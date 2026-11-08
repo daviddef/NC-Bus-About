@@ -165,7 +165,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
                 eventHandlers={{
                   click: () => open(here, (
                     <Pop icon="bus" colour={run.colour} title={`Get off: ${stop.t}`} sub={run.name}
-                      rows={[`${hhmm(r.getOffAt)} · ${mins(r.busMin)} on the bus`, `Then ${r.walkReal ? '' : '≈'}${mins(r.walkMin)} walk (${metres(r.distM)})`, stop.k === 'seg' ? `A stop on ${stop.road}` : 'Named stop on the run sheet']} />
+                      rows={[`${hhmm(r.getOffAt)} · ${mins(r.busMin)} on the bus · ${r.stopCount} stop${r.stopCount === 1 ? '' : 's'}`, `Then ${r.walkReal ? '' : '≈'}${mins(r.walkMin)} walk (${metres(r.distM)})`, stop.k === 'seg' ? `A stop on ${stop.road}` : 'Named stop on the run sheet']} />
                   )),
                 }} />
             </Fragment>

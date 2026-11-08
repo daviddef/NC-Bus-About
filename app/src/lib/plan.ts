@@ -50,6 +50,16 @@ export function stopsFor(run: Run): StopOption[] {
   return out
 }
 
+/** Stops from the school up to and including the get-off stop. The two sides of a road count once. */
+export function countStops(stops: StopOption[], upTo: number): number {
+  const kept: StopOption[] = []
+  for (const s of stops.filter((x) => x.i <= upTo).sort((a, b) => a.i - b.i)) {
+    const last = kept[kept.length - 1]
+    if (!last || dist([last.lat, last.lon], [s.lat, s.lon]) > 40) kept.push(s)
+  }
+  return Math.max(kept.length, 1)
+}
+
 export function planTrips(runs: Run[], dest: Pt, mode: Mode, sort: SortKey): Result[] {
   const res: Result[] = []
   for (const run of runs) {
@@ -65,7 +75,7 @@ export function planTrips(runs: Run[], dest: Pt, mode: Mode, sort: SortKey): Res
     if (!best) continue
     const arriveAt = run.departMin + best.s.eta + best.w
     res.push({
-      run, stop: best.s, stops, distM: best.d, walkMin: best.w, busMin: best.s.eta,
+      run, stop: best.s, stops, distM: best.d, walkMin: best.w, busMin: best.s.eta, stopCount: countStops(stops, best.s.i),
       getOffAt: run.departMin + best.s.eta, arriveAt, journeyMin: arriveAt - run.departMin, walkReal: false,
     })
   }

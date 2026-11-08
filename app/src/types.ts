@@ -46,6 +46,7 @@ export interface Result {
   distM: number // straight line, stop to destination
   walkMin: number
   busMin: number
+  stopCount: number // listed stops on the way, including the get-off stop (the bus may skip "as required" ones)
   getOffAt: number // minutes since midnight
   arriveAt: number
   journeyMin: number // leaving school to reaching the destination

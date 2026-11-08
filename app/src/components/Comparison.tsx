@@ -10,6 +10,7 @@ const ROWS: Row[] = [
   { label: 'Leave school', cells: (r) => hhmm(r.run.departMin), value: (r) => r.run.departMin },
   { label: 'Get off at', cells: (r) => hhmm(r.getOffAt) },
   { label: 'Time on the bus', cells: (r) => mins(r.busMin), value: (r) => r.busMin },
+  { label: 'Stops on the way', cells: (r) => String(r.stopCount), value: (r) => r.stopCount },
   { label: 'Walk at the end', cells: (r) => mins(r.walkMin), value: (r) => r.walkMin },
   { label: 'Walking distance', cells: (r) => metres(r.distM), value: (r) => r.distM },
 ]
