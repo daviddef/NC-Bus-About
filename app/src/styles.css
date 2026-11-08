@@ -128,3 +128,19 @@ small{font-size:12px;color:var(--mut);font-weight:400}.ok{color:var(--ok)}.warn{
 .cmp tbody th{width:25%;font-size:12px}
 .cmp thead th{font-size:12px}
 }
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:2px 0 22px}
+.picks div{background:var(--pan);border-radius:12px;padding:10px 12px;display:grid;gap:2px}
+.picks span{font-size:12px;color:var(--mut)}.picks b{font-size:18px}
+.cmp .tl{margin-bottom:26px}
+table.simple{margin-top:6px;font-size:16px}
+table.simple th,table.simple td{padding:15px 12px}
+table.simple thead th{font-size:15px;padding-bottom:12px}
+table.simple small{display:block;font-size:12px;font-weight:400;color:var(--mut);margin-top:2px}
+table.simple td.win small{color:var(--mut)}
+table.simple td{font-weight:600}
+table.simple small.stopn{font-weight:400;font-size:13px;color:var(--ink,inherit);margin:0}
+@media(max-width:600px){
+.picks{gap:6px}.picks b{font-size:15px}.picks div{padding:8px 9px}
+table.simple{font-size:14px}
+table.simple th,table.simple td{padding:12px 4px}
+}
