@@ -49,6 +49,8 @@ export interface Result {
   getOffAt: number // minutes since midnight
   arriveAt: number
   journeyMin: number // leaving school to reaching the destination
+  walkReal: boolean // true once distM/walkMin come from a real walking route
+  walkPath?: Pt[]
 }
 
 export type Mode = 'quick' | 'close'

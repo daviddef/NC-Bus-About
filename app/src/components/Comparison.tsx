@@ -72,6 +72,7 @@ export default function Comparison({ results }: { results: Result[] }) {
             )
           })}
           <tr><th scope="row">Get-off stop</th>{results.map((r) => <td key={r.run.key}>{r.stop.k === 'seg' ? <>on {r.stop.road}: </> : null}{r.stop.t}</td>)}</tr>
+          <tr><th scope="row">Walk measured by</th>{results.map((r) => <td key={r.run.key}>{r.walkReal ? 'walking route' : 'straight line (estimate)'}</td>)}</tr>
           <tr><th scope="row">Part-way only?</th>{results.map((r) => <td key={r.run.key} className={r.walkMin > 15 ? 'bad' : 'best'}>{r.walkMin > 15 ? 'Yes: long walk or pick-up' : 'No'}</td>)}</tr>
           <tr><th scope="row">Source sheet updated</th>{results.map((r) => <td key={r.run.key}>{r.run.updated ?? 'unknown'}</td>)}</tr>
           <tr><th scope="row">How sure are we?</th>{results.map((r) => <td key={r.run.key}>{r.stop.status === 'possible' ? 'Stop match uncertain; ' : ''}stop unchecked, times estimated</td>)}</tr>

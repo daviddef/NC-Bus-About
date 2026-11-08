@@ -16,7 +16,7 @@ export default function RunCard({ r, rank, on, onToggle }: Props) {
       <div className="times">
         <span>Leave school</span><b>{hhmm(run.departMin)}</b>
         <span>Get off</span><b>{hhmm(r.getOffAt)} <small>({mins(r.busMin)} on the bus)</small></b>
-        <span>Reach destination</span><b>{hhmm(r.arriveAt)} <small>({mins(r.walkMin)} walk, {metres(r.distM)})</small></b>
+        <span>Reach destination</span><b>{hhmm(r.arriveAt)} <small>({r.walkReal ? '' : '≈'}{mins(r.walkMin)} walk, {r.walkReal ? '' : '≈'}{metres(r.distM)})</small></b>
       </div>
       <div>
         {stop.k === 'seg' && <>Stop on <b>{stop.road}</b>: </>}

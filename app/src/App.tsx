@@ -4,9 +4,10 @@ import MapView from './components/MapView'
 import RunCard from './components/RunCard'
 import { geocode } from './lib/geocode'
 import { mins } from './lib/format'
-import { planTrips, prepare, walkMinutes } from './lib/plan'
+import { planTrips, prepare, sortResults, walkMinutes, withWalk } from './lib/plan'
+import { walkingRoute, type Walk } from './lib/walking'
 import { dist } from './lib/geo'
-import type { Dataset, GeoHit, Mode, Pt, Run, SortKey } from './types'
+import type { Dataset, GeoHit, Mode, Pt, Result, Run, SortKey } from './types'
 
 export default function App() {
   const [runs, setRuns] = useState<Run[]>([])
@@ -31,7 +32,19 @@ export default function App() {
   }, [])
 
   const dest: Pt | null = hits[hit] ? [hits[hit].lat, hits[hit].lon] : null
-  const results = useMemo(() => (dest ? planTrips(runs, dest, mode, sort) : []), [runs, dest, mode, sort])
+  const base = useMemo(() => (dest ? planTrips(runs, dest, mode, sort) : []), [runs, dest, mode, sort])
+  const [walks, setWalks] = useState<Record<string, Walk>>({})
+  const wkey = (r: Result) => `${r.run.key}|${r.stop.lat},${r.stop.lon}|${dest?.join(',')}`
+  useEffect(() => {
+    if (!dest) return
+    let live = true
+    base.slice(0, 8).forEach((r) => {
+      walkingRoute([r.stop.lat, r.stop.lon], dest).then((w) => { if (live && w) setWalks((p) => (p[wkey(r)] ? p : { ...p, [wkey(r)]: w })) })
+    })
+    return () => { live = false }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [base])
+  const results = useMemo(() => sortResults(base.map((r) => (walks[wkey(r)] ? withWalk(r, walks[wkey(r)]) : r)), sort), [base, walks, sort])
   const chosen = results.filter((r) => selected.includes(r.run.key))
 
   async function search(e: React.FormEvent) {

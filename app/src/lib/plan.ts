@@ -63,9 +63,19 @@ export function planTrips(runs: Run[], dest: Pt, mode: Mode, sort: SortKey): Res
     const arriveAt = run.departMin + best.s.eta + best.w
     res.push({
       run, stop: best.s, stops, distM: best.d, walkMin: best.w, busMin: best.s.eta,
-      getOffAt: run.departMin + best.s.eta, arriveAt, journeyMin: arriveAt - run.departMin,
+      getOffAt: run.departMin + best.s.eta, arriveAt, journeyMin: arriveAt - run.departMin, walkReal: false,
     })
   }
+  return sortResults(res, sort)
+}
+
+export function sortResults(res: Result[], sort: SortKey): Result[] {
   const by = { arrive: (r: Result) => r.arriveAt, walk: (r: Result) => r.walkMin, bus: (r: Result) => r.busMin }[sort]
-  return res.sort((a, b) => by(a) - by(b))
+  return [...res].sort((a, b) => by(a) - by(b))
+}
+
+/** Swap the straight-line walk for a real walking route once we have it. */
+export function withWalk(r: Result, w: { path: Pt[]; distM: number; min: number }): Result {
+  const arriveAt = r.getOffAt + w.min
+  return { ...r, distM: w.distM, walkMin: w.min, arriveAt, journeyMin: arriveAt - r.run.departMin, walkReal: true, walkPath: w.path }
 }

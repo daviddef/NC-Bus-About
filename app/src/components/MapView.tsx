@@ -3,7 +3,7 @@ import L from 'leaflet'
 import { CircleMarker, MapContainer, Marker, Polyline, Popup, TileLayer, Tooltip, useMap } from 'react-leaflet'
 import { bearing, dist } from '../lib/geo'
 import { hhmm, metres, mins } from '../lib/format'
-import { etaMin, project, walkMinutes } from '../lib/plan'
+import { etaMin, project } from '../lib/plan'
 import type { Pt, Result } from '../types'
 
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/'
@@ -133,8 +133,13 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
               </Tooltip>
             </CircleMarker>
             {dest && (
-              <Polyline positions={[here, dest]} pathOptions={{ color: '#b3261e', weight: 3, dashArray: '3 6' }}>
-                <Tooltip sticky>Walk {metres(r.distM)} · {mins(walkMinutes(r.distM))}</Tooltip>
+              <Polyline
+                positions={r.walkPath ? [here, ...r.walkPath, dest] : [here, dest]}
+                pathOptions={{ color: '#b3261e', weight: r.walkPath ? 4 : 3, dashArray: r.walkPath ? '1 7' : '3 6', lineCap: 'round' }}
+              >
+                <Tooltip sticky>
+                  Walk {r.walkReal ? '' : '≈'}{metres(r.distM)} · {r.walkReal ? '' : '≈'}{mins(r.walkMin)} {r.walkReal ? '(walking route)' : '(straight-line estimate)'}
+                </Tooltip>
               </Polyline>
             )}
           </Fragment>
