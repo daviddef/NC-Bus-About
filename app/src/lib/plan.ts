@@ -1,7 +1,8 @@
 import { dist } from './geo'
 import type { Dataset, Mode, Pt, Result, Run, SortKey, StopOption } from '../types'
 
-export const PALETTE = ['#1a56db', '#e65100', '#2e7d32', '#8e24aa', '#c2185b', '#00838f', '#6d4c41']
+export const PALETTE = ['#1a56db', '#e65100', '#2e7d32', '#8e24aa', '#c2185b', '#00838f', '#6d4c41', '#455a64']
+export const GREY = '#8a94a6'
 const BUS_FACTOR = 1.3 // school bus assumed this much slower than a car
 const MAX_OFF = 250 // metres: a road stop must be this close to the drawn route
 export const walkMinutes = (d: number) => (d * 1.3) / 80 // 80 m/min, +30% for streets

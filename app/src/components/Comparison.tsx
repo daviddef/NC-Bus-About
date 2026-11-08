@@ -1,10 +1,10 @@
 import { hhmm, metres, mins } from '../lib/format'
-import type { Result } from '../types'
+import type { Mode, Result } from '../types'
 
-type Row = { label: string; cells: (r: Result) => string; value?: (r: Result) => number; hint?: string }
+type Row = { label: string; cells: (r: Result) => string; value?: (r: Result) => number }
 
 const ROWS: Row[] = [
-  { label: 'Arrive at destination', cells: (r) => hhmm(r.arriveAt), value: (r) => r.arriveAt, hint: 'earliest wins' },
+  { label: 'Arrive at destination', cells: (r) => hhmm(r.arriveAt), value: (r) => r.arriveAt },
   { label: 'Door to door (from leaving school)', cells: (r) => mins(r.journeyMin), value: (r) => r.journeyMin },
   { label: 'Leave school', cells: (r) => hhmm(r.run.departMin), value: (r) => r.run.departMin },
   { label: 'Get off at', cells: (r) => hhmm(r.getOffAt) },
@@ -13,32 +13,58 @@ const ROWS: Row[] = [
   { label: 'Walking distance', cells: (r) => metres(r.distM), value: (r) => r.distM },
 ]
 
-export default function Comparison({ results }: { results: Result[] }) {
+interface Props { results: Result[]; alt: Result[]; mode: Mode; onMode: (m: Mode) => void }
+
+export default function Comparison({ results, alt, mode, onMode }: Props) {
+  const toggle = (
+    <div className="seg" role="group" aria-label="Which stop to get off at">
+      <button className={mode === 'quick' ? 'act' : ''} onClick={() => onMode('quick')}>Quickest</button>
+      <button className={mode === 'close' ? 'act' : ''} onClick={() => onMode('close')}>Least walking</button>
+    </div>
+  )
   if (results.length < 2) {
-    return <div className="cmp"><p className="note">Tick two or more runs on the left to compare them.</p></div>
+    return <div className="cmp">{toggle}<p className="note">Tick two or more runs to compare them.</p></div>
   }
   const start = Math.min(...results.map((r) => r.run.departMin))
   const end = Math.max(...results.map((r) => r.arriveAt))
   const span = Math.max(end - start, 1)
   const pct = (m: number) => ((m - start) / span) * 100
-  const fastest = [...results].sort((a, b) => a.arriveAt - b.arriveAt)[0]
+  const first = [...results].sort((a, b) => a.arriveAt - b.arriveAt)[0]
+  const least = [...results].sort((a, b) => a.walkMin - b.walkMin)[0]
 
-  const notes = results.filter((r) => r !== fastest).map((r) => {
-    const later = Math.round(r.arriveAt - fastest.arriveAt)
-    const walkDiff = Math.round(r.walkMin - fastest.walkMin)
-    const busDiff = Math.round(r.busMin - fastest.busMin)
+  const notes = results.filter((r) => r !== first).map((r) => {
+    const later = Math.round(r.arriveAt - first.arriveAt)
+    const walkDiff = Math.round(r.walkMin - first.walkMin)
     const bits = [
       later === 0 ? 'arrives at the same time' : `arrives ${later} min later`,
       walkDiff === 0 ? '' : walkDiff < 0 ? `${-walkDiff} min less walking` : `${walkDiff} min more walking`,
-      busDiff === 0 ? '' : busDiff < 0 ? `${-busDiff} min less on the bus` : `${busDiff} min more on the bus`,
     ].filter(Boolean)
     return <li key={r.run.key}><b style={{ color: r.run.colour }}>{r.run.name}</b>: {bits.join(', ')}.</li>
+  })
+
+  const altLines = results.map((r) => {
+    const a = alt.find((x) => x.run.key === r.run.key)
+    if (!a) return null
+    const same = a.stop.lat === r.stop.lat && a.stop.lon === r.stop.lon
+    const label = mode === 'quick' ? 'Least walking instead' : 'Quickest instead'
+    return (
+      <li key={r.run.key}>
+        <b style={{ color: r.run.colour }}>{r.run.name}</b> — {label}:{' '}
+        {same ? 'same stop.' : <>get off at <b>{a.stop.t}</b> ({hhmm(a.getOffAt)}), walk {a.walkReal ? '' : '≈'}{mins(a.walkMin)} ({metres(a.distM)}), arrive {hhmm(a.arriveAt)}
+          {' '}— {Math.abs(Math.round(a.arriveAt - r.arriveAt))} min {a.arriveAt >= r.arriveAt ? 'later' : 'sooner'}, {Math.abs(Math.round(a.walkMin - r.walkMin))} min {a.walkMin <= r.walkMin ? 'less' : 'more'} walking.</>}
+      </li>
+    )
   })
 
   return (
     <div className="cmp">
       <h2>Comparing {results.length} runs</h2>
-      <p className="verdict"><b style={{ color: fastest.run.colour }}>{fastest.run.name}</b> gets you there first, at about <b>{hhmm(fastest.arriveAt)}</b>. Compared with it:</p>
+      {toggle}
+      <p className="verdict">
+        <b style={{ color: first.run.colour }}>{first.run.name}</b> gets you there first, about <b>{hhmm(first.arriveAt)}</b>.
+        {least !== first && <> <b style={{ color: least.run.colour }}>{least.run.name}</b> has the shortest walk ({mins(least.walkMin)}, {metres(least.distM)}).</>}
+        {' '}Compared with the first:
+      </p>
       <ul>{notes}</ul>
 
       <h3>Timeline</h3>
@@ -48,7 +74,7 @@ export default function Comparison({ results }: { results: Result[] }) {
             <div className="tlname" style={{ color: r.run.colour }}>{r.run.name.split(' · ')[0]}</div>
             <div className="tlbar">
               <div className="bus" style={{ left: pct(r.run.departMin) + '%', width: pct(r.getOffAt) - pct(r.run.departMin) + '%', background: r.run.colour }}>{mins(r.busMin)} bus</div>
-              <div className="walk" style={{ left: pct(r.getOffAt) + '%', width: pct(r.arriveAt) - pct(r.getOffAt) + '%' }}>{mins(r.walkMin)} walk</div>
+              <div className="walk" style={{ left: pct(r.getOffAt) + '%', width: pct(r.arriveAt) - pct(r.getOffAt) + '%' }}>{r.distM < 150 ? 'no walk' : mins(r.walkMin) + ' walk'}</div>
             </div>
           </div>
         ))}
@@ -65,9 +91,7 @@ export default function Comparison({ results }: { results: Result[] }) {
             return (
               <tr key={row.label}>
                 <th scope="row">{row.label}</th>
-                {results.map((r) => (
-                  <td key={r.run.key} className={row.value && row.value(r) === best ? 'best' : ''}>{row.cells(r)}</td>
-                ))}
+                {results.map((r) => <td key={r.run.key} className={row.value && row.value(r) === best ? 'best' : ''}>{row.cells(r)}</td>)}
               </tr>
             )
           })}
@@ -78,6 +102,9 @@ export default function Comparison({ results }: { results: Result[] }) {
           <tr><th scope="row">How sure are we?</th>{results.map((r) => <td key={r.run.key}>{r.stop.status === 'possible' ? 'Stop match uncertain; ' : ''}stop unchecked, times estimated</td>)}</tr>
         </tbody>
       </table>
+
+      <h3>{mode === 'quick' ? 'Or, to walk as little as possible' : 'Or, to get there as soon as possible'}</h3>
+      <ul>{altLines}</ul>
       <p className="note">Green marks the best value in each row. All times are estimated from road distance (the College sheets only give the afternoon departure) and have not been checked by College Transport.</p>
     </div>
   )

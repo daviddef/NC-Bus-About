@@ -1,22 +1,18 @@
+import { useState } from 'react'
 import { hhmm, metres, mins } from '../lib/format'
 import type { Result } from '../types'
 
-interface Props { r: Result; rank: number; on: boolean; onToggle: () => void }
+interface Props { r: Result; rank?: number; on: boolean; onToggle: () => void }
 
-export default function RunCard({ r, rank, on, onToggle }: Props) {
+function Body({ r }: { r: Result }) {
   const { run, stop } = r
+  const approx = r.walkReal ? '' : '≈'
   return (
-    <div className={`card ${on ? 'on' : ''}`} style={{ ['--c' as string]: run.colour }}>
-      <h2>
-        <input type="checkbox" checked={on} onChange={onToggle} aria-label={`Show ${run.name} on the map`} />
-        <span className="sw" />
-        {run.name}
-        {rank === 0 && <span className="chip ok">Best</span>}
-      </h2>
+    <>
       <div className="times">
         <span>Leave school</span><b>{hhmm(run.departMin)}</b>
         <span>Get off</span><b>{hhmm(r.getOffAt)} <small>({mins(r.busMin)} on the bus)</small></b>
-        <span>Reach destination</span><b>{hhmm(r.arriveAt)} <small>({r.walkReal ? '' : '≈'}{mins(r.walkMin)} walk, {r.walkReal ? '' : '≈'}{metres(r.distM)})</small></b>
+        <span>Reach destination</span><b>{hhmm(r.arriveAt)} <small>({approx}{mins(r.walkMin)} walk, {approx}{metres(r.distM)})</small></b>
       </div>
       <div>
         {stop.k === 'seg' && <>Stop on <b>{stop.road}</b>: </>}
@@ -31,6 +27,40 @@ export default function RunCard({ r, rank, on, onToggle }: Props) {
       {r.walkMin > 15 && (
         <div className="banner">Gets you part-way only: {metres(r.distM)} still to go ({mins(r.walkMin)} walk). Ask someone to pick you up, or plan the walk.</div>
       )}
+    </>
+  )
+}
+
+/** Full card, used for the top results. */
+export default function RunCard({ r, rank, on, onToggle }: Props) {
+  return (
+    <div className={`card ${on ? 'on' : ''}`} style={{ ['--c' as string]: r.run.colour }}>
+      <h2>
+        <input type="checkbox" checked={on} onChange={onToggle} aria-label={`Show ${r.run.name} on the map`} />
+        <span className="sw" />
+        {r.run.name}
+        {rank === 0 && <span className="chip ok">Best</span>}
+      </h2>
+      <Body r={r} />
+    </div>
+  )
+}
+
+/** One line that expands to the full details, used for the rest of the runs. */
+export function RunRow({ r, on, onToggle }: Omit<Props, 'rank'>) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className={`row ${on ? 'on' : ''}`} style={{ ['--c' as string]: r.run.colour }}>
+      <div className="row1">
+        <input type="checkbox" checked={on} onChange={onToggle} aria-label={`Show ${r.run.name} on the map`} />
+        <span className="sw" />
+        <button type="button" className="rowbtn" aria-expanded={open} onClick={() => setOpen(!open)}>
+          <span className="rname">{r.run.name}</span>
+          <span className="rsum">{hhmm(r.arriveAt)} · {r.walkReal ? '' : '≈'}{mins(r.walkMin)} walk</span>
+          <span className="chev">{open ? '▴' : '▾'}</span>
+        </button>
+      </div>
+      {open && <div className="rowbody"><Body r={r} /></div>}
     </div>
   )
 }
