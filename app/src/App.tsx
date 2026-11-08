@@ -3,12 +3,13 @@ import Comparison from './components/Comparison'
 import MapView from './components/MapView'
 import RunCard, { RunRow } from './components/RunCard'
 import Segmented, { type Opt } from './components/Segmented'
-import { geocode } from './lib/geocode'
+import SearchBox from './components/SearchBox'
+import { addRecent, loadRecents, saveRecents, type Place } from './lib/places'
 import { mins } from './lib/format'
 import { GREY, PALETTE, planTrips, prepare, sortResults, walkMinutes, withWalk } from './lib/plan'
 import { dist } from './lib/geo'
 import { walkingRoute, type Walk } from './lib/walking'
-import type { Dataset, GeoHit, Mode, Pt, Result, Run, SortKey } from './types'
+import type { Dataset, Mode, Pt, Result, Run, SortKey } from './types'
 
 const MODES: Opt<Mode>[] = [
   { value: 'quick', label: 'Quickest', icon: 'bolt' },
@@ -24,11 +25,8 @@ export default function App() {
   const [runs, setRuns] = useState<Run[]>([])
   const [school, setSchool] = useState<Pt>([-27.3595, 153.0640])
   const [loadErr, setLoadErr] = useState('')
-  const [q, setQ] = useState('')
-  const [hits, setHits] = useState<GeoHit[]>([])
-  const [hit, setHit] = useState(0)
-  const [busy, setBusy] = useState(false)
-  const [err, setErr] = useState('')
+  const [place, setPlace] = useState<Place | null>(null)
+  const [recents, setRecents] = useState<Place[]>(() => loadRecents())
   const [mode, setMode] = useState<Mode>('quick')
   const [sort, setSort] = useState<SortKey>('arrive')
   const [selected, setSelected] = useState<string[]>([])
@@ -43,7 +41,7 @@ export default function App() {
       .catch((e: Error) => setLoadErr(e.message))
   }, [])
 
-  const dest: Pt | null = hits[hit] ? [hits[hit].lat, hits[hit].lon] : null
+  const dest: Pt | null = place ? [place.lat, place.lon] : null
   const other: Mode = mode === 'quick' ? 'close' : 'quick'
   const baseA = useMemo(() => (dest ? planTrips(runs, dest, mode, sort) : []), [runs, dest, mode, sort])
   const baseB = useMemo(() => (dest ? planTrips(runs, dest, other, sort) : []), [runs, dest, other, sort])
@@ -75,19 +73,11 @@ export default function App() {
     [baseB, walks, selected])
   const chosen = results.filter((r) => selected.includes(r.run.key))
 
-  async function search(e: React.FormEvent) {
-    e.preventDefault()
-    if (!q.trim()) return
-    setBusy(true); setErr('')
-    try {
-      const h = await geocode(q.trim())
-      if (!h.length) { setErr('I could not find that place. Try adding the suburb.'); setHits([]); return }
-      setHits(h); setHit(0)
-      setSelected(planTrips(runs, [h[0].lat, h[0].lon], mode, sort).slice(0, 2).map((r) => r.run.key))
-      setView('map'); setFitKey((k) => k + 1)
-    } catch (x) {
-      setErr('Search failed (' + (x as Error).message + '). Check your connection and try again.')
-    } finally { setBusy(false) }
+  function pick(p: Place) {
+    setPlace(p)
+    if (p.icon !== 'target') setRecents((r) => addRecent(r, p)) // never remember where someone actually is
+    setSelected(planTrips(runs, [p.lat, p.lon], mode, sort).slice(0, 2).map((r) => r.run.key))
+    setView('map'); setFitKey((k) => k + 1)
   }
 
   function toggle(key: string) {
@@ -107,10 +97,7 @@ export default function App() {
           <h1>Which bus home?</h1>
           <p>From St Joseph&rsquo;s Nudgee College &middot; prototype with estimated times</p>
         </header>
-        <form onSubmit={search}>
-          <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Place or address, e.g. Westfield Chermside" autoComplete="off" />
-          <button disabled={busy || !runs.length}>{busy ? '…' : 'Find bus'}</button>
-        </form>
+        <SearchBox ready={runs.length > 0} recents={recents} onPick={pick} onClearRecents={() => { setRecents([]); saveRecents([]) }} />
         {loadErr && <p className="err pad">Could not load run data: {loadErr}</p>}
         {dest && (
           <div className="opts">
@@ -121,16 +108,10 @@ export default function App() {
       </section>
 
       <section className="top">
-        {!dest && !err && (
+        {!dest && (
           <p className="note">Type where you are going. Times are estimates worked out from road distance — the College sheets only give the 3:05 pm departure. Not yet checked by College Transport: always check BusMinder and your driver.</p>
         )}
-        {err && <p className="err">{err}</p>}
-        {dest && (
-          <p className="note where">
-            Buses to <b>{hits[hit].full}</b>
-            {hits.length > 1 && <> · Not right? {hits.map((h, i) => (i === hit ? null : <a key={i} href="#" onClick={(e) => { e.preventDefault(); setHit(i); setFitKey((k) => k + 1) }}>{h.label} </a>))}</>}
-          </p>
-        )}
+        {place && <p className="note where">Buses to <b>{place.full}</b></p>}
         {walkAll !== null && walkAll <= 60 && <p className="note">Walking all the way from school: about {mins(walkAll)}.</p>}
         {top.map((r, i) => <RunCard key={r.run.key} r={r} rank={i} on={selected.includes(r.run.key)} onToggle={() => toggle(r.run.key)} />)}
         {dest && !results.length && <p>No run found near there.</p>}
@@ -143,7 +124,7 @@ export default function App() {
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
-            <MapView school={school} dest={dest} destName={hits[hit]?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} />
+            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} />
           </div>
           {view === 'compare' && <Comparison results={chosen} alt={alt} mode={mode} onMode={setMode} />}
         </div>

@@ -55,4 +55,3 @@ export interface Result {
 
 export type Mode = 'quick' | 'close'
 export type SortKey = 'arrive' | 'walk' | 'bus'
-export interface GeoHit { lat: number; lon: number; label: string; full: string }
