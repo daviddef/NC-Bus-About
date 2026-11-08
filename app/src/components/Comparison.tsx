@@ -49,15 +49,19 @@ export default function Comparison({ results }: { results: Result[] }) {
 
       <h3>Timeline</h3>
       <div className="tl" role="img" aria-label="Timeline of each journey: bus then walk">
-        {results.map((r) => (
-          <div className="tlrow" key={r.run.key}>
-            <div className="tlname" style={{ color: r.run.colour }}>{r.run.name.split(' · ')[0]}</div>
-            <div className="tlbar">
-              <div className="bus" style={{ left: pct(r.run.departMin) + '%', width: pct(r.getOffAt) - pct(r.run.departMin) + '%', background: r.run.colour }}>{mins(r.busMin)} bus</div>
-              <div className="walk" style={{ left: pct(r.getOffAt) + '%', width: pct(r.arriveAt) - pct(r.getOffAt) + '%' }}>{r.distM < 150 ? 'no walk' : mins(r.walkMin) + ' walk'}</div>
+        {results.map((r) => {
+          const wlabel = r.distM < 150 ? 'no walk' : mins(r.walkMin) + ' walk'
+          const narrow = pct(r.arriveAt) - pct(r.getOffAt) < 16 // too short to hold its own label
+          return (
+            <div className="tlrow" key={r.run.key}>
+              <div className="tlname" style={{ color: r.run.colour }}>{r.run.name.split(' · ')[0]}</div>
+              <div className="tlbar">
+                <div className="bus" style={{ left: pct(r.run.departMin) + '%', width: pct(r.getOffAt) - pct(r.run.departMin) + '%', background: r.run.colour }}>{mins(r.busMin)} bus{narrow ? ' · ' + wlabel : ''}</div>
+                <div className="walk" style={{ left: pct(r.getOffAt) + '%', width: pct(r.arriveAt) - pct(r.getOffAt) + '%' }}>{narrow ? '' : wlabel}</div>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
         <div className="tlaxis"><span>{hhmm(start)}</span><span>{hhmm(start + span / 2)}</span><span>{hhmm(end)}</span></div>
       </div>
 
