@@ -16,6 +16,28 @@ const CATS: { pri: Priority; tag: string }[] = [
   { pri: 'walk', tag: 'Least walking' },
 ]
 
+type Pick = { r: Result; tags: string[] }
+
+/** One card per category, each a different run. A run that wins twice (at the same stop) carries both tags and the
+ *  other category shows its runner-up, labelled "2nd …", so three options always appear. */
+function topPicks(lists: Record<Priority, Result[]>): Pick[] {
+  const out: Pick[] = []
+  const owed: { c: (typeof CATS)[number] }[] = []
+  for (const c of CATS) {
+    const w = lists[c.pri][0]
+    if (!w) continue
+    const same = out.find((o) => o.r.run.key === w.run.key && o.r.stop.lat === w.stop.lat && o.r.stop.lon === w.stop.lon)
+    if (same) { same.tags.push(c.tag); owed.push({ c }) }
+    else if (out.some((o) => o.r.run.key === w.run.key)) owed.push({ c })
+    else out.push({ r: w, tags: [c.tag] })
+  }
+  for (const { c } of owed) {
+    const next = lists[c.pri].find((x) => !out.some((o) => o.r.run.key === x.run.key))
+    if (next) out.push({ r: next, tags: ['2nd ' + c.tag.toLowerCase()] })
+  }
+  return out
+}
+
 export default function App() {
   const [runs, setRuns] = useState<Run[]>([])
   const [school, setSchool] = useState<Pt>([-27.3595, 153.0640])
@@ -60,29 +82,18 @@ export default function App() {
   const results = useMemo(() => sortResults(baseA.map(real), 'quick').map(paint),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [baseA, walks, selected])
-  // The best run for each of the three things that matter; one card if the same run wins more than one.
-  const top = useMemo(() => {
-    const out: { r: Result; tags: string[] }[] = []
-    if (!bases) return out
-    for (const c of CATS) {
-      const list = bases[c.pri].map(real)
-      const first = list[0]
-      if (!first) continue
-      const same = out.find((o) => o.r.run.key === first.run.key && o.r.stop.lat === first.stop.lat && o.r.stop.lon === first.stop.lon)
-      if (same) { same.tags.push(c.tag); continue }
-      if (!out.some((o) => o.r.run.key === first.run.key)) out.push({ r: first, tags: [c.tag] })
-    }
-    return out.map((o) => ({ ...o, r: paint(o.r) }))
+  // Always three different runs: the best for each of the three things that matter.
+  const top = useMemo(() => (bases ? topPicks({ quick: bases.quick.map(real), stops: bases.stops.map(real), walk: bases.walk.map(real) }).map((o) => ({ ...o, r: paint(o.r) })) : []),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bases, walks, selected])
+    [bases, walks, selected])
   const topKeys = top.map((t) => t.r.run.key)
   const chosen = selected.map((k) => top.find((t) => t.r.run.key === k)?.r ?? results.find((r) => r.run.key === k)).filter((r): r is Result => !!r).map(paint)
 
   function pick(p: Place) {
     setPlace(p)
     if (p.icon !== 'target') setRecents((r) => addRecent(r, p)) // never remember where someone actually is
-    const keys = new Set(CATS.map((c) => planTrips(runs, [p.lat, p.lon], c.pri)[0]?.run.key).filter(Boolean) as string[])
-    for (const r of planTrips(runs, [p.lat, p.lon], 'quick')) { if (keys.size >= 3) break; keys.add(r.run.key) } // always at least three to compare
+    const to: Pt = [p.lat, p.lon]
+    const keys = new Set(topPicks({ quick: planTrips(runs, to, 'quick'), stops: planTrips(runs, to, 'stops'), walk: planTrips(runs, to, 'walk') }).map((o) => o.r.run.key))
     setSelected([...keys])
     setView('map'); setFitKey((k) => k + 1)
   }
