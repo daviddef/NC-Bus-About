@@ -1,0 +1,447 @@
+{
+ "file": "RUN-6-PADDINGTON.pdf",
+ "title": "RUN 6 - Paddington",
+ "subtitle": [],
+ "updated": "08/12/2021",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7.00 Bus stop 13",
+     "time": "07:00",
+     "text": "Bus stop 13",
+     "stop": true
+    },
+    {
+     "raw": "Latrobe Terrace (Perrott Street)",
+     "text": "Latrobe Terrace (Perrott Street)"
+    },
+    {
+     "raw": "Continue Latrobe Terrace",
+     "text": "Continue Latrobe Terrace"
+    },
+    {
+     "raw": "7.04 Bus stop 10 - Paddington Central",
+     "time": "07:04",
+     "text": "Bus stop 10 - Paddington Central",
+     "stop": true
+    },
+    {
+     "raw": "Continue Given Terrace",
+     "text": "Continue Given Terrace"
+    },
+    {
+     "raw": "7.06 Bus stop 8 - Old Paddo Post Office",
+     "time": "07:06",
+     "text": "Bus stop 8 - Old Paddo Post Office",
+     "stop": true
+    },
+    {
+     "raw": "Continue Given Tce/Caxton St",
+     "text": "Continue Given Tce/Caxton St"
+    },
+    {
+     "raw": "Left Inner City Bypass",
+     "turn": "Left",
+     "text": "Inner City Bypass"
+    },
+    {
+     "raw": "Left Musgrave St off ramp",
+     "turn": "Left",
+     "text": "Musgrave St off ramp"
+    },
+    {
+     "raw": "Right Musgrave St",
+     "turn": "Right",
+     "text": "Musgrave St"
+    },
+    {
+     "raw": "Left Gregory Terrace",
+     "turn": "Left",
+     "text": "Gregory Terrace"
+    },
+    {
+     "raw": "7.15 Bus stop 7 - St Joseph’s Gregory Terrace",
+     "time": "07:15",
+     "text": "Bus stop 7 - St Joseph’s Gregory Terrace",
+     "stop": true
+    },
+    {
+     "raw": "Left Bowen Bridge Rd",
+     "turn": "Left",
+     "text": "Bowen Bridge Rd"
+    },
+    {
+     "raw": "Left Northey St",
+     "turn": "Left",
+     "text": "Northey St"
+    },
+    {
+     "raw": "7.25 Bus stop - Northey St near Allom St",
+     "time": "07:25",
+     "text": "Bus stop - Northey St near Allom St",
+     "stop": true
+    },
+    {
+     "raw": "Continue as Green Terrace",
+     "text": "Continue as Green Terrace"
+    },
+    {
+     "raw": "Left Newmarket Rd",
+     "turn": "Left",
+     "text": "Newmarket Rd"
+    },
+    {
+     "raw": "Right Silvester Rd",
+     "turn": "Right",
+     "text": "Silvester Rd"
+    },
+    {
+     "raw": "7.28 Bus Stop 17 - Kedron Brook Rd at Silvester St",
+     "time": "07:28",
+     "text": "Bus Stop 17 - Kedron Brook Rd at Silvester St",
+     "stop": true
+    },
+    {
+     "raw": "Left Kedron Brook Rd",
+     "turn": "Left",
+     "text": "Kedron Brook Rd"
+    },
+    {
+     "raw": "7.30 Bus Stop 20 - Wilston Village",
+     "time": "07:30",
+     "text": "Bus Stop 20 - Wilston Village",
+     "stop": true
+    },
+    {
+     "raw": "Right Days Rd",
+     "turn": "Right",
+     "text": "Days Rd"
+    },
+    {
+     "raw": "7.35 Bus Stop 24 - Days Rd at Eight Ave",
+     "time": "07:35",
+     "text": "Bus Stop 24 - Days Rd at Eight Ave",
+     "stop": true
+    },
+    {
+     "raw": "Continue as Maygar St",
+     "text": "Continue as Maygar St"
+    },
+    {
+     "raw": "7.38 Bus Stop 19 - Maygar St at McKensie St",
+     "time": "07:38",
+     "text": "Bus Stop 19 - Maygar St at McKensie St",
+     "stop": true
+    },
+    {
+     "raw": "Left Lutwyche Rd",
+     "turn": "Left",
+     "text": "Lutwyche Rd"
+    },
+    {
+     "raw": "7.40 Bus Stop 20 - Lutwyche Shops",
+     "time": "07:40",
+     "text": "Bus Stop 20 - Lutwyche Shops",
+     "stop": true
+    },
+    {
+     "raw": "7.41 BS Lutwyche Rd at Leckie Road, stop 25",
+     "time": "07:41",
+     "text": "BS Lutwyche Rd at Leckie Road, stop 25",
+     "stop": true
+    },
+    {
+     "raw": "7.42 Bus Stop - Kedron North",
+     "time": "07:42",
+     "text": "Bus Stop - Kedron North",
+     "stop": true
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "Right Rode Rd",
+     "turn": "Right",
+     "text": "Rode Rd"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Pfingst Rd",
+     "turn": "Left",
+     "text": "Pfingst Rd"
+    },
+    {
+     "raw": "7.50 Bus Stop 46 - Pfingst Rd near Gurley St",
+     "time": "07:50",
+     "text": "Bus Stop 46 - Pfingst Rd near Gurley St",
+     "stop": true
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Hamilton Rd",
+     "turn": "Right",
+     "text": "Hamilton Rd"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Sandgate Rd",
+     "turn": "Left",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "7.55 Bus Stop Virginia State School",
+     "time": "07:55",
+     "text": "Bus Stop Virginia State School",
+     "stop": true
+    },
+    {
+     "raw": "8.05 Nudgee College",
+     "time": "08:05",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Set down at bus bays",
+     "text": "Set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15.05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Sandgate Rd",
+     "turn": "Left",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "Right Hamilton Rd",
+     "turn": "Right",
+     "text": "Hamilton Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Pfingst Rd",
+     "turn": "Left",
+     "text": "Pfingst Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Rode Rd",
+     "turn": "Right",
+     "text": "Rode Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Lutwyche Rd",
+     "turn": "Left",
+     "text": "Lutwyche Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Bus Stop - Kedron North",
+     "text": "Bus Stop - Kedron North",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Bus stop 20 - Lutwyche Shops",
+     "text": "Bus stop 20 - Lutwyche Shops",
+     "stop": true
+    },
+    {
+     "raw": "Right Maygar St continues as Days Rd",
+     "turn": "Right",
+     "text": "Maygar St continues as Days Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Bus Stop 24 - Days Rd at Eight Ave",
+     "text": "Bus Stop 24 - Days Rd at Eight Ave",
+     "stop": true
+    },
+    {
+     "raw": "Left Kedron Brook Rd",
+     "turn": "Left",
+     "text": "Kedron Brook Rd"
+    },
+    {
+     "raw": "Bus stop 19 - Wilston Village",
+     "text": "Bus stop 19 - Wilston Village",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Silvester Rd",
+     "turn": "Right",
+     "text": "Silvester Rd"
+    },
+    {
+     "raw": "Left Newmarket Rd",
+     "turn": "Left",
+     "text": "Newmarket Rd"
+    },
+    {
+     "raw": "Right Green Tce/Northey St",
+     "turn": "Right",
+     "text": "Green Tce/Northey St"
+    },
+    {
+     "raw": "Drop as required",
+     "text": "Drop as required",
+     "as_required": true
+    },
+    {
+     "raw": "Right Bowen Bridge Rd",
+     "turn": "Right",
+     "text": "Bowen Bridge Rd"
+    },
+    {
+     "raw": "Right Gregory Terrace",
+     "turn": "Right",
+     "text": "Gregory Terrace"
+    },
+    {
+     "raw": "Bus stop 7 - St Joseph’s Gregory Terrace",
+     "text": "Bus stop 7 - St Joseph’s Gregory Terrace",
+     "stop": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the route",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "Right Musgrave Rd",
+     "turn": "Right",
+     "text": "Musgrave Rd"
+    },
+    {
+     "raw": "Left Inner City Bypass",
+     "turn": "Left",
+     "text": "Inner City Bypass"
+    },
+    {
+     "raw": "Right Caxton St/Given Tce",
+     "turn": "Right",
+     "text": "Caxton St/Given Tce"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Bus stop 5 - Given Tce at Paddington",
+     "text": "Bus stop 5 - Given Tce at Paddington",
+     "stop": true
+    },
+    {
+     "raw": "Bus stop 8 - Old Paddo Post Office",
+     "text": "Bus stop 8 - Old Paddo Post Office",
+     "stop": true
+    },
+    {
+     "raw": "Bus stop 10 - Paddington Central",
+     "text": "Bus stop 10 - Paddington Central",
+     "stop": true
+    },
+    {
+     "raw": "Bus stop 11 - Latrobe Tce at Trammies Cnr",
+     "text": "Bus stop 11 - Latrobe Tce at Trammies Cnr",
+     "stop": true
+    },
+    {
+     "raw": "Bus stop 13 - Latrobe Tce at Perrott St",
+     "text": "Bus stop 13 - Latrobe Tce at Perrott St",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  }
+ ]
+}

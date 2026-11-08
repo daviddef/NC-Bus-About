@@ -1,0 +1,404 @@
+{
+ "file": "Run-7-Bardon.pdf",
+ "title": "RUN 7 ‐ BARDON",
+ "subtitle": [],
+ "updated": "23/04/2025",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7.08 Boundary Road ‐ Rainworth primary",
+     "time": "07:08",
+     "text": "Boundary Road ‐ Rainworth primary"
+    },
+    {
+     "raw": "Right Simpson Road",
+     "turn": "Right",
+     "text": "Simpson Road"
+    },
+    {
+     "raw": "7.12 Bus Stop 17 (The Drive)",
+     "time": "07:12",
+     "text": "Bus Stop 17 (The Drive)",
+     "stop": true
+    },
+    {
+     "raw": "Left Jubilee Terrace",
+     "turn": "Left",
+     "text": "Jubilee Terrace"
+    },
+    {
+     "raw": "Right Waterworks Road",
+     "turn": "Right",
+     "text": "Waterworks Road"
+    },
+    {
+     "raw": "Left Ashgrove Avenue",
+     "turn": "Left",
+     "text": "Ashgrove Avenue"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7.20 Bus stop 27 ‐ Asgrove Marketplace",
+     "time": "07:20",
+     "text": "Bus stop 27 ‐ Asgrove Marketplace",
+     "stop": true
+    },
+    {
+     "raw": "Continue Ashgrove Avenue",
+     "text": "Continue Ashgrove Avenue"
+    },
+    {
+     "raw": "7.22 Bus stop 24 ‐ Asgrove Avenue near Lovekin St",
+     "time": "07:22",
+     "text": "Bus stop 24 ‐ Asgrove Avenue near Lovekin St",
+     "stop": true
+    },
+    {
+     "raw": "7.24 Bus Stop 20 ‐ Ashgrove Avenue opposite",
+     "time": "07:24",
+     "text": "Bus Stop 20 ‐ Ashgrove Avenue opposite",
+     "stop": true
+    },
+    {
+     "raw": "Caravan Park",
+     "text": "Caravan Park"
+    },
+    {
+     "raw": "Left Enoggera Road",
+     "turn": "Left",
+     "text": "Enoggera Road"
+    },
+    {
+     "raw": "7.27 Bus stop 22 ‐ Newmarket Primary",
+     "time": "07:27",
+     "text": "Bus stop 22 ‐ Newmarket Primary",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Shand Street/Appleby Road",
+     "text": "Continues as Shand Street/Appleby Road"
+    },
+    {
+     "raw": "7.34 Bus stop 31 ‐ Sicklefield Road",
+     "time": "07:34",
+     "text": "Bus stop 31 ‐ Sicklefield Road",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Shand Street/Appleby Road",
+     "text": "Continues as Shand Street/Appleby Road"
+    },
+    {
+     "raw": "7.38 Bus stop after roundabout",
+     "time": "07:38",
+     "text": "Bus stop after roundabout",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Appleby Road/Maundrell Terrace",
+     "text": "Continues as Appleby Road/Maundrell Terrace"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7.40 Bus stop 41 ‐ Stafford Heights",
+     "time": "07:40",
+     "text": "Bus stop 41 ‐ Stafford Heights",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Maundrell Terrace",
+     "text": "Continues as Maundrell Terrace"
+    },
+    {
+     "raw": "Right Hamilton Road",
+     "turn": "Right",
+     "text": "Hamilton Road"
+    },
+    {
+     "raw": "7.47 Bus stop 53 ‐ Chermside Library",
+     "time": "07:47",
+     "text": "Bus stop 53 ‐ Chermside Library",
+     "stop": true
+    },
+    {
+     "raw": "*Pick up as required ‐ bus will pick up from Council Bus Stops along the route",
+     "text": "*Pick up as required ‐ bus will pick up from Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "7.48 Bus stop 51 ‐ Corrie Street",
+     "time": "07:48",
+     "text": "Bus stop 51 ‐ Corrie Street",
+     "stop": true
+    },
+    {
+     "raw": "Right Spence Road",
+     "turn": "Right",
+     "text": "Spence Road"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Rode Road",
+     "turn": "Left",
+     "text": "Rode Road"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Bilsen Road",
+     "turn": "Left",
+     "text": "Bilsen Road"
+    },
+    {
+     "raw": "7.52 Bus stop 45 ‐ Bilsen Road near Joppa Lane",
+     "time": "07:52",
+     "text": "Bus stop 45 ‐ Bilsen Road near Joppa Lane",
+     "stop": true
+    },
+    {
+     "raw": "7.53 Bus Stop 49 ‐ Bilsen Rd at Halcyon Street",
+     "time": "07:53",
+     "text": "Bus Stop 49 ‐ Bilsen Rd at Halcyon Street",
+     "stop": true
+    },
+    {
+     "raw": "Right Goss Road",
+     "turn": "Right",
+     "text": "Goss Road"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Sandgate Road",
+     "turn": "Left",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "8.05 Nudgee College",
+     "time": "08:05",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Set down at bus bays",
+     "text": "Set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15.05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Sandgate Road",
+     "turn": "Left",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Right Goss Road",
+     "turn": "Right",
+     "text": "Goss Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Bilson Road",
+     "turn": "Left",
+     "text": "Bilson Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Rode Road",
+     "turn": "Right",
+     "text": "Rode Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Spence Road",
+     "turn": "Right",
+     "text": "Spence Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Hamilton Road",
+     "turn": "Left",
+     "text": "Hamilton Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Coninues thru roundabout as Hamilton Road",
+     "text": "Coninues thru roundabout as Hamilton Road"
+    },
+    {
+     "raw": "Left Maudrell Tce",
+     "turn": "Left",
+     "text": "Maudrell Tce"
+    },
+    {
+     "raw": "Continues as Appleby Road",
+     "text": "Continues as Appleby Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continues as Shand Street",
+     "text": "Continues as Shand Street"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continues as Sicklefield Road",
+     "text": "Continues as Sicklefield Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continues as South Pine Road",
+     "text": "Continues as South Pine Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continues as Enoggera Road",
+     "text": "Continues as Enoggera Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Drop as required ‐ bus will drop off at Council Bus Stops along the route",
+     "text": "*Drop as required ‐ bus will drop off at Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "Right Ashgrove Avenue",
+     "turn": "Right",
+     "text": "Ashgrove Avenue"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Bus stop 27 ‐ Ashgrove Marketplace",
+     "text": "Bus stop 27 ‐ Ashgrove Marketplace",
+     "stop": true
+    },
+    {
+     "raw": "Right Waterworks Road",
+     "turn": "Right",
+     "text": "Waterworks Road"
+    },
+    {
+     "raw": "Left Jubilee Terrace",
+     "turn": "Left",
+     "text": "Jubilee Terrace"
+    },
+    {
+     "raw": "Right Simpson Road",
+     "turn": "Right",
+     "text": "Simpson Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Boundary Road ‐ Rainworth Primary",
+     "turn": "Left",
+     "text": "Boundary Road ‐ Rainworth Primary"
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "file": "RAIL-BUS_2026-02-05-045510_tbtj.pdf",
+ "title": "RAIL BUS",
+ "subtitle": [],
+ "updated": "05/02/2026",
+ "updated_note": "added more detail",
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "8.05 Unload current School Run students",
+     "time": "08:05",
+     "text": "Unload current School Run students"
+    },
+    {
+     "raw": "End Trip on BusMinder Driver App",
+     "text": "End Trip on BusMinder Driver App"
+    },
+    {
+     "raw": "Start AM Rail Bus trip on BusMinder Driver App",
+     "text": "Start AM Rail Bus trip on BusMinder Driver App"
+    },
+    {
+     "raw": "Radio base advising you are starting the Rail run",
+     "text": "Radio base advising you are starting the Rail run"
+    },
+    {
+     "raw": "8.10 Depart Nudgee College to Boondall Rail",
+     "time": "08:10",
+     "text": "Depart Nudgee College to Boondall Rail",
+     "school_or_depot": true
+    },
+    {
+     "raw": "via Sandgate Road",
+     "text": "via Sandgate Road"
+    },
+    {
+     "raw": "Right Stanworth Road",
+     "turn": "Right",
+     "text": "Stanworth Road"
+    },
+    {
+     "raw": "Left Rostrevor Road",
+     "turn": "Left",
+     "text": "Rostrevor Road"
+    },
+    {
+     "raw": "Right Bard Street",
+     "turn": "Right",
+     "text": "Bard Street"
+    },
+    {
+     "raw": "Right Aberdeen Pde",
+     "turn": "Right",
+     "text": "Aberdeen Pde"
+    },
+    {
+     "raw": "Bus Stop ‐ Boondal Station",
+     "text": "Bus Stop ‐ Boondal Station",
+     "stop": true
+    },
+    {
+     "raw": "Check the train from Banyo due 8.12 has arrived",
+     "text": "Check the train from Banyo due 8.12 has arrived"
+    },
+    {
+     "raw": "Check the train from Shorncliffe due 8.17 has arrived",
+     "text": "Check the train from Shorncliffe due 8.17 has arrived"
+    },
+    {
+     "raw": "8.20 Return Nudgee College (if both trains are in)",
+     "time": "08:20",
+     "text": "Return Nudgee College (if both trains are in)",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Set down at Nudgee College bus bays",
+     "text": "Set down at Nudgee College bus bays",
+     "school_or_depot": true
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15.02 Departs Nudgee College to Boondall Rail",
+     "time": "15:02",
+     "text": "Departs Nudgee College to Boondall Rail",
+     "school_or_depot": true
+    },
+    {
+     "raw": "via Sandgate Road",
+     "text": "via Sandgate Road"
+    },
+    {
+     "raw": "Right Stanworth Road",
+     "turn": "Right",
+     "text": "Stanworth Road"
+    },
+    {
+     "raw": "Left Rostrevor Road",
+     "turn": "Left",
+     "text": "Rostrevor Road"
+    },
+    {
+     "raw": "Right Bard Street",
+     "turn": "Right",
+     "text": "Bard Street"
+    },
+    {
+     "raw": "Right Aberdeen Pde",
+     "turn": "Right",
+     "text": "Aberdeen Pde"
+    },
+    {
+     "raw": "Boondall Station",
+     "text": "Boondall Station"
+    },
+    {
+     "raw": "Unload current School Run students",
+     "text": "Unload current School Run students"
+    },
+    {
+     "raw": "End Trip on BusMinder Driver App",
+     "text": "End Trip on BusMinder Driver App"
+    },
+    {
+     "raw": "Start next School Run trip on BusMinder Driver App",
+     "text": "Start next School Run trip on BusMinder Driver App"
+    },
+    {
+     "raw": "Return to Nudgee College",
+     "text": "Return to Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Radio base advising you are departing the Rail run",
+     "text": "Radio base advising you are departing the Rail run",
+     "school_or_depot": true
+    },
+    {
+     "raw": "15.20 Nudgee College",
+     "time": "15:20",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Load next run at bus bays",
+     "text": "Load next run at bus bays",
+     "school_or_depot": true
+    }
+   ]
+  }
+ ]
+}

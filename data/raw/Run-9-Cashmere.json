@@ -1,0 +1,482 @@
+{
+ "file": "Run-9-Cashmere.pdf",
+ "title": "RUN 9 - CASHMERE",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": "16/01/2023",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7:00 Corvus Drive Stop 1",
+     "time": "07:00",
+     "text": "Corvus Drive Stop 1"
+    },
+    {
+     "raw": "(146 Corvus Drive)",
+     "text": "(146 Corvus Drive)"
+    },
+    {
+     "raw": "7:02 Corvus Drive Stop 2",
+     "time": "07:02",
+     "text": "Corvus Drive Stop 2"
+    },
+    {
+     "raw": "(108 Corvus Drive)",
+     "text": "(108 Corvus Drive)"
+    },
+    {
+     "raw": "7:04 Corvus Drive Stop 2",
+     "time": "07:04",
+     "text": "Corvus Drive Stop 2"
+    },
+    {
+     "raw": "(23 Corvus Drive)",
+     "text": "(23 Corvus Drive)"
+    },
+    {
+     "raw": "7:07 BS - Ken Duncombe Drive",
+     "time": "07:07",
+     "text": "BS - Ken Duncombe Drive",
+     "stop": true
+    },
+    {
+     "raw": "Left Ira Buckby Road West",
+     "turn": "Left",
+     "text": "Ira Buckby Road West"
+    },
+    {
+     "raw": "Left At Roundabout into Ira Buckby Road",
+     "turn": "Left",
+     "text": "At Roundabout into Ira Buckby Road"
+    },
+    {
+     "raw": "7:12 BS Ira Buckby Rd near Hayward Ave",
+     "time": "07:12",
+     "text": "BS Ira Buckby Rd near Hayward Ave",
+     "stop": true
+    },
+    {
+     "raw": "Right Samsonvale Road",
+     "turn": "Right",
+     "text": "Samsonvale Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "07:14 BS Samsonvale Rd at Kurrajong Drive",
+     "time": "07:14",
+     "text": "BS Samsonvale Rd at Kurrajong Drive",
+     "stop": true
+    },
+    {
+     "raw": "Right Old North Road",
+     "turn": "Right",
+     "text": "Old North Road"
+    },
+    {
+     "raw": "Right Brisbane Road",
+     "turn": "Right",
+     "text": "Brisbane Road"
+    },
+    {
+     "raw": "07:18 BS Brisbane Rd near Solomon Parade",
+     "time": "07:18",
+     "text": "BS Brisbane Rd near Solomon Parade",
+     "stop": true
+    },
+    {
+     "raw": "Veer right then left as Brisbane Road",
+     "text": "Veer right then left as Brisbane Road"
+    },
+    {
+     "raw": "BS Pallas Pde near Brisbane Rd",
+     "text": "BS Pallas Pde near Brisbane Rd",
+     "stop": true
+    },
+    {
+     "raw": "Straight at roundabout into Pallas Parade",
+     "text": "Straight at roundabout into Pallas Parade"
+    },
+    {
+     "raw": "Right At roundabout into Russet Burbank Parade",
+     "turn": "Right",
+     "text": "At roundabout into Russet Burbank Parade"
+    },
+    {
+     "raw": "BS Russet Burbank Pde near Delawar Rd",
+     "text": "BS Russet Burbank Pde near Delawar Rd",
+     "stop": true
+    },
+    {
+     "raw": "Right Old North Road",
+     "turn": "Right",
+     "text": "Old North Road"
+    },
+    {
+     "raw": "Left Kremzow Road",
+     "turn": "Left",
+     "text": "Kremzow Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Gympie Road",
+     "turn": "Right",
+     "text": "Gympie Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continues as Strathpine Road",
+     "text": "Continues as Strathpine Road"
+    },
+    {
+     "raw": "Right Gympie Road - (To Bald Hills)",
+     "turn": "Right",
+     "text": "Gympie Road - (To Bald Hills)"
+    },
+    {
+     "raw": "7.30 BS Gympie Rd near Duncan Ave",
+     "time": "07:30",
+     "text": "BS Gympie Rd near Duncan Ave",
+     "stop": true
+    },
+    {
+     "raw": "Continue Gympie Road",
+     "text": "Continue Gympie Road"
+    },
+    {
+     "raw": "Right Roghan Road",
+     "turn": "Right",
+     "text": "Roghan Road"
+    },
+    {
+     "raw": "Left Ridley Rd",
+     "turn": "Left",
+     "text": "Ridley Rd"
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "as_required": true
+    },
+    {
+     "raw": "Left Beams Road",
+     "turn": "Left",
+     "text": "Beams Road"
+    },
+    {
+     "raw": "Continue Beams Road",
+     "text": "Continue Beams Road"
+    },
+    {
+     "raw": "Left Lacey Road",
+     "turn": "Left",
+     "text": "Lacey Road"
+    },
+    {
+     "raw": "7:38 Lacey Rd near Beams Rd",
+     "time": "07:38",
+     "text": "Lacey Rd near Beams Rd"
+    },
+    {
+     "raw": "7:40 BS Lacey Rd near Highbridge Cct",
+     "time": "07:40",
+     "text": "BS Lacey Rd near Highbridge Cct",
+     "stop": true
+    },
+    {
+     "raw": "Right Linfield Road",
+     "turn": "Right",
+     "text": "Linfield Road"
+    },
+    {
+     "raw": "Right Norris Road",
+     "turn": "Right",
+     "text": "Norris Road"
+    },
+    {
+     "raw": "Continues as Roghan Road",
+     "text": "Continues as Roghan Road"
+    },
+    {
+     "raw": "7:50 BS Roghan Rd near Springbok St",
+     "time": "07:50",
+     "text": "BS Roghan Rd near Springbok St",
+     "stop": true
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Into College at Zillmere Road lights",
+     "turn": "Left",
+     "text": "Into College at Zillmere Road lights"
+    },
+    {
+     "raw": "Left Into School driveway",
+     "turn": "Left",
+     "text": "Into School driveway"
+    },
+    {
+     "raw": "8.05 U turn into bus bays & set down",
+     "time": "08:05",
+     "turn": "UTurn",
+     "text": "into bus bays & set down",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Nudgee College",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "END TRIP",
+     "text": "END TRIP"
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "the route where safe to do so",
+     "text": "the route where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15.05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Roghan Road",
+     "turn": "Left",
+     "text": "Roghan Road"
+    },
+    {
+     "raw": "BS Roghan Rd near Springbok St",
+     "text": "BS Roghan Rd near Springbok St",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Norris Road",
+     "text": "Continues as Norris Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Linkfield Road",
+     "turn": "Left",
+     "text": "Linkfield Road"
+    },
+    {
+     "raw": "Left Lacey Road",
+     "turn": "Left",
+     "text": "Lacey Road"
+    },
+    {
+     "raw": "BS Lacey Rd near Highbridge Cct",
+     "text": "BS Lacey Rd near Highbridge Cct",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Beams Road",
+     "turn": "Right",
+     "text": "Beams Road"
+    },
+    {
+     "raw": "Right Gympie Road",
+     "turn": "Right",
+     "text": "Gympie Road"
+    },
+    {
+     "raw": "Left Exit onto Gympie Road",
+     "turn": "Left",
+     "text": "Exit onto Gympie Road"
+    },
+    {
+     "raw": "Continues as Gympie Road",
+     "text": "Continues as Gympie Road"
+    },
+    {
+     "raw": "Left Roundabout 1st exit",
+     "turn": "Left",
+     "text": "Roundabout 1st exit"
+    },
+    {
+     "raw": "Continues as Gympie Road",
+     "text": "Continues as Gympie Road"
+    },
+    {
+     "raw": "Left Gympie Road (to Strathpine)",
+     "turn": "Left",
+     "text": "Gympie Road (to Strathpine)"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Kremzow Road",
+     "turn": "Left",
+     "text": "Kremzow Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Old North Road",
+     "turn": "Right",
+     "text": "Old North Road"
+    },
+    {
+     "raw": "Left Russet Burbank Parade",
+     "turn": "Left",
+     "text": "Russet Burbank Parade"
+    },
+    {
+     "raw": "BS Russet Burbank Pde near Delawar Rd",
+     "text": "BS Russet Burbank Pde near Delawar Rd",
+     "stop": true
+    },
+    {
+     "raw": "Left At roundabout into Pallas Parade",
+     "turn": "Left",
+     "text": "At roundabout into Pallas Parade"
+    },
+    {
+     "raw": "Straight at roundabout into Brisbane Rd",
+     "text": "Straight at roundabout into Brisbane Rd"
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "as_required": true
+    },
+    {
+     "raw": "Veer right then left as Brisbane Road",
+     "text": "Veer right then left as Brisbane Road"
+    },
+    {
+     "raw": "BS Brisbane Rd near Old North Rd",
+     "text": "BS Brisbane Rd near Old North Rd",
+     "stop": true
+    },
+    {
+     "raw": "Left Old North Road",
+     "turn": "Left",
+     "text": "Old North Road"
+    },
+    {
+     "raw": "Left Samsonvale Road",
+     "turn": "Left",
+     "text": "Samsonvale Road"
+    },
+    {
+     "raw": "BS Samsonvale Rd at Kurrajong Drive",
+     "text": "BS Samsonvale Rd at Kurrajong Drive",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Ira Buckby Road",
+     "turn": "Left",
+     "text": "Ira Buckby Road"
+    },
+    {
+     "raw": "Ira Buckby Rd near Hayward Ave",
+     "text": "Ira Buckby Rd near Hayward Ave"
+    },
+    {
+     "raw": "Right Ira Buckby Road West",
+     "turn": "Right",
+     "text": "Ira Buckby Road West"
+    },
+    {
+     "raw": "Right Corvus Drive (2nd entry near top of hill)",
+     "turn": "Right",
+     "text": "Corvus Drive (2nd entry near top of hill)"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continue Corvis Drive",
+     "text": "Continue Corvis Drive"
+    },
+    {
+     "raw": "Left At roundabout into Ken Duncombe Drive",
+     "turn": "Left",
+     "text": "At roundabout into Ken Duncombe Drive"
+    },
+    {
+     "raw": "BS Ken Dumcombe Drive",
+     "text": "BS Ken Dumcombe Drive",
+     "stop": true
+    },
+    {
+     "raw": "Empty to College",
+     "text": "Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "route where safe to do so",
+     "text": "route where safe to do so"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,572 @@
+{
+ "file": "Run-11-Morayfield.pdf",
+ "title": "RUN 11 - MORAYFIELD",
+ "subtitle": [],
+ "updated": "01/09/2025",
+ "updated_note": "(removed Narangba",
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "6.50 Bus Stop - Keystar Motors",
+     "time": "06:50",
+     "text": "Bus Stop - Keystar Motors",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Morayfield Road",
+     "text": "Continues as Morayfield Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Walkers Road",
+     "turn": "Right",
+     "text": "Walkers Road"
+    },
+    {
+     "raw": "Left Oakey Flat Road",
+     "turn": "Left",
+     "text": "Oakey Flat Road"
+    },
+    {
+     "raw": "6.55 Corner Oakley Flat Rd/Nairn Rd",
+     "time": "06:55",
+     "text": "Corner Oakley Flat Rd/Nairn Rd"
+    },
+    {
+     "raw": "(Excelsior Park Village)",
+     "text": "(Excelsior Park Village)"
+    },
+    {
+     "raw": "Right Oakley Flat Road",
+     "turn": "Right",
+     "text": "Oakley Flat Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Rowley Road",
+     "turn": "Left",
+     "text": "Rowley Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Facer Road",
+     "turn": "Right",
+     "text": "Facer Road"
+    },
+    {
+     "raw": "7.00 Bus Stop - Woodpecker Tavern",
+     "time": "07:00",
+     "text": "Bus Stop - Woodpecker Tavern",
+     "stop": true
+    },
+    {
+     "raw": "Left Oakey Flat Road",
+     "turn": "Left",
+     "text": "Oakey Flat Road"
+    },
+    {
+     "raw": "Right Oakey Flat Road",
+     "turn": "Right",
+     "text": "Oakey Flat Road"
+    },
+    {
+     "raw": "Left Oakey Flat Road",
+     "turn": "Left",
+     "text": "Oakey Flat Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7.07 Opposite Ambulance Station",
+     "time": "07:07",
+     "text": "Opposite Ambulance Station"
+    },
+    {
+     "raw": "Continues as Oakey Flat Road",
+     "text": "Continues as Oakey Flat Road"
+    },
+    {
+     "raw": "Right Main Street",
+     "turn": "Right",
+     "text": "Main Street"
+    },
+    {
+     "raw": "Continue Main Street",
+     "text": "Continue Main Street"
+    },
+    {
+     "raw": "Continues as Narangba Road",
+     "text": "Continues as Narangba Road"
+    },
+    {
+     "raw": "Right Torrens Road",
+     "turn": "Right",
+     "text": "Torrens Road"
+    },
+    {
+     "raw": "Continues as Beeville Road",
+     "text": "Continues as Beeville Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7.20 Pick up prior to IGA",
+     "time": "07:20",
+     "text": "Pick up prior to IGA"
+    },
+    {
+     "raw": "Continues as Beeville Road",
+     "text": "Continues as Beeville Road"
+    },
+    {
+     "raw": "Left Dayboro Road - (Roundabout)",
+     "turn": "Left",
+     "text": "Dayboro Road - (Roundabout)"
+    },
+    {
+     "raw": "7.25 Petrie Primary School",
+     "time": "07:25",
+     "text": "Petrie Primary School"
+    },
+    {
+     "raw": "Right Gympie Road College Bus Transit",
+     "turn": "Right",
+     "text": "Gympie Road College Bus Transit"
+    },
+    {
+     "raw": "7.35 BS Gympie Rd at Pine Rivers High",
+     "time": "07:35",
+     "text": "BS Gympie Rd at Pine Rivers High",
+     "stop": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "as_required": true
+    },
+    {
+     "raw": "7.45 BS Strathpine Rd at Adair St",
+     "time": "07:45",
+     "text": "BS Strathpine Rd at Adair St",
+     "stop": true
+    },
+    {
+     "raw": "St Pauls School",
+     "text": "St Pauls School"
+    },
+    {
+     "raw": "Continues as Strathpine Road",
+     "text": "Continues as Strathpine Road"
+    },
+    {
+     "raw": "Continues as Hoyland Street",
+     "text": "Continues as Hoyland Street"
+    },
+    {
+     "raw": "Continues as Bracken Ridge Road",
+     "text": "Continues as Bracken Ridge Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Norris Road",
+     "turn": "Right",
+     "text": "Norris Road"
+    },
+    {
+     "raw": "7.53 BS Norris Rd at Greenore St",
+     "time": "07:53",
+     "text": "BS Norris Rd at Greenore St",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Norris Road",
+     "text": "Continues as Norris Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Barbour Road/ Phillips St",
+     "turn": "Left",
+     "text": "Barbour Road/ Phillips St"
+    },
+    {
+     "raw": "7.55 BS St Joseph's Primary",
+     "time": "07:55",
+     "text": "BS St Joseph's Primary",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Phillips Road",
+     "text": "Continues as Phillips Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Denham Street",
+     "turn": "Right",
+     "text": "Denham Street"
+    },
+    {
+     "raw": "7.57 BS Denham St at Warra, stop 31",
+     "time": "07:57",
+     "text": "BS Denham St at Warra, stop 31",
+     "stop": true
+    },
+    {
+     "raw": "Left Telegraph Road",
+     "turn": "Left",
+     "text": "Telegraph Road"
+    },
+    {
+     "raw": "Right Lemke Road",
+     "turn": "Right",
+     "text": "Lemke Road"
+    },
+    {
+     "raw": "Left Roghan Road",
+     "turn": "Left",
+     "text": "Roghan Road"
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Into College at Zillmere Road lights",
+     "turn": "Left",
+     "text": "Into College at Zillmere Road lights"
+    },
+    {
+     "raw": "Left into School driveway",
+     "turn": "Left",
+     "text": "into School driveway"
+    },
+    {
+     "raw": "8.10 U turn into bus bays & set down",
+     "time": "08:10",
+     "turn": "UTurn",
+     "text": "into bus bays & set down",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Nudgee College",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "END TRIP",
+     "text": "END TRIP"
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "Area maximum speed",
+     "text": "Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "the route where safe to do so",
+     "text": "the route where safe to do so"
+    },
+    {
+     "raw": "Rail Station from AM run)",
+     "text": "Rail Station from AM run)"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15:05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Roghan Road",
+     "turn": "Left",
+     "text": "Roghan Road"
+    },
+    {
+     "raw": "Right Lemke Road",
+     "turn": "Right",
+     "text": "Lemke Road"
+    },
+    {
+     "raw": "Left Telegraph Road",
+     "turn": "Left",
+     "text": "Telegraph Road"
+    },
+    {
+     "raw": "Right Denham Street",
+     "turn": "Right",
+     "text": "Denham Street"
+    },
+    {
+     "raw": "BS Denham St at Warra",
+     "text": "BS Denham St at Warra",
+     "stop": true
+    },
+    {
+     "raw": "Left Phillips Street",
+     "turn": "Left",
+     "text": "Phillips Street"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS St Joseph's Primary",
+     "text": "BS St Joseph's Primary",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Barbour Road",
+     "text": "Continues as Barbour Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Norris Road",
+     "turn": "Right",
+     "text": "Norris Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Norris Rd near Barbour Rd",
+     "text": "BS Norris Rd near Barbour Rd",
+     "stop": true
+    },
+    {
+     "raw": "BS Norris Rd at North Point",
+     "text": "BS Norris Rd at North Point",
+     "stop": true
+    },
+    {
+     "raw": "BS Norris Rd at Greenore Street, stop 45",
+     "text": "BS Norris Rd at Greenore Street, stop 45",
+     "stop": true
+    },
+    {
+     "raw": "Left Bracken Ridge Rd/Hoyland Street",
+     "turn": "Left",
+     "text": "Bracken Ridge Rd/Hoyland Street"
+    },
+    {
+     "raw": "(Continues as Strathpine Road)",
+     "text": "(Continues as Strathpine Road)"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Gympie Rd at Pine Rivers High",
+     "text": "BS Gympie Rd at Pine Rivers High",
+     "stop": true
+    },
+    {
+     "raw": "Left Dayboro Road",
+     "turn": "Left",
+     "text": "Dayboro Road"
+    },
+    {
+     "raw": "Opposite Petrie Primary School",
+     "text": "Opposite Petrie Primary School"
+    },
+    {
+     "raw": "Right Beeville Road - (Roundabout)",
+     "turn": "Right",
+     "text": "Beeville Road - (Roundabout)"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Continues as Torrens Road",
+     "turn": "Left",
+     "text": "Continues as Torrens Road"
+    },
+    {
+     "raw": "Left Narangba Road",
+     "turn": "Left",
+     "text": "Narangba Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continues as Narangba Road",
+     "text": "Continues as Narangba Road"
+    },
+    {
+     "raw": "Continue Main Street",
+     "text": "Continue Main Street"
+    },
+    {
+     "raw": "Left Oakey Flat Road",
+     "turn": "Left",
+     "text": "Oakey Flat Road"
+    },
+    {
+     "raw": "Narangba Ambulance Station",
+     "text": "Narangba Ambulance Station"
+    },
+    {
+     "raw": "Right Oakey Flat Road",
+     "turn": "Right",
+     "text": "Oakey Flat Road"
+    },
+    {
+     "raw": "Left Oakey Flat Road",
+     "turn": "Left",
+     "text": "Oakey Flat Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "as_required": true
+    },
+    {
+     "raw": "Right Facer Road",
+     "turn": "Right",
+     "text": "Facer Road"
+    },
+    {
+     "raw": "Bus Stop - Woodpecker Tavern",
+     "text": "Bus Stop - Woodpecker Tavern",
+     "stop": true
+    },
+    {
+     "raw": "Left Rowley Road",
+     "turn": "Left",
+     "text": "Rowley Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Oakey Flat Road",
+     "turn": "Right",
+     "text": "Oakey Flat Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Nairn Road - drop at IGA Shops",
+     "turn": "Left",
+     "text": "Nairn Road - drop at IGA Shops"
+    },
+    {
+     "raw": "(Excelsior Park Village)",
+     "text": "(Excelsior Park Village)"
+    },
+    {
+     "raw": "Continues as - Oakey Flat Road",
+     "text": "Continues as - Oakey Flat Road"
+    },
+    {
+     "raw": "Right Walkers Road",
+     "turn": "Right",
+     "text": "Walkers Road"
+    },
+    {
+     "raw": "Left Morayfield Road",
+     "turn": "Left",
+     "text": "Morayfield Road"
+    },
+    {
+     "raw": "BS Morayfield Rd at Oakey Flat Road",
+     "text": "BS Morayfield Rd at Oakey Flat Road",
+     "stop": true
+    },
+    {
+     "raw": "END OF RUN",
+     "text": "END OF RUN"
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "route where safe to do so",
+     "text": "route where safe to do so"
+    },
+    {
+     "raw": "Rail Station from AM run)",
+     "text": "Rail Station from AM run)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,587 @@
+{
+ "file": "Run-1-Eatons-Hill.pdf",
+ "title": "RUN 1 - Eatons Hill",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": "21/01/2026",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "6:57 Eden Drive",
+     "time": "06:57",
+     "text": "Eden Drive"
+    },
+    {
+     "raw": "Right Church Road",
+     "turn": "Right",
+     "text": "Church Road"
+    },
+    {
+     "raw": "7:00 Pick up corner Church & Albion Road",
+     "time": "07:00",
+     "text": "Pick up corner Church & Albion Road"
+    },
+    {
+     "raw": "Continue Church Road",
+     "text": "Continue Church Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Hidden Valley Drive",
+     "turn": "Left",
+     "text": "Hidden Valley Drive"
+    },
+    {
+     "raw": "7:03 1st bus stop",
+     "time": "07:03",
+     "text": "1st bus stop",
+     "stop": true
+    },
+    {
+     "raw": "Continue Hidden Valley Drive",
+     "text": "Continue Hidden Valley Drive"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Drapers Road",
+     "turn": "Right",
+     "text": "Drapers Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Bunya Crossing Road",
+     "turn": "Left",
+     "text": "Bunya Crossing Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continue Queen Elizabeth Drive",
+     "text": "Continue Queen Elizabeth Drive"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:10 Bus stop opposite IGA",
+     "time": "07:10",
+     "text": "Bus stop opposite IGA",
+     "stop": true
+    },
+    {
+     "raw": "Right Eatons Crossing Road",
+     "turn": "Right",
+     "text": "Eatons Crossing Road"
+    },
+    {
+     "raw": "Right South Pine Road",
+     "turn": "Right",
+     "text": "South Pine Road"
+    },
+    {
+     "raw": "7:14 Bus Stop Bunya Park",
+     "time": "07:14",
+     "text": "Bus Stop Bunya Park",
+     "stop": true
+    },
+    {
+     "raw": "Continue South Pine Road",
+     "text": "Continue South Pine Road"
+    },
+    {
+     "raw": "Right Flamingo Dr/Faheys Rd/",
+     "turn": "Right",
+     "text": "Flamingo Dr/Faheys Rd/"
+    },
+    {
+     "raw": "Morgan Dr/Albany Forrest Dr",
+     "text": "Morgan Dr/Albany Forrest Dr"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Narrabeen Road",
+     "turn": "Right",
+     "text": "Narrabeen Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Theiss Drive",
+     "turn": "Left",
+     "text": "Theiss Drive"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Jinker Track",
+     "turn": "Left",
+     "text": "Jinker Track"
+    },
+    {
+     "raw": "7:30 1st bus stop",
+     "time": "07:30",
+     "text": "1st bus stop",
+     "stop": true
+    },
+    {
+     "raw": "Left Old Northern Road",
+     "turn": "Left",
+     "text": "Old Northern Road"
+    },
+    {
+     "raw": "Right Keong Rd",
+     "turn": "Right",
+     "text": "Keong Rd"
+    },
+    {
+     "raw": "7.35 1st Bus Stop Opposite School",
+     "time": "07:35",
+     "text": "1st Bus Stop Opposite School",
+     "stop": true
+    },
+    {
+     "raw": "Continue Keong Road",
+     "text": "Continue Keong Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Vere left past Aldi shops",
+     "turn": "Left",
+     "text": "Vere left past Aldi shops"
+    },
+    {
+     "raw": "Right Albany Creek Road",
+     "turn": "Right",
+     "text": "Albany Creek Road"
+    },
+    {
+     "raw": "7:40 Bus Stop - opposite Aldi shops",
+     "time": "07:40",
+     "text": "Bus Stop - opposite Aldi shops",
+     "stop": true
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Bronson Street",
+     "turn": "Left",
+     "text": "Bronson Street"
+    },
+    {
+     "raw": "7.43 Pick up near Church",
+     "time": "07:43",
+     "text": "Pick up near Church"
+    },
+    {
+     "raw": "Continue Neville Rd/Roghan Rd",
+     "text": "Continue Neville Rd/Roghan Rd"
+    },
+    {
+     "raw": "Left Roghan Rd/Bridgeman Downs Rd",
+     "turn": "Left",
+     "text": "Roghan Rd/Bridgeman Downs Rd"
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "as_required": true
+    },
+    {
+     "raw": "7:46 Bus Stop - prior Ridley Road",
+     "time": "07:46",
+     "text": "Bus Stop - prior Ridley Road",
+     "stop": true
+    },
+    {
+     "raw": "Right Ridley Road",
+     "turn": "Right",
+     "text": "Ridley Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Beam Road",
+     "turn": "Left",
+     "text": "Beam Road"
+    },
+    {
+     "raw": "7:49 Bus Stop (Near Woolworths)",
+     "time": "07:49",
+     "text": "Bus Stop (Near Woolworths)",
+     "stop": true
+    },
+    {
+     "raw": "Continue Beams Road",
+     "text": "Continue Beams Road"
+    },
+    {
+     "raw": "7:55 Bus Stop (Carseldine Campus)",
+     "time": "07:55",
+     "text": "Bus Stop (Carseldine Campus)",
+     "stop": true
+    },
+    {
+     "raw": "Continue Beams Road",
+     "text": "Continue Beams Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Into College at Zillmere Road lights",
+     "turn": "Left",
+     "text": "Into College at Zillmere Road lights"
+    },
+    {
+     "raw": "Left Into School driveway",
+     "turn": "Left",
+     "text": "Into School driveway"
+    },
+    {
+     "raw": "8:10 U turn into bus bays & set down",
+     "time": "08:10",
+     "turn": "UTurn",
+     "text": "into bus bays & set down",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Nudgee College",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "END TRIP",
+     "text": "END TRIP"
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "the route where safe to do so",
+     "text": "the route where safe to do so"
+    },
+    {
+     "raw": "- time point corrected",
+     "text": "- time point corrected"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15:05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Beams Road",
+     "turn": "Left",
+     "text": "Beams Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Bus stop opposite Woolworths",
+     "text": "Bus stop opposite Woolworths",
+     "stop": true
+    },
+    {
+     "raw": "Right Ridley Road",
+     "turn": "Right",
+     "text": "Ridley Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Roghan Road",
+     "turn": "Left",
+     "text": "Roghan Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Bridgeman Road",
+     "turn": "Left",
+     "text": "Bridgeman Road"
+    },
+    {
+     "raw": "Right Roghan Road",
+     "turn": "Right",
+     "text": "Roghan Road"
+    },
+    {
+     "raw": "Continues Neville Rd/Bronson St",
+     "text": "Continues Neville Rd/Bronson St"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Albany Creek Road",
+     "turn": "Right",
+     "text": "Albany Creek Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Keong Road",
+     "turn": "Left",
+     "text": "Keong Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Old North Road",
+     "turn": "Left",
+     "text": "Old North Road"
+    },
+    {
+     "raw": "Right Jinker Track",
+     "turn": "Right",
+     "text": "Jinker Track"
+    },
+    {
+     "raw": "1st bus stop on left",
+     "text": "1st bus stop on left",
+     "stop": true
+    },
+    {
+     "raw": "Right Theiss Drive",
+     "turn": "Right",
+     "text": "Theiss Drive"
+    },
+    {
+     "raw": "Right Narrabeen Road",
+     "turn": "Right",
+     "text": "Narrabeen Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Albany Forrest Drive",
+     "turn": "Left",
+     "text": "Albany Forrest Drive"
+    },
+    {
+     "raw": "Continues as Morgan Rd/",
+     "text": "Continues as Morgan Rd/"
+    },
+    {
+     "raw": "Faheys Rd/Flamingo Dr",
+     "text": "Faheys Rd/Flamingo Dr"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left South Pine Road",
+     "turn": "Left",
+     "text": "South Pine Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Eatons Crossing Road",
+     "turn": "Left",
+     "text": "Eatons Crossing Road"
+    },
+    {
+     "raw": "Left Queen Elizabeth Drive",
+     "turn": "Left",
+     "text": "Queen Elizabeth Drive"
+    },
+    {
+     "raw": "Bus Stop 16A",
+     "text": "Bus Stop 16A",
+     "stop": true
+    },
+    {
+     "raw": "Continue Queen Elizabeth Dr/ Bunya",
+     "text": "Continue Queen Elizabeth Dr/ Bunya"
+    },
+    {
+     "raw": "Crossing Rd",
+     "text": "Crossing Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "as_required": true
+    },
+    {
+     "raw": "Left Queen Elizabeth Drive",
+     "turn": "Left",
+     "text": "Queen Elizabeth Drive"
+    },
+    {
+     "raw": "Bus Stop 16A near IGA",
+     "text": "Bus Stop 16A near IGA",
+     "stop": true
+    },
+    {
+     "raw": "Continue Queen Elizabeth Dr/ Bunya",
+     "text": "Continue Queen Elizabeth Dr/ Bunya"
+    },
+    {
+     "raw": "Crossing Rd",
+     "text": "Crossing Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Drapers Road",
+     "turn": "Right",
+     "text": "Drapers Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Hidden Valley Drive",
+     "turn": "Left",
+     "text": "Hidden Valley Drive"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Church Road",
+     "turn": "Right",
+     "text": "Church Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Eden Drive",
+     "turn": "Left",
+     "text": "Eden Drive"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "route where safe to do so",
+     "text": "route where safe to do so"
+    },
+    {
+     "raw": "- time point corrected",
+     "text": "- time point corrected"
+    }
+   ]
+  }
+ ]
+}

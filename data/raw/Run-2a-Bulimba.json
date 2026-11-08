@@ -1,0 +1,347 @@
+{
+ "file": "Run-2a-Bulimba.pdf",
+ "title": "RUN 2a - Bulimba/Southside",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": "10/01/2025",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7:30 BS Wynnum Rd at Waldo St, stop 20",
+     "time": "07:30",
+     "text": "BS Wynnum Rd at Waldo St, stop 20",
+     "stop": true
+    },
+    {
+     "raw": "(Norman Park Ferry)",
+     "text": "(Norman Park Ferry)"
+    },
+    {
+     "raw": "Left Hawthorne Rd",
+     "turn": "Left",
+     "text": "Hawthorne Rd"
+    },
+    {
+     "raw": "7:32 BS Hawthorne Rd at Lourdes Hill, stop 21a",
+     "time": "07:32",
+     "text": "BS Hawthorne Rd at Lourdes Hill, stop 21a",
+     "stop": true
+    },
+    {
+     "raw": "7:33 BS Hawthorne Rd at Forbes St, stop 21b",
+     "time": "07:33",
+     "text": "BS Hawthorne Rd at Forbes St, stop 21b",
+     "stop": true
+    },
+    {
+     "raw": "Right Lytton Rd exit off roundabout",
+     "turn": "Right",
+     "text": "Lytton Rd exit off roundabout"
+    },
+    {
+     "raw": "7:34 BS Lytton Rd at Nuttall St, stop 40",
+     "time": "07:34",
+     "text": "BS Lytton Rd at Nuttall St, stop 40",
+     "stop": true
+    },
+    {
+     "raw": "Continue Lytton Rd",
+     "text": "Continue Lytton Rd"
+    },
+    {
+     "raw": "7:36 BS Lytton Rd at Taylor St, stop 35",
+     "time": "07:36",
+     "text": "BS Lytton Rd at Taylor St, stop 35",
+     "stop": true
+    },
+    {
+     "raw": "Continue Lytton Rd",
+     "text": "Continue Lytton Rd"
+    },
+    {
+     "raw": "Right Thyne Rd",
+     "turn": "Right",
+     "text": "Thyne Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Burrai St",
+     "turn": "Left",
+     "text": "Burrai St"
+    },
+    {
+     "raw": "Left Wynnum Rd",
+     "turn": "Left",
+     "text": "Wynnum Rd"
+    },
+    {
+     "raw": "Left Junction Rd",
+     "turn": "Left",
+     "text": "Junction Rd"
+    },
+    {
+     "raw": "Right Krupp Rd",
+     "turn": "Right",
+     "text": "Krupp Rd"
+    },
+    {
+     "raw": "Right Whitworth Rd",
+     "turn": "Right",
+     "text": "Whitworth Rd"
+    },
+    {
+     "raw": "Left Grenade St",
+     "turn": "Left",
+     "text": "Grenade St"
+    },
+    {
+     "raw": "7:43 BS Grenade St near Barrack Rd, stop 59",
+     "time": "07:43",
+     "text": "BS Grenade St near Barrack Rd, stop 59",
+     "stop": true
+    },
+    {
+     "raw": "Right Barrack Rd",
+     "turn": "Right",
+     "text": "Barrack Rd"
+    },
+    {
+     "raw": "(up to r/about then U-turn)",
+     "text": "(up to r/about then U-turn)"
+    },
+    {
+     "raw": "Right Lytton Rd",
+     "turn": "Right",
+     "text": "Lytton Rd"
+    },
+    {
+     "raw": "Left Gateway Bridge",
+     "turn": "Left",
+     "text": "Gateway Bridge"
+    },
+    {
+     "raw": "Left Southern Cross Way",
+     "turn": "Left",
+     "text": "Southern Cross Way"
+    },
+    {
+     "raw": "Left Toombul Rd Exit",
+     "turn": "Left",
+     "text": "Toombul Rd Exit"
+    },
+    {
+     "raw": "Right Nudgee Rd",
+     "turn": "Right",
+     "text": "Nudgee Rd"
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "8:10 Nudgee College",
+     "time": "08:10",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Set down at bus bays",
+     "text": "Set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15:05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Sandgate Road",
+     "turn": "Left",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Toombul Road",
+     "turn": "Left",
+     "text": "Toombul Road"
+    },
+    {
+     "raw": "Right Southern Cross Way (roundabout)",
+     "turn": "Right",
+     "text": "Southern Cross Way (roundabout)"
+    },
+    {
+     "raw": "Continue Southern Cross Way",
+     "text": "Continue Southern Cross Way"
+    },
+    {
+     "raw": "Left Gateway Bridge",
+     "turn": "Left",
+     "text": "Gateway Bridge"
+    },
+    {
+     "raw": "Right Lytton Rd",
+     "turn": "Right",
+     "text": "Lytton Rd"
+    },
+    {
+     "raw": "Left Barrack Rd",
+     "turn": "Left",
+     "text": "Barrack Rd"
+    },
+    {
+     "raw": "Cross railway line, U-turn at",
+     "text": "Cross railway line, U-turn at"
+    },
+    {
+     "raw": "R/about, continue Barrack Rd",
+     "text": "R/about, continue Barrack Rd"
+    },
+    {
+     "raw": "Left Grenade St",
+     "turn": "Left",
+     "text": "Grenade St"
+    },
+    {
+     "raw": "BS Grenade St near Barrack Rd, stop 59",
+     "text": "BS Grenade St near Barrack Rd, stop 59",
+     "stop": true
+    },
+    {
+     "raw": "Continue Grenade Street",
+     "text": "Continue Grenade Street"
+    },
+    {
+     "raw": "Right Whitworth Rd",
+     "turn": "Right",
+     "text": "Whitworth Rd"
+    },
+    {
+     "raw": "Left Krupp Rd",
+     "turn": "Left",
+     "text": "Krupp Rd"
+    },
+    {
+     "raw": "Left Junction Rd",
+     "turn": "Left",
+     "text": "Junction Rd"
+    },
+    {
+     "raw": "Right Wynnum Rd",
+     "turn": "Right",
+     "text": "Wynnum Rd"
+    },
+    {
+     "raw": "Right Burrai St",
+     "turn": "Right",
+     "text": "Burrai St"
+    },
+    {
+     "raw": "Right Thyne Rd",
+     "turn": "Right",
+     "text": "Thyne Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Lytton Rd",
+     "turn": "Left",
+     "text": "Lytton Rd"
+    },
+    {
+     "raw": "BS Lytton Rd at Taylor Street, stop 35",
+     "text": "BS Lytton Rd at Taylor Street, stop 35",
+     "stop": true
+    },
+    {
+     "raw": "BS Lytton Rd at Nuttall Street, stop 40",
+     "text": "BS Lytton Rd at Nuttall Street, stop 40",
+     "stop": true
+    },
+    {
+     "raw": "Continue Lytton / Hawthorn Rd",
+     "text": "Continue Lytton / Hawthorn Rd"
+    },
+    {
+     "raw": "BS Hawthorne Rd at Forbes Street, stop 21b",
+     "text": "BS Hawthorne Rd at Forbes Street, stop 21b",
+     "stop": true
+    },
+    {
+     "raw": "BS Hawthorne Rd at Lourdes Hill, stop 21a",
+     "text": "BS Hawthorne Rd at Lourdes Hill, stop 21a",
+     "stop": true
+    },
+    {
+     "raw": "BS Hawthorne Rd at Cawmore Street, stop 21",
+     "text": "BS Hawthorne Rd at Cawmore Street, stop 21",
+     "stop": true
+    },
+    {
+     "raw": "Right Wynnum Rd",
+     "turn": "Right",
+     "text": "Wynnum Rd"
+    },
+    {
+     "raw": "BS Wynnum Rd at Waldo St, stop 20",
+     "text": "BS Wynnum Rd at Waldo St, stop 20",
+     "stop": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "as_required": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "safe to do so",
+     "text": "safe to do so"
+    }
+   ]
+  }
+ ]
+}

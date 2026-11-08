@@ -1,0 +1,135 @@
+{
+ "file": "5PM-SPORTS-BUS-1.pdf",
+ "title": "5PM- SPORTS RUN",
+ "subtitle": [],
+ "updated": "17/04/2023",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "17:10 Nudgee College",
+     "time": "17:10",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "bus bays",
+     "text": "bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Sandgate Road",
+     "turn": "Left",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Toombul Road",
+     "turn": "Left",
+     "text": "Toombul Road"
+    },
+    {
+     "raw": "Right Melton Road / Melton Rd",
+     "turn": "Right",
+     "text": "Melton Road / Melton Rd"
+    },
+    {
+     "raw": "Bus Stop 15",
+     "text": "Bus Stop 15",
+     "stop": true
+    },
+    {
+     "raw": "Continue Melton Rd / Widdop St",
+     "text": "Continue Melton Rd / Widdop St"
+    },
+    {
+     "raw": "Left Gellibrand Street",
+     "turn": "Left",
+     "text": "Gellibrand Street"
+    },
+    {
+     "raw": "Bus Stop - Aviation School",
+     "text": "Bus Stop - Aviation School",
+     "stop": true
+    },
+    {
+     "raw": "Right Zillman Road",
+     "turn": "Right",
+     "text": "Zillman Road"
+    },
+    {
+     "raw": "Bus Stop - Pinky’s",
+     "text": "Bus Stop - Pinky’s",
+     "stop": true
+    },
+    {
+     "raw": "(Shops prior to rail crossing)",
+     "text": "(Shops prior to rail crossing)"
+    },
+    {
+     "raw": "Continue Zillman/Kitchener Road",
+     "text": "Continue Zillman/Kitchener Road"
+    },
+    {
+     "raw": "Right Lancaster Road",
+     "turn": "Right",
+     "text": "Lancaster Road"
+    },
+    {
+     "raw": "Left Anthony Street",
+     "turn": "Left",
+     "text": "Anthony Street"
+    },
+    {
+     "raw": "Left Massey Street",
+     "turn": "Left",
+     "text": "Massey Street"
+    },
+    {
+     "raw": "Ascot State School bus bays",
+     "text": "Ascot State School bus bays",
+     "connection": true,
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Abbott Street",
+     "turn": "Left",
+     "text": "Abbott Street"
+    },
+    {
+     "raw": "Right Lancaster Road",
+     "turn": "Right",
+     "text": "Lancaster Road"
+    },
+    {
+     "raw": "Right Racecourse Road",
+     "turn": "Right",
+     "text": "Racecourse Road"
+    },
+    {
+     "raw": "Bus Stop - Beatrice Tce",
+     "text": "Bus Stop - Beatrice Tce",
+     "stop": true
+    },
+    {
+     "raw": "Continue Racecourse Rd",
+     "text": "Continue Racecourse Rd"
+    },
+    {
+     "raw": "Bus Stop - Hamilton Central",
+     "text": "Bus Stop - Hamilton Central",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    }
+   ]
+  }
+ ]
+}

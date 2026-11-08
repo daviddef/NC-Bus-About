@@ -1,0 +1,469 @@
+{
+ "file": "Run-8-North-Lakes.pdf",
+ "title": "RUN 8 - NORTH LAKES",
+ "subtitle": [],
+ "updated": "08/10/2025",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "6.55 BS Mariner Bvd near Lipscombe St",
+     "time": "06:55",
+     "text": "BS Mariner Bvd near Lipscombe St",
+     "stop": true
+    },
+    {
+     "raw": "Continue Mariner Blvd",
+     "text": "Continue Mariner Blvd"
+    },
+    {
+     "raw": "U turn U turn (exit 4) from Roundabout",
+     "turn": "UTurn",
+     "text": "U turn (exit 4) from Roundabout"
+    },
+    {
+     "raw": "Right Lipscombe Rd",
+     "turn": "Right",
+     "text": "Lipscombe Rd"
+    },
+    {
+     "raw": "Right Deception Bay Rd",
+     "turn": "Right",
+     "text": "Deception Bay Rd"
+    },
+    {
+     "raw": "7.00 BS Deception Bay Rd at Bailey Rd",
+     "time": "07:00",
+     "text": "BS Deception Bay Rd at Bailey Rd",
+     "stop": true
+    },
+    {
+     "raw": "Right Anzac Ave",
+     "turn": "Right",
+     "text": "Anzac Ave"
+    },
+    {
+     "raw": "7.09 BS Anzac Ave at Kinsellas Road",
+     "time": "07:09",
+     "text": "BS Anzac Ave at Kinsellas Road",
+     "stop": true
+    },
+    {
+     "raw": "Right Diamond Jubilee Way",
+     "turn": "Right",
+     "text": "Diamond Jubilee Way"
+    },
+    {
+     "raw": "Left Memorial Drive",
+     "turn": "Left",
+     "text": "Memorial Drive"
+    },
+    {
+     "raw": "Right Discovery Drive",
+     "turn": "Right",
+     "text": "Discovery Drive"
+    },
+    {
+     "raw": "7.15 BS Discovery Dr near Southerden Dr",
+     "time": "07:15",
+     "text": "BS Discovery Dr near Southerden Dr",
+     "stop": true
+    },
+    {
+     "raw": "7.18 BS Discovery Dr near Marsh St",
+     "time": "07:18",
+     "text": "BS Discovery Dr near Marsh St",
+     "stop": true
+    },
+    {
+     "raw": "Left Bounty Boulevard",
+     "turn": "Left",
+     "text": "Bounty Boulevard"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Endeavour Boulevard",
+     "turn": "Left",
+     "text": "Endeavour Boulevard"
+    },
+    {
+     "raw": "7.25 BS Endeavour Bvd near Bounty Bvd",
+     "time": "07:25",
+     "text": "BS Endeavour Bvd near Bounty Bvd",
+     "stop": true
+    },
+    {
+     "raw": "Continue Endeavour Boulevard",
+     "text": "Continue Endeavour Boulevard"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Plantation Road",
+     "turn": "Right",
+     "text": "Plantation Road"
+    },
+    {
+     "raw": "Left Old Gympie Road",
+     "turn": "Left",
+     "text": "Old Gympie Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Brickworks Road",
+     "turn": "Left",
+     "text": "Brickworks Road"
+    },
+    {
+     "raw": "Brickworks Rd, opp. Joe Kruger Park",
+     "text": "Brickworks Rd, opp. Joe Kruger Park"
+    },
+    {
+     "raw": "7.38 BS Brickworks Rd near Galway Dr",
+     "time": "07:38",
+     "text": "BS Brickworks Rd near Galway Dr",
+     "stop": true
+    },
+    {
+     "raw": "Right Duffield Road",
+     "turn": "Right",
+     "text": "Duffield Road"
+    },
+    {
+     "raw": "Left Goodfellows Road",
+     "turn": "Left",
+     "text": "Goodfellows Road"
+    },
+    {
+     "raw": "7.41 Goodfellows Rd, Childcare Centre",
+     "time": "07:41",
+     "text": "Goodfellows Rd, Childcare Centre"
+    },
+    {
+     "raw": "Right Ogg Road",
+     "turn": "Right",
+     "text": "Ogg Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Dohles Rocks Road",
+     "turn": "Left",
+     "text": "Dohles Rocks Road"
+    },
+    {
+     "raw": "Right Castle Hill Drive",
+     "turn": "Right",
+     "text": "Castle Hill Drive"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7.47 BS Castle Hill Dr near Farrington Dr",
+     "time": "07:47",
+     "text": "BS Castle Hill Dr near Farrington Dr",
+     "stop": true
+    },
+    {
+     "raw": "Right Dohles Rocks Road",
+     "turn": "Right",
+     "text": "Dohles Rocks Road"
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "as_required": true
+    },
+    {
+     "raw": "7.49 Coles, Dohles Rocks Rd Murrumba Downs",
+     "time": "07:49",
+     "text": "Coles, Dohles Rocks Rd Murrumba Downs"
+    },
+    {
+     "raw": "Right M1",
+     "turn": "Right",
+     "text": "M1"
+    },
+    {
+     "raw": "Left Exit# 123 - Bracken Ridge",
+     "turn": "Left",
+     "text": "Exit# 123 - Bracken Ridge"
+    },
+    {
+     "raw": "Right Right At Traffic Lights",
+     "turn": "Right",
+     "text": "Right At Traffic Lights"
+    },
+    {
+     "raw": "Over overpass",
+     "text": "Over overpass"
+    },
+    {
+     "raw": "Left Veer left on to Degan Deviation",
+     "turn": "Left",
+     "text": "Veer left on to Degan Deviation"
+    },
+    {
+     "raw": "Continues as Braun Street",
+     "text": "Continues as Braun Street"
+    },
+    {
+     "raw": "Continues as Sandgate Road",
+     "text": "Continues as Sandgate Road"
+    },
+    {
+     "raw": "Left Into College at Zillmere Road lights",
+     "turn": "Left",
+     "text": "Into College at Zillmere Road lights"
+    },
+    {
+     "raw": "Left Into School driveway",
+     "turn": "Left",
+     "text": "Into School driveway"
+    },
+    {
+     "raw": "8.10 U turn into bus bays & set down",
+     "time": "08:10",
+     "turn": "UTurn",
+     "text": "into bus bays & set down",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Nudgee College",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "END TRIP",
+     "text": "END TRIP"
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "the route where safe to do so",
+     "text": "the route where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15.05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Continues Braun Street",
+     "text": "Continues Braun Street"
+    },
+    {
+     "raw": "Left Depot Road",
+     "turn": "Left",
+     "text": "Depot Road"
+    },
+    {
+     "raw": "Right Gateway Motorway",
+     "turn": "Right",
+     "text": "Gateway Motorway"
+    },
+    {
+     "raw": "Left Dohles Rocks Road",
+     "turn": "Left",
+     "text": "Dohles Rocks Road"
+    },
+    {
+     "raw": "Left Castle Hill Drive",
+     "turn": "Left",
+     "text": "Castle Hill Drive"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Dohles Rocks Road",
+     "turn": "Left",
+     "text": "Dohles Rocks Road"
+    },
+    {
+     "raw": "Right Ogg Road",
+     "turn": "Right",
+     "text": "Ogg Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Goodfellows Road",
+     "turn": "Left",
+     "text": "Goodfellows Road"
+    },
+    {
+     "raw": "Right Duffield Road",
+     "turn": "Right",
+     "text": "Duffield Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Brickworks Road",
+     "turn": "Left",
+     "text": "Brickworks Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Old Gympie Road",
+     "turn": "Right",
+     "text": "Old Gympie Road"
+    },
+    {
+     "raw": "Right Plantation Road",
+     "turn": "Right",
+     "text": "Plantation Road"
+    },
+    {
+     "raw": "Left Endeavour Boulevard",
+     "turn": "Left",
+     "text": "Endeavour Boulevard"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Bounty Boulevard",
+     "turn": "Right",
+     "text": "Bounty Boulevard"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Discovery Drive",
+     "turn": "Right",
+     "text": "Discovery Drive"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "as_required": true
+    },
+    {
+     "raw": "Left Memorial Drive",
+     "turn": "Left",
+     "text": "Memorial Drive"
+    },
+    {
+     "raw": "Right Diamond Jubilee Way",
+     "turn": "Right",
+     "text": "Diamond Jubilee Way"
+    },
+    {
+     "raw": "Left Anzac Avenue",
+     "turn": "Left",
+     "text": "Anzac Avenue"
+    },
+    {
+     "raw": "1st Bus Stop",
+     "text": "1st Bus Stop",
+     "stop": true
+    },
+    {
+     "raw": "Continue Anzac Avenue",
+     "text": "Continue Anzac Avenue"
+    },
+    {
+     "raw": "Left Deception Bay Road",
+     "turn": "Left",
+     "text": "Deception Bay Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Lipscombe Rd",
+     "turn": "Left",
+     "text": "Lipscombe Rd"
+    },
+    {
+     "raw": "Left Mariner Blvd",
+     "turn": "Left",
+     "text": "Mariner Blvd"
+    },
+    {
+     "raw": "BS Mariner Bvd near Lipscombe St",
+     "text": "BS Mariner Bvd near Lipscombe St",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "route where safe to do so",
+     "text": "route where safe to do so"
+    }
+   ]
+  }
+ ]
+}

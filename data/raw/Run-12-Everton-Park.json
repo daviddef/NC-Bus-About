@@ -1,0 +1,400 @@
+{
+ "file": "Run-12-Everton-Park.pdf",
+ "title": "RUN 12 - Everton Park",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": "08/01/2025",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7.18 BS Osborne Rd near Northmore St, stop 52",
+     "time": "07:18",
+     "text": "BS Osborne Rd near Northmore St, stop 52",
+     "stop": true
+    },
+    {
+     "raw": "Left Burwood Rd (back of Shopping Centre)",
+     "turn": "Left",
+     "text": "Burwood Rd (back of Shopping Centre)"
+    },
+    {
+     "raw": "Right Burwood Rd (roundabout)",
+     "turn": "Right",
+     "text": "Burwood Rd (roundabout)"
+    },
+    {
+     "raw": "Continues as Griffith St",
+     "text": "Continues as Griffith St"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Cross over South Pine Rd",
+     "text": "Cross over South Pine Rd"
+    },
+    {
+     "raw": "Continues as Stafford Rd",
+     "text": "Continues as Stafford Rd"
+    },
+    {
+     "raw": "Left Trouts Rd",
+     "turn": "Left",
+     "text": "Trouts Rd"
+    },
+    {
+     "raw": "7.27 BS Trouts Rd at Flockton St, stop 43",
+     "time": "07:27",
+     "text": "BS Trouts Rd at Flockton St, stop 43",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Parton St",
+     "text": "Continues as Parton St"
+    },
+    {
+     "raw": "7:28 Parton St at Costello Place, stop 44",
+     "time": "07:28",
+     "text": "Parton St at Costello Place, stop 44"
+    },
+    {
+     "raw": "Left Rode Rd",
+     "turn": "Left",
+     "text": "Rode Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS - McDowell State School",
+     "text": "BS - McDowell State School",
+     "stop": true
+    },
+    {
+     "raw": "Right Roundabout into Beckett Rd",
+     "turn": "Right",
+     "text": "Roundabout into Beckett Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:38 Bus Stop Casuarina St",
+     "time": "07:38",
+     "text": "Bus Stop Casuarina St",
+     "stop": true
+    },
+    {
+     "raw": "Right Albany Creek Rd",
+     "turn": "Right",
+     "text": "Albany Creek Rd"
+    },
+    {
+     "raw": "7:43 BS Albany Creek Rd at Aspley Bowl",
+     "time": "07:43",
+     "text": "BS Albany Creek Rd at Aspley Bowl",
+     "stop": true
+    },
+    {
+     "raw": "Left Gayford St",
+     "turn": "Left",
+     "text": "Gayford St"
+    },
+    {
+     "raw": "Left Gympie Rd",
+     "turn": "Left",
+     "text": "Gympie Rd"
+    },
+    {
+     "raw": "Right Zillmere Rd",
+     "turn": "Right",
+     "text": "Zillmere Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Kirby Rd",
+     "turn": "Right",
+     "text": "Kirby Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along the",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along the",
+     "as_required": true
+    },
+    {
+     "raw": "07:50 BS Kirby Rd at Kirby South, stop 45",
+     "time": "07:50",
+     "text": "BS Kirby Rd at Kirby South, stop 45",
+     "stop": true
+    },
+    {
+     "raw": "Left Ellison Rd",
+     "turn": "Left",
+     "text": "Ellison Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Murphy Rd",
+     "turn": "Left",
+     "text": "Murphy Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Zillmere Rd",
+     "turn": "Right",
+     "text": "Zillmere Rd"
+    },
+    {
+     "raw": "Left Into School driveway",
+     "turn": "Left",
+     "text": "Into School driveway"
+    },
+    {
+     "raw": "8.10 U turn into bus bays & set down",
+     "time": "08:10",
+     "turn": "UTurn",
+     "text": "into bus bays & set down",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Nudgee College",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "END TRIP",
+     "text": "END TRIP"
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "route where safe to do so",
+     "text": "route where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15:05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Zillmere Rd",
+     "text": "Zillmere Rd"
+    },
+    {
+     "raw": "Left Murphy Rd",
+     "turn": "Left",
+     "text": "Murphy Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Ellison Rd",
+     "turn": "Right",
+     "text": "Ellison Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Kirby Rd",
+     "turn": "Right",
+     "text": "Kirby Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Zillmere Rd",
+     "turn": "Left",
+     "text": "Zillmere Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Gympie Rd",
+     "turn": "Left",
+     "text": "Gympie Rd"
+    },
+    {
+     "raw": "Right Gayford St",
+     "turn": "Right",
+     "text": "Gayford St"
+    },
+    {
+     "raw": "Right Albany Creek Rd",
+     "turn": "Right",
+     "text": "Albany Creek Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Beckett Rd",
+     "turn": "Left",
+     "text": "Beckett Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Rode Rd",
+     "turn": "Left",
+     "text": "Rode Rd"
+    },
+    {
+     "raw": "Bus Stop",
+     "text": "Bus Stop",
+     "stop": true
+    },
+    {
+     "raw": "(Opposite McDowell State School)",
+     "text": "(Opposite McDowell State School)"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Parton St",
+     "turn": "Right",
+     "text": "Parton St"
+    },
+    {
+     "raw": "Continues as Trouts Rd",
+     "text": "Continues as Trouts Rd"
+    },
+    {
+     "raw": "Parton St at Costello Place, stop 44",
+     "text": "Parton St at Costello Place, stop 44"
+    },
+    {
+     "raw": "BS Trouts Rd at Flockton St, stop 43",
+     "text": "BS Trouts Rd at Flockton St, stop 43",
+     "stop": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the route",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "Right Stafford Rd",
+     "turn": "Right",
+     "text": "Stafford Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Cross over South Pine Rd",
+     "text": "Cross over South Pine Rd"
+    },
+    {
+     "raw": "Continue on Griffith St",
+     "text": "Continue on Griffith St"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continues as Burwood Rd",
+     "text": "Continues as Burwood Rd"
+    },
+    {
+     "raw": "Right Burwood Rd (behind shopping centre)",
+     "turn": "Right",
+     "text": "Burwood Rd (behind shopping centre)"
+    },
+    {
+     "raw": "Left Continues as Burwood Rd (roundabout)",
+     "turn": "Left",
+     "text": "Continues as Burwood Rd (roundabout)"
+    },
+    {
+     "raw": "Right Osborne Rd",
+     "turn": "Right",
+     "text": "Osborne Rd"
+    },
+    {
+     "raw": "BS Osborne Rd near Northmore St, stop 52",
+     "text": "BS Osborne Rd near Northmore St, stop 52",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  }
+ ]
+}

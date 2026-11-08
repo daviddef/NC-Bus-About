@@ -1,0 +1,635 @@
+{
+ "file": "Run-15-Wooloowin.pdf",
+ "title": "RUN 15 - WOOLOOWIN",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": "08/12/2021",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7:05 BS Park Rd at Gorman Street, stop 28",
+     "time": "07:05",
+     "text": "BS Park Rd at Gorman Street, stop 28",
+     "stop": true
+    },
+    {
+     "raw": "7:07 BS Park Rd at Rose Street, stop 29",
+     "time": "07:07",
+     "text": "BS Park Rd at Rose Street, stop 29",
+     "stop": true
+    },
+    {
+     "raw": "Right Rose Street",
+     "turn": "Right",
+     "text": "Rose Street"
+    },
+    {
+     "raw": "Left Kent Road",
+     "turn": "Left",
+     "text": "Kent Road"
+    },
+    {
+     "raw": "7:08 BS Kent Rd near Judge St, stop 32",
+     "time": "07:08",
+     "text": "BS Kent Rd near Judge St, stop 32",
+     "stop": true
+    },
+    {
+     "raw": "Right Lodge Road",
+     "turn": "Right",
+     "text": "Lodge Road"
+    },
+    {
+     "raw": "7:09 BS Lodge Rd near Roseleigh St, stop 33",
+     "time": "07:09",
+     "text": "BS Lodge Rd near Roseleigh St, stop 33",
+     "stop": true
+    },
+    {
+     "raw": "Right Dawson Street",
+     "turn": "Right",
+     "text": "Dawson Street"
+    },
+    {
+     "raw": "Left Rose Street - Continues as Junction Rd",
+     "turn": "Left",
+     "text": "Rose Street - Continues as Junction Rd"
+    },
+    {
+     "raw": "Right Morrison Road",
+     "turn": "Right",
+     "text": "Morrison Road"
+    },
+    {
+     "raw": "7:13 BS Morrison Rd near Norman Pde, stop 27",
+     "time": "07:13",
+     "text": "BS Morrison Rd near Norman Pde, stop 27",
+     "stop": true
+    },
+    {
+     "raw": "Right Norman Parade",
+     "turn": "Right",
+     "text": "Norman Parade"
+    },
+    {
+     "raw": "Left Bonney Avenue",
+     "turn": "Left",
+     "text": "Bonney Avenue"
+    },
+    {
+     "raw": "7:15 BS Bonney Ave at Bayview Terrace, stop 25",
+     "time": "07:15",
+     "text": "BS Bonney Ave at Bayview Terrace, stop 25",
+     "stop": true
+    },
+    {
+     "raw": "Continue Bonney Ave",
+     "text": "Continue Bonney Ave"
+    },
+    {
+     "raw": "7:16 BS Bonney Ave near Sandgate Rd, stop 21",
+     "time": "07:16",
+     "text": "BS Bonney Ave near Sandgate Rd, stop 21",
+     "stop": true
+    },
+    {
+     "raw": "Right Sandgate Rd",
+     "turn": "Right",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "7:20 BS Sandgate Rd at Camden Street, stop 20",
+     "time": "07:20",
+     "text": "BS Sandgate Rd at Camden Street, stop 20",
+     "stop": true
+    },
+    {
+     "raw": "Pickup as required",
+     "text": "Pickup as required",
+     "as_required": true
+    },
+    {
+     "raw": "Left Crosby Rd",
+     "turn": "Left",
+     "text": "Crosby Rd"
+    },
+    {
+     "raw": "7:23 BS Crosby Rd near Dover St, stop 18",
+     "time": "07:23",
+     "text": "BS Crosby Rd near Dover St, stop 18",
+     "stop": true
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:24 BS Crosby Rd at Comus Avenue, stop 20",
+     "time": "07:24",
+     "text": "BS Crosby Rd at Comus Avenue, stop 20",
+     "stop": true
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:26 BS Crosby Rd at Hipwood Street, stop 22",
+     "time": "07:26",
+     "text": "BS Crosby Rd at Hipwood Street, stop 22",
+     "stop": true
+    },
+    {
+     "raw": "Right Massey St",
+     "turn": "Right",
+     "text": "Massey St"
+    },
+    {
+     "raw": "Left Abbot St",
+     "turn": "Left",
+     "text": "Abbot St"
+    },
+    {
+     "raw": "Right Lancaster Rd",
+     "turn": "Right",
+     "text": "Lancaster Rd"
+    },
+    {
+     "raw": "7:31 BS Lancaster Rd at Ormond Street, stop 26",
+     "time": "07:31",
+     "text": "BS Lancaster Rd at Ormond Street, stop 26",
+     "stop": true
+    },
+    {
+     "raw": "Continue Lancaster Rd",
+     "text": "Continue Lancaster Rd"
+    },
+    {
+     "raw": "7:32 BS Lancaster Rd at Kitchener Road, stop 25",
+     "time": "07:32",
+     "text": "BS Lancaster Rd at Kitchener Road, stop 25",
+     "stop": true
+    },
+    {
+     "raw": "Left Kitchener Rd",
+     "turn": "Left",
+     "text": "Kitchener Rd"
+    },
+    {
+     "raw": "Left Oriel Rd",
+     "turn": "Left",
+     "text": "Oriel Rd"
+    },
+    {
+     "raw": "Right Sandgate Rd",
+     "turn": "Right",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "7:36 BS Sandgate Rd at Clayfield South, stop 23",
+     "time": "07:36",
+     "text": "BS Sandgate Rd at Clayfield South, stop 23",
+     "stop": true
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "7:37 BS Sandgate Rd at Adelaide Street, stop 25",
+     "time": "07:37",
+     "text": "BS Sandgate Rd at Adelaide Street, stop 25",
+     "stop": true
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Rode Rd",
+     "turn": "Left",
+     "text": "Rode Rd"
+    },
+    {
+     "raw": "7:45 BS Rode Rd near Kinmond Ave, stop 41",
+     "time": "07:45",
+     "text": "BS Rode Rd near Kinmond Ave, stop 41",
+     "stop": true
+    },
+    {
+     "raw": "Continue Rode Rd",
+     "text": "Continue Rode Rd"
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "7:46 BS Rode Rd near Sugarloaf St, stop 42/43",
+     "time": "07:46",
+     "text": "BS Rode Rd near Sugarloaf St, stop 42/43",
+     "stop": true
+    },
+    {
+     "raw": "Continues to roundabout",
+     "text": "Continues to roundabout"
+    },
+    {
+     "raw": "Right Uturn (take 4th exit off roundabout)",
+     "turn": "Right",
+     "text": "Uturn (take 4th exit off roundabout)"
+    },
+    {
+     "raw": "Continue Rode Rd",
+     "text": "Continue Rode Rd"
+    },
+    {
+     "raw": "7:50 BS Rode Rd near Bayview Tce, stop 42/43",
+     "time": "07:50",
+     "text": "BS Rode Rd near Bayview Tce, stop 42/43",
+     "stop": true
+    },
+    {
+     "raw": "Left Take slip road left to Sandgate Rd",
+     "turn": "Left",
+     "text": "Take slip road left to Sandgate Rd"
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "7:52 BS Sandgate Rd at Nundah North, stop 7/6",
+     "time": "07:52",
+     "text": "BS Sandgate Rd at Nundah North, stop 7/6",
+     "stop": true
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:53 BS Sandgate Rd at Virginia School, stop 21",
+     "time": "07:53",
+     "text": "BS Sandgate Rd at Virginia School, stop 21",
+     "stop": true
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "8:00 Nudgee College",
+     "time": "08:00",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Set down at bus bays",
+     "text": "Set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15:05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Zillmere Road",
+     "turn": "Right",
+     "text": "Zillmere Road"
+    },
+    {
+     "raw": "Left Sandgate Road",
+     "turn": "Left",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "BS Sandgate Rd at Virginia School, stop 21",
+     "text": "BS Sandgate Rd at Virginia School, stop 21",
+     "stop": true
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "BS Sandgate Rd at Royal Street, stop 19a",
+     "text": "BS Sandgate Rd at Royal Street, stop 19a",
+     "stop": true
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "BS Sandgate Rd at Nundah North, stop 6",
+     "text": "BS Sandgate Rd at Nundah North, stop 6",
+     "stop": true
+    },
+    {
+     "raw": "(Prior to Hamilton Road)",
+     "text": "(Prior to Hamilton Road)"
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "Right Rode Rd",
+     "turn": "Right",
+     "text": "Rode Rd"
+    },
+    {
+     "raw": "BS Rode Rd near Kinmond Ave, stop 41",
+     "text": "BS Rode Rd near Kinmond Ave, stop 41",
+     "stop": true
+    },
+    {
+     "raw": "Continue Rode Rd",
+     "text": "Continue Rode Rd"
+    },
+    {
+     "raw": "BS Rode Rd near Sugarloaf St, stop 42/43",
+     "text": "BS Rode Rd near Sugarloaf St, stop 42/43",
+     "stop": true
+    },
+    {
+     "raw": "Continues to roundabout",
+     "text": "Continues to roundabout"
+    },
+    {
+     "raw": "Right Uturn (take 4th exit off roundabout)",
+     "turn": "Right",
+     "text": "Uturn (take 4th exit off roundabout)"
+    },
+    {
+     "raw": "Continue Rode Rd",
+     "text": "Continue Rode Rd"
+    },
+    {
+     "raw": "BS Rode Rd near Bayview Tce, stop 42/43",
+     "text": "BS Rode Rd near Bayview Tce, stop 42/43",
+     "stop": true
+    },
+    {
+     "raw": "Continue Rode Rd",
+     "text": "Continue Rode Rd"
+    },
+    {
+     "raw": "Right Sandgate Rd",
+     "turn": "Right",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Sandgate Rd at Clayfield South, stop 23",
+     "text": "BS Sandgate Rd at Clayfield South, stop 23",
+     "stop": true
+    },
+    {
+     "raw": "BS Sandgate Rd at Hutton Street, stop 21",
+     "text": "BS Sandgate Rd at Hutton Street, stop 21",
+     "stop": true
+    },
+    {
+     "raw": "BS Sandgate Rd at Camden Street, stop 20",
+     "text": "BS Sandgate Rd at Camden Street, stop 20",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Crosby Rd",
+     "turn": "Left",
+     "text": "Crosby Rd"
+    },
+    {
+     "raw": "BS Crosby Rd near Dover St, stop 18",
+     "text": "BS Crosby Rd near Dover St, stop 18",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Crosby Rd at Comus Avenue, stop 20",
+     "text": "BS Crosby Rd at Comus Avenue, stop 20",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Crosby Rd at Hipwood Street, stop 22",
+     "text": "BS Crosby Rd at Hipwood Street, stop 22",
+     "stop": true
+    },
+    {
+     "raw": "Left Anthony St",
+     "turn": "Left",
+     "text": "Anthony St"
+    },
+    {
+     "raw": "Right Massey St",
+     "turn": "Right",
+     "text": "Massey St"
+    },
+    {
+     "raw": "Left Abbott St",
+     "turn": "Left",
+     "text": "Abbott St"
+    },
+    {
+     "raw": "Right Lancaster Rd",
+     "turn": "Right",
+     "text": "Lancaster Rd"
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the route",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "BS Lancaster Rd at Ormond Street, stop 26",
+     "text": "BS Lancaster Rd at Ormond Street, stop 26",
+     "stop": true
+    },
+    {
+     "raw": "BS Lancaster Rd at Kitchener Road, stop 25",
+     "text": "BS Lancaster Rd at Kitchener Road, stop 25",
+     "stop": true
+    },
+    {
+     "raw": "Left Kitchener Rd",
+     "turn": "Left",
+     "text": "Kitchener Rd"
+    },
+    {
+     "raw": "Left Oriel Rd",
+     "turn": "Left",
+     "text": "Oriel Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Sandgate Rd",
+     "turn": "Left",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "Right Bonney Ave",
+     "turn": "Right",
+     "text": "Bonney Ave"
+    },
+    {
+     "raw": "BS Bonney Ave near Sandgate Rd, stop 21",
+     "text": "BS Bonney Ave near Sandgate Rd, stop 21",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Bonney Ave at Bayview Terrace, stop 25",
+     "text": "BS Bonney Ave at Bayview Terrace, stop 25",
+     "stop": true
+    },
+    {
+     "raw": "Right Norman Pde",
+     "turn": "Right",
+     "text": "Norman Pde"
+    },
+    {
+     "raw": "BS Norman Pde at Morrison Road, stop 27",
+     "text": "BS Norman Pde at Morrison Road, stop 27",
+     "stop": true
+    },
+    {
+     "raw": "Left Morrison Rd",
+     "turn": "Left",
+     "text": "Morrison Rd"
+    },
+    {
+     "raw": "Left Junction Road",
+     "turn": "Left",
+     "text": "Junction Road"
+    },
+    {
+     "raw": "Continues as Rose Street",
+     "text": "Continues as Rose Street"
+    },
+    {
+     "raw": "Right Dawson St",
+     "turn": "Right",
+     "text": "Dawson St"
+    },
+    {
+     "raw": "Left Lodge Rd",
+     "turn": "Left",
+     "text": "Lodge Rd"
+    },
+    {
+     "raw": "BS Lodge Rd near Roseleigh St, stop 33",
+     "text": "BS Lodge Rd near Roseleigh St, stop 33",
+     "stop": true
+    },
+    {
+     "raw": "Left Kent Rd",
+     "turn": "Left",
+     "text": "Kent Rd"
+    },
+    {
+     "raw": "BS Kent Rd near Judge St, stop 32",
+     "text": "BS Kent Rd near Judge St, stop 32",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Rose St",
+     "turn": "Right",
+     "text": "Rose St"
+    },
+    {
+     "raw": "Left Park Rd",
+     "turn": "Left",
+     "text": "Park Rd"
+    },
+    {
+     "raw": "BS Park Rd at Rose Street, stop 29",
+     "text": "BS Park Rd at Rose Street, stop 29",
+     "stop": true
+    },
+    {
+     "raw": "BS Park Rd at Gorman Street, stop 28",
+     "text": "BS Park Rd at Gorman Street, stop 28",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to Depot",
+     "text": "Return Empty to Depot",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  }
+ ]
+}

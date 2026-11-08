@@ -1,0 +1,465 @@
+{
+ "file": "Run-3-Ascot.pdf",
+ "title": "RUN 3 - ASCOT",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": null,
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7:20 Shaw Rd near Buckland Rd, stop 37",
+     "time": "07:20",
+     "text": "Shaw Rd near Buckland Rd, stop 37"
+    },
+    {
+     "raw": "Continue Shaw Rd",
+     "text": "Continue Shaw Rd"
+    },
+    {
+     "raw": "7:23 BS Shaw Rd near Henry St, stop 35",
+     "time": "07:23",
+     "text": "BS Shaw Rd near Henry St, stop 35",
+     "stop": true
+    },
+    {
+     "raw": "Left Lodge Rd",
+     "turn": "Left",
+     "text": "Lodge Rd"
+    },
+    {
+     "raw": "Right Dawson St",
+     "turn": "Right",
+     "text": "Dawson St"
+    },
+    {
+     "raw": "Left Rose St - Continues as Junction Rd",
+     "turn": "Left",
+     "text": "Rose St - Continues as Junction Rd"
+    },
+    {
+     "raw": "7:27 BS Eagle Junction Station",
+     "time": "07:27",
+     "text": "BS Eagle Junction Station",
+     "stop": true
+    },
+    {
+     "raw": "Continue Junction Rd",
+     "text": "Continue Junction Rd"
+    },
+    {
+     "raw": "7:28 BS Junction Rd at Stuckey St, stop 28/2",
+     "time": "07:28",
+     "text": "BS Junction Rd at Stuckey St, stop 28/2",
+     "stop": true
+    },
+    {
+     "raw": "Right Sandgate Rd",
+     "turn": "Right",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Oriel Rd",
+     "turn": "Left",
+     "text": "Oriel Rd"
+    },
+    {
+     "raw": "Right Waratah St",
+     "turn": "Right",
+     "text": "Waratah St"
+    },
+    {
+     "raw": "7:33 BS Waratah St near Oriel Rd",
+     "time": "07:33",
+     "text": "BS Waratah St near Oriel Rd",
+     "stop": true
+    },
+    {
+     "raw": "Continue Waratah St",
+     "text": "Continue Waratah St"
+    },
+    {
+     "raw": "Left Upper Lancaster Rd",
+     "turn": "Left",
+     "text": "Upper Lancaster Rd"
+    },
+    {
+     "raw": "Right Anthony St",
+     "turn": "Right",
+     "text": "Anthony St"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Massey St",
+     "turn": "Left",
+     "text": "Massey St"
+    },
+    {
+     "raw": "7:37 BS Massey St at Ascot School",
+     "time": "07:37",
+     "text": "BS Massey St at Ascot School",
+     "stop": true
+    },
+    {
+     "raw": "Left Abbott St",
+     "turn": "Left",
+     "text": "Abbott St"
+    },
+    {
+     "raw": "Left Lancaster Rd",
+     "turn": "Left",
+     "text": "Lancaster Rd"
+    },
+    {
+     "raw": "Right Round-about into Alexandra Rd",
+     "turn": "Right",
+     "text": "Round-about into Alexandra Rd"
+    },
+    {
+     "raw": "7:40 BS Alexandra Rd at Reeve St Stop 27",
+     "time": "07:40",
+     "text": "BS Alexandra Rd at Reeve St Stop 27",
+     "stop": true
+    },
+    {
+     "raw": "Continue Alexandra Rd",
+     "text": "Continue Alexandra Rd"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "as_required": true
+    },
+    {
+     "raw": "Updated:",
+     "text": "Updated:"
+    },
+    {
+     "raw": "7:41 BS Alexandra Rd at Palm Avenue Stop 29",
+     "time": "07:41",
+     "text": "BS Alexandra Rd at Palm Avenue Stop 29",
+     "stop": true
+    },
+    {
+     "raw": "Continue Alexandra Rd",
+     "text": "Continue Alexandra Rd"
+    },
+    {
+     "raw": "7:42 BS Alexandra Rd at Sefton Rd Stop 30",
+     "time": "07:42",
+     "text": "BS Alexandra Rd at Sefton Rd Stop 30",
+     "stop": true
+    },
+    {
+     "raw": "Left Wagner Rd",
+     "turn": "Left",
+     "text": "Wagner Rd"
+    },
+    {
+     "raw": "Right Sandgate Rd",
+     "turn": "Right",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "7:46 BS Sandgate Rd at Clayfield, stop 27",
+     "time": "07:46",
+     "text": "BS Sandgate Rd at Clayfield, stop 27",
+     "stop": true
+    },
+    {
+     "raw": "7:47 BS Sandgate Rd at Collins St, stop 28",
+     "time": "07:47",
+     "text": "BS Sandgate Rd at Collins St, stop 28",
+     "stop": true
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "8:05 Nudgee College",
+     "time": "08:05",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Set down at bus bays",
+     "text": "Set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "the route where safe to do so",
+     "text": "the route where safe to do so"
+    },
+    {
+     "raw": "08/12/2021",
+     "text": "08/12/2021"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "3.05 Depart College",
+     "time": "03:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Zillmere Rd",
+     "turn": "Right",
+     "text": "Zillmere Rd"
+    },
+    {
+     "raw": "Left Sandgate Rd",
+     "turn": "Left",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "BS Sandgate Rd at Collins St, stop 28",
+     "text": "BS Sandgate Rd at Collins St, stop 28",
+     "stop": true
+    },
+    {
+     "raw": "BS Sandgate Rd at Clayfield",
+     "text": "BS Sandgate Rd at Clayfield",
+     "stop": true
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "Drop as required**",
+     "text": "Drop as required**",
+     "as_required": true
+    },
+    {
+     "raw": "BS Sandgate Rd at Adelaide St, stop 25",
+     "text": "BS Sandgate Rd at Adelaide St, stop 25",
+     "stop": true
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Oriel Rd",
+     "turn": "Left",
+     "text": "Oriel Rd"
+    },
+    {
+     "raw": "Right Waratah St",
+     "turn": "Right",
+     "text": "Waratah St"
+    },
+    {
+     "raw": "BS Waratah St near Oriel Rd",
+     "text": "BS Waratah St near Oriel Rd",
+     "stop": true
+    },
+    {
+     "raw": "Continue Waratah St",
+     "text": "Continue Waratah St"
+    },
+    {
+     "raw": "Left Upper Lancaster Rd",
+     "turn": "Left",
+     "text": "Upper Lancaster Rd"
+    },
+    {
+     "raw": "Right Anthony St",
+     "turn": "Right",
+     "text": "Anthony St"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Massey St",
+     "turn": "Left",
+     "text": "Massey St"
+    },
+    {
+     "raw": "BS Massey St at Ascot School",
+     "text": "BS Massey St at Ascot School",
+     "stop": true
+    },
+    {
+     "raw": "Left Abbott St",
+     "turn": "Left",
+     "text": "Abbott St"
+    },
+    {
+     "raw": "Left Lancaster Rd",
+     "turn": "Left",
+     "text": "Lancaster Rd"
+    },
+    {
+     "raw": "Right Round-about into Alexandra Rd",
+     "turn": "Right",
+     "text": "Round-about into Alexandra Rd"
+    },
+    {
+     "raw": "BS Alexandra Rd at Reeve St Stop 27",
+     "text": "BS Alexandra Rd at Reeve St Stop 27",
+     "stop": true
+    },
+    {
+     "raw": "Continue Alexandra Rd",
+     "text": "Continue Alexandra Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Alexandra Rd at Palm Avenue Stop 29",
+     "text": "BS Alexandra Rd at Palm Avenue Stop 29",
+     "stop": true
+    },
+    {
+     "raw": "Continue Alexandra Rd",
+     "text": "Continue Alexandra Rd"
+    },
+    {
+     "raw": "BS Alexandra Rd at Sefton Rd Stop 30",
+     "text": "BS Alexandra Rd at Sefton Rd Stop 30",
+     "stop": true
+    },
+    {
+     "raw": "Left Wagner Rd",
+     "turn": "Left",
+     "text": "Wagner Rd"
+    },
+    {
+     "raw": "Right Sandgate Rd",
+     "turn": "Right",
+     "text": "Sandgate Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Junction Rd",
+     "turn": "Left",
+     "text": "Junction Rd"
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along",
+     "as_required": true
+    },
+    {
+     "raw": "Updated:",
+     "text": "Updated:"
+    },
+    {
+     "raw": "BS Junction Rd at Stuckey St, stop 28/2",
+     "text": "BS Junction Rd at Stuckey St, stop 28/2",
+     "stop": true
+    },
+    {
+     "raw": "Continue Junction Rd",
+     "text": "Continue Junction Rd"
+    },
+    {
+     "raw": "BS Eagle Junction Station",
+     "text": "BS Eagle Junction Station",
+     "stop": true
+    },
+    {
+     "raw": "Continue Junction Rd",
+     "text": "Continue Junction Rd"
+    },
+    {
+     "raw": "Right Dawson St",
+     "turn": "Right",
+     "text": "Dawson St"
+    },
+    {
+     "raw": "Left Lodge Rd",
+     "turn": "Left",
+     "text": "Lodge Rd"
+    },
+    {
+     "raw": "Right Shaw Rd",
+     "turn": "Right",
+     "text": "Shaw Rd"
+    },
+    {
+     "raw": "BS Shaw Rd near Emma St, stop 35",
+     "text": "BS Shaw Rd near Emma St, stop 35",
+     "stop": true
+    },
+    {
+     "raw": "Continue Shaw Rd",
+     "text": "Continue Shaw Rd"
+    },
+    {
+     "raw": "BS Shaw Rd at Parklands, stop 36",
+     "text": "BS Shaw Rd at Parklands, stop 36",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to Depot",
+     "text": "Return Empty to Depot",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "the route where safe to do so",
+     "text": "the route where safe to do so"
+    },
+    {
+     "raw": "08/12/2021",
+     "text": "08/12/2021"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,513 @@
+{
+ "file": "Run-14-New-Farm-new-T1_2026.pdf",
+ "title": "RUN 14 - New Farm",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": "21/01/2026",
+ "updated_note": "added",
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7:02 BS Skyring Tce near Cunningham St",
+     "time": "07:02",
+     "text": "BS Skyring Tce near Cunningham St",
+     "stop": true
+    },
+    {
+     "raw": "Continue Skyring Terrace",
+     "text": "Continue Skyring Terrace"
+    },
+    {
+     "raw": "7:03 BS Teneriffe Ferry Skyring Tce",
+     "time": "07:03",
+     "text": "BS Teneriffe Ferry Skyring Tce",
+     "stop": true
+    },
+    {
+     "raw": "Continue Skyring Terrace - Macquarie St",
+     "text": "Continue Skyring Terrace - Macquarie St"
+    },
+    {
+     "raw": "7:05 BS Macquarie St at Mercantile Place, stop 14",
+     "time": "07:05",
+     "text": "BS Macquarie St at Mercantile Place, stop 14",
+     "stop": true
+    },
+    {
+     "raw": "Right Merthyr Rd",
+     "turn": "Right",
+     "text": "Merthyr Rd"
+    },
+    {
+     "raw": "7:07 BS Merthyr Rd at Hawthorne Street, stop 13",
+     "time": "07:07",
+     "text": "BS Merthyr Rd at Hawthorne Street, stop 13",
+     "stop": true
+    },
+    {
+     "raw": "Continue Merthyr Rd",
+     "text": "Continue Merthyr Rd"
+    },
+    {
+     "raw": "Left Griffith St",
+     "turn": "Left",
+     "text": "Griffith St"
+    },
+    {
+     "raw": "Continues as Oxlade Dr",
+     "text": "Continues as Oxlade Dr"
+    },
+    {
+     "raw": "7:11 BS Oxlade Dr at Merthyr, stop 1",
+     "time": "07:11",
+     "text": "BS Oxlade Dr at Merthyr, stop 1",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Oxlade Dr",
+     "text": "Continues as Oxlade Dr"
+    },
+    {
+     "raw": "7:13 BS Oxlade Dr at Lower Bowen Terrace, stop 19",
+     "time": "07:13",
+     "text": "BS Oxlade Dr at Lower Bowen Terrace, stop 19",
+     "stop": true
+    },
+    {
+     "raw": "Left Brunswick St",
+     "turn": "Left",
+     "text": "Brunswick St"
+    },
+    {
+     "raw": "7:18 BS Brunswick St at Robertson Street, stop 5",
+     "time": "07:18",
+     "text": "BS Brunswick St at Robertson Street, stop 5",
+     "stop": true
+    },
+    {
+     "raw": "Left Ann St",
+     "turn": "Left",
+     "text": "Ann St"
+    },
+    {
+     "raw": "Right Gipps St",
+     "turn": "Right",
+     "text": "Gipps St"
+    },
+    {
+     "raw": "Right Wickham St",
+     "turn": "Right",
+     "text": "Wickham St"
+    },
+    {
+     "raw": "7:23 BS Wickham Street Stop 228 near Brunswick",
+     "time": "07:23",
+     "text": "BS Wickham Street Stop 228 near Brunswick",
+     "stop": true
+    },
+    {
+     "raw": "Continue Wickham St",
+     "text": "Continue Wickham St"
+    },
+    {
+     "raw": "7:26 BS Wickham St at Light Street, stop 7",
+     "time": "07:26",
+     "text": "BS Wickham St at Light Street, stop 7",
+     "stop": true
+    },
+    {
+     "raw": "Continue Wickham St - Breakfast Creek Rd",
+     "text": "Continue Wickham St - Breakfast Creek Rd"
+    },
+    {
+     "raw": "Right Kingsford Smith Dr",
+     "turn": "Right",
+     "text": "Kingsford Smith Dr"
+    },
+    {
+     "raw": "7:30 BS Kingsford Smith Dr at Cooksley St, stop 13/14",
+     "time": "07:30",
+     "text": "BS Kingsford Smith Dr at Cooksley St, stop 13/14",
+     "stop": true
+    },
+    {
+     "raw": "Pick up as required",
+     "text": "Pick up as required",
+     "as_required": true
+    },
+    {
+     "raw": "Left Racecourse Road",
+     "turn": "Left",
+     "text": "Racecourse Road"
+    },
+    {
+     "raw": "7:33 BS Racecourse Rd at Kent Street, stop 21",
+     "time": "07:33",
+     "text": "BS Racecourse Rd at Kent Street, stop 21",
+     "stop": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along the route where",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along the route where",
+     "as_required": true
+    },
+    {
+     "raw": "7:35 BS Racecourse Rd at Beatrice Tce, stop 22",
+     "time": "07:35",
+     "text": "BS Racecourse Rd at Beatrice Tce, stop 22",
+     "stop": true
+    },
+    {
+     "raw": "Left Lancaster Rd",
+     "turn": "Left",
+     "text": "Lancaster Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Kitchener Road",
+     "turn": "Right",
+     "text": "Kitchener Road"
+    },
+    {
+     "raw": "7:42 BS Zillman Rd at Hendra Rail, stop 32/8 (Pinky's)",
+     "time": "07:42",
+     "text": "BS Zillman Rd at Hendra Rail, stop 32/8 (Pinky's)",
+     "stop": true
+    },
+    {
+     "raw": "(past railway crossing)",
+     "text": "(past railway crossing)"
+    },
+    {
+     "raw": "7:43 BS Zillman Rd at Union Street, stop 35/6",
+     "time": "07:43",
+     "text": "BS Zillman Rd at Union Street, stop 35/6",
+     "stop": true
+    },
+    {
+     "raw": "Left Gellibrand Street",
+     "turn": "Left",
+     "text": "Gellibrand Street"
+    },
+    {
+     "raw": "7:45 BS Gellibrand St near Zillman Rd, stop 36/4",
+     "time": "07:45",
+     "text": "BS Gellibrand St near Zillman Rd, stop 36/4",
+     "stop": true
+    },
+    {
+     "raw": "Right Widdop Street / Melton Road",
+     "turn": "Right",
+     "text": "Widdop Street / Melton Road"
+    },
+    {
+     "raw": "7:47 BS Widdop St at Eliza Street, stop 37/43",
+     "time": "07:47",
+     "text": "BS Widdop St at Eliza Street, stop 37/43",
+     "stop": true
+    },
+    {
+     "raw": "7:50 BS Melton Rd near New Ivo St, stop 12",
+     "time": "07:50",
+     "text": "BS Melton Rd near New Ivo St, stop 12",
+     "stop": true
+    },
+    {
+     "raw": "7:51 BS Melton Rd near Allworth St, stop 15",
+     "time": "07:51",
+     "text": "BS Melton Rd near Allworth St, stop 15",
+     "stop": true
+    },
+    {
+     "raw": "Left Toombul Road",
+     "turn": "Left",
+     "text": "Toombul Road"
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "8:10 Nudgee College",
+     "time": "08:10",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "set down at bus bays",
+     "text": "set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed is",
+     "text": "College Bus Transit Area maximum speed is"
+    },
+    {
+     "raw": "10 km per hour",
+     "text": "10 km per hour"
+    },
+    {
+     "raw": "safe to do so",
+     "text": "safe to do so"
+    },
+    {
+     "raw": "PM Boondal Rail run",
+     "text": "PM Boondal Rail run"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15:20 Depart College",
+     "time": "15:20",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Sandgate Road",
+     "turn": "Left",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Toombul Road",
+     "turn": "Left",
+     "text": "Toombul Road"
+    },
+    {
+     "raw": "Right Melton Road",
+     "turn": "Right",
+     "text": "Melton Road"
+    },
+    {
+     "raw": "BS Melton Road near Allworth St, stop 15",
+     "text": "BS Melton Road near Allworth St, stop 15",
+     "stop": true
+    },
+    {
+     "raw": "Left Gellibrand Street",
+     "turn": "Left",
+     "text": "Gellibrand Street"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Zillman Road",
+     "turn": "Right",
+     "text": "Zillman Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Zillman Road at Hendra 32/8 - Pinky's",
+     "text": "BS Zillman Road at Hendra 32/8 - Pinky's",
+     "stop": true
+    },
+    {
+     "raw": "(prior railway crossing)",
+     "text": "(prior railway crossing)"
+    },
+    {
+     "raw": "Continue as Zillman Road",
+     "text": "Continue as Zillman Road"
+    },
+    {
+     "raw": "Continue as Kitchener Road",
+     "text": "Continue as Kitchener Road"
+    },
+    {
+     "raw": "Left Lancaster Rd",
+     "turn": "Left",
+     "text": "Lancaster Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Racecourse Rd",
+     "turn": "Right",
+     "text": "Racecourse Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Kingsford Smith Drive",
+     "turn": "Right",
+     "text": "Kingsford Smith Drive"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Breakfast Creek Rd",
+     "turn": "Left",
+     "text": "Breakfast Creek Rd"
+    },
+    {
+     "raw": "Left Skyring Tce",
+     "turn": "Left",
+     "text": "Skyring Tce"
+    },
+    {
+     "raw": "BS - Teneriffe Ferry Skyring Tce",
+     "text": "BS - Teneriffe Ferry Skyring Tce",
+     "stop": true
+    },
+    {
+     "raw": "Continue Skyring Terrace - Macquarie St",
+     "text": "Continue Skyring Terrace - Macquarie St"
+    },
+    {
+     "raw": "BS - Skyring Tce near Cunningham St",
+     "text": "BS - Skyring Tce near Cunningham St",
+     "stop": true
+    },
+    {
+     "raw": "Continue Skyring Terrace",
+     "text": "Continue Skyring Terrace"
+    },
+    {
+     "raw": "BS - Teneriffe Ferry Skyring Tce",
+     "text": "BS - Teneriffe Ferry Skyring Tce",
+     "stop": true
+    },
+    {
+     "raw": "Continue Skyring Terrace - Macquarie St",
+     "text": "Continue Skyring Terrace - Macquarie St"
+    },
+    {
+     "raw": "BS - Macquarie St at Mercantile Place, stop 14",
+     "text": "BS - Macquarie St at Mercantile Place, stop 14",
+     "stop": true
+    },
+    {
+     "raw": "Merthyr Rd",
+     "text": "Merthyr Rd"
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "as_required": true
+    },
+    {
+     "raw": "BS - Merthyr Rd at Hawthorne Street, stop 13",
+     "text": "BS - Merthyr Rd at Hawthorne Street, stop 13",
+     "stop": true
+    },
+    {
+     "raw": "Continue Merthyr Rd",
+     "text": "Continue Merthyr Rd"
+    },
+    {
+     "raw": "Left Griffith St",
+     "turn": "Left",
+     "text": "Griffith St"
+    },
+    {
+     "raw": "Continues as Oxlade Dr",
+     "text": "Continues as Oxlade Dr"
+    },
+    {
+     "raw": "BS - Oxlade Dr at Merthyr, stop 1",
+     "text": "BS - Oxlade Dr at Merthyr, stop 1",
+     "stop": true
+    },
+    {
+     "raw": "Continues as Oxlade Dr",
+     "text": "Continues as Oxlade Dr"
+    },
+    {
+     "raw": "BS - Oxlade Dr at Lower Bowen Terrace, stop 19",
+     "text": "BS - Oxlade Dr at Lower Bowen Terrace, stop 19",
+     "stop": true
+    },
+    {
+     "raw": "Left Brunswick St",
+     "turn": "Left",
+     "text": "Brunswick St"
+    },
+    {
+     "raw": "BS - Brunswick St at Robertson Street, stop 5",
+     "text": "BS - Brunswick St at Robertson Street, stop 5",
+     "stop": true
+    },
+    {
+     "raw": "Left Ann St",
+     "turn": "Left",
+     "text": "Ann St"
+    },
+    {
+     "raw": "Right Gipps St",
+     "turn": "Right",
+     "text": "Gipps St"
+    },
+    {
+     "raw": "Right Wickham St",
+     "turn": "Right",
+     "text": "Wickham St"
+    },
+    {
+     "raw": "BS - Wickham Street Stop 228 near Brunswick",
+     "text": "BS - Wickham Street Stop 228 near Brunswick",
+     "stop": true
+    },
+    {
+     "raw": "Continue Wickham St",
+     "text": "Continue Wickham St"
+    },
+    {
+     "raw": "BS - Wickham St at Light Street, stop 7",
+     "text": "BS - Wickham St at Light Street, stop 7",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "safe to do so",
+     "text": "safe to do so"
+    },
+    {
+     "raw": "PM Boondal Rail run",
+     "text": "PM Boondal Rail run"
+    }
+   ]
+  }
+ ]
+}

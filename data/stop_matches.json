@@ -1,0 +1,7892 @@
+[
+ {
+  "run": "5PM-SPORTS-BUS-1",
+  "trip": "PM",
+  "seq": 5,
+  "time": null,
+  "text": "Bus Stop 15",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "5PM-SPORTS-BUS-1",
+  "trip": "PM",
+  "seq": 8,
+  "time": null,
+  "text": "Bus Stop - Aviation School",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "61000",
+    "name": "Boronia Rd at Aviation School",
+    "lat": -27.416378,
+    "lon": 153.104492,
+    "score": 1.0
+   },
+   {
+    "stop_id": "61002",
+    "name": "Boronia Rd at Aviation School",
+    "lat": -27.416041,
+    "lon": 153.104744,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "5PM-SPORTS-BUS-1",
+  "trip": "PM",
+  "seq": 10,
+  "time": null,
+  "text": "Bus Stop - Pinky’s",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "311613",
+    "name": "Casuarina Dr S near Taedi Ave",
+    "lat": -27.295757,
+    "lon": 152.966559,
+    "score": 0.5
+   },
+   {
+    "stop_id": "320934",
+    "name": "Kerkin Rd S at Vanes Street",
+    "lat": -27.828311,
+    "lon": 153.330605,
+    "score": 0.5
+   },
+   {
+    "stop_id": "320935",
+    "name": "Kerkin Rd S at Vanes Street",
+    "lat": -27.82751,
+    "lon": 153.33056,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "5PM-SPORTS-BUS-1",
+  "trip": "PM",
+  "seq": 20,
+  "time": null,
+  "text": "Bus Stop - Beatrice Tce",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2946",
+    "name": "Racecourse Rd at Beatrice Terrace, stop 22",
+    "lat": -27.433614,
+    "lon": 153.065147,
+    "score": 1.0
+   },
+   {
+    "stop_id": "1479",
+    "name": "Fletcher Pde near Beatrice St, stop 21",
+    "lat": -27.449673,
+    "lon": 152.984404,
+    "score": 0.5
+   },
+   {
+    "stop_id": "1753",
+    "name": "Morrow St near Beatrice St, stop 17/18",
+    "lat": -27.491985,
+    "lon": 152.982682,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "5PM-SPORTS-BUS-1",
+  "trip": "PM",
+  "seq": 22,
+  "time": null,
+  "text": "Bus Stop - Hamilton Central",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "5027",
+    "name": "Racecourse Rd at Hamilton Central, stop 20",
+    "lat": -27.438488,
+    "lon": 153.064378,
+    "score": 1.0
+   },
+   {
+    "stop_id": "5028",
+    "name": "Racecourse Rd at Hamilton Central, stop 20",
+    "lat": -27.437983,
+    "lon": 153.064585,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10031",
+    "name": "Hamilton Rd at Trouts Rd, stop 46",
+    "lat": -27.381274,
+    "lon": 153.001122,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "RAIL-BUS_2026-02-05-045510_tbtj",
+  "trip": "AM",
+  "seq": 10,
+  "time": null,
+  "text": "Bus Stop ‐ Boondal Station",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "1001",
+    "name": "Queen Street station, 1e",
+    "lat": -27.470552,
+    "lon": 153.024575,
+    "score": 0.5
+   },
+   {
+    "stop_id": "1002",
+    "name": "Queen Street station, 1f",
+    "lat": -27.470675,
+    "lon": 153.024755,
+    "score": 0.5
+   },
+   {
+    "stop_id": "1003",
+    "name": "Queen Street station, 1g",
+    "lat": -27.470652,
+    "lon": 153.024996,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:00",
+  "text": "Bus stop 13",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 3,
+  "time": "07:04",
+  "text": "Bus stop 10 - Paddington Central",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10180",
+    "name": "Latrobe Tce at Paddington Central, stop 10",
+    "lat": -27.459242,
+    "lon": 152.99807,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1338",
+    "name": "Latrobe Tce at Paddington Central, stop 10",
+    "lat": -27.459135,
+    "lon": 152.998149,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312095",
+    "name": "Herses Rd near Paddington Lane",
+    "lat": -27.69447,
+    "lon": 153.209898,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 5,
+  "time": "07:06",
+  "text": "Bus stop 8 - Old Paddo Post Office",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "827",
+    "name": "Given Tce at Old Paddo Post Office, stop 8",
+    "lat": -27.46047,
+    "lon": 153.002956,
+    "score": 1.1
+   },
+   {
+    "stop_id": "828",
+    "name": "Latrobe Tce at Old Paddo Post Office, stop 8",
+    "lat": -27.460241,
+    "lon": 153.002176,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 11,
+  "time": "07:15",
+  "text": "Bus stop 7 - St Joseph’s Gregory Terrace",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "320934",
+    "name": "Kerkin Rd S at Vanes Street",
+    "lat": -27.828311,
+    "lon": 153.330605,
+    "score": 0.4
+   },
+   {
+    "stop_id": "320935",
+    "name": "Kerkin Rd S at Vanes Street",
+    "lat": -27.82751,
+    "lon": 153.33056,
+    "score": 0.4
+   },
+   {
+    "stop_id": "311613",
+    "name": "Casuarina Dr S near Taedi Ave",
+    "lat": -27.295757,
+    "lon": 152.966559,
+    "score": 0.2
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 14,
+  "time": "07:25",
+  "text": "Bus stop - Northey St near Allom St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "478",
+    "name": "Northey St near Allom St, stop 12",
+    "lat": -27.442222,
+    "lon": 153.028237,
+    "score": 1.0
+   },
+   {
+    "stop_id": "480",
+    "name": "Northey St near Allom St",
+    "lat": -27.442329,
+    "lon": 153.028248,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 18,
+  "time": "07:28",
+  "text": "Bus Stop 17 - Kedron Brook Rd at Silvester St",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "445",
+    "name": "Kedron Brook Rd at Antill Street, stop 25/22",
+    "lat": -27.427749,
+    "lon": 153.018913,
+    "score": 0.8
+   },
+   {
+    "stop_id": "446",
+    "name": "Kedron Brook Rd at Antill Street, stop 22/25",
+    "lat": -27.427618,
+    "lon": 153.018793,
+    "score": 0.8
+   },
+   {
+    "stop_id": "448",
+    "name": "Kedron Brook Rd at Ada Street, stop 18",
+    "lat": -27.434956,
+    "lon": 153.022431,
+    "score": 0.8
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 20,
+  "time": "07:30",
+  "text": "Bus Stop 20 - Wilston Village",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "447",
+    "name": "Kedron Brook Rd at Wilston Village, stop 20",
+    "lat": -27.431816,
+    "lon": 153.019473,
+    "score": 1.1
+   },
+   {
+    "stop_id": "454",
+    "name": "Kedron Brook Rd at Wilston Village, stop 20",
+    "lat": -27.43268,
+    "lon": 153.019904,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10057",
+    "name": "Days Rd at Wilston Road, stop 1A",
+    "lat": -27.425459,
+    "lon": 153.011306,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 22,
+  "time": "07:35",
+  "text": "Bus Stop 24 - Days Rd at Eight Ave",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "10823",
+    "name": "Eight Mile Plains station, platform 2",
+    "lat": -27.578702,
+    "lon": 153.102071,
+    "score": 0.25
+   },
+   {
+    "stop_id": "10824",
+    "name": "Eight Mile Plains station, platform 1",
+    "lat": -27.578465,
+    "lon": 153.101772,
+    "score": 0.25
+   },
+   {
+    "stop_id": "11408",
+    "name": "Eight Mile Plains station, platform 2",
+    "lat": -27.578725,
+    "lon": 153.102083,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 24,
+  "time": "07:38",
+  "text": "Bus Stop 19 - Maygar St at McKensie St",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "441",
+    "name": "Maygar St at McKenzie Street, stop 19",
+    "lat": -27.426532,
+    "lon": 153.030607,
+    "score": 0.85
+   },
+   {
+    "stop_id": "10164",
+    "name": "Lutwyche Rd at Maygar Street, stop 17",
+    "lat": -27.427683,
+    "lon": 153.032368,
+    "score": 0.75
+   },
+   {
+    "stop_id": "424",
+    "name": "Maygar St at Anderson Street, stop 21",
+    "lat": -27.426833,
+    "lon": 153.027047,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 26,
+  "time": "07:40",
+  "text": "Bus Stop 20 - Lutwyche Shops",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10174",
+    "name": "Lutwyche Rd at Lutwyche, stop 20",
+    "lat": -27.421776,
+    "lon": 153.033784,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11214",
+    "name": "Lutwyche Rd at Lutwyche, stop 20",
+    "lat": -27.422054,
+    "lon": 153.034024,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10163",
+    "name": "Lutwyche Rd at Old Council Chambers, stop 16",
+    "lat": -27.429326,
+    "lon": 153.032396,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 27,
+  "time": "07:41",
+  "text": "BS Lutwyche Rd at Leckie Road, stop 25",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11012",
+    "name": "Lutwyche Rd at Leckie Road, stop 25",
+    "lat": -27.411962,
+    "lon": 153.033347,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11063",
+    "name": "Leckie Rd near Fifth Ave",
+    "lat": -27.41056,
+    "lon": 153.034066,
+    "score": 0.75
+   },
+   {
+    "stop_id": "11066",
+    "name": "Sadlier St near Leckie Rd",
+    "lat": -27.40709,
+    "lon": 153.034383,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 28,
+  "time": "07:42",
+  "text": "Bus Stop - Kedron North",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "11074",
+    "name": "Park Rd near Kedron Park Rd, stop 27",
+    "lat": -27.415898,
+    "lon": 153.039141,
+    "score": 0.5
+   },
+   {
+    "stop_id": "11075",
+    "name": "Park Rd near Kedron Park Rd, stop 27",
+    "lat": -27.416068,
+    "lon": 153.039124,
+    "score": 0.5
+   },
+   {
+    "stop_id": "11100",
+    "name": "Kedron Park Rd near Kent St, stop 26",
+    "lat": -27.417683,
+    "lon": 153.039522,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 34,
+  "time": "07:50",
+  "text": "Bus Stop 46 - Pfingst Rd near Gurley St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4138",
+    "name": "Pfingst Rd near Gurley St, stop 46",
+    "lat": -27.392816,
+    "lon": 153.041761,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "AM",
+  "seq": 39,
+  "time": "07:55",
+  "text": "Bus Stop Virginia State School",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3481",
+    "name": "Sandgate Rd at Virginia School, stop 21",
+    "lat": -27.383432,
+    "lon": 153.062084,
+    "score": 0.67
+   },
+   {
+    "stop_id": "3578",
+    "name": "Sandgate Rd at Virginia School, stop 21/20",
+    "lat": -27.383311,
+    "lon": 153.062376,
+    "score": 0.67
+   },
+   {
+    "stop_id": "2766",
+    "name": "Lindsay St at Virginia Avenue, stop 23",
+    "lat": -27.461446,
+    "lon": 153.055893,
+    "score": 0.33
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 10,
+  "time": null,
+  "text": "Bus Stop - Kedron North",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "11074",
+    "name": "Park Rd near Kedron Park Rd, stop 27",
+    "lat": -27.415898,
+    "lon": 153.039141,
+    "score": 0.5
+   },
+   {
+    "stop_id": "11075",
+    "name": "Park Rd near Kedron Park Rd, stop 27",
+    "lat": -27.416068,
+    "lon": 153.039124,
+    "score": 0.5
+   },
+   {
+    "stop_id": "11100",
+    "name": "Kedron Park Rd near Kent St, stop 26",
+    "lat": -27.417683,
+    "lon": 153.039522,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 12,
+  "time": null,
+  "text": "Bus stop 20 - Lutwyche Shops",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10174",
+    "name": "Lutwyche Rd at Lutwyche, stop 20",
+    "lat": -27.421776,
+    "lon": 153.033784,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11214",
+    "name": "Lutwyche Rd at Lutwyche, stop 20",
+    "lat": -27.422054,
+    "lon": 153.034024,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10163",
+    "name": "Lutwyche Rd at Old Council Chambers, stop 16",
+    "lat": -27.429326,
+    "lon": 153.032396,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 15,
+  "time": null,
+  "text": "Bus Stop 24 - Days Rd at Eight Ave",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "10823",
+    "name": "Eight Mile Plains station, platform 2",
+    "lat": -27.578702,
+    "lon": 153.102071,
+    "score": 0.25
+   },
+   {
+    "stop_id": "10824",
+    "name": "Eight Mile Plains station, platform 1",
+    "lat": -27.578465,
+    "lon": 153.101772,
+    "score": 0.25
+   },
+   {
+    "stop_id": "11408",
+    "name": "Eight Mile Plains station, platform 2",
+    "lat": -27.578725,
+    "lon": 153.102083,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 17,
+  "time": null,
+  "text": "Bus stop 19 - Wilston Village",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "447",
+    "name": "Kedron Brook Rd at Wilston Village, stop 20",
+    "lat": -27.431816,
+    "lon": 153.019473,
+    "score": 1.0
+   },
+   {
+    "stop_id": "454",
+    "name": "Kedron Brook Rd at Wilston Village, stop 20",
+    "lat": -27.43268,
+    "lon": 153.019904,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10057",
+    "name": "Days Rd at Wilston Road, stop 1A",
+    "lat": -27.425459,
+    "lon": 153.011306,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 25,
+  "time": null,
+  "text": "Bus stop 7 - St Joseph’s Gregory Terrace",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "320934",
+    "name": "Kerkin Rd S at Vanes Street",
+    "lat": -27.828311,
+    "lon": 153.330605,
+    "score": 0.4
+   },
+   {
+    "stop_id": "320935",
+    "name": "Kerkin Rd S at Vanes Street",
+    "lat": -27.82751,
+    "lon": 153.33056,
+    "score": 0.4
+   },
+   {
+    "stop_id": "311613",
+    "name": "Casuarina Dr S near Taedi Ave",
+    "lat": -27.295757,
+    "lon": 152.966559,
+    "score": 0.2
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 31,
+  "time": null,
+  "text": "Bus stop 5 - Given Tce at Paddington",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "816",
+    "name": "Given Tce at Paddington, stop 5",
+    "lat": -27.462282,
+    "lon": 153.007691,
+    "score": 1.1
+   },
+   {
+    "stop_id": "817",
+    "name": "Given Tce at Paddington, stop 5",
+    "lat": -27.462263,
+    "lon": 153.00842,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10180",
+    "name": "Latrobe Tce at Paddington Central, stop 10",
+    "lat": -27.459242,
+    "lon": 152.99807,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 32,
+  "time": null,
+  "text": "Bus stop 8 - Old Paddo Post Office",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "827",
+    "name": "Given Tce at Old Paddo Post Office, stop 8",
+    "lat": -27.46047,
+    "lon": 153.002956,
+    "score": 1.1
+   },
+   {
+    "stop_id": "828",
+    "name": "Latrobe Tce at Old Paddo Post Office, stop 8",
+    "lat": -27.460241,
+    "lon": 153.002176,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 33,
+  "time": null,
+  "text": "Bus stop 10 - Paddington Central",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10180",
+    "name": "Latrobe Tce at Paddington Central, stop 10",
+    "lat": -27.459242,
+    "lon": 152.99807,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1338",
+    "name": "Latrobe Tce at Paddington Central, stop 10",
+    "lat": -27.459135,
+    "lon": 152.998149,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312095",
+    "name": "Herses Rd near Paddington Lane",
+    "lat": -27.69447,
+    "lon": 153.209898,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 34,
+  "time": null,
+  "text": "Bus stop 11 - Latrobe Tce at Trammies Cnr",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1337",
+    "name": "Latrobe Tce at Trammies Corner, stop 11",
+    "lat": -27.458323,
+    "lon": 152.995067,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1341",
+    "name": "Latrobe Tce at Trammies Corner, stop 11",
+    "lat": -27.458437,
+    "lon": 152.99495,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "RUN-6-PADDINGTON",
+  "trip": "PM",
+  "seq": 35,
+  "time": null,
+  "text": "Bus stop 13 - Latrobe Tce at Perrott St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1333",
+    "name": "Latrobe Tce at Perrott Street , stop 13",
+    "lat": -27.459696,
+    "lon": 152.990668,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1334",
+    "name": "Latrobe Tce at Perrott Street, stop 13",
+    "lat": -27.459658,
+    "lon": 152.990979,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 6,
+  "time": "07:03",
+  "text": "1st bus stop",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 15,
+  "time": "07:10",
+  "text": "Bus stop opposite IGA",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 18,
+  "time": "07:14",
+  "text": "Bus Stop Bunya Park",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "14094",
+    "name": "South Pine Rd at Bunya Park",
+    "lat": -27.33696,
+    "lon": 152.960583,
+    "score": 1.0
+   },
+   {
+    "stop_id": "14095",
+    "name": "South Pine Rd at Bunya Park",
+    "lat": -27.337369,
+    "lon": 152.960891,
+    "score": 1.0
+   },
+   {
+    "stop_id": "13124",
+    "name": "Bunya Rd at Blackwood",
+    "lat": -27.385878,
+    "lon": 152.951216,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 28,
+  "time": "07:30",
+  "text": "1st bus stop",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 31,
+  "time": "07:35",
+  "text": "1st Bus Stop Opposite School",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "10055",
+    "name": "Rosemary St at Inala School, stop 75",
+    "lat": -27.585864,
+    "lon": 152.975937,
+    "score": 0.5
+   },
+   {
+    "stop_id": "10096",
+    "name": "Tingal Rd at Wynnum North State School, stop 10/5",
+    "lat": -27.43434,
+    "lon": 153.166395,
+    "score": 0.5
+   },
+   {
+    "stop_id": "10098",
+    "name": "Tingal Rd at Wynnum North State School, stop 10/5",
+    "lat": -27.43482,
+    "lon": 153.166316,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 36,
+  "time": "07:40",
+  "text": "Bus Stop - opposite Aldi shops",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4941",
+    "name": "Orange Grove Rd at Aldi, stop 52",
+    "lat": -27.558136,
+    "lon": 153.040414,
+    "score": 1.0
+   },
+   {
+    "stop_id": "4984",
+    "name": "Orange Grove Rd at Aldi, stop 52",
+    "lat": -27.55828,
+    "lon": 153.04053,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 43,
+  "time": "07:46",
+  "text": "Bus Stop - prior Ridley Road",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10016",
+    "name": "Ridley Rd at Ridley Road South",
+    "lat": -27.352058,
+    "lon": 153.004353,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10017",
+    "name": "Ridley Rd at Ridley Road South",
+    "lat": -27.351409,
+    "lon": 153.004346,
+    "score": 1.0
+   },
+   {
+    "stop_id": "4067",
+    "name": "Ridley Rd near Centurion St",
+    "lat": -27.346311,
+    "lon": 153.005301,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 47,
+  "time": "07:49",
+  "text": "Bus Stop (Near Woolworths)",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "AM",
+  "seq": 49,
+  "time": "07:55",
+  "text": "Bus Stop (Carseldine Campus)",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "PM",
+  "seq": 4,
+  "time": null,
+  "text": "Bus stop opposite Woolworths",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "PM",
+  "seq": 19,
+  "time": null,
+  "text": "1st bus stop on left",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "PM",
+  "seq": 31,
+  "time": null,
+  "text": "Bus Stop 16A",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1360",
+    "name": "Simpsons Rd at Bardon, stop 16a",
+    "lat": -27.458414,
+    "lon": 152.98529,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3690",
+    "name": "Home St at Victoria Street, stop 16A",
+    "lat": -27.505287,
+    "lon": 153.024301,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3712",
+    "name": "Fairfield Rd at Victoria Street, stop 16a",
+    "lat": -27.505576,
+    "lon": 153.025421,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-1-Eatons-Hill",
+  "trip": "PM",
+  "seq": 37,
+  "time": null,
+  "text": "Bus Stop 16A near IGA",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "1360",
+    "name": "Simpsons Rd at Bardon, stop 16a",
+    "lat": -27.458414,
+    "lon": 152.98529,
+    "score": 0.5
+   },
+   {
+    "stop_id": "3690",
+    "name": "Home St at Victoria Street, stop 16A",
+    "lat": -27.505287,
+    "lon": 153.024301,
+    "score": 0.5
+   },
+   {
+    "stop_id": "3712",
+    "name": "Fairfield Rd at Victoria Street, stop 16a",
+    "lat": -27.505576,
+    "lon": 153.025421,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:15",
+  "text": "Bus Stop - Boardman Rd (opp. Fire Station)",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312443",
+    "name": "Boardman Rd at McGregor Street",
+    "lat": -27.222432,
+    "lon": 153.086386,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312444",
+    "name": "Boardman Rd at Susan Avenue",
+    "lat": -27.225262,
+    "lon": 153.085228,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312445",
+    "name": "Boardman Rd at Susan Avenue",
+    "lat": -27.224843,
+    "lon": 153.085157,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 2,
+  "time": "07:16",
+  "text": "Bus Stop (Marina Plaza Shops)",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 4,
+  "time": "07:17",
+  "text": "1st Bus Stop",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 10,
+  "time": null,
+  "text": "Bus Stop - Southern Cross School",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "302178",
+    "name": "Dame Patti Dr near Southern Cross Pde",
+    "lat": -26.415759,
+    "lon": 153.10591,
+    "score": 0.67
+   },
+   {
+    "stop_id": "310976",
+    "name": "Scarborough Rd at Southern Cross College",
+    "lat": -27.205128,
+    "lon": 153.109816,
+    "score": 0.67
+   },
+   {
+    "stop_id": "310977",
+    "name": "Scarborough Rd at Southern Cross College",
+    "lat": -27.206201,
+    "lon": 153.109786,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 11,
+  "time": "07:25",
+  "text": "Bus Stop - Griffith Road",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10835",
+    "name": "Griffith University Sports Rd",
+    "lat": -27.545954,
+    "lon": 153.064347,
+    "score": 1.0
+   },
+   {
+    "stop_id": "2133",
+    "name": "Griffith St near South Pine Rd, stop 18/4",
+    "lat": -27.407537,
+    "lon": 152.990376,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310970",
+    "name": "Scarborough Rd at Griffith Road",
+    "lat": -27.208445,
+    "lon": 153.109184,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 13,
+  "time": null,
+  "text": "Bus Stop - Maryborough Terrace",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "310974",
+    "name": "Scarborough Rd at Maryborough Terrace",
+    "lat": -27.211566,
+    "lon": 153.108599,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310975",
+    "name": "Scarborough Rd at Maryborough Terrace",
+    "lat": -27.211603,
+    "lon": 153.108761,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 21,
+  "time": "07:41",
+  "text": "Bus Stop (Pelican Park)",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 24,
+  "time": "07:45",
+  "text": "Bus Stop - Brighton Health Campus",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "310270",
+    "name": "Brisbane Rd at TAFE Queensland Ipswich campus",
+    "lat": -27.608155,
+    "lon": 152.811461,
+    "score": 0.33
+   },
+   {
+    "stop_id": "310276",
+    "name": "Byrne St at TAFE Queensland Ipswich campus",
+    "lat": -27.604955,
+    "lon": 152.812445,
+    "score": 0.33
+   },
+   {
+    "stop_id": "310277",
+    "name": "Byrne St at TAFE Queensland Ipswich campus",
+    "lat": -27.604689,
+    "lon": 152.812377,
+    "score": 0.33
+   }
+  ]
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "AM",
+  "seq": 31,
+  "time": "07:55",
+  "text": "Bus Stop Rail Station",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "5011",
+    "name": "Mitchelton Rail station",
+    "lat": -27.411489,
+    "lon": 152.976389,
+    "score": 1.0
+   },
+   {
+    "stop_id": "924",
+    "name": "Milton Rd at Milton Rail station, stop 5/6",
+    "lat": -27.468302,
+    "lon": 153.006537,
+    "score": 1.0
+   },
+   {
+    "stop_id": "2691",
+    "name": "Wynnum Rd at Morningside Rail, stop 25",
+    "lat": -27.470201,
+    "lon": 153.069358,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-10-Redcliffe",
+  "trip": "PM",
+  "seq": 11,
+  "time": null,
+  "text": "Bus Stop - Brighton Health Campus",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "310270",
+    "name": "Brisbane Rd at TAFE Queensland Ipswich campus",
+    "lat": -27.608155,
+    "lon": 152.811461,
+    "score": 0.33
+   },
+   {
+    "stop_id": "310276",
+    "name": "Byrne St at TAFE Queensland Ipswich campus",
+    "lat": -27.604955,
+    "lon": 152.812445,
+    "score": 0.33
+   },
+   {
+    "stop_id": "310277",
+    "name": "Byrne St at TAFE Queensland Ipswich campus",
+    "lat": -27.604689,
+    "lon": 152.812377,
+    "score": 0.33
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "AM",
+  "seq": 0,
+  "time": "06:50",
+  "text": "Bus Stop - Keystar Motors",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "AM",
+  "seq": 12,
+  "time": "07:00",
+  "text": "Bus Stop - Woodpecker Tavern",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "12000",
+    "name": "Sumners Rd at Sumner Tavern",
+    "lat": -27.561853,
+    "lon": 152.932185,
+    "score": 0.5
+   },
+   {
+    "stop_id": "12001",
+    "name": "Sumners Rd at Sumner Tavern",
+    "lat": -27.561658,
+    "lon": 152.931504,
+    "score": 0.5
+   },
+   {
+    "stop_id": "319213",
+    "name": "Dreamworld Parkway at Boathouse Tavern",
+    "lat": -27.872273,
+    "lon": 153.314194,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "AM",
+  "seq": 30,
+  "time": "07:35",
+  "text": "BS Gympie Rd at Pine Rivers High",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "311093",
+    "name": "Gympie Rd at Pine Rivers High School",
+    "lat": -27.29811,
+    "lon": 152.987221,
+    "score": 1.0
+   },
+   {
+    "stop_id": "311094",
+    "name": "Gympie Rd at Pine Rivers High School",
+    "lat": -27.298059,
+    "lon": 152.987478,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310647",
+    "name": "Gympie Rd at Pine Rivers Special School",
+    "lat": -27.282004,
+    "lon": 152.982648,
+    "score": 0.8
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "AM",
+  "seq": 32,
+  "time": "07:45",
+  "text": "BS Strathpine Rd at Adair St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "20040",
+    "name": "Strathpine Rd at Adair St",
+    "lat": -27.317107,
+    "lon": 153.006838,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3529",
+    "name": "Strathpine Rd at Adair Street",
+    "lat": -27.316726,
+    "lon": 153.005896,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "AM",
+  "seq": 39,
+  "time": "07:53",
+  "text": "BS Norris Rd at Greenore St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3169",
+    "name": "Norris Rd at Greenore Street",
+    "lat": -27.31667,
+    "lon": 153.027995,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3170",
+    "name": "Norris Rd at Greenore Street, stop 45",
+    "lat": -27.317229,
+    "lon": 153.027746,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "AM",
+  "seq": 43,
+  "time": "07:55",
+  "text": "BS St Joseph's Primary",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "320287",
+    "name": "Kerkin Rd South at St Joseph's College",
+    "lat": -27.831777,
+    "lon": 153.332031,
+    "score": 0.67
+   },
+   {
+    "stop_id": "320311",
+    "name": "Kerkin Rd South at St Joseph's College",
+    "lat": -27.83117,
+    "lon": 153.331825,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "AM",
+  "seq": 47,
+  "time": "07:57",
+  "text": "BS Denham St at Warra, stop 31",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3182",
+    "name": "Denham St at Warra, stop 31",
+    "lat": -27.330398,
+    "lon": 153.04186,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3183",
+    "name": "Denham St at Warra",
+    "lat": -27.330774,
+    "lon": 153.041638,
+    "score": 1.0
+   },
+   {
+    "stop_id": "6167",
+    "name": "Tingal Rd at Warra Street, stop 11",
+    "lat": -27.433081,
+    "lon": 153.165887,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "PM",
+  "seq": 6,
+  "time": null,
+  "text": "BS Denham St at Warra",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3182",
+    "name": "Denham St at Warra, stop 31",
+    "lat": -27.330398,
+    "lon": 153.04186,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3183",
+    "name": "Denham St at Warra",
+    "lat": -27.330774,
+    "lon": 153.041638,
+    "score": 1.0
+   },
+   {
+    "stop_id": "6167",
+    "name": "Tingal Rd at Warra Street, stop 11",
+    "lat": -27.433081,
+    "lon": 153.165887,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "PM",
+  "seq": 9,
+  "time": null,
+  "text": "BS St Joseph's Primary",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "320287",
+    "name": "Kerkin Rd South at St Joseph's College",
+    "lat": -27.831777,
+    "lon": 153.332031,
+    "score": 0.67
+   },
+   {
+    "stop_id": "320311",
+    "name": "Kerkin Rd South at St Joseph's College",
+    "lat": -27.83117,
+    "lon": 153.331825,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "PM",
+  "seq": 14,
+  "time": null,
+  "text": "BS Norris Rd near Barbour Rd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1033",
+    "name": "Norris Rd near Barbour Rd",
+    "lat": -27.322908,
+    "lon": 153.026691,
+    "score": 1.0
+   },
+   {
+    "stop_id": "1034",
+    "name": "Norris Rd near Barbour Rd",
+    "lat": -27.32333,
+    "lon": 153.026694,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10671",
+    "name": "Norris Rd near Barbour Rd, stop 46",
+    "lat": -27.32434,
+    "lon": 153.026394,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "PM",
+  "seq": 15,
+  "time": null,
+  "text": "BS Norris Rd at North Point",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "1033",
+    "name": "Norris Rd near Barbour Rd",
+    "lat": -27.322908,
+    "lon": 153.026691,
+    "score": 0.5
+   },
+   {
+    "stop_id": "1034",
+    "name": "Norris Rd near Barbour Rd",
+    "lat": -27.32333,
+    "lon": 153.026694,
+    "score": 0.5
+   },
+   {
+    "stop_id": "10572",
+    "name": "Norris Rd at Bracken Ridge Plaza",
+    "lat": -27.329694,
+    "lon": 153.025461,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "PM",
+  "seq": 16,
+  "time": null,
+  "text": "BS Norris Rd at Greenore Street, stop 45",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3170",
+    "name": "Norris Rd at Greenore Street, stop 45",
+    "lat": -27.317229,
+    "lon": 153.027746,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3169",
+    "name": "Norris Rd at Greenore Street",
+    "lat": -27.31667,
+    "lon": 153.027995,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "PM",
+  "seq": 20,
+  "time": null,
+  "text": "BS Gympie Rd at Pine Rivers High",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "311093",
+    "name": "Gympie Rd at Pine Rivers High School",
+    "lat": -27.29811,
+    "lon": 152.987221,
+    "score": 1.0
+   },
+   {
+    "stop_id": "311094",
+    "name": "Gympie Rd at Pine Rivers High School",
+    "lat": -27.298059,
+    "lon": 152.987478,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310647",
+    "name": "Gympie Rd at Pine Rivers Special School",
+    "lat": -27.282004,
+    "lon": 152.982648,
+    "score": 0.8
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "PM",
+  "seq": 37,
+  "time": null,
+  "text": "Bus Stop - Woodpecker Tavern",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "12000",
+    "name": "Sumners Rd at Sumner Tavern",
+    "lat": -27.561853,
+    "lon": 152.932185,
+    "score": 0.5
+   },
+   {
+    "stop_id": "12001",
+    "name": "Sumners Rd at Sumner Tavern",
+    "lat": -27.561658,
+    "lon": 152.931504,
+    "score": 0.5
+   },
+   {
+    "stop_id": "319213",
+    "name": "Dreamworld Parkway at Boathouse Tavern",
+    "lat": -27.872273,
+    "lon": 153.314194,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-11-Morayfield",
+  "trip": "PM",
+  "seq": 47,
+  "time": null,
+  "text": "BS Morayfield Rd at Oakey Flat Road",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "310777",
+    "name": "Morayfield Rd at Oakey Flat Road",
+    "lat": -27.110657,
+    "lon": 152.950285,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310778",
+    "name": "Morayfield Rd at Oakey Flat Road",
+    "lat": -27.111354,
+    "lon": 152.950361,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312714",
+    "name": "Oakey Flat Rd near Pioneer Rd",
+    "lat": -27.191843,
+    "lon": 152.943473,
+    "score": 0.8
+   }
+  ]
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:18",
+  "text": "BS Osborne Rd near Northmore St, stop 52",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2095",
+    "name": "Osborne Rd near Northmore St, stop 52",
+    "lat": -27.406244,
+    "lon": 152.978292,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2096",
+    "name": "Osborne Rd near Northmore St, stop 52",
+    "lat": -27.406339,
+    "lon": 152.978132,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10107",
+    "name": "Osborne Rd at Osborne North, stop 51",
+    "lat": -27.402675,
+    "lon": 152.979186,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "AM",
+  "seq": 8,
+  "time": "07:27",
+  "text": "BS Trouts Rd at Flockton St, stop 43",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2146",
+    "name": "Trouts Rd at Flockton Street, stop 43",
+    "lat": -27.394944,
+    "lon": 152.998702,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2164",
+    "name": "Trouts Rd at Flockton St, stop 43",
+    "lat": -27.394991,
+    "lon": 152.998836,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "AM",
+  "seq": 13,
+  "time": null,
+  "text": "BS - McDowell State School",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "10096",
+    "name": "Tingal Rd at Wynnum North State School, stop 10/5",
+    "lat": -27.43434,
+    "lon": 153.166395,
+    "score": 0.67
+   },
+   {
+    "stop_id": "10098",
+    "name": "Tingal Rd at Wynnum North State School, stop 10/5",
+    "lat": -27.43482,
+    "lon": 153.166316,
+    "score": 0.67
+   },
+   {
+    "stop_id": "11105",
+    "name": "Lutwyche Rd at Wooloowin State School, stop 22",
+    "lat": -27.416809,
+    "lon": 153.036587,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "AM",
+  "seq": 16,
+  "time": "07:38",
+  "text": "Bus Stop Casuarina St",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "14064",
+    "name": "Beckett Rd at Casuarina",
+    "lat": -27.365298,
+    "lon": 152.991686,
+    "score": 0.5
+   },
+   {
+    "stop_id": "14065",
+    "name": "Beckett Rd at Casuarina",
+    "lat": -27.364047,
+    "lon": 152.991605,
+    "score": 0.5
+   },
+   {
+    "stop_id": "300808",
+    "name": "Casuarina Dr at Ottelia Drive",
+    "lat": -28.135478,
+    "lon": 153.442264,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "AM",
+  "seq": 18,
+  "time": "07:43",
+  "text": "BS Albany Creek Rd at Aspley Bowl",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10198",
+    "name": "Albany Creek Rd at Aspley Bowl",
+    "lat": -27.362708,
+    "lon": 153.008572,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10199",
+    "name": "Albany Creek Rd at Aspley Bowl",
+    "lat": -27.362408,
+    "lon": 153.008554,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "AM",
+  "seq": 26,
+  "time": "07:50",
+  "text": "BS Kirby Rd at Kirby South, stop 45",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3408",
+    "name": "Kirby Rd at Kirby South, stop 45",
+    "lat": -27.372353,
+    "lon": 153.025172,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3409",
+    "name": "Kirby Rd at Kirby South, stop 45",
+    "lat": -27.372063,
+    "lon": 153.025084,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10472",
+    "name": "Kirby Rd near Zillmere Rd, stop 52a",
+    "lat": -27.35828,
+    "lon": 153.02771,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "PM",
+  "seq": 17,
+  "time": null,
+  "text": "Bus Stop",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "PM",
+  "seq": 23,
+  "time": null,
+  "text": "BS Trouts Rd at Flockton St, stop 43",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2146",
+    "name": "Trouts Rd at Flockton Street, stop 43",
+    "lat": -27.394944,
+    "lon": 152.998702,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2164",
+    "name": "Trouts Rd at Flockton St, stop 43",
+    "lat": -27.394991,
+    "lon": 152.998836,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-12-Everton-Park",
+  "trip": "PM",
+  "seq": 34,
+  "time": null,
+  "text": "BS Osborne Rd near Northmore St, stop 52",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2095",
+    "name": "Osborne Rd near Northmore St, stop 52",
+    "lat": -27.406244,
+    "lon": 152.978292,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2096",
+    "name": "Osborne Rd near Northmore St, stop 52",
+    "lat": -27.406339,
+    "lon": 152.978132,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10107",
+    "name": "Osborne Rd at Osborne North, stop 51",
+    "lat": -27.402675,
+    "lon": 152.979186,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:23",
+  "text": "BS Buckland Rd near Bage Street, stop 37",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4214",
+    "name": "Buckland Rd near Bage Street, stop 37",
+    "lat": -27.403319,
+    "lon": 153.059165,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 2,
+  "time": "07:25",
+  "text": "BS Buckland Rd at Imbros Street, stop 35",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4205",
+    "name": "Buckland Rd at Imbros Street, stop 35/36",
+    "lat": -27.401979,
+    "lon": 153.050439,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4206",
+    "name": "Buckland Rd at Imbros Street, stop 35",
+    "lat": -27.402162,
+    "lon": 153.051012,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 6,
+  "time": "07:27",
+  "text": "BS Shaw Rd near Cressey Rd, stop 37",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4164",
+    "name": "Shaw Rd near Cressey Rd, stop 37",
+    "lat": -27.40118,
+    "lon": 153.048054,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 12,
+  "time": "07:30",
+  "text": "BS Pfingst Rd near White St, stop 44",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4152",
+    "name": "Pfingst Rd near White St, stop 44",
+    "lat": -27.39739,
+    "lon": 153.041046,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2130",
+    "name": "South Pine Rd at White Street, stop 38",
+    "lat": -27.404291,
+    "lon": 152.988622,
+    "score": 0.75
+   },
+   {
+    "stop_id": "2131",
+    "name": "South Pine Rd at White Street, stop 38",
+    "lat": -27.404562,
+    "lon": 152.988523,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 18,
+  "time": "07:36",
+  "text": "BS Turner Rd at East Street, stop 46",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3922",
+    "name": "Turner Rd at East Street, stop 46",
+    "lat": -27.400184,
+    "lon": 153.026594,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3923",
+    "name": "Turner Rd at East Street, stop 46",
+    "lat": -27.400115,
+    "lon": 153.02673,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3918",
+    "name": "Turner Rd at Hinkler Street, stop 44",
+    "lat": -27.403953,
+    "lon": 153.025985,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 20,
+  "time": "07:38",
+  "text": "BS Strathmore St near Goodall St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3924",
+    "name": "Strathmore St near Goodall St",
+    "lat": -27.403439,
+    "lon": 153.02816,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 23,
+  "time": "07:46",
+  "text": "BS Sadlier St near Leckie Rd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11066",
+    "name": "Sadlier St near Leckie Rd",
+    "lat": -27.40709,
+    "lon": 153.034383,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11067",
+    "name": "Leckie Rd near Sadlier St",
+    "lat": -27.407151,
+    "lon": 153.034651,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11070",
+    "name": "Gympie Rd at Sadlier Street",
+    "lat": -27.407418,
+    "lon": 153.032671,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 25,
+  "time": "07:48",
+  "text": "BS Leckie Rd near Eleventh Ave",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11069",
+    "name": "Leckie Rd near Eleventh Ave",
+    "lat": -27.404951,
+    "lon": 153.034923,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 27,
+  "time": "07:50",
+  "text": "BS Wavell State High School",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "3486",
+    "name": "Hamilton Rd at Wavell Heights North",
+    "lat": -27.391072,
+    "lon": 153.0531,
+    "score": 0.25
+   },
+   {
+    "stop_id": "4177",
+    "name": "Hamilton Rd at Wavell Heights North near Bilsen Rd",
+    "lat": -27.390858,
+    "lon": 153.051797,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 28,
+  "time": "07:52",
+  "text": "BS Edinburgh Castle Rd at Zeehan St, stop 42",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4159",
+    "name": "Edinburgh Castle Rd at Zeehan Street, stop 42",
+    "lat": -27.399294,
+    "lon": 153.043904,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4160",
+    "name": "Edinburgh Castle Rd at Zeehan Street, stop 42",
+    "lat": -27.399476,
+    "lon": 153.04378,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "AM",
+  "seq": 29,
+  "time": "07:54",
+  "text": "BS Edinburgh Castle Rd at Deloraine St, stop 41",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4161",
+    "name": "Edinburgh Castle Rd at Deloraine Street, stop 41",
+    "lat": -27.398651,
+    "lon": 153.045775,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4162",
+    "name": "Edinburgh Castle Rd at Deloraine Street, stop 41",
+    "lat": -27.398711,
+    "lon": 153.045995,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4124",
+    "name": "Rode Rd near Deloraine St, stop 37A",
+    "lat": -27.395705,
+    "lon": 153.046706,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "PM",
+  "seq": 5,
+  "time": null,
+  "text": "BS Edinburgh Castle Rd at Deloraine St, stop 41",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4161",
+    "name": "Edinburgh Castle Rd at Deloraine Street, stop 41",
+    "lat": -27.398651,
+    "lon": 153.045775,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4162",
+    "name": "Edinburgh Castle Rd at Deloraine Street, stop 41",
+    "lat": -27.398711,
+    "lon": 153.045995,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4124",
+    "name": "Rode Rd near Deloraine St, stop 37A",
+    "lat": -27.395705,
+    "lon": 153.046706,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "PM",
+  "seq": 6,
+  "time": null,
+  "text": "BS Edinburgh Castle Rd at Zeehan St, stop 42",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4159",
+    "name": "Edinburgh Castle Rd at Zeehan Street, stop 42",
+    "lat": -27.399294,
+    "lon": 153.043904,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4160",
+    "name": "Edinburgh Castle Rd at Zeehan Street, stop 42",
+    "lat": -27.399476,
+    "lon": 153.04378,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "PM",
+  "seq": 11,
+  "time": null,
+  "text": "BS Turner Rd at East Street, stop 46",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3922",
+    "name": "Turner Rd at East Street, stop 46",
+    "lat": -27.400184,
+    "lon": 153.026594,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3923",
+    "name": "Turner Rd at East Street, stop 46",
+    "lat": -27.400115,
+    "lon": 153.02673,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3918",
+    "name": "Turner Rd at Hinkler Street, stop 44",
+    "lat": -27.403953,
+    "lon": 153.025985,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "PM",
+  "seq": 13,
+  "time": null,
+  "text": "BS Strathmore St near Goodall St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3924",
+    "name": "Strathmore St near Goodall St",
+    "lat": -27.403439,
+    "lon": 153.02816,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "PM",
+  "seq": 16,
+  "time": null,
+  "text": "BS Sadlier St near Leckie Rd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11066",
+    "name": "Sadlier St near Leckie Rd",
+    "lat": -27.40709,
+    "lon": 153.034383,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11067",
+    "name": "Leckie Rd near Sadlier St",
+    "lat": -27.407151,
+    "lon": 153.034651,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11070",
+    "name": "Gympie Rd at Sadlier Street",
+    "lat": -27.407418,
+    "lon": 153.032671,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "PM",
+  "seq": 18,
+  "time": null,
+  "text": "BS Leckie Rd near Eleventh Ave",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11069",
+    "name": "Leckie Rd near Eleventh Ave",
+    "lat": -27.404951,
+    "lon": 153.034923,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-13-Wavell-Heights",
+  "trip": "PM",
+  "seq": 26,
+  "time": null,
+  "text": "BS Buckland Rd at Nundah State School, stop 38A",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4213",
+    "name": "Buckland Rd at Nundah State School, stop 38A",
+    "lat": -27.403054,
+    "lon": 153.057972,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10527",
+    "name": "Logan Rd at Mt Gravatt Showgrounds, stop 38A",
+    "lat": -27.544392,
+    "lon": 153.081786,
+    "score": 0.33
+   },
+   {
+    "stop_id": "3935",
+    "name": "Gympie Rd at The Gardens Stop 38a",
+    "lat": -27.383362,
+    "lon": 153.02997,
+    "score": 0.33
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:02",
+  "text": "BS Skyring Tce near Cunningham St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10752",
+    "name": "Skyring Tce near Cunningham St",
+    "lat": -27.449985,
+    "lon": 153.043539,
+    "score": 1.0
+   },
+   {
+    "stop_id": "20524",
+    "name": "Skyring Tce near Cunningham St",
+    "lat": -27.45,
+    "lon": 153.044363,
+    "score": 1.0
+   },
+   {
+    "stop_id": "12112",
+    "name": "Commercial Rd near Skyring Tce",
+    "lat": -27.453038,
+    "lon": 153.047801,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 2,
+  "time": "07:03",
+  "text": "BS Teneriffe Ferry Skyring Tce",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "5029",
+    "name": "Teneriffe Ferry Skyring Tce",
+    "lat": -27.452182,
+    "lon": 153.048048,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10752",
+    "name": "Skyring Tce near Cunningham St",
+    "lat": -27.449985,
+    "lon": 153.043539,
+    "score": 0.5
+   },
+   {
+    "stop_id": "12112",
+    "name": "Commercial Rd near Skyring Tce",
+    "lat": -27.453038,
+    "lon": 153.047801,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 4,
+  "time": "07:05",
+  "text": "BS Macquarie St at Mercantile Place, stop 14",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "706",
+    "name": "Macquarie St at Mercantile Place, stop 14",
+    "lat": -27.458773,
+    "lon": 153.049978,
+    "score": 1.1
+   },
+   {
+    "stop_id": "707",
+    "name": "Macquarie St at Mercantile Place, stop 14",
+    "lat": -27.45778,
+    "lon": 153.050108,
+    "score": 1.1
+   },
+   {
+    "stop_id": "315771",
+    "name": "Mercantile Ct at Kinetic Depot hail 'n' ride",
+    "lat": -27.965993,
+    "lon": 153.370979,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 6,
+  "time": "07:07",
+  "text": "BS Merthyr Rd at Hawthorne Street, stop 13",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10330",
+    "name": "Merthyr Rd at Hawthorne Street, stop 13",
+    "lat": -27.463393,
+    "lon": 153.049733,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10332",
+    "name": "Merthyr Rd at Hawthorne Street, stop 13",
+    "lat": -27.46333,
+    "lon": 153.049984,
+    "score": 1.1
+   },
+   {
+    "stop_id": "5008",
+    "name": "Merthyr Rd at Mark Street, stop 13",
+    "lat": -27.468649,
+    "lon": 153.044582,
+    "score": 0.85
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 10,
+  "time": "07:11",
+  "text": "BS Oxlade Dr at Merthyr, stop 1",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4998",
+    "name": "Oxlade Dr at Merthyr, stop 1",
+    "lat": -27.474088,
+    "lon": 153.043179,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4505",
+    "name": "Oxlade Dr at Riverside, stop 25",
+    "lat": -27.473317,
+    "lon": 153.048911,
+    "score": 0.67
+   },
+   {
+    "stop_id": "4506",
+    "name": "Oxlade Dr at Lower Bowen Terrace, stop 19",
+    "lat": -27.472715,
+    "lon": 153.049403,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 12,
+  "time": "07:13",
+  "text": "BS Oxlade Dr at Lower Bowen Terrace, stop 19",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4506",
+    "name": "Oxlade Dr at Lower Bowen Terrace, stop 19",
+    "lat": -27.472715,
+    "lon": 153.049403,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4507",
+    "name": "Oxlade Dr near Brunswick St, stop 19",
+    "lat": -27.47152,
+    "lon": 153.050732,
+    "score": 0.5
+   },
+   {
+    "stop_id": "4505",
+    "name": "Oxlade Dr at Riverside, stop 25",
+    "lat": -27.473317,
+    "lon": 153.048911,
+    "score": 0.4
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 14,
+  "time": "07:18",
+  "text": "BS Brunswick St at Robertson Street, stop 5",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "738",
+    "name": "Brunswick St at Robertson Street, stop 5",
+    "lat": -27.460544,
+    "lon": 153.037533,
+    "score": 1.1
+   },
+   {
+    "stop_id": "739",
+    "name": "Brunswick St at Robertson Street, stop 5",
+    "lat": -27.459743,
+    "lon": 153.036726,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312898",
+    "name": "Robertson Rd near France St",
+    "lat": -27.628267,
+    "lon": 152.77729,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 18,
+  "time": "07:23",
+  "text": "BS Wickham Street Stop 228 near Brunswick",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "228",
+    "name": "Wickham Street Stop 228 near Brunswick",
+    "lat": -27.45714,
+    "lon": 153.033874,
+    "score": 1.1
+   },
+   {
+    "stop_id": "202",
+    "name": "Brunswick Street Stop 202 near Wickham St",
+    "lat": -27.457263,
+    "lon": 153.033586,
+    "score": 1.0
+   },
+   {
+    "stop_id": "1021",
+    "name": "Wickham St at Light Street, stop 7",
+    "lat": -27.452271,
+    "lon": 153.038857,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 20,
+  "time": "07:26",
+  "text": "BS Wickham St at Light Street, stop 7",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1021",
+    "name": "Wickham St at Light Street, stop 7",
+    "lat": -27.452271,
+    "lon": 153.038857,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312496",
+    "name": "Bass St at Light Street",
+    "lat": -27.618914,
+    "lon": 152.728343,
+    "score": 0.75
+   },
+   {
+    "stop_id": "312508",
+    "name": "Light St at Bass Street",
+    "lat": -27.618164,
+    "lon": 152.727226,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 23,
+  "time": "07:30",
+  "text": "BS Kingsford Smith Dr at Cooksley St, stop 13/14",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "5043",
+    "name": "Kingsford Smith Dr at Cooksley Street, stop 14",
+    "lat": -27.44002,
+    "lon": 153.049944,
+    "score": 1.1
+   },
+   {
+    "stop_id": "5045",
+    "name": "Kingsford Smith Dr at Cooksley Street, stop 13/14",
+    "lat": -27.439717,
+    "lon": 153.049971,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 26,
+  "time": "07:33",
+  "text": "BS Racecourse Rd at Kent Street, stop 21",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2945",
+    "name": "Racecourse Rd at Kent Street, stop 21",
+    "lat": -27.435692,
+    "lon": 153.064949,
+    "score": 1.1
+   },
+   {
+    "stop_id": "5025",
+    "name": "Racecourse Rd at Kent Street, stop 21",
+    "lat": -27.436446,
+    "lon": 153.064718,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2944",
+    "name": "Racecourse Rd at Beatrice Street, stop 22",
+    "lat": -27.432872,
+    "lon": 153.065388,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 28,
+  "time": "07:35",
+  "text": "BS Racecourse Rd at Beatrice Tce, stop 22",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2946",
+    "name": "Racecourse Rd at Beatrice Terrace, stop 22",
+    "lat": -27.433614,
+    "lon": 153.065147,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2944",
+    "name": "Racecourse Rd at Beatrice Street, stop 22",
+    "lat": -27.432872,
+    "lon": 153.065388,
+    "score": 0.85
+   },
+   {
+    "stop_id": "1479",
+    "name": "Fletcher Pde near Beatrice St, stop 21",
+    "lat": -27.449673,
+    "lon": 152.984404,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 32,
+  "time": "07:42",
+  "text": "BS Zillman Rd at Hendra Rail, stop 32/8 (Pinky's)",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3644",
+    "name": "Zillman Rd at Hendra Rail, stop 32/8",
+    "lat": -27.422206,
+    "lon": 153.063429,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3645",
+    "name": "Zillman Rd at Hendra Rail, stop 32/8",
+    "lat": -27.422217,
+    "lon": 153.06355,
+    "score": 1.1
+   },
+   {
+    "stop_id": "600432",
+    "name": "Hendra station, platform 1",
+    "lat": -27.421971,
+    "lon": 153.062443,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 34,
+  "time": "07:43",
+  "text": "BS Zillman Rd at Union Street, stop 35/6",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2967",
+    "name": "Zillman Rd at Union Street, stop 35/6",
+    "lat": -27.418582,
+    "lon": 153.064038,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2968",
+    "name": "Zillman Rd at Union Street, stop 35/6",
+    "lat": -27.418952,
+    "lon": 153.0641,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4226",
+    "name": "Buckland Rd at Union Street, stop 2",
+    "lat": -27.403674,
+    "lon": 153.062607,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 36,
+  "time": "07:45",
+  "text": "BS Gellibrand St near Zillman Rd, stop 36/4",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11153",
+    "name": "Gellibrand St near Zillman Rd, stop 36/4",
+    "lat": -27.415505,
+    "lon": 153.063614,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2966",
+    "name": "Gellibrand St near Zillman Rd, stop 36/4",
+    "lat": -27.415696,
+    "lon": 153.064252,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 38,
+  "time": "07:47",
+  "text": "BS Widdop St at Eliza Street, stop 37/43",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11151",
+    "name": "Widdop St at Eliza Street, stop 37/43",
+    "lat": -27.414608,
+    "lon": 153.062867,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11152",
+    "name": "Widdop St at Eliza Street, stop 37/43",
+    "lat": -27.414631,
+    "lon": 153.06274,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11147",
+    "name": "Widdop St at Walkers Way, stop 39/45",
+    "lat": -27.40968,
+    "lon": 153.063538,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 39,
+  "time": "07:50",
+  "text": "BS Melton Rd near New Ivo St, stop 12",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4291",
+    "name": "Melton Rd near New Ivo St, stop 12",
+    "lat": -27.397229,
+    "lon": 153.066305,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4292",
+    "name": "Melton Rd near New Ivo St, stop 12",
+    "lat": -27.397042,
+    "lon": 153.066669,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "AM",
+  "seq": 40,
+  "time": "07:51",
+  "text": "BS Melton Rd near Allworth St, stop 15",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4297",
+    "name": "Melton Rd near Allworth St, stop 15",
+    "lat": -27.393501,
+    "lon": 153.071101,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4298",
+    "name": "Melton Rd near Allworth St, stop 15",
+    "lat": -27.393739,
+    "lon": 153.07093,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 5,
+  "time": null,
+  "text": "BS Melton Road near Allworth St, stop 15",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4297",
+    "name": "Melton Rd near Allworth St, stop 15",
+    "lat": -27.393501,
+    "lon": 153.071101,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4298",
+    "name": "Melton Rd near Allworth St, stop 15",
+    "lat": -27.393739,
+    "lon": 153.07093,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 10,
+  "time": null,
+  "text": "BS Zillman Road at Hendra 32/8 - Pinky's",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3644",
+    "name": "Zillman Rd at Hendra Rail, stop 32/8",
+    "lat": -27.422206,
+    "lon": 153.063429,
+    "score": 0.85
+   },
+   {
+    "stop_id": "3645",
+    "name": "Zillman Rd at Hendra Rail, stop 32/8",
+    "lat": -27.422217,
+    "lon": 153.06355,
+    "score": 0.85
+   },
+   {
+    "stop_id": "600432",
+    "name": "Hendra station, platform 1",
+    "lat": -27.421971,
+    "lon": 153.062443,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 22,
+  "time": null,
+  "text": "BS - Teneriffe Ferry Skyring Tce",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "5029",
+    "name": "Teneriffe Ferry Skyring Tce",
+    "lat": -27.452182,
+    "lon": 153.048048,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10752",
+    "name": "Skyring Tce near Cunningham St",
+    "lat": -27.449985,
+    "lon": 153.043539,
+    "score": 0.5
+   },
+   {
+    "stop_id": "12112",
+    "name": "Commercial Rd near Skyring Tce",
+    "lat": -27.453038,
+    "lon": 153.047801,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 24,
+  "time": null,
+  "text": "BS - Skyring Tce near Cunningham St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10752",
+    "name": "Skyring Tce near Cunningham St",
+    "lat": -27.449985,
+    "lon": 153.043539,
+    "score": 1.0
+   },
+   {
+    "stop_id": "20524",
+    "name": "Skyring Tce near Cunningham St",
+    "lat": -27.45,
+    "lon": 153.044363,
+    "score": 1.0
+   },
+   {
+    "stop_id": "12112",
+    "name": "Commercial Rd near Skyring Tce",
+    "lat": -27.453038,
+    "lon": 153.047801,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 26,
+  "time": null,
+  "text": "BS - Teneriffe Ferry Skyring Tce",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "5029",
+    "name": "Teneriffe Ferry Skyring Tce",
+    "lat": -27.452182,
+    "lon": 153.048048,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10752",
+    "name": "Skyring Tce near Cunningham St",
+    "lat": -27.449985,
+    "lon": 153.043539,
+    "score": 0.5
+   },
+   {
+    "stop_id": "12112",
+    "name": "Commercial Rd near Skyring Tce",
+    "lat": -27.453038,
+    "lon": 153.047801,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 28,
+  "time": null,
+  "text": "BS - Macquarie St at Mercantile Place, stop 14",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "706",
+    "name": "Macquarie St at Mercantile Place, stop 14",
+    "lat": -27.458773,
+    "lon": 153.049978,
+    "score": 1.1
+   },
+   {
+    "stop_id": "707",
+    "name": "Macquarie St at Mercantile Place, stop 14",
+    "lat": -27.45778,
+    "lon": 153.050108,
+    "score": 1.1
+   },
+   {
+    "stop_id": "315771",
+    "name": "Mercantile Ct at Kinetic Depot hail 'n' ride",
+    "lat": -27.965993,
+    "lon": 153.370979,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 31,
+  "time": null,
+  "text": "BS - Merthyr Rd at Hawthorne Street, stop 13",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10330",
+    "name": "Merthyr Rd at Hawthorne Street, stop 13",
+    "lat": -27.463393,
+    "lon": 153.049733,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10332",
+    "name": "Merthyr Rd at Hawthorne Street, stop 13",
+    "lat": -27.46333,
+    "lon": 153.049984,
+    "score": 1.1
+   },
+   {
+    "stop_id": "5008",
+    "name": "Merthyr Rd at Mark Street, stop 13",
+    "lat": -27.468649,
+    "lon": 153.044582,
+    "score": 0.85
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 35,
+  "time": null,
+  "text": "BS - Oxlade Dr at Merthyr, stop 1",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4998",
+    "name": "Oxlade Dr at Merthyr, stop 1",
+    "lat": -27.474088,
+    "lon": 153.043179,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4505",
+    "name": "Oxlade Dr at Riverside, stop 25",
+    "lat": -27.473317,
+    "lon": 153.048911,
+    "score": 0.67
+   },
+   {
+    "stop_id": "4506",
+    "name": "Oxlade Dr at Lower Bowen Terrace, stop 19",
+    "lat": -27.472715,
+    "lon": 153.049403,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 37,
+  "time": null,
+  "text": "BS - Oxlade Dr at Lower Bowen Terrace, stop 19",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4506",
+    "name": "Oxlade Dr at Lower Bowen Terrace, stop 19",
+    "lat": -27.472715,
+    "lon": 153.049403,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4507",
+    "name": "Oxlade Dr near Brunswick St, stop 19",
+    "lat": -27.47152,
+    "lon": 153.050732,
+    "score": 0.5
+   },
+   {
+    "stop_id": "4505",
+    "name": "Oxlade Dr at Riverside, stop 25",
+    "lat": -27.473317,
+    "lon": 153.048911,
+    "score": 0.4
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 39,
+  "time": null,
+  "text": "BS - Brunswick St at Robertson Street, stop 5",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "738",
+    "name": "Brunswick St at Robertson Street, stop 5",
+    "lat": -27.460544,
+    "lon": 153.037533,
+    "score": 1.1
+   },
+   {
+    "stop_id": "739",
+    "name": "Brunswick St at Robertson Street, stop 5",
+    "lat": -27.459743,
+    "lon": 153.036726,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312898",
+    "name": "Robertson Rd near France St",
+    "lat": -27.628267,
+    "lon": 152.77729,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 43,
+  "time": null,
+  "text": "BS - Wickham Street Stop 228 near Brunswick",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "228",
+    "name": "Wickham Street Stop 228 near Brunswick",
+    "lat": -27.45714,
+    "lon": 153.033874,
+    "score": 1.1
+   },
+   {
+    "stop_id": "202",
+    "name": "Brunswick Street Stop 202 near Wickham St",
+    "lat": -27.457263,
+    "lon": 153.033586,
+    "score": 1.0
+   },
+   {
+    "stop_id": "1021",
+    "name": "Wickham St at Light Street, stop 7",
+    "lat": -27.452271,
+    "lon": 153.038857,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-14-New-Farm-new-T1_2026",
+  "trip": "PM",
+  "seq": 45,
+  "time": null,
+  "text": "BS - Wickham St at Light Street, stop 7",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1021",
+    "name": "Wickham St at Light Street, stop 7",
+    "lat": -27.452271,
+    "lon": 153.038857,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312496",
+    "name": "Bass St at Light Street",
+    "lat": -27.618914,
+    "lon": 152.728343,
+    "score": 0.75
+   },
+   {
+    "stop_id": "312508",
+    "name": "Light St at Bass Street",
+    "lat": -27.618164,
+    "lon": 152.727226,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:05",
+  "text": "BS Park Rd at Gorman Street, stop 28",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11076",
+    "name": "Park Rd at Gorman Street, stop 28",
+    "lat": -27.415114,
+    "lon": 153.040282,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11077",
+    "name": "Park Rd at Gorman Street, stop 28",
+    "lat": -27.415033,
+    "lon": 153.040904,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 1,
+  "time": "07:07",
+  "text": "BS Park Rd at Rose Street, stop 29",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11078",
+    "name": "Park Rd at Rose Street, stop 29",
+    "lat": -27.414241,
+    "lon": 153.041899,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11079",
+    "name": "Park Rd at Rose Street, stop 29",
+    "lat": -27.413824,
+    "lon": 153.041929,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11080",
+    "name": "Kent Rd near Rose St, stop 30",
+    "lat": -27.413379,
+    "lon": 153.043078,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 4,
+  "time": "07:08",
+  "text": "BS Kent Rd near Judge St, stop 32",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11084",
+    "name": "Kent Rd near Judge St, stop 32",
+    "lat": -27.410525,
+    "lon": 153.043621,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11085",
+    "name": "Kent Rd near Judge St, stop 32",
+    "lat": -27.410308,
+    "lon": 153.043785,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 6,
+  "time": "07:09",
+  "text": "BS Lodge Rd near Roseleigh St, stop 33",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "11088",
+    "name": "Lodge Rd at Clark Street, stop 34",
+    "lat": -27.410016,
+    "lon": 153.046354,
+    "score": 0.75
+   },
+   {
+    "stop_id": "11089",
+    "name": "Lodge Rd at Clark Street, stop 34",
+    "lat": -27.410127,
+    "lon": 153.046362,
+    "score": 0.75
+   },
+   {
+    "stop_id": "11122",
+    "name": "Park Ave near Lodge Rd, stop 29",
+    "lat": -27.410964,
+    "lon": 153.051275,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 10,
+  "time": "07:13",
+  "text": "BS Morrison Rd near Norman Pde, stop 27",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11113",
+    "name": "Norman Pde at Morrison Road, stop 27",
+    "lat": -27.416284,
+    "lon": 153.050667,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11114",
+    "name": "Morrison Rd near Norman Pde, stop 27",
+    "lat": -27.416099,
+    "lon": 153.051317,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 13,
+  "time": "07:15",
+  "text": "BS Bonney Ave at Bayview Terrace, stop 25",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11110",
+    "name": "Bonney Ave at Bayview Terrace, stop 25",
+    "lat": -27.418028,
+    "lon": 153.047834,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11111",
+    "name": "Bonney Ave at Bayview Terrace, stop 25",
+    "lat": -27.419161,
+    "lon": 153.047514,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11109",
+    "name": "Bonney Ave at Adamson Street, stop 26",
+    "lat": -27.416474,
+    "lon": 153.047978,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 15,
+  "time": "07:16",
+  "text": "BS Bonney Ave near Sandgate Rd, stop 21",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11186",
+    "name": "Bonney Ave near Sandgate Rd, stop 21",
+    "lat": -27.427398,
+    "lon": 153.046244,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11187",
+    "name": "Bonney Ave near Sandgate Rd, stop 21",
+    "lat": -27.427371,
+    "lon": 153.046125,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11109",
+    "name": "Bonney Ave at Adamson Street, stop 26",
+    "lat": -27.416474,
+    "lon": 153.047978,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 17,
+  "time": "07:20",
+  "text": "BS Sandgate Rd at Camden Street, stop 20",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11190",
+    "name": "Sandgate Rd at Camden Street, stop 20",
+    "lat": -27.428547,
+    "lon": 153.043778,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11191",
+    "name": "Sandgate Rd at Camden Street, stop 20",
+    "lat": -27.428868,
+    "lon": 153.043143,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 20,
+  "time": "07:23",
+  "text": "BS Crosby Rd near Dover St, stop 18",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11196",
+    "name": "Crosby Rd near Dover St, stop 18",
+    "lat": -27.432107,
+    "lon": 153.043711,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2681",
+    "name": "Balmoral St at Dover Street, stop 22",
+    "lat": -27.47092,
+    "lon": 153.062404,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 22,
+  "time": "07:24",
+  "text": "BS Crosby Rd at Comus Avenue, stop 20",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3610",
+    "name": "Crosby Rd at Comus Avenue, stop 20",
+    "lat": -27.432882,
+    "lon": 153.048549,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3613",
+    "name": "Crosby Rd at Comus Avenue, stop 20",
+    "lat": -27.432784,
+    "lon": 153.04878,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 24,
+  "time": "07:26",
+  "text": "BS Crosby Rd at Hipwood Street, stop 22",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3611",
+    "name": "Crosby Rd at Hipwood Street, stop 22",
+    "lat": -27.434012,
+    "lon": 153.054304,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3615",
+    "name": "Crosby Rd at Hipwood Street, stop 22",
+    "lat": -27.433858,
+    "lon": 153.054449,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 28,
+  "time": "07:31",
+  "text": "BS Lancaster Rd at Ormond Street, stop 26",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3647",
+    "name": "Lancaster Rd at Ormond Street, stop 26",
+    "lat": -27.430377,
+    "lon": 153.059171,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3648",
+    "name": "Lancaster Rd at Ormond Street, stop 26",
+    "lat": -27.430334,
+    "lon": 153.059774,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 30,
+  "time": "07:32",
+  "text": "BS Lancaster Rd at Kitchener Road, stop 25",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3646",
+    "name": "Lancaster Rd at Kitchener Road, stop 25",
+    "lat": -27.430706,
+    "lon": 153.061606,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3649",
+    "name": "Lancaster Rd at Kitchener Road, stop 25",
+    "lat": -27.43061,
+    "lon": 153.061839,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10900",
+    "name": "Gympie Rd near Kitchener Road",
+    "lat": -27.399715,
+    "lon": 153.031758,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 34,
+  "time": "07:36",
+  "text": "BS Sandgate Rd at Clayfield South, stop 23",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3651",
+    "name": "Sandgate Rd at Clayfield South, stop 23",
+    "lat": -27.426831,
+    "lon": 153.05054,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3654",
+    "name": "Sandgate Rd at Clayfield South, stop 23",
+    "lat": -27.425939,
+    "lon": 153.050551,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11167",
+    "name": "Sandgate Rd at Clayfield, stop 27",
+    "lat": -27.418546,
+    "lon": 153.055285,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 36,
+  "time": "07:37",
+  "text": "BS Sandgate Rd at Adelaide Street, stop 25",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3657",
+    "name": "Sandgate Rd at Adelaide Street, stop 25",
+    "lat": -27.421894,
+    "lon": 153.05171,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3658",
+    "name": "Sandgate Rd at Adelaide Street, stop 25",
+    "lat": -27.422084,
+    "lon": 153.051733,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312391",
+    "name": "Adelaide St near Queens Rd",
+    "lat": -27.652131,
+    "lon": 153.12327,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 39,
+  "time": "07:45",
+  "text": "BS Rode Rd near Kinmond Ave, stop 41",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4197",
+    "name": "Rode Rd near Kinmond Ave, stop 41",
+    "lat": -27.397381,
+    "lon": 153.055399,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 42,
+  "time": "07:46",
+  "text": "BS Rode Rd near Sugarloaf St, stop 42/43",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4199",
+    "name": "Rode Rd near Sugarloaf St, stop 42/43",
+    "lat": -27.396993,
+    "lon": 153.05293,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 46,
+  "time": "07:50",
+  "text": "BS Rode Rd near Bayview Tce, stop 42/43",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4198",
+    "name": "Rode Rd near Bayview Tce, stop 42/43",
+    "lat": -27.397053,
+    "lon": 153.054291,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4178",
+    "name": "Hamilton Rd at Nundah North near Bayview Tce",
+    "lat": -27.391672,
+    "lon": 153.055981,
+    "score": 0.75
+   },
+   {
+    "stop_id": "10567",
+    "name": "North Rd at Bayview, stop 63",
+    "lat": -27.291523,
+    "lon": 153.061743,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 49,
+  "time": "07:52",
+  "text": "BS Sandgate Rd at Nundah North, stop 7/6",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4180",
+    "name": "Sandgate Rd at Nundah North, stop 7/6",
+    "lat": -27.391534,
+    "lon": 153.059095,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4183",
+    "name": "Sandgate Rd at Nundah North, stop 6",
+    "lat": -27.391878,
+    "lon": 153.059358,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10013",
+    "name": "Sandgate Rd at Nundah, stop 3",
+    "lat": -27.398972,
+    "lon": 153.059158,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "AM",
+  "seq": 51,
+  "time": "07:53",
+  "text": "BS Sandgate Rd at Virginia School, stop 21",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3481",
+    "name": "Sandgate Rd at Virginia School, stop 21",
+    "lat": -27.383432,
+    "lon": 153.062084,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3578",
+    "name": "Sandgate Rd at Virginia School, stop 21/20",
+    "lat": -27.383311,
+    "lon": 153.062376,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3328",
+    "name": "Sandgate Rd at Virginia",
+    "lat": -27.369756,
+    "lon": 153.061911,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 3,
+  "time": null,
+  "text": "BS Sandgate Rd at Virginia School, stop 21",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3481",
+    "name": "Sandgate Rd at Virginia School, stop 21",
+    "lat": -27.383432,
+    "lon": 153.062084,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3578",
+    "name": "Sandgate Rd at Virginia School, stop 21/20",
+    "lat": -27.383311,
+    "lon": 153.062376,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3328",
+    "name": "Sandgate Rd at Virginia",
+    "lat": -27.369756,
+    "lon": 153.061911,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 5,
+  "time": null,
+  "text": "BS Sandgate Rd at Royal Street, stop 19a",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3579",
+    "name": "Sandgate Rd at Royal Street, stop 19a",
+    "lat": -27.38567,
+    "lon": 153.061199,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10426",
+    "name": "Cornwall St at Rialto Street, stop 19a",
+    "lat": -27.503623,
+    "lon": 153.050916,
+    "score": 0.4
+   },
+   {
+    "stop_id": "2454",
+    "name": "Cornwall St at Rialto Street, stop 19a",
+    "lat": -27.503307,
+    "lon": 153.049777,
+    "score": 0.4
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 7,
+  "time": null,
+  "text": "BS Sandgate Rd at Nundah North, stop 6",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4180",
+    "name": "Sandgate Rd at Nundah North, stop 7/6",
+    "lat": -27.391534,
+    "lon": 153.059095,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4183",
+    "name": "Sandgate Rd at Nundah North, stop 6",
+    "lat": -27.391878,
+    "lon": 153.059358,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10013",
+    "name": "Sandgate Rd at Nundah, stop 3",
+    "lat": -27.398972,
+    "lon": 153.059158,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 11,
+  "time": null,
+  "text": "BS Rode Rd near Kinmond Ave, stop 41",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4197",
+    "name": "Rode Rd near Kinmond Ave, stop 41",
+    "lat": -27.397381,
+    "lon": 153.055399,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 13,
+  "time": null,
+  "text": "BS Rode Rd near Sugarloaf St, stop 42/43",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4199",
+    "name": "Rode Rd near Sugarloaf St, stop 42/43",
+    "lat": -27.396993,
+    "lon": 153.05293,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 17,
+  "time": null,
+  "text": "BS Rode Rd near Bayview Tce, stop 42/43",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4198",
+    "name": "Rode Rd near Bayview Tce, stop 42/43",
+    "lat": -27.397053,
+    "lon": 153.054291,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4178",
+    "name": "Hamilton Rd at Nundah North near Bayview Tce",
+    "lat": -27.391672,
+    "lon": 153.055981,
+    "score": 0.75
+   },
+   {
+    "stop_id": "10567",
+    "name": "North Rd at Bayview, stop 63",
+    "lat": -27.291523,
+    "lon": 153.061743,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 21,
+  "time": null,
+  "text": "BS Sandgate Rd at Clayfield South, stop 23",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3651",
+    "name": "Sandgate Rd at Clayfield South, stop 23",
+    "lat": -27.426831,
+    "lon": 153.05054,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3654",
+    "name": "Sandgate Rd at Clayfield South, stop 23",
+    "lat": -27.425939,
+    "lon": 153.050551,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11167",
+    "name": "Sandgate Rd at Clayfield, stop 27",
+    "lat": -27.418546,
+    "lon": 153.055285,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 22,
+  "time": null,
+  "text": "BS Sandgate Rd at Hutton Street, stop 21",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11188",
+    "name": "Sandgate Rd at Hutton Street, stop 21",
+    "lat": -27.428033,
+    "lon": 153.047026,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11189",
+    "name": "Sandgate Rd at Hutton Street, stop 21",
+    "lat": -27.428149,
+    "lon": 153.046863,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1829",
+    "name": "Swann Rd at Hutton Lane, stop 21",
+    "lat": -27.498274,
+    "lon": 152.993631,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 23,
+  "time": null,
+  "text": "BS Sandgate Rd at Camden Street, stop 20",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11190",
+    "name": "Sandgate Rd at Camden Street, stop 20",
+    "lat": -27.428547,
+    "lon": 153.043778,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11191",
+    "name": "Sandgate Rd at Camden Street, stop 20",
+    "lat": -27.428868,
+    "lon": 153.043143,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 26,
+  "time": null,
+  "text": "BS Crosby Rd near Dover St, stop 18",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11196",
+    "name": "Crosby Rd near Dover St, stop 18",
+    "lat": -27.432107,
+    "lon": 153.043711,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2681",
+    "name": "Balmoral St at Dover Street, stop 22",
+    "lat": -27.47092,
+    "lon": 153.062404,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 28,
+  "time": null,
+  "text": "BS Crosby Rd at Comus Avenue, stop 20",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3610",
+    "name": "Crosby Rd at Comus Avenue, stop 20",
+    "lat": -27.432882,
+    "lon": 153.048549,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3613",
+    "name": "Crosby Rd at Comus Avenue, stop 20",
+    "lat": -27.432784,
+    "lon": 153.04878,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 30,
+  "time": null,
+  "text": "BS Crosby Rd at Hipwood Street, stop 22",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3611",
+    "name": "Crosby Rd at Hipwood Street, stop 22",
+    "lat": -27.434012,
+    "lon": 153.054304,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3615",
+    "name": "Crosby Rd at Hipwood Street, stop 22",
+    "lat": -27.433858,
+    "lon": 153.054449,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 36,
+  "time": null,
+  "text": "BS Lancaster Rd at Ormond Street, stop 26",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3647",
+    "name": "Lancaster Rd at Ormond Street, stop 26",
+    "lat": -27.430377,
+    "lon": 153.059171,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3648",
+    "name": "Lancaster Rd at Ormond Street, stop 26",
+    "lat": -27.430334,
+    "lon": 153.059774,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 37,
+  "time": null,
+  "text": "BS Lancaster Rd at Kitchener Road, stop 25",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3646",
+    "name": "Lancaster Rd at Kitchener Road, stop 25",
+    "lat": -27.430706,
+    "lon": 153.061606,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3649",
+    "name": "Lancaster Rd at Kitchener Road, stop 25",
+    "lat": -27.43061,
+    "lon": 153.061839,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10900",
+    "name": "Gympie Rd near Kitchener Road",
+    "lat": -27.399715,
+    "lon": 153.031758,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 43,
+  "time": null,
+  "text": "BS Bonney Ave near Sandgate Rd, stop 21",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11186",
+    "name": "Bonney Ave near Sandgate Rd, stop 21",
+    "lat": -27.427398,
+    "lon": 153.046244,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11187",
+    "name": "Bonney Ave near Sandgate Rd, stop 21",
+    "lat": -27.427371,
+    "lon": 153.046125,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11109",
+    "name": "Bonney Ave at Adamson Street, stop 26",
+    "lat": -27.416474,
+    "lon": 153.047978,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 45,
+  "time": null,
+  "text": "BS Bonney Ave at Bayview Terrace, stop 25",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11110",
+    "name": "Bonney Ave at Bayview Terrace, stop 25",
+    "lat": -27.418028,
+    "lon": 153.047834,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11111",
+    "name": "Bonney Ave at Bayview Terrace, stop 25",
+    "lat": -27.419161,
+    "lon": 153.047514,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11109",
+    "name": "Bonney Ave at Adamson Street, stop 26",
+    "lat": -27.416474,
+    "lon": 153.047978,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 47,
+  "time": null,
+  "text": "BS Norman Pde at Morrison Road, stop 27",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11113",
+    "name": "Norman Pde at Morrison Road, stop 27",
+    "lat": -27.416284,
+    "lon": 153.050667,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11114",
+    "name": "Morrison Rd near Norman Pde, stop 27",
+    "lat": -27.416099,
+    "lon": 153.051317,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 53,
+  "time": null,
+  "text": "BS Lodge Rd near Roseleigh St, stop 33",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "11088",
+    "name": "Lodge Rd at Clark Street, stop 34",
+    "lat": -27.410016,
+    "lon": 153.046354,
+    "score": 0.75
+   },
+   {
+    "stop_id": "11089",
+    "name": "Lodge Rd at Clark Street, stop 34",
+    "lat": -27.410127,
+    "lon": 153.046362,
+    "score": 0.75
+   },
+   {
+    "stop_id": "11122",
+    "name": "Park Ave near Lodge Rd, stop 29",
+    "lat": -27.410964,
+    "lon": 153.051275,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 55,
+  "time": null,
+  "text": "BS Kent Rd near Judge St, stop 32",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11084",
+    "name": "Kent Rd near Judge St, stop 32",
+    "lat": -27.410525,
+    "lon": 153.043621,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11085",
+    "name": "Kent Rd near Judge St, stop 32",
+    "lat": -27.410308,
+    "lon": 153.043785,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 59,
+  "time": null,
+  "text": "BS Park Rd at Rose Street, stop 29",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11078",
+    "name": "Park Rd at Rose Street, stop 29",
+    "lat": -27.414241,
+    "lon": 153.041899,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11079",
+    "name": "Park Rd at Rose Street, stop 29",
+    "lat": -27.413824,
+    "lon": 153.041929,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11080",
+    "name": "Kent Rd near Rose St, stop 30",
+    "lat": -27.413379,
+    "lon": 153.043078,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-15-Wooloowin",
+  "trip": "PM",
+  "seq": 60,
+  "time": null,
+  "text": "BS Park Rd at Gorman Street, stop 28",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11076",
+    "name": "Park Rd at Gorman Street, stop 28",
+    "lat": -27.415114,
+    "lon": 153.040282,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11077",
+    "name": "Park Rd at Gorman Street, stop 28",
+    "lat": -27.415033,
+    "lon": 153.040904,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:30",
+  "text": "BS Wynnum Rd at Waldo St, stop 20",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2700",
+    "name": "Wynnum Rd at Waldo Street, stop 20",
+    "lat": -27.473486,
+    "lon": 153.057394,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2710",
+    "name": "Wynnum Rd at Waldo Street, stop 20",
+    "lat": -27.473119,
+    "lon": 153.057506,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "AM",
+  "seq": 3,
+  "time": "07:32",
+  "text": "BS Hawthorne Rd at Lourdes Hill, stop 21a",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2712",
+    "name": "Hawthorne Rd at Lourdes Hill, stop 21a",
+    "lat": -27.469645,
+    "lon": 153.058978,
+    "score": 1.0
+   },
+   {
+    "stop_id": "6468",
+    "name": "Hawthorne Rd at Lourdes Hill, stop 21a",
+    "lat": -27.469377,
+    "lon": 153.05917,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3561",
+    "name": "College Way near Lourdes Pl",
+    "lat": -27.356874,
+    "lon": 153.073175,
+    "score": 0.2
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "AM",
+  "seq": 4,
+  "time": "07:33",
+  "text": "BS Hawthorne Rd at Forbes St, stop 21b",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2713",
+    "name": "Hawthorne Rd at Forbes Street, stop 21b",
+    "lat": -27.466944,
+    "lon": 153.059408,
+    "score": 1.0
+   },
+   {
+    "stop_id": "6481",
+    "name": "Hawthorne Rd at Forbes Street, stop 21b",
+    "lat": -27.466398,
+    "lon": 153.059651,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "AM",
+  "seq": 6,
+  "time": "07:34",
+  "text": "BS Lytton Rd at Nuttall St, stop 40",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2827",
+    "name": "Lytton Rd at Nuttall Street, stop 40",
+    "lat": -27.451146,
+    "lon": 153.063601,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2828",
+    "name": "Lytton Rd at Nuttall Street, stop 40",
+    "lat": -27.450857,
+    "lon": 153.063759,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "AM",
+  "seq": 8,
+  "time": "07:36",
+  "text": "BS Lytton Rd at Taylor St, stop 35",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2829",
+    "name": "Lytton Rd at Taylor Street, stop 35",
+    "lat": -27.450456,
+    "lon": 153.070014,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2833",
+    "name": "Lytton Rd at Taylor Street, stop 35",
+    "lat": -27.45021,
+    "lon": 153.068464,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4151",
+    "name": "Pfingst Rd near Taylor St, stop 44",
+    "lat": -27.397213,
+    "lon": 153.040955,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "AM",
+  "seq": 18,
+  "time": "07:43",
+  "text": "BS Grenade St near Barrack Rd, stop 59",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2877",
+    "name": "Grenade St near Barrack Rd, stop 59",
+    "lat": -27.463523,
+    "lon": 153.089352,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2878",
+    "name": "Grenade St near Barrack Rd, stop 59",
+    "lat": -27.463607,
+    "lon": 153.089173,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2879",
+    "name": "Barrack Rd near Bombery St, stop 60",
+    "lat": -27.466679,
+    "lon": 153.089242,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "PM",
+  "seq": 11,
+  "time": null,
+  "text": "BS Grenade St near Barrack Rd, stop 59",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2877",
+    "name": "Grenade St near Barrack Rd, stop 59",
+    "lat": -27.463523,
+    "lon": 153.089352,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2878",
+    "name": "Grenade St near Barrack Rd, stop 59",
+    "lat": -27.463607,
+    "lon": 153.089173,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2879",
+    "name": "Barrack Rd near Bombery St, stop 60",
+    "lat": -27.466679,
+    "lon": 153.089242,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "PM",
+  "seq": 21,
+  "time": null,
+  "text": "BS Lytton Rd at Taylor Street, stop 35",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2829",
+    "name": "Lytton Rd at Taylor Street, stop 35",
+    "lat": -27.450456,
+    "lon": 153.070014,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2833",
+    "name": "Lytton Rd at Taylor Street, stop 35",
+    "lat": -27.45021,
+    "lon": 153.068464,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4151",
+    "name": "Pfingst Rd near Taylor St, stop 44",
+    "lat": -27.397213,
+    "lon": 153.040955,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "PM",
+  "seq": 22,
+  "time": null,
+  "text": "BS Lytton Rd at Nuttall Street, stop 40",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2827",
+    "name": "Lytton Rd at Nuttall Street, stop 40",
+    "lat": -27.451146,
+    "lon": 153.063601,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2828",
+    "name": "Lytton Rd at Nuttall Street, stop 40",
+    "lat": -27.450857,
+    "lon": 153.063759,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "PM",
+  "seq": 24,
+  "time": null,
+  "text": "BS Hawthorne Rd at Forbes Street, stop 21b",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2713",
+    "name": "Hawthorne Rd at Forbes Street, stop 21b",
+    "lat": -27.466944,
+    "lon": 153.059408,
+    "score": 1.0
+   },
+   {
+    "stop_id": "6481",
+    "name": "Hawthorne Rd at Forbes Street, stop 21b",
+    "lat": -27.466398,
+    "lon": 153.059651,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "PM",
+  "seq": 25,
+  "time": null,
+  "text": "BS Hawthorne Rd at Lourdes Hill, stop 21a",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2712",
+    "name": "Hawthorne Rd at Lourdes Hill, stop 21a",
+    "lat": -27.469645,
+    "lon": 153.058978,
+    "score": 1.0
+   },
+   {
+    "stop_id": "6468",
+    "name": "Hawthorne Rd at Lourdes Hill, stop 21a",
+    "lat": -27.469377,
+    "lon": 153.05917,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3561",
+    "name": "College Way near Lourdes Pl",
+    "lat": -27.356874,
+    "lon": 153.073175,
+    "score": 0.2
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "PM",
+  "seq": 26,
+  "time": null,
+  "text": "BS Hawthorne Rd at Cawmore Street, stop 21",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2685",
+    "name": "Hawthorne Rd at Cawmore Street, stop 21",
+    "lat": -27.471876,
+    "lon": 153.059121,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2711",
+    "name": "Hawthorne Rd at Cawmore Street, stop 21",
+    "lat": -27.472059,
+    "lon": 153.059043,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2a-Bulimba",
+  "trip": "PM",
+  "seq": 28,
+  "time": null,
+  "text": "BS Wynnum Rd at Waldo St, stop 20",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2700",
+    "name": "Wynnum Rd at Waldo Street, stop 20",
+    "lat": -27.473486,
+    "lon": 153.057394,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2710",
+    "name": "Wynnum Rd at Waldo Street, stop 20",
+    "lat": -27.473119,
+    "lon": 153.057506,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:30",
+  "text": "BS Kingsford Smith Dr at Theodore St, stop 33",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2918",
+    "name": "Kingsford Smith Dr at Theodore St, stop 33",
+    "lat": -27.433818,
+    "lon": 153.080192,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2923",
+    "name": "Kingsford Smith Dr at Theodore St, stop 33",
+    "lat": -27.434168,
+    "lon": 153.080151,
+    "score": 1.1
+   },
+   {
+    "stop_id": "200308",
+    "name": "Theodore St at MacArthur Av",
+    "lat": -27.441254,
+    "lon": 153.077137,
+    "score": 0.4
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 2,
+  "time": "07:30",
+  "text": "BS Nudgee Rd near Dobson St, stop 30",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2919",
+    "name": "Nudgee Rd near Dobson St, stop 30",
+    "lat": -27.434679,
+    "lon": 153.071164,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 5,
+  "time": "07:32",
+  "text": "BS Nudgee Rd at Lilley St, stop 34",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1030",
+    "name": "Nudgee Rd at Lilley Street, stop 34",
+    "lat": -27.425245,
+    "lon": 153.072665,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1031",
+    "name": "Nudgee Rd near Lilley St, stop 34",
+    "lat": -27.425026,
+    "lon": 153.072864,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 9,
+  "time": "07:36",
+  "text": "BS Golden Sq at Bulli Street, stop 47",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2926",
+    "name": "Golden Sq at Bulli Street, stop 47",
+    "lat": -27.418326,
+    "lon": 153.07425,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 11,
+  "time": "07:37",
+  "text": "BS Pleystowe Cr near Nudgee Rd, stop 46",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2928",
+    "name": "Pleystowe Cr near Nudgee Rd, stop 46",
+    "lat": -27.420306,
+    "lon": 153.073732,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 16,
+  "time": "07:43",
+  "text": "BS Amelia St near York St, stop 8",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4282",
+    "name": "Amelia St near York St, stop 8",
+    "lat": -27.402562,
+    "lon": 153.070196,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4283",
+    "name": "Amelia St near York St, stop 8",
+    "lat": -27.402608,
+    "lon": 153.070312,
+    "score": 1.1
+   },
+   {
+    "stop_id": "301423",
+    "name": "Reserve Rd near Amelia St",
+    "lat": -27.892079,
+    "lon": 153.283107,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 20,
+  "time": "07:50",
+  "text": "BS Nudgee Rd at Armada Place",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11235",
+    "name": "Nudgee Rd at Armada Pl",
+    "lat": -27.384242,
+    "lon": 153.089499,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11236",
+    "name": "Nudgee Rd at Armada Pl",
+    "lat": -27.385218,
+    "lon": 153.088832,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 22,
+  "time": "07:53",
+  "text": "BS St Vincents Rd at Childs Rd, stop 38",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3501",
+    "name": "Saint Vincents Rd at Childs Road, stop 38",
+    "lat": -27.366806,
+    "lon": 153.089972,
+    "score": 0.9
+   },
+   {
+    "stop_id": "3502",
+    "name": "Saint Vincents Rd at Childs Road, stop 38",
+    "lat": -27.366051,
+    "lon": 153.090845,
+    "score": 0.9
+   },
+   {
+    "stop_id": "3500",
+    "name": "Childs Rd at Parkland, stop 32/38",
+    "lat": -27.371896,
+    "lon": 153.094486,
+    "score": 0.7
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 25,
+  "time": "07:54",
+  "text": "BS St Vincents Rd at Hilltop, stop 34",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3511",
+    "name": "Saint Vincents Rd at Hilltop, stop 34",
+    "lat": -27.371864,
+    "lon": 153.082468,
+    "score": 0.85
+   },
+   {
+    "stop_id": "3512",
+    "name": "Saint Vincents Rd at Hilltop, stop 34",
+    "lat": -27.371717,
+    "lon": 153.082452,
+    "score": 0.85
+   },
+   {
+    "stop_id": "3901",
+    "name": "Hilltop Ave near Rainey St, stop 34b",
+    "lat": -27.392097,
+    "lon": 153.024971,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 29,
+  "time": "07:56",
+  "text": "BS Earnshaw Rd at Earnshaw State College",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "10446",
+    "name": "Tufnell Rd at Earnshaw Road, stop 27",
+    "lat": -27.379112,
+    "lon": 153.080867,
+    "score": 0.6
+   },
+   {
+    "stop_id": "10516",
+    "name": "Tufnell Rd at Earnshaw Road, stop 27",
+    "lat": -27.379178,
+    "lon": 153.080746,
+    "score": 0.6
+   },
+   {
+    "stop_id": "3515",
+    "name": "Red Hill Rd near Earnshaw Rd, stop 33a",
+    "lat": -27.376275,
+    "lon": 153.08586,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 33,
+  "time": "07:57",
+  "text": "BS Tufnell Rd near St Vincents Rd, stop 31a",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3556",
+    "name": "Tufnell Rd near St Vincents Rd, stop 31a",
+    "lat": -27.375813,
+    "lon": 153.078099,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3557",
+    "name": "Tufnell Rd near St Vincents Rd, stop 31a",
+    "lat": -27.375855,
+    "lon": 153.077958,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3004",
+    "name": "Ekibin Rd at Rigby Street, stop 31a",
+    "lat": -27.517335,
+    "lon": 153.038105,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "AM",
+  "seq": 38,
+  "time": "07:59",
+  "text": "BS St Vincents Rd at Blinzinger Rd, stop 27",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3568",
+    "name": "Saint Vincents Rd at Blinzinger Road, stop 27",
+    "lat": -27.379074,
+    "lon": 153.071774,
+    "score": 0.9
+   },
+   {
+    "stop_id": "3575",
+    "name": "Saint Vincents Rd at Blinzinger Road, stop 27",
+    "lat": -27.379403,
+    "lon": 153.071047,
+    "score": 0.9
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 5,
+  "time": null,
+  "text": "BS St Vincents Rd at Blinzinger Road, stop 27",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3568",
+    "name": "Saint Vincents Rd at Blinzinger Road, stop 27",
+    "lat": -27.379074,
+    "lon": 153.071774,
+    "score": 0.9
+   },
+   {
+    "stop_id": "3575",
+    "name": "Saint Vincents Rd at Blinzinger Road, stop 27",
+    "lat": -27.379403,
+    "lon": 153.071047,
+    "score": 0.9
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 9,
+  "time": null,
+  "text": "BS Tufnell Rd near St Vincents Rd, stop 31a",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3556",
+    "name": "Tufnell Rd near St Vincents Rd, stop 31a",
+    "lat": -27.375813,
+    "lon": 153.078099,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3557",
+    "name": "Tufnell Rd near St Vincents Rd, stop 31a",
+    "lat": -27.375855,
+    "lon": 153.077958,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3004",
+    "name": "Ekibin Rd at Rigby Street, stop 31a",
+    "lat": -27.517335,
+    "lon": 153.038105,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 11,
+  "time": null,
+  "text": "BS Tufnell Rd at Earnshaw Road, stop 27",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10446",
+    "name": "Tufnell Rd at Earnshaw Road, stop 27",
+    "lat": -27.379112,
+    "lon": 153.080867,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10516",
+    "name": "Tufnell Rd at Earnshaw Road, stop 27",
+    "lat": -27.379178,
+    "lon": 153.080746,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3515",
+    "name": "Red Hill Rd near Earnshaw Rd, stop 33a",
+    "lat": -27.376275,
+    "lon": 153.08586,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 15,
+  "time": null,
+  "text": "BS St Vincents Rd at Hilltop, stop 34",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3511",
+    "name": "Saint Vincents Rd at Hilltop, stop 34",
+    "lat": -27.371864,
+    "lon": 153.082468,
+    "score": 0.85
+   },
+   {
+    "stop_id": "3512",
+    "name": "Saint Vincents Rd at Hilltop, stop 34",
+    "lat": -27.371717,
+    "lon": 153.082452,
+    "score": 0.85
+   },
+   {
+    "stop_id": "3901",
+    "name": "Hilltop Ave near Rainey St, stop 34b",
+    "lat": -27.392097,
+    "lon": 153.024971,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 16,
+  "time": null,
+  "text": "BS St Vincents Rd at Hayden St, stop 37",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3505",
+    "name": "Saint Vincents Rd at Hayden Street, stop 37",
+    "lat": -27.36826,
+    "lon": 153.087581,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3506",
+    "name": "Saint Vincents Rd at Hayden Street, stop 37",
+    "lat": -27.368339,
+    "lon": 153.087699,
+    "score": 1.1
+   },
+   {
+    "stop_id": "311477",
+    "name": "Federation Dr near Hayden St",
+    "lat": -27.685527,
+    "lon": 153.154017,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 19,
+  "time": null,
+  "text": "BS Nudgee Rd at Armada Pl",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11235",
+    "name": "Nudgee Rd at Armada Pl",
+    "lat": -27.384242,
+    "lon": 153.089499,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11236",
+    "name": "Nudgee Rd at Armada Pl",
+    "lat": -27.385218,
+    "lon": 153.088832,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 22,
+  "time": null,
+  "text": "BS Amelia St near York St, stop 8",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4282",
+    "name": "Amelia St near York St, stop 8",
+    "lat": -27.402562,
+    "lon": 153.070196,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4283",
+    "name": "Amelia St near York St, stop 8",
+    "lat": -27.402608,
+    "lon": 153.070312,
+    "score": 1.1
+   },
+   {
+    "stop_id": "301423",
+    "name": "Reserve Rd near Amelia St",
+    "lat": -27.892079,
+    "lon": 153.283107,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 26,
+  "time": null,
+  "text": "BS Golden Sq at Bulli Street, stop 47",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2926",
+    "name": "Golden Sq at Bulli Street, stop 47",
+    "lat": -27.418326,
+    "lon": 153.07425,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 31,
+  "time": null,
+  "text": "BS Nudgee Rd at Lilley Street, stop 34",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1030",
+    "name": "Nudgee Rd at Lilley Street, stop 34",
+    "lat": -27.425245,
+    "lon": 153.072665,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1031",
+    "name": "Nudgee Rd near Lilley St, stop 34",
+    "lat": -27.425026,
+    "lon": 153.072864,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 33,
+  "time": null,
+  "text": "BS Nudgee Rd near Stevenson St, stop 30",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2934",
+    "name": "Nudgee Rd near Stevenson St, stop 30",
+    "lat": -27.43567,
+    "lon": 153.071178,
+    "score": 1.1
+   },
+   {
+    "stop_id": "5957",
+    "name": "Baynes St near Stevenson Ct, stop 55",
+    "lat": -27.494467,
+    "lon": 153.114416,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-2b-Hamilton",
+  "trip": "PM",
+  "seq": 35,
+  "time": null,
+  "text": "BS Kingsford Smith Dr at Theodore St, stop 33",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2918",
+    "name": "Kingsford Smith Dr at Theodore St, stop 33",
+    "lat": -27.433818,
+    "lon": 153.080192,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2923",
+    "name": "Kingsford Smith Dr at Theodore St, stop 33",
+    "lat": -27.434168,
+    "lon": 153.080151,
+    "score": 1.1
+   },
+   {
+    "stop_id": "200308",
+    "name": "Theodore St at MacArthur Av",
+    "lat": -27.441254,
+    "lon": 153.077137,
+    "score": 0.4
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 2,
+  "time": "07:23",
+  "text": "BS Shaw Rd near Henry St, stop 35",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11093",
+    "name": "Shaw Rd near Henry St, stop 35",
+    "lat": -27.407823,
+    "lon": 153.047197,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312544",
+    "name": "Chetwynd St near Henry St",
+    "lat": -27.678683,
+    "lon": 153.18753,
+    "score": 0.5
+   },
+   {
+    "stop_id": "312545",
+    "name": "Chetwynd St near Henry St",
+    "lat": -27.678495,
+    "lon": 153.187417,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 6,
+  "time": "07:27",
+  "text": "BS Eagle Junction Station",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11115",
+    "name": "Junction Rd at Eagle Junction station, stop 28/1",
+    "lat": -27.41481,
+    "lon": 153.050168,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11116",
+    "name": "Junction Rd at Eagle Junction station, stop 28",
+    "lat": -27.414887,
+    "lon": 153.049736,
+    "score": 1.0
+   },
+   {
+    "stop_id": "600395",
+    "name": "Eagle Junction station, platform 1",
+    "lat": -27.415535,
+    "lon": 153.049684,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 8,
+  "time": "07:28",
+  "text": "BS Junction Rd at Stuckey St, stop 28/2",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11127",
+    "name": "Junction Rd at Stuckey Street, stop 28/2",
+    "lat": -27.415596,
+    "lon": 153.056063,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11128",
+    "name": "Junction Rd at Stuckey Street, stop 28/2",
+    "lat": -27.415714,
+    "lon": 153.055988,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 13,
+  "time": "07:33",
+  "text": "BS Waratah St near Oriel Rd",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "3629",
+    "name": "Alexandra Rd at Oriel Road Stop 28",
+    "lat": -27.427021,
+    "lon": 153.058513,
+    "score": 0.5
+   },
+   {
+    "stop_id": "3630",
+    "name": "Alexandra Rd at Oriel Road Stop 28",
+    "lat": -27.427079,
+    "lon": 153.058626,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 19,
+  "time": "07:37",
+  "text": "BS Massey St at Ascot School",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3616",
+    "name": "Anthony St at Ascot School, stop 23",
+    "lat": -27.433221,
+    "lon": 153.055249,
+    "score": 0.75
+   },
+   {
+    "stop_id": "3617",
+    "name": "Anthony St at Ascot School, stop 23",
+    "lat": -27.432367,
+    "lon": 153.055258,
+    "score": 0.75
+   },
+   {
+    "stop_id": "10803",
+    "name": "Grand Ave East near Ascot Ave",
+    "lat": -27.627464,
+    "lon": 152.969834,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 23,
+  "time": "07:40",
+  "text": "BS Alexandra Rd at Reeve St Stop 27",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3627",
+    "name": "Alexandra Rd at Reeve Street Stop 27",
+    "lat": -27.428899,
+    "lon": 153.058197,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3628",
+    "name": "Alexandra Rd at Reeve Street Stop 27",
+    "lat": -27.428955,
+    "lon": 153.058311,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 28,
+  "time": "07:41",
+  "text": "BS Alexandra Rd at Palm Avenue Stop 29",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3631",
+    "name": "Alexandra Rd at Palm Avenue Stop 29",
+    "lat": -27.425409,
+    "lon": 153.058791,
+    "score": 1.1
+   },
+   {
+    "stop_id": "18007",
+    "name": "Kate St near Palm Ave",
+    "lat": -27.325773,
+    "lon": 153.077646,
+    "score": 0.5
+   },
+   {
+    "stop_id": "300539",
+    "name": "Ferny Ave at Palm Avenue",
+    "lat": -27.996316,
+    "lon": 153.427716,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 30,
+  "time": "07:42",
+  "text": "BS Alexandra Rd at Sefton Rd Stop 30",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3634",
+    "name": "Alexandra Rd at Sefton Road Stop 30",
+    "lat": -27.423394,
+    "lon": 153.059128,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3641",
+    "name": "Sefton Rd near Alexandra Rd, stop 30",
+    "lat": -27.423162,
+    "lon": 153.059472,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3643",
+    "name": "Sefton Rd at Marie Street, stop 31",
+    "lat": -27.423489,
+    "lon": 153.062623,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 33,
+  "time": "07:46",
+  "text": "BS Sandgate Rd at Clayfield, stop 27",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11167",
+    "name": "Sandgate Rd at Clayfield, stop 27",
+    "lat": -27.418546,
+    "lon": 153.055285,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11169",
+    "name": "Sandgate Rd at Clayfield",
+    "lat": -27.419263,
+    "lon": 153.054744,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3651",
+    "name": "Sandgate Rd at Clayfield South, stop 23",
+    "lat": -27.426831,
+    "lon": 153.05054,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "AM",
+  "seq": 34,
+  "time": "07:47",
+  "text": "BS Sandgate Rd at Collins St, stop 28",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11164",
+    "name": "Sandgate Rd at Collins Street, stop 28",
+    "lat": -27.417133,
+    "lon": 153.057538,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11165",
+    "name": "Sandgate Rd at Collins Street, stop 28",
+    "lat": -27.416984,
+    "lon": 153.057501,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312992",
+    "name": "Collins St at Donald Road",
+    "lat": -27.635194,
+    "lon": 153.306673,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 3,
+  "time": null,
+  "text": "BS Sandgate Rd at Collins St, stop 28",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11164",
+    "name": "Sandgate Rd at Collins Street, stop 28",
+    "lat": -27.417133,
+    "lon": 153.057538,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11165",
+    "name": "Sandgate Rd at Collins Street, stop 28",
+    "lat": -27.416984,
+    "lon": 153.057501,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312992",
+    "name": "Collins St at Donald Road",
+    "lat": -27.635194,
+    "lon": 153.306673,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 4,
+  "time": null,
+  "text": "BS Sandgate Rd at Clayfield",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11167",
+    "name": "Sandgate Rd at Clayfield, stop 27",
+    "lat": -27.418546,
+    "lon": 153.055285,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11169",
+    "name": "Sandgate Rd at Clayfield",
+    "lat": -27.419263,
+    "lon": 153.054744,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3651",
+    "name": "Sandgate Rd at Clayfield South, stop 23",
+    "lat": -27.426831,
+    "lon": 153.05054,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 7,
+  "time": null,
+  "text": "BS Sandgate Rd at Adelaide St, stop 25",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3657",
+    "name": "Sandgate Rd at Adelaide Street, stop 25",
+    "lat": -27.421894,
+    "lon": 153.05171,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3658",
+    "name": "Sandgate Rd at Adelaide Street, stop 25",
+    "lat": -27.422084,
+    "lon": 153.051733,
+    "score": 1.1
+   },
+   {
+    "stop_id": "312391",
+    "name": "Adelaide St near Queens Rd",
+    "lat": -27.652131,
+    "lon": 153.12327,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 12,
+  "time": null,
+  "text": "BS Waratah St near Oriel Rd",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "3629",
+    "name": "Alexandra Rd at Oriel Road Stop 28",
+    "lat": -27.427021,
+    "lon": 153.058513,
+    "score": 0.5
+   },
+   {
+    "stop_id": "3630",
+    "name": "Alexandra Rd at Oriel Road Stop 28",
+    "lat": -27.427079,
+    "lon": 153.058626,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 18,
+  "time": null,
+  "text": "BS Massey St at Ascot School",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "3616",
+    "name": "Anthony St at Ascot School, stop 23",
+    "lat": -27.433221,
+    "lon": 153.055249,
+    "score": 0.75
+   },
+   {
+    "stop_id": "3617",
+    "name": "Anthony St at Ascot School, stop 23",
+    "lat": -27.432367,
+    "lon": 153.055258,
+    "score": 0.75
+   },
+   {
+    "stop_id": "10803",
+    "name": "Grand Ave East near Ascot Ave",
+    "lat": -27.627464,
+    "lon": 152.969834,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 22,
+  "time": null,
+  "text": "BS Alexandra Rd at Reeve St Stop 27",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3627",
+    "name": "Alexandra Rd at Reeve Street Stop 27",
+    "lat": -27.428899,
+    "lon": 153.058197,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3628",
+    "name": "Alexandra Rd at Reeve Street Stop 27",
+    "lat": -27.428955,
+    "lon": 153.058311,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 25,
+  "time": null,
+  "text": "BS Alexandra Rd at Palm Avenue Stop 29",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3631",
+    "name": "Alexandra Rd at Palm Avenue Stop 29",
+    "lat": -27.425409,
+    "lon": 153.058791,
+    "score": 1.1
+   },
+   {
+    "stop_id": "18007",
+    "name": "Kate St near Palm Ave",
+    "lat": -27.325773,
+    "lon": 153.077646,
+    "score": 0.5
+   },
+   {
+    "stop_id": "300539",
+    "name": "Ferny Ave at Palm Avenue",
+    "lat": -27.996316,
+    "lon": 153.427716,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 27,
+  "time": null,
+  "text": "BS Alexandra Rd at Sefton Rd Stop 30",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3634",
+    "name": "Alexandra Rd at Sefton Road Stop 30",
+    "lat": -27.423394,
+    "lon": 153.059128,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3641",
+    "name": "Sefton Rd near Alexandra Rd, stop 30",
+    "lat": -27.423162,
+    "lon": 153.059472,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3643",
+    "name": "Sefton Rd at Marie Street, stop 31",
+    "lat": -27.423489,
+    "lon": 153.062623,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 34,
+  "time": null,
+  "text": "BS Junction Rd at Stuckey St, stop 28/2",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11127",
+    "name": "Junction Rd at Stuckey Street, stop 28/2",
+    "lat": -27.415596,
+    "lon": 153.056063,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11128",
+    "name": "Junction Rd at Stuckey Street, stop 28/2",
+    "lat": -27.415714,
+    "lon": 153.055988,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 36,
+  "time": null,
+  "text": "BS Eagle Junction Station",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11115",
+    "name": "Junction Rd at Eagle Junction station, stop 28/1",
+    "lat": -27.41481,
+    "lon": 153.050168,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11116",
+    "name": "Junction Rd at Eagle Junction station, stop 28",
+    "lat": -27.414887,
+    "lon": 153.049736,
+    "score": 1.0
+   },
+   {
+    "stop_id": "600395",
+    "name": "Eagle Junction station, platform 1",
+    "lat": -27.415535,
+    "lon": 153.049684,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 41,
+  "time": null,
+  "text": "BS Shaw Rd near Emma St, stop 35",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11090",
+    "name": "Shaw Rd near Emma St, stop 35",
+    "lat": -27.408743,
+    "lon": 153.046949,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11094",
+    "name": "Emma St near Shaw Rd, stop 32",
+    "lat": -27.408397,
+    "lon": 153.04784,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11095",
+    "name": "Emma St near Shaw Rd, stop 32",
+    "lat": -27.408445,
+    "lon": 153.047423,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-3-Ascot",
+  "trip": "PM",
+  "seq": 43,
+  "time": null,
+  "text": "BS Shaw Rd at Parklands, stop 36",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11091",
+    "name": "Shaw Rd at Parklands, stop 36",
+    "lat": -27.406028,
+    "lon": 153.047362,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11092",
+    "name": "Shaw Rd at Parklands, stop 36",
+    "lat": -27.404716,
+    "lon": 153.047461,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4170",
+    "name": "Shaw Rd at Westwood Street, stop 36",
+    "lat": -27.396815,
+    "lon": 153.048792,
+    "score": 0.77
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 0,
+  "time": "07:05",
+  "text": "BS Payne Rd at Payne - Glenmore, stop 32",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4107",
+    "name": "Payne Rd at Payne - Glenmore, stop 32",
+    "lat": -27.448676,
+    "lon": 152.957547,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4108",
+    "name": "Payne Rd at Glenmore St, stop 32",
+    "lat": -27.448417,
+    "lon": 152.957756,
+    "score": 1.1
+   },
+   {
+    "stop_id": "300632",
+    "name": "Glenmore Dr near Lochinvar Ct",
+    "lat": -27.9913,
+    "lon": 153.362962,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 3,
+  "time": "07:08",
+  "text": "BS Settlement Rd at Gap Primary School, stop 36",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "12065",
+    "name": "Settlement Rd at Gap Primary School, stop 36",
+    "lat": -27.442519,
+    "lon": 152.944014,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4083",
+    "name": "Waterworks Rd at Gap High School, stop 34",
+    "lat": -27.444763,
+    "lon": 152.949188,
+    "score": 0.6
+   },
+   {
+    "stop_id": "4115",
+    "name": "Waterworks Rd at Gap High School, stop 34",
+    "lat": -27.444997,
+    "lon": 152.949969,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 4,
+  "time": "07:09",
+  "text": "BS Settlement Rd at Chaprowe Street, stop 37",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3858",
+    "name": "Settlement Rd at Chaprowe Street, stop 37",
+    "lat": -27.438761,
+    "lon": 152.943526,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3859",
+    "name": "Settlement Rd at Chaprowe Street, stop 37",
+    "lat": -27.440263,
+    "lon": 152.943869,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 6,
+  "time": "07:15",
+  "text": "BS Samford Rd near Warrong St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "6207",
+    "name": "Samford Rd near Warrong St",
+    "lat": -27.411974,
+    "lon": 152.942648,
+    "score": 1.0
+   },
+   {
+    "stop_id": "6208",
+    "name": "Samford Rd near Warrong St",
+    "lat": -27.412045,
+    "lon": 152.942317,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 7,
+  "time": null,
+  "text": "BS Samford Rd near Claverton St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "6206",
+    "name": "Samford Rd near Claverton St",
+    "lat": -27.407639,
+    "lon": 152.940696,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312050",
+    "name": "Claverton Dr near Aberfoyle Dr",
+    "lat": -27.18005,
+    "lon": 153.011128,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 10,
+  "time": null,
+  "text": "BS Gordon Rd near Owarra Ave",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "6171",
+    "name": "Gordon Rd near Owarra Ave",
+    "lat": -27.397944,
+    "lon": 152.937499,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 14,
+  "time": "07:23",
+  "text": "BS Hutton Rd near Yingally Dr",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11301",
+    "name": "Hutton Rd near Yingally Dr",
+    "lat": -27.391851,
+    "lon": 152.945002,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11304",
+    "name": "Hutton Rd near Yingally Dr",
+    "lat": -27.391658,
+    "lon": 152.944738,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 27,
+  "time": "07:36",
+  "text": "BS Hamilton Rd at Paramount Circuit, stop 47",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4007",
+    "name": "Hamilton Rd at Paramount Circuit, stop 47",
+    "lat": -27.379565,
+    "lon": 152.989519,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4057",
+    "name": "Beckett Rd at Paramount Chase",
+    "lat": -27.375915,
+    "lon": 152.989324,
+    "score": 0.5
+   },
+   {
+    "stop_id": "4058",
+    "name": "Beckett Rd at Paramount Chase",
+    "lat": -27.37639,
+    "lon": 152.989559,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 29,
+  "time": null,
+  "text": "BS Hamilton Rd at Trouts Rd, stop 46",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10031",
+    "name": "Hamilton Rd at Trouts Rd, stop 46",
+    "lat": -27.381274,
+    "lon": 153.001122,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2145",
+    "name": "Hamilton Rd at Trouts Rd, stop 46",
+    "lat": -27.381248,
+    "lon": 152.999661,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2144",
+    "name": "Trouts Rd at Disney Street, stop 42",
+    "lat": -27.397507,
+    "lon": 152.998355,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 31,
+  "time": null,
+  "text": "BS Whites St at Kenna Street, stop 46",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11202",
+    "name": "Whites St at Kenna Street, stop 46",
+    "lat": -27.379419,
+    "lon": 153.008084,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11212",
+    "name": "Kenna St near Whites Rd, stop 46",
+    "lat": -27.37966,
+    "lon": 153.008524,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 35,
+  "time": null,
+  "text": "BS Stringybark Dr at Martindale Street, stop 47",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10229",
+    "name": "Stringybark Dr at Martindale Street, stop 47",
+    "lat": -27.373884,
+    "lon": 153.005958,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10512",
+    "name": "Stringybark Dr at Martindale Street, stop 47",
+    "lat": -27.374125,
+    "lon": 153.005762,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 37,
+  "time": "07:48",
+  "text": "BS Stringybark Dr near Horn Rd, stop 48",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4211",
+    "name": "Stringybark Dr near Horn Rd, stop 48",
+    "lat": -27.369193,
+    "lon": 153.005669,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4229",
+    "name": "Stringybark Dr near Horn Rd, stop 48",
+    "lat": -27.369667,
+    "lon": 153.005686,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4033",
+    "name": "Maundrell Tce at Horn Road, stop 50a",
+    "lat": -27.371189,
+    "lon": 153.014969,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 39,
+  "time": null,
+  "text": "BS Horn Rd at Muneera Street, stop 49",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4306",
+    "name": "Horn Rd at Muneera Street, stop 49",
+    "lat": -27.368839,
+    "lon": 153.007404,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4304",
+    "name": "Horn Rd at Muneera Crescent, stop 49",
+    "lat": -27.368936,
+    "lon": 153.007209,
+    "score": 0.85
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 41,
+  "time": null,
+  "text": "BS Maundrell Tce at Darwin Street, stop 50a",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4035",
+    "name": "Maundrell Tce at Darwin Street, stop 50a",
+    "lat": -27.369319,
+    "lon": 153.015315,
+    "score": 1.0
+   },
+   {
+    "stop_id": "4036",
+    "name": "Maundrell Tce at Darwin Street, stop 50",
+    "lat": -27.368698,
+    "lon": 153.015575,
+    "score": 0.8
+   },
+   {
+    "stop_id": "311394",
+    "name": "Kokoda St near Darwin St",
+    "lat": -27.712275,
+    "lon": 153.196501,
+    "score": 0.4
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 45,
+  "time": "07:58",
+  "text": "BS Robinson Rd at Priscilla Street, stop 53",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3399",
+    "name": "Robinson Rd at Priscilla Street, stop 53",
+    "lat": -27.366455,
+    "lon": 153.034858,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3400",
+    "name": "Robinson Rd at Priscilla Street, stop 53",
+    "lat": -27.366668,
+    "lon": 153.035304,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "AM",
+  "seq": 46,
+  "time": null,
+  "text": "BS Robinson Rd at Bassano St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10598",
+    "name": "Robinson Rd at Bassano Street",
+    "lat": -27.367613,
+    "lon": 153.042528,
+    "score": 1.0
+   },
+   {
+    "stop_id": "10599",
+    "name": "Robinson Rd at Bassano Street",
+    "lat": -27.367927,
+    "lon": 153.043564,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 4,
+  "time": null,
+  "text": "BS Robinson Rd at Priscilla Street, stop 53",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3399",
+    "name": "Robinson Rd at Priscilla Street, stop 53",
+    "lat": -27.366455,
+    "lon": 153.034858,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3400",
+    "name": "Robinson Rd at Priscilla Street, stop 53",
+    "lat": -27.366668,
+    "lon": 153.035304,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 8,
+  "time": null,
+  "text": "BS Maundrell Tce at Darwin Street, stop 50",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4035",
+    "name": "Maundrell Tce at Darwin Street, stop 50a",
+    "lat": -27.369319,
+    "lon": 153.015315,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4036",
+    "name": "Maundrell Tce at Darwin Street, stop 50",
+    "lat": -27.368698,
+    "lon": 153.015575,
+    "score": 1.1
+   },
+   {
+    "stop_id": "311394",
+    "name": "Kokoda St near Darwin St",
+    "lat": -27.712275,
+    "lon": 153.196501,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 11,
+  "time": null,
+  "text": "BS Horn Rd at Muneera Street, stop 49",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4306",
+    "name": "Horn Rd at Muneera Street, stop 49",
+    "lat": -27.368839,
+    "lon": 153.007404,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4304",
+    "name": "Horn Rd at Muneera Crescent, stop 49",
+    "lat": -27.368936,
+    "lon": 153.007209,
+    "score": 0.85
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 13,
+  "time": null,
+  "text": "BS Stringybark Dr near Horn Rd, stop 48",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4211",
+    "name": "Stringybark Dr near Horn Rd, stop 48",
+    "lat": -27.369193,
+    "lon": 153.005669,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4229",
+    "name": "Stringybark Dr near Horn Rd, stop 48",
+    "lat": -27.369667,
+    "lon": 153.005686,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4033",
+    "name": "Maundrell Tce at Horn Road, stop 50a",
+    "lat": -27.371189,
+    "lon": 153.014969,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 14,
+  "time": null,
+  "text": "BS Stringybark Dr at Martindale Street, stop 47",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10229",
+    "name": "Stringybark Dr at Martindale Street, stop 47",
+    "lat": -27.373884,
+    "lon": 153.005958,
+    "score": 1.1
+   },
+   {
+    "stop_id": "10512",
+    "name": "Stringybark Dr at Martindale Street, stop 47",
+    "lat": -27.374125,
+    "lon": 153.005762,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 18,
+  "time": null,
+  "text": "BS Kenna St near Whites Rd, stop 46",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11212",
+    "name": "Kenna St near Whites Rd, stop 46",
+    "lat": -27.37966,
+    "lon": 153.008524,
+    "score": 1.1
+   },
+   {
+    "stop_id": "11202",
+    "name": "Whites St at Kenna Street, stop 46",
+    "lat": -27.379419,
+    "lon": 153.008084,
+    "score": 0.85
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 21,
+  "time": null,
+  "text": "BS Hamilton Rd at Trouts Rd, stop 46",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10031",
+    "name": "Hamilton Rd at Trouts Rd, stop 46",
+    "lat": -27.381274,
+    "lon": 153.001122,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2145",
+    "name": "Hamilton Rd at Trouts Rd, stop 46",
+    "lat": -27.381248,
+    "lon": 152.999661,
+    "score": 1.1
+   },
+   {
+    "stop_id": "2144",
+    "name": "Trouts Rd at Disney Street, stop 42",
+    "lat": -27.397507,
+    "lon": 152.998355,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 41,
+  "time": null,
+  "text": "BS Gordon Rd near Anora Cr",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "2646",
+    "name": "Gordon Rd near Anora Cr",
+    "lat": -27.397847,
+    "lon": 152.93766,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 44,
+  "time": null,
+  "text": "BS Samford Rd near Claverton St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "6206",
+    "name": "Samford Rd near Claverton St",
+    "lat": -27.407639,
+    "lon": 152.940696,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312050",
+    "name": "Claverton Dr near Aberfoyle Dr",
+    "lat": -27.18005,
+    "lon": 153.011128,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 45,
+  "time": null,
+  "text": "BS Samford Rd near Warrong St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "6207",
+    "name": "Samford Rd near Warrong St",
+    "lat": -27.411974,
+    "lon": 152.942648,
+    "score": 1.0
+   },
+   {
+    "stop_id": "6208",
+    "name": "Samford Rd near Warrong St",
+    "lat": -27.412045,
+    "lon": 152.942317,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 48,
+  "time": null,
+  "text": "BS Settlement Rd at Chaprowe Street, stop 37",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3858",
+    "name": "Settlement Rd at Chaprowe Street, stop 37",
+    "lat": -27.438761,
+    "lon": 152.943526,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3859",
+    "name": "Settlement Rd at Chaprowe Street, stop 37",
+    "lat": -27.440263,
+    "lon": 152.943869,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-4-The-Gap-new-T1_2026",
+  "trip": "PM",
+  "seq": 51,
+  "time": null,
+  "text": "BS Payne Rd at Payne - Glenmore, stop 32",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4107",
+    "name": "Payne Rd at Payne - Glenmore, stop 32",
+    "lat": -27.448676,
+    "lon": 152.957547,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4108",
+    "name": "Payne Rd at Glenmore St, stop 32",
+    "lat": -27.448417,
+    "lon": 152.957756,
+    "score": 1.1
+   },
+   {
+    "stop_id": "300632",
+    "name": "Glenmore Dr near Lochinvar Ct",
+    "lat": -27.9913,
+    "lon": 153.362962,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-5-Samford",
+  "trip": "AM",
+  "seq": 23,
+  "time": "07:23",
+  "text": "Mary Ring Drive bus stop",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "313177",
+    "name": "Mount Glorious Rd near Mary Ring Dr",
+    "lat": -27.373436,
+    "lon": 152.885173,
+    "score": 1.0
+   },
+   {
+    "stop_id": "313178",
+    "name": "Mount Glorious Rd near Mary Ring Dr",
+    "lat": -27.373147,
+    "lon": 152.884759,
+    "score": 1.0
+   },
+   {
+    "stop_id": "319795",
+    "name": "Kippa-Ring station, stop A",
+    "lat": -27.225283,
+    "lon": 153.081652,
+    "score": 0.33
+   }
+  ]
+ },
+ {
+  "run": "Run-5-Samford",
+  "trip": "AM",
+  "seq": 26,
+  "time": "07:25",
+  "text": "Depart Mary Ring Drive bus stop",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "313177",
+    "name": "Mount Glorious Rd near Mary Ring Dr",
+    "lat": -27.373436,
+    "lon": 152.885173,
+    "score": 0.75
+   },
+   {
+    "stop_id": "313178",
+    "name": "Mount Glorious Rd near Mary Ring Dr",
+    "lat": -27.373147,
+    "lon": 152.884759,
+    "score": 0.75
+   },
+   {
+    "stop_id": "319795",
+    "name": "Kippa-Ring station, stop A",
+    "lat": -27.225283,
+    "lon": 153.081652,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-5-Samford",
+  "trip": "AM",
+  "seq": 39,
+  "time": "07:44",
+  "text": "Mayflower Street bus stop",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "1",
+    "name": "Herschel Street Stop 1 near North Quay",
+    "lat": -27.467834,
+    "lon": 153.019079,
+    "score": 0.5
+   },
+   {
+    "stop_id": "10",
+    "name": "Ann Street Stop 11 at King George Square",
+    "lat": -27.468003,
+    "lon": 153.02397,
+    "score": 0.5
+   },
+   {
+    "stop_id": "100",
+    "name": "Margaret St stop 93 at George St",
+    "lat": -27.473751,
+    "lon": 153.026745,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-5-Samford",
+  "trip": "AM",
+  "seq": 44,
+  "time": "07:58",
+  "text": "Stop Graham Rd near Stirling St",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "310773",
+    "name": "Graham Rd at Hargrave Street",
+    "lat": -27.118667,
+    "lon": 152.966832,
+    "score": 0.75
+   },
+   {
+    "stop_id": "310774",
+    "name": "Graham Rd at Hargrave Street",
+    "lat": -27.117944,
+    "lon": 152.967344,
+    "score": 0.75
+   },
+   {
+    "stop_id": "312625",
+    "name": "Hargrave St near Graham Rd",
+    "lat": -27.122209,
+    "lon": 152.960855,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-5-Samford",
+  "trip": "AM",
+  "seq": 46,
+  "time": "07:59",
+  "text": "Stop BT Ridley Rd at Ridley Road South",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "10016",
+    "name": "Ridley Rd at Ridley Road South",
+    "lat": -27.352058,
+    "lon": 153.004353,
+    "score": 0.83
+   },
+   {
+    "stop_id": "10017",
+    "name": "Ridley Rd at Ridley Road South",
+    "lat": -27.351409,
+    "lon": 153.004346,
+    "score": 0.83
+   },
+   {
+    "stop_id": "4067",
+    "name": "Ridley Rd near Centurion St",
+    "lat": -27.346311,
+    "lon": 153.005301,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 2,
+  "time": "07:12",
+  "text": "Bus Stop 17 (The Drive)",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 7,
+  "time": "07:20",
+  "text": "Bus stop 27 ‐ Asgrove Marketplace",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "11258",
+    "name": "Ashgrove Ave at Ashgrove Marketplace",
+    "lat": -27.44456,
+    "lon": 152.993792,
+    "score": 0.5
+   },
+   {
+    "stop_id": "301540",
+    "name": "Burnett St at Buderim Marketplace",
+    "lat": -26.687558,
+    "lon": 153.049014,
+    "score": 0.5
+   },
+   {
+    "stop_id": "301541",
+    "name": "Burnett St at Buderim Marketplace",
+    "lat": -26.688095,
+    "lon": 153.047862,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 9,
+  "time": "07:22",
+  "text": "Bus stop 24 ‐ Asgrove Avenue near Lovekin St",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "1982",
+    "name": "Ashgrove Ave near Lovekin St, stop 24",
+    "lat": -27.440116,
+    "lon": 152.997506,
+    "score": 0.85
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 10,
+  "time": "07:24",
+  "text": "Bus Stop 20 ‐ Ashgrove Avenue opposite",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1976",
+    "name": "Ashgrove Ave near Caravan Park, stop 20",
+    "lat": -27.437975,
+    "lon": 153.00565,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1977",
+    "name": "Ashgrove Ave near Caravan Park, stop 20",
+    "lat": -27.438119,
+    "lon": 153.005783,
+    "score": 1.1
+   },
+   {
+    "stop_id": "1996",
+    "name": "Enoggera Rd at Ashgrove Avenue, stop 20a",
+    "lat": -27.437587,
+    "lon": 153.006907,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 13,
+  "time": "07:27",
+  "text": "Bus stop 22 ‐ Newmarket Primary",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "10077",
+    "name": "Enoggera Rd at Newmarket, stop 20",
+    "lat": -27.437667,
+    "lon": 153.007261,
+    "score": 0.5
+   },
+   {
+    "stop_id": "1999",
+    "name": "Enoggera Rd at Newmarket, stop 20",
+    "lat": -27.438872,
+    "lon": 153.007071,
+    "score": 0.5
+   },
+   {
+    "stop_id": "2949",
+    "name": "Newmarket St at Manson Road, stop 43",
+    "lat": -27.422536,
+    "lon": 153.070152,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 15,
+  "time": "07:34",
+  "text": "Bus stop 31 ‐ Sicklefield Road",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4403",
+    "name": "Shand St at Sicklefield Rd, stop 31",
+    "lat": -27.417577,
+    "lon": 152.999904,
+    "score": 1.1
+   },
+   {
+    "stop_id": "4404",
+    "name": "Shand St at Sicklefield Rd, stop 31",
+    "lat": -27.417896,
+    "lon": 153.000089,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 17,
+  "time": "07:38",
+  "text": "Bus stop after roundabout",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "1825",
+    "name": "Roundabout at Hawken Shops, stop 25",
+    "lat": -27.502281,
+    "lon": 152.996902,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3975",
+    "name": "Holme Ave near Roundabout",
+    "lat": -27.351034,
+    "lon": 153.065915,
+    "score": 1.0
+   },
+   {
+    "stop_id": "4988",
+    "name": "Moray St at Roundabout, stop 12",
+    "lat": -27.470002,
+    "lon": 153.042778,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 20,
+  "time": "07:40",
+  "text": "Bus stop 41 ‐ Stafford Heights",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4417",
+    "name": "Rode Rd at Stafford Heights near Cranbourne St",
+    "lat": -27.391136,
+    "lon": 153.01192,
+    "score": 1.0
+   },
+   {
+    "stop_id": "4419",
+    "name": "Rode Rd at Stafford Heights near Maundrell Tce",
+    "lat": -27.391198,
+    "lon": 153.010855,
+    "score": 1.0
+   },
+   {
+    "stop_id": "4436",
+    "name": "Appleby Rd at Stafford Heights",
+    "lat": -27.3925,
+    "lon": 153.011338,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 23,
+  "time": "07:47",
+  "text": "Bus stop 53 ‐ Chermside Library",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "10189",
+    "name": "Old Cleveland Rd at Stones Corner Library, stop 17",
+    "lat": -27.498482,
+    "lon": 153.043671,
+    "score": 0.5
+   },
+   {
+    "stop_id": "2059",
+    "name": "Gizerah St at Mitchelton Library, stop 10",
+    "lat": -27.417379,
+    "lon": 152.977843,
+    "score": 0.5
+   },
+   {
+    "stop_id": "2060",
+    "name": "Gizerah St at Mitchelton Library, stop 10",
+    "lat": -27.417787,
+    "lon": 152.978408,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 25,
+  "time": "07:48",
+  "text": "Bus stop 51 ‐ Corrie Street",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "10104",
+    "name": "Hamilton Rd at Corrie Street, stop 51",
+    "lat": -27.387041,
+    "lon": 153.038887,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3456",
+    "name": "Hamilton Rd at Corrie Street, stop 51",
+    "lat": -27.387133,
+    "lon": 153.038642,
+    "score": 1.1
+   },
+   {
+    "stop_id": "3462",
+    "name": "Corrie St near Hodgkinson St, stop 41",
+    "lat": -27.384016,
+    "lon": 153.040178,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 31,
+  "time": "07:52",
+  "text": "Bus stop 45 ‐ Bilsen Road near Joppa Lane",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "4202",
+    "name": "Bilsen Rd near Joppa Lane, stop 45",
+    "lat": -27.395087,
+    "lon": 153.051564,
+    "score": 1.1
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "AM",
+  "seq": 32,
+  "time": "07:53",
+  "text": "Bus Stop 49 ‐ Bilsen Rd at Halcyon Street",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3475",
+    "name": "Bilsen Rd at Halcyon Street, stop 48",
+    "lat": -27.38873,
+    "lon": 153.052863,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3476",
+    "name": "Bilsen Rd at Halcyon Street, stop 48",
+    "lat": -27.388357,
+    "lon": 153.052809,
+    "score": 1.0
+   },
+   {
+    "stop_id": "322180",
+    "name": "Logan Reserve Rd at Halcyon Way",
+    "lat": -27.706969,
+    "lon": 153.116825,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-7-Bardon",
+  "trip": "PM",
+  "seq": 27,
+  "time": null,
+  "text": "Bus stop 27 ‐ Ashgrove Marketplace",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11258",
+    "name": "Ashgrove Ave at Ashgrove Marketplace",
+    "lat": -27.44456,
+    "lon": 152.993792,
+    "score": 1.0
+   },
+   {
+    "stop_id": "301540",
+    "name": "Burnett St at Buderim Marketplace",
+    "lat": -26.687558,
+    "lon": 153.049014,
+    "score": 0.5
+   },
+   {
+    "stop_id": "301541",
+    "name": "Burnett St at Buderim Marketplace",
+    "lat": -26.688095,
+    "lon": 153.047862,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "AM",
+  "seq": 0,
+  "time": "06:55",
+  "text": "BS Mariner Bvd near Lipscombe St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312060",
+    "name": "Mariner Bvd near Lipscombe St",
+    "lat": -27.198224,
+    "lon": 153.016694,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312061",
+    "name": "Mariner Bvd near Parsons Bvd",
+    "lat": -27.198403,
+    "lon": 153.017056,
+    "score": 0.5
+   },
+   {
+    "stop_id": "312067",
+    "name": "Parsons Bvd near Mariner Bvd",
+    "lat": -27.198006,
+    "lon": 153.018097,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "AM",
+  "seq": 5,
+  "time": "07:00",
+  "text": "BS Deception Bay Rd at Bailey Rd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "310492",
+    "name": "Deception Bay Rd at Bailey Road",
+    "lat": -27.192678,
+    "lon": 153.023286,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310493",
+    "name": "Deception Bay Rd at Bailey Road",
+    "lat": -27.193045,
+    "lon": 153.024954,
+    "score": 1.0
+   },
+   {
+    "stop_id": "12047",
+    "name": "Tarragindi Rd at Bailey Street, stop 37",
+    "lat": -27.52462,
+    "lon": 153.035964,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "AM",
+  "seq": 7,
+  "time": "07:09",
+  "text": "BS Anzac Ave at Kinsellas Road",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "310699",
+    "name": "Anzac Ave at Kinsellas Road",
+    "lat": -27.232928,
+    "lon": 153.031143,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310700",
+    "name": "Anzac Ave at Kinsellas Road",
+    "lat": -27.232321,
+    "lon": 153.031975,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312567",
+    "name": "Chermside Rd at Kinsellas Road",
+    "lat": -27.218223,
+    "lon": 153.02906,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "AM",
+  "seq": 11,
+  "time": "07:15",
+  "text": "BS Discovery Dr near Southerden Dr",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312808",
+    "name": "Discovery Dr near Southerden Dr",
+    "lat": -27.231313,
+    "lon": 153.021689,
+    "score": 1.0
+   },
+   {
+    "stop_id": "3210",
+    "name": "Deagon St near Southerden St, stop 37",
+    "lat": -27.313969,
+    "lon": 153.063333,
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "AM",
+  "seq": 12,
+  "time": "07:18",
+  "text": "BS Discovery Dr near Marsh St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312812",
+    "name": "Discovery Dr near Marsh St",
+    "lat": -27.21569,
+    "lon": 153.021668,
+    "score": 1.0
+   },
+   {
+    "stop_id": "2745",
+    "name": "Dahlia St at Marsh Street, stop 62",
+    "lat": -27.472014,
+    "lon": 153.088438,
+    "score": 0.5
+   },
+   {
+    "stop_id": "2746",
+    "name": "Dahlia St at Marsh Street, stop 62",
+    "lat": -27.472084,
+    "lon": 153.08817,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "AM",
+  "seq": 16,
+  "time": "07:25",
+  "text": "BS Endeavour Bvd near Bounty Bvd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "317659",
+    "name": "Endeavour Bvd near Bounty Bvd",
+    "lat": -27.220432,
+    "lon": 153.006168,
+    "score": 1.0
+   },
+   {
+    "stop_id": "317667",
+    "name": "Endeavour Bvd near Bounty Bvd",
+    "lat": -27.220552,
+    "lon": 153.005993,
+    "score": 1.0
+   },
+   {
+    "stop_id": "317655",
+    "name": "Bounty Bvd near Trevino Pde",
+    "lat": -27.210524,
+    "lon": 153.01834,
+    "score": 0.75
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "AM",
+  "seq": 24,
+  "time": "07:38",
+  "text": "BS Brickworks Rd near Galway Dr",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312357",
+    "name": "Brickworks Rd near Galway Dr",
+    "lat": -27.243588,
+    "lon": 153.001167,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312358",
+    "name": "Brickworks Rd near Galway Dr",
+    "lat": -27.243698,
+    "lon": 153.001128,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "AM",
+  "seq": 33,
+  "time": "07:47",
+  "text": "BS Castle Hill Dr near Farrington Dr",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312679",
+    "name": "Castle Hill Dr near Farrington Dr",
+    "lat": -27.275361,
+    "lon": 153.011317,
+    "score": 1.0
+   },
+   {
+    "stop_id": "5116",
+    "name": "South Pine Rd at Farrington Street, stop 30",
+    "lat": -27.421358,
+    "lon": 152.999709,
+    "score": 0.2
+   },
+   {
+    "stop_id": "5132",
+    "name": "South Pine Rd at Farrington Street, stop 30",
+    "lat": -27.42154,
+    "lon": 152.999508,
+    "score": 0.2
+   }
+  ]
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "PM",
+  "seq": 28,
+  "time": null,
+  "text": "1st Bus Stop",
+  "status": "none",
+  "candidates": []
+ },
+ {
+  "run": "Run-8-North-Lakes",
+  "trip": "PM",
+  "seq": 34,
+  "time": null,
+  "text": "BS Mariner Bvd near Lipscombe St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312060",
+    "name": "Mariner Bvd near Lipscombe St",
+    "lat": -27.198224,
+    "lon": 153.016694,
+    "score": 1.0
+   },
+   {
+    "stop_id": "312061",
+    "name": "Mariner Bvd near Parsons Bvd",
+    "lat": -27.198403,
+    "lon": 153.017056,
+    "score": 0.5
+   },
+   {
+    "stop_id": "312067",
+    "name": "Parsons Bvd near Mariner Bvd",
+    "lat": -27.198006,
+    "lon": 153.018097,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 6,
+  "time": "07:07",
+  "text": "BS - Ken Duncombe Drive",
+  "status": "possible",
+  "candidates": [
+   {
+    "stop_id": "312717",
+    "name": "Oakey Flat Rd near Duncombe Dr",
+    "lat": -27.192828,
+    "lon": 152.944433,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 9,
+  "time": "07:12",
+  "text": "BS Ira Buckby Rd near Hayward Ave",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "317980",
+    "name": "Ira Buckby Rd near Hayward Ave",
+    "lat": -27.295875,
+    "lon": 152.938755,
+    "score": 1.0
+   },
+   {
+    "stop_id": "319370",
+    "name": "Ira Buckby Rd near Franzin Dr",
+    "lat": -27.292432,
+    "lon": 152.939378,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 12,
+  "time": "07:14",
+  "text": "BS Samsonvale Rd at Kurrajong Drive",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312345",
+    "name": "Samsonvale Rd at Kurrajong Drive",
+    "lat": -27.290369,
+    "lon": 152.94753,
+    "score": 1.0
+   },
+   {
+    "stop_id": "313540",
+    "name": "Samsonvale Rd near Kurrajong Dr",
+    "lat": -27.290661,
+    "lon": 152.948486,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310747",
+    "name": "Kurrajong Dr at Blue Gum Drive",
+    "lat": -27.676241,
+    "lon": 153.112987,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 15,
+  "time": "07:18",
+  "text": "BS Brisbane Rd near Solomon Parade",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "317986",
+    "name": "Brisbane Rd near Solomon Pde",
+    "lat": -27.300019,
+    "lon": 152.955054,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 17,
+  "time": null,
+  "text": "BS Pallas Pde near Brisbane Rd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "317947",
+    "name": "Pallas Pde near Brisbane Rd",
+    "lat": -27.303139,
+    "lon": 152.950906,
+    "score": 1.0
+   },
+   {
+    "stop_id": "317952",
+    "name": "Pallas Pde near Brisbane Rd",
+    "lat": -27.303224,
+    "lon": 152.951101,
+    "score": 1.0
+   },
+   {
+    "stop_id": "318044",
+    "name": "Pallas Pde near Russett Burbank Pde",
+    "lat": -27.305164,
+    "lon": 152.956605,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 20,
+  "time": null,
+  "text": "BS Russet Burbank Pde near Delawar Rd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "318057",
+    "name": "Russet Burbank Pde near Delawar Rd",
+    "lat": -27.305759,
+    "lon": 152.961978,
+    "score": 1.0
+   },
+   {
+    "stop_id": "318058",
+    "name": "Russet Burbank Pde near Delawar Rd",
+    "lat": -27.305604,
+    "lon": 152.960441,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 28,
+  "time": "07:30",
+  "text": "BS Gympie Rd near Duncan Ave",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "3489",
+    "name": "Gympie Rd near Duncan Ave",
+    "lat": -27.318792,
+    "lon": 153.006399,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310317",
+    "name": "Duncan Rd at Duncan Road Sports Fields",
+    "lat": -27.56774,
+    "lon": 153.220648,
+    "score": 0.5
+   },
+   {
+    "stop_id": "311844",
+    "name": "Lyndon Rd near Duncan Rd",
+    "lat": -27.567199,
+    "lon": 153.215994,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 37,
+  "time": "07:40",
+  "text": "BS Lacey Rd near Highbridge Cct",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11394",
+    "name": "Lacey Rd near Highbridge Cct",
+    "lat": -27.335742,
+    "lon": 153.015906,
+    "score": 1.0
+   },
+   {
+    "stop_id": "30099",
+    "name": "Lacey Rd near Highbridge Cct",
+    "lat": -27.33603,
+    "lon": 153.01609,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "AM",
+  "seq": 41,
+  "time": "07:50",
+  "text": "BS Roghan Rd near Springbok St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11392",
+    "name": "Roghan Rd near Springbok Street",
+    "lat": -27.340211,
+    "lon": 153.036221,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11393",
+    "name": "Roghan Rd near Springbok Street",
+    "lat": -27.340367,
+    "lon": 153.036052,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "PM",
+  "seq": 3,
+  "time": null,
+  "text": "BS Roghan Rd near Springbok St",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11392",
+    "name": "Roghan Rd near Springbok Street",
+    "lat": -27.340211,
+    "lon": 153.036221,
+    "score": 1.0
+   },
+   {
+    "stop_id": "11393",
+    "name": "Roghan Rd near Springbok Street",
+    "lat": -27.340367,
+    "lon": 153.036052,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "PM",
+  "seq": 8,
+  "time": null,
+  "text": "BS Lacey Rd near Highbridge Cct",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "11394",
+    "name": "Lacey Rd near Highbridge Cct",
+    "lat": -27.335742,
+    "lon": 153.015906,
+    "score": 1.0
+   },
+   {
+    "stop_id": "30099",
+    "name": "Lacey Rd near Highbridge Cct",
+    "lat": -27.33603,
+    "lon": 153.01609,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "PM",
+  "seq": 22,
+  "time": null,
+  "text": "BS Russet Burbank Pde near Delawar Rd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "318057",
+    "name": "Russet Burbank Pde near Delawar Rd",
+    "lat": -27.305759,
+    "lon": 152.961978,
+    "score": 1.0
+   },
+   {
+    "stop_id": "318058",
+    "name": "Russet Burbank Pde near Delawar Rd",
+    "lat": -27.305604,
+    "lon": 152.960441,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "PM",
+  "seq": 27,
+  "time": null,
+  "text": "BS Brisbane Rd near Old North Rd",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "313538",
+    "name": "Old North Rd at Brisbane Rd",
+    "lat": -27.297397,
+    "lon": 152.958329,
+    "score": 1.0
+   },
+   {
+    "stop_id": "317985",
+    "name": "Brisbane Rd near Old North Rd",
+    "lat": -27.298969,
+    "lon": 152.956639,
+    "score": 1.0
+   },
+   {
+    "stop_id": "13126",
+    "name": "Holmead Rd at Brisbane Holiday Village",
+    "lat": -27.570162,
+    "lon": 153.0932,
+    "score": 0.6
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "PM",
+  "seq": 30,
+  "time": null,
+  "text": "BS Samsonvale Rd at Kurrajong Drive",
+  "status": "strong",
+  "candidates": [
+   {
+    "stop_id": "312345",
+    "name": "Samsonvale Rd at Kurrajong Drive",
+    "lat": -27.290369,
+    "lon": 152.94753,
+    "score": 1.0
+   },
+   {
+    "stop_id": "313540",
+    "name": "Samsonvale Rd near Kurrajong Dr",
+    "lat": -27.290661,
+    "lon": 152.948486,
+    "score": 1.0
+   },
+   {
+    "stop_id": "310747",
+    "name": "Kurrajong Dr at Blue Gum Drive",
+    "lat": -27.676241,
+    "lon": 153.112987,
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "run": "Run-9-Cashmere",
+  "trip": "PM",
+  "seq": 39,
+  "time": null,
+  "text": "BS Ken Dumcombe Drive",
+  "status": "none",
+  "candidates": [
+   {
+    "stop_id": "10025",
+    "name": "Queen Elizabeth Dr at Hero",
+    "lat": -27.335511,
+    "lon": 152.95292,
+    "score": 0.33
+   },
+   {
+    "stop_id": "10043",
+    "name": "Queen Elizabeth Dr at Corso Street",
+    "lat": -27.33751,
+    "lon": 152.950051,
+    "score": 0.33
+   },
+   {
+    "stop_id": "1005",
+    "name": "Queen Elizabeth Dr at Hero Street",
+    "lat": -27.335962,
+    "lon": 152.952169,
+    "score": 0.33
+   }
+  ]
+ }
+]

@@ -1,0 +1,452 @@
+{
+ "file": "Run-2b-Hamilton.pdf",
+ "title": "RUN 2b - HAMILTON",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": "20/01/2025",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7:30 BS Kingsford Smith Dr at Theodore St, stop 33",
+     "time": "07:30",
+     "text": "BS Kingsford Smith Dr at Theodore St, stop 33",
+     "stop": true
+    },
+    {
+     "raw": "Right Nudgee Rd",
+     "turn": "Right",
+     "text": "Nudgee Rd"
+    },
+    {
+     "raw": "7:30 BS Nudgee Rd near Dobson St, stop 30",
+     "time": "07:30",
+     "text": "BS Nudgee Rd near Dobson St, stop 30",
+     "stop": true
+    },
+    {
+     "raw": "Continue Nudgee Rd",
+     "text": "Continue Nudgee Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:32 BS Nudgee Rd at Lilley St, stop 34",
+     "time": "07:32",
+     "text": "BS Nudgee Rd at Lilley St, stop 34",
+     "stop": true
+    },
+    {
+     "raw": "Continue Nudgee Rd",
+     "text": "Continue Nudgee Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Bulli St",
+     "turn": "Right",
+     "text": "Bulli St"
+    },
+    {
+     "raw": "7:36 BS Golden Sq at Bulli Street, stop 47",
+     "time": "07:36",
+     "text": "BS Golden Sq at Bulli Street, stop 47",
+     "stop": true
+    },
+    {
+     "raw": "Right Pleystowe Cr",
+     "turn": "Right",
+     "text": "Pleystowe Cr"
+    },
+    {
+     "raw": "7:37 BS Pleystowe Cr near Nudgee Rd, stop 46",
+     "time": "07:37",
+     "text": "BS Pleystowe Cr near Nudgee Rd, stop 46",
+     "stop": true
+    },
+    {
+     "raw": "Right Nudgee Rd",
+     "turn": "Right",
+     "text": "Nudgee Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left York St",
+     "turn": "Left",
+     "text": "York St"
+    },
+    {
+     "raw": "Right Amelia St",
+     "turn": "Right",
+     "text": "Amelia St"
+    },
+    {
+     "raw": "7:43 BS Amelia St near York St, stop 8",
+     "time": "07:43",
+     "text": "BS Amelia St near York St, stop 8",
+     "stop": true
+    },
+    {
+     "raw": "Right Nellie St",
+     "turn": "Right",
+     "text": "Nellie St"
+    },
+    {
+     "raw": "Left Nudgee Rd",
+     "turn": "Left",
+     "text": "Nudgee Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:50 BS Nudgee Rd at Armada Place",
+     "time": "07:50",
+     "text": "BS Nudgee Rd at Armada Place",
+     "stop": true
+    },
+    {
+     "raw": "Continues Childs Rd",
+     "text": "Continues Childs Rd"
+    },
+    {
+     "raw": "7:53 BS St Vincents Rd at Childs Rd, stop 38",
+     "time": "07:53",
+     "text": "BS St Vincents Rd at Childs Rd, stop 38",
+     "stop": true
+    },
+    {
+     "raw": "Left St Vincents Rd",
+     "turn": "Left",
+     "text": "St Vincents Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:54 BS St Vincents Rd at Hilltop, stop 34",
+     "time": "07:54",
+     "text": "BS St Vincents Rd at Hilltop, stop 34",
+     "stop": true
+    },
+    {
+     "raw": "Left Red Hill Rd",
+     "turn": "Left",
+     "text": "Red Hill Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Earnshaw Rd",
+     "turn": "Right",
+     "text": "Earnshaw Rd"
+    },
+    {
+     "raw": "7:56 BS Earnshaw Rd at Earnshaw State College",
+     "time": "07:56",
+     "text": "BS Earnshaw Rd at Earnshaw State College",
+     "stop": true
+    },
+    {
+     "raw": "Right Tufnell Rd",
+     "turn": "Right",
+     "text": "Tufnell Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "7:57 BS Tufnell Rd near St Vincents Rd, stop 31a",
+     "time": "07:57",
+     "text": "BS Tufnell Rd near St Vincents Rd, stop 31a",
+     "stop": true
+    },
+    {
+     "raw": "Left St Vincents Rd",
+     "turn": "Left",
+     "text": "St Vincents Rd"
+    },
+    {
+     "raw": "(Cross rail line)",
+     "text": "(Cross rail line)"
+    },
+    {
+     "raw": "Left St Vincents Rd",
+     "turn": "Left",
+     "text": "St Vincents Rd"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7:59 BS St Vincents Rd at Blinzinger Rd, stop 27",
+     "time": "07:59",
+     "text": "BS St Vincents Rd at Blinzinger Rd, stop 27",
+     "stop": true
+    },
+    {
+     "raw": "Right Toombul Rd",
+     "turn": "Right",
+     "text": "Toombul Rd"
+    },
+    {
+     "raw": "Continue Sandgate Rd",
+     "text": "Continue Sandgate Rd"
+    },
+    {
+     "raw": "8:10 Nudgee College",
+     "time": "08:10",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Set down at bus bays",
+     "text": "Set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15:05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Sandgate Road",
+     "turn": "Left",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Toombul Road",
+     "turn": "Left",
+     "text": "Toombul Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left St Vincents Rd",
+     "turn": "Left",
+     "text": "St Vincents Rd"
+    },
+    {
+     "raw": "BS St Vincents Rd at Blinzinger Road, stop 27",
+     "text": "BS St Vincents Rd at Blinzinger Road, stop 27",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Cross rail line",
+     "turn": "Right",
+     "text": "Cross rail line"
+    },
+    {
+     "raw": "Right Tuffnell Rd",
+     "turn": "Right",
+     "text": "Tuffnell Rd"
+    },
+    {
+     "raw": "BS Tufnell Rd near St Vincents Rd, stop 31a",
+     "text": "BS Tufnell Rd near St Vincents Rd, stop 31a",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Tufnell Rd at Earnshaw Road, stop 27",
+     "text": "BS Tufnell Rd at Earnshaw Road, stop 27",
+     "stop": true
+    },
+    {
+     "raw": "Left Earnshaw Rd",
+     "turn": "Left",
+     "text": "Earnshaw Rd"
+    },
+    {
+     "raw": "Left Red Hill Rd",
+     "turn": "Left",
+     "text": "Red Hill Rd"
+    },
+    {
+     "raw": "Right St Vincents Rd",
+     "turn": "Right",
+     "text": "St Vincents Rd"
+    },
+    {
+     "raw": "BS St Vincents Rd at Hilltop, stop 34",
+     "text": "BS St Vincents Rd at Hilltop, stop 34",
+     "stop": true
+    },
+    {
+     "raw": "BS St Vincents Rd at Hayden St, stop 37",
+     "text": "BS St Vincents Rd at Hayden St, stop 37",
+     "stop": true
+    },
+    {
+     "raw": "Right Childs Rd",
+     "turn": "Right",
+     "text": "Childs Rd"
+    },
+    {
+     "raw": "Coninues Nudgee Rd",
+     "text": "Coninues Nudgee Rd"
+    },
+    {
+     "raw": "BS Nudgee Rd at Armada Pl",
+     "text": "BS Nudgee Rd at Armada Pl",
+     "stop": true
+    },
+    {
+     "raw": "Right Nellie St",
+     "turn": "Right",
+     "text": "Nellie St"
+    },
+    {
+     "raw": "Left Amelia St",
+     "turn": "Left",
+     "text": "Amelia St"
+    },
+    {
+     "raw": "BS Amelia St near York St, stop 8",
+     "text": "BS Amelia St near York St, stop 8",
+     "stop": true
+    },
+    {
+     "raw": "Left York St",
+     "turn": "Left",
+     "text": "York St"
+    },
+    {
+     "raw": "Right Nudgee Rd",
+     "turn": "Right",
+     "text": "Nudgee Rd"
+    },
+    {
+     "raw": "Left Bulli St",
+     "turn": "Left",
+     "text": "Bulli St"
+    },
+    {
+     "raw": "BS Golden Sq at Bulli Street, stop 47",
+     "text": "BS Golden Sq at Bulli Street, stop 47",
+     "stop": true
+    },
+    {
+     "raw": "Right Pleystowe Cr",
+     "turn": "Right",
+     "text": "Pleystowe Cr"
+    },
+    {
+     "raw": "Left Nudgee Rd",
+     "turn": "Left",
+     "text": "Nudgee Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "as_required": true
+    },
+    {
+     "raw": "BS Nudgee Rd at Lilley Street, stop 34",
+     "text": "BS Nudgee Rd at Lilley Street, stop 34",
+     "stop": true
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Nudgee Rd near Stevenson St, stop 30",
+     "text": "BS Nudgee Rd near Stevenson St, stop 30",
+     "stop": true
+    },
+    {
+     "raw": "Left Kingsford Smith Dve",
+     "turn": "Left",
+     "text": "Kingsford Smith Dve"
+    },
+    {
+     "raw": "BS Kingsford Smith Dr at Theodore St, stop 33",
+     "text": "BS Kingsford Smith Dr at Theodore St, stop 33",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "safe to do so",
+     "text": "safe to do so"
+    }
+   ]
+  }
+ ]
+}

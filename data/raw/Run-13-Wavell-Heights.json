@@ -1,0 +1,372 @@
+{
+ "file": "Run-13-Wavell-Heights.pdf",
+ "title": "AM RUN 13 - WAVELL HEIGHTS",
+ "subtitle": [
+  "Depart Depart"
+ ],
+ "updated": "16/01/2023",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7:23 BS Buckland Rd near Bage Street, stop 37",
+     "time": "07:23",
+     "text": "BS Buckland Rd near Bage Street, stop 37",
+     "stop": true
+    },
+    {
+     "raw": "Continue Buckland Rd",
+     "text": "Continue Buckland Rd"
+    },
+    {
+     "raw": "7:25 BS Buckland Rd at Imbros Street, stop 35",
+     "time": "07:25",
+     "text": "BS Buckland Rd at Imbros Street, stop 35",
+     "stop": true
+    },
+    {
+     "raw": "Continue Buckland Rd",
+     "text": "Continue Buckland Rd"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Shaw Rd",
+     "turn": "Right",
+     "text": "Shaw Rd"
+    },
+    {
+     "raw": "7:27 BS Shaw Rd near Cressey Rd, stop 37",
+     "time": "07:27",
+     "text": "BS Shaw Rd near Cressey Rd, stop 37",
+     "stop": true
+    },
+    {
+     "raw": "Continue Shaw Rd",
+     "text": "Continue Shaw Rd"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Rode Rd",
+     "turn": "Left",
+     "text": "Rode Rd"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Pfingst Rd",
+     "turn": "Left",
+     "text": "Pfingst Rd"
+    },
+    {
+     "raw": "7:30 BS Pfingst Rd near White St, stop 44",
+     "time": "07:30",
+     "text": "BS Pfingst Rd near White St, stop 44",
+     "stop": true
+    },
+    {
+     "raw": "Right Edinburgh Castle Rd",
+     "turn": "Right",
+     "text": "Edinburgh Castle Rd"
+    },
+    {
+     "raw": "Right Roundabout 3rd exit - Colac St",
+     "turn": "Right",
+     "text": "Roundabout 3rd exit - Colac St"
+    },
+    {
+     "raw": "Left Roundabout 1st exit - Sport St",
+     "turn": "Left",
+     "text": "Roundabout 1st exit - Sport St"
+    },
+    {
+     "raw": "Continue straight across Gympie Rd - Kitchener Rd",
+     "text": "Continue straight across Gympie Rd - Kitchener Rd"
+    },
+    {
+     "raw": "Left Turner Rd",
+     "turn": "Left",
+     "text": "Turner Rd"
+    },
+    {
+     "raw": "7:36 BS Turner Rd at East Street, stop 46",
+     "time": "07:36",
+     "text": "BS Turner Rd at East Street, stop 46",
+     "stop": true
+    },
+    {
+     "raw": "Left Strathmore St",
+     "turn": "Left",
+     "text": "Strathmore St"
+    },
+    {
+     "raw": "7:38 BS Strathmore St near Goodall St",
+     "time": "07:38",
+     "text": "BS Strathmore St near Goodall St",
+     "stop": true
+    },
+    {
+     "raw": "Right Gympie Rd",
+     "turn": "Right",
+     "text": "Gympie Rd"
+    },
+    {
+     "raw": "Left Sadlier St",
+     "turn": "Left",
+     "text": "Sadlier St"
+    },
+    {
+     "raw": "7:46 BS Sadlier St near Leckie Rd",
+     "time": "07:46",
+     "text": "BS Sadlier St near Leckie Rd",
+     "stop": true
+    },
+    {
+     "raw": "Left Leckie Rd",
+     "turn": "Left",
+     "text": "Leckie Rd"
+    },
+    {
+     "raw": "7:48 BS Leckie Rd near Eleventh Ave",
+     "time": "07:48",
+     "text": "BS Leckie Rd near Eleventh Ave",
+     "stop": true
+    },
+    {
+     "raw": "Right Edinburgh Castle Rd",
+     "turn": "Right",
+     "text": "Edinburgh Castle Rd"
+    },
+    {
+     "raw": "7:50 BS Wavell State High School",
+     "time": "07:50",
+     "text": "BS Wavell State High School",
+     "stop": true
+    },
+    {
+     "raw": "7:52 BS Edinburgh Castle Rd at Zeehan St, stop 42",
+     "time": "07:52",
+     "text": "BS Edinburgh Castle Rd at Zeehan St, stop 42",
+     "stop": true
+    },
+    {
+     "raw": "7:54 BS Edinburgh Castle Rd at Deloraine St, stop 41",
+     "time": "07:54",
+     "text": "BS Edinburgh Castle Rd at Deloraine St, stop 41",
+     "stop": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "Roundabout 2nd exit - Bilsen Rd",
+     "text": "Roundabout 2nd exit - Bilsen Rd"
+    },
+    {
+     "raw": "Right Hamilton Rd",
+     "turn": "Right",
+     "text": "Hamilton Rd"
+    },
+    {
+     "raw": "8.00 Nudgee College",
+     "time": "08:00",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Set down at bus bays",
+     "text": "Set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15:05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Sandgate Road",
+     "turn": "Left",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Right Hamilton Rd",
+     "turn": "Right",
+     "text": "Hamilton Rd"
+    },
+    {
+     "raw": "Left Bilsen Rd",
+     "turn": "Left",
+     "text": "Bilsen Rd"
+    },
+    {
+     "raw": "Right Edinburgh Castle Rd exit off roundabout",
+     "turn": "Right",
+     "text": "Edinburgh Castle Rd exit off roundabout"
+    },
+    {
+     "raw": "BS Edinburgh Castle Rd at Deloraine St, stop 41",
+     "text": "BS Edinburgh Castle Rd at Deloraine St, stop 41",
+     "stop": true
+    },
+    {
+     "raw": "BS Edinburgh Castle Rd at Zeehan St, stop 42",
+     "text": "BS Edinburgh Castle Rd at Zeehan St, stop 42",
+     "stop": true
+    },
+    {
+     "raw": "Right Roundabout 3rd exit - Colac St",
+     "turn": "Right",
+     "text": "Roundabout 3rd exit - Colac St"
+    },
+    {
+     "raw": "Left Roundabout 1st exit - Sport St",
+     "turn": "Left",
+     "text": "Roundabout 1st exit - Sport St"
+    },
+    {
+     "raw": "Continue straight across Gympie Rd - Kitchener Rd",
+     "text": "Continue straight across Gympie Rd - Kitchener Rd"
+    },
+    {
+     "raw": "Left Turner Rd",
+     "turn": "Left",
+     "text": "Turner Rd"
+    },
+    {
+     "raw": "BS Turner Rd at East Street, stop 46",
+     "text": "BS Turner Rd at East Street, stop 46",
+     "stop": true
+    },
+    {
+     "raw": "Left Strathmore St",
+     "turn": "Left",
+     "text": "Strathmore St"
+    },
+    {
+     "raw": "BS Strathmore St near Goodall St",
+     "text": "BS Strathmore St near Goodall St",
+     "stop": true
+    },
+    {
+     "raw": "Right Gympie Rd",
+     "turn": "Right",
+     "text": "Gympie Rd"
+    },
+    {
+     "raw": "Left Sadlier St",
+     "turn": "Left",
+     "text": "Sadlier St"
+    },
+    {
+     "raw": "BS Sadlier St near Leckie Rd",
+     "text": "BS Sadlier St near Leckie Rd",
+     "stop": true
+    },
+    {
+     "raw": "Left Leckie Rd",
+     "turn": "Left",
+     "text": "Leckie Rd"
+    },
+    {
+     "raw": "BS Leckie Rd near Eleventh Ave",
+     "text": "BS Leckie Rd near Eleventh Ave",
+     "stop": true
+    },
+    {
+     "raw": "Right Roundabout 3rd exit - Edinburgh Castle Rd",
+     "turn": "Right",
+     "text": "Roundabout 3rd exit - Edinburgh Castle Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Shaw Rd",
+     "turn": "Right",
+     "text": "Shaw Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "as_required": true
+    },
+    {
+     "raw": "Left Buckland Rd",
+     "turn": "Left",
+     "text": "Buckland Rd"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Buckland Rd at Nundah State School, stop 38A",
+     "text": "BS Buckland Rd at Nundah State School, stop 38A",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "safe to do so",
+     "text": "safe to do so"
+    }
+   ]
+  }
+ ],
+ "page_headings": [
+  [
+   "PM RUN 13 - WAVELL HEIGHTS",
+   "Depart Depart"
+  ]
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "file": "BOARDERS-RUN.pdf",
+ "title": "Sunshine Coast Boarders Run",
+ "subtitle": [],
+ "updated": "05/04/2018",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "TRIP NORTH",
+   "items": [
+    {
+     "raw": "3.10 Nudgee College",
+     "time": "03:10",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Aussie World (Slip rd off pacific Motorway)",
+     "text": "Aussie World (Slip rd off pacific Motorway)"
+    },
+    {
+     "raw": "Darby Close, Maroochydore",
+     "text": "Darby Close, Maroochydore"
+    }
+   ]
+  },
+  {
+   "label": "TRIP SOUTH",
+   "items": [
+    {
+     "raw": "4.30 Darby Close, Maroochydore",
+     "time": "04:30",
+     "text": "Darby Close, Maroochydore"
+    },
+    {
+     "raw": "4.45 Pignata rd (slip rd off Pacific Motorway)",
+     "time": "04:45",
+     "text": "Pignata rd (slip rd off Pacific Motorway)"
+    },
+    {
+     "raw": "Opposite Aussie World",
+     "text": "Opposite Aussie World"
+    }
+   ]
+  }
+ ]
+}

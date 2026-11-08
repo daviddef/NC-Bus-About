@@ -1,0 +1,565 @@
+{
+ "file": "Run-4-The-Gap-new-T1_2026.pdf",
+ "title": "RUN 4 - THE GAP",
+ "subtitle": [],
+ "updated": "21/01/2026",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7.05 BS Payne Rd at Payne - Glenmore, stop 32",
+     "time": "07:05",
+     "text": "BS Payne Rd at Payne - Glenmore, stop 32",
+     "stop": true
+    },
+    {
+     "raw": "Right Illowra St",
+     "turn": "Right",
+     "text": "Illowra St"
+    },
+    {
+     "raw": "Continues Settlement Rd",
+     "text": "Continues Settlement Rd"
+    },
+    {
+     "raw": "7.08 BS Settlement Rd at Gap Primary School, stop 36",
+     "time": "07:08",
+     "text": "BS Settlement Rd at Gap Primary School, stop 36",
+     "stop": true
+    },
+    {
+     "raw": "7.09 BS Settlement Rd at Chaprowe Street, stop 37",
+     "time": "07:09",
+     "text": "BS Settlement Rd at Chaprowe Street, stop 37",
+     "stop": true
+    },
+    {
+     "raw": "Left Samford Road",
+     "turn": "Left",
+     "text": "Samford Road"
+    },
+    {
+     "raw": "7.15 BS Samford Rd near Warrong St",
+     "time": "07:15",
+     "text": "BS Samford Rd near Warrong St",
+     "stop": true
+    },
+    {
+     "raw": "BS Samford Rd near Claverton St",
+     "text": "BS Samford Rd near Claverton St",
+     "stop": true
+    },
+    {
+     "raw": "Right Ferny Way",
+     "turn": "Right",
+     "text": "Ferny Way"
+    },
+    {
+     "raw": "Left Gordon Road",
+     "turn": "Left",
+     "text": "Gordon Road"
+    },
+    {
+     "raw": "BS Gordon Rd near Owarra Ave",
+     "text": "BS Gordon Rd near Owarra Ave",
+     "stop": true
+    },
+    {
+     "raw": "Right Patricks Road",
+     "turn": "Right",
+     "text": "Patricks Road"
+    },
+    {
+     "raw": "Left Caesar Road",
+     "turn": "Left",
+     "text": "Caesar Road"
+    },
+    {
+     "raw": "Left Hutton Road",
+     "turn": "Left",
+     "text": "Hutton Road"
+    },
+    {
+     "raw": "7.23 BS Hutton Rd near Yingally Dr",
+     "time": "07:23",
+     "text": "BS Hutton Rd near Yingally Dr",
+     "stop": true
+    },
+    {
+     "raw": "Contunue Hutton Rd then Woodhill St",
+     "text": "Contunue Hutton Rd then Woodhill St"
+    },
+    {
+     "raw": "Right Bunya Road",
+     "turn": "Right",
+     "text": "Bunya Road"
+    },
+    {
+     "raw": "Left Jinker Track",
+     "turn": "Left",
+     "text": "Jinker Track"
+    },
+    {
+     "raw": "Left James Drysdale Recreational Park",
+     "turn": "Left",
+     "text": "James Drysdale Recreational Park"
+    },
+    {
+     "raw": "7.27 Last car park - on right (with shelter)",
+     "time": "07:27",
+     "text": "Last car park - on right (with shelter)"
+    },
+    {
+     "raw": "Caution - large bus turns around",
+     "text": "Caution - large bus turns around"
+    },
+    {
+     "raw": "Right Jinker Track",
+     "turn": "Right",
+     "text": "Jinker Track"
+    },
+    {
+     "raw": "Left Collins Road",
+     "turn": "Left",
+     "text": "Collins Road"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Collins Rd near Dipperu St",
+     "text": "Collins Rd near Dipperu St"
+    },
+    {
+     "raw": "Left Old Northern Road",
+     "turn": "Left",
+     "text": "Old Northern Road"
+    },
+    {
+     "raw": "Right Hamilton Road",
+     "turn": "Right",
+     "text": "Hamilton Road"
+    },
+    {
+     "raw": "7.36 BS Hamilton Rd at Paramount Circuit, stop 47",
+     "time": "07:36",
+     "text": "BS Hamilton Rd at Paramount Circuit, stop 47",
+     "stop": true
+    },
+    {
+     "raw": "(near MacDowall Shops)",
+     "text": "(near MacDowall Shops)"
+    },
+    {
+     "raw": "BS Hamilton Rd at Trouts Rd, stop 46",
+     "text": "BS Hamilton Rd at Trouts Rd, stop 46",
+     "stop": true
+    },
+    {
+     "raw": "Left Whites Road",
+     "turn": "Left",
+     "text": "Whites Road"
+    },
+    {
+     "raw": "BS Whites St at Kenna Street, stop 46",
+     "text": "BS Whites St at Kenna Street, stop 46",
+     "stop": true
+    },
+    {
+     "raw": "Kenna St near Ashley Rd",
+     "text": "Kenna St near Ashley Rd"
+    },
+    {
+     "raw": "Left Martindale Street",
+     "turn": "Left",
+     "text": "Martindale Street"
+    },
+    {
+     "raw": "Right Stringybark Drive",
+     "turn": "Right",
+     "text": "Stringybark Drive"
+    },
+    {
+     "raw": "BS Stringybark Dr at Martindale Street, stop 47",
+     "text": "BS Stringybark Dr at Martindale Street, stop 47",
+     "stop": true
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along the route",
+     "as_required": true
+    },
+    {
+     "raw": "7.48 BS Stringybark Dr near Horn Rd, stop 48",
+     "time": "07:48",
+     "text": "BS Stringybark Dr near Horn Rd, stop 48",
+     "stop": true
+    },
+    {
+     "raw": "Right Horn Road",
+     "turn": "Right",
+     "text": "Horn Road"
+    },
+    {
+     "raw": "BS Horn Rd at Muneera Street, stop 49",
+     "text": "BS Horn Rd at Muneera Street, stop 49",
+     "stop": true
+    },
+    {
+     "raw": "Left Maundrell Terrace",
+     "turn": "Left",
+     "text": "Maundrell Terrace"
+    },
+    {
+     "raw": "BS Maundrell Tce at Darwin Street, stop 50a",
+     "text": "BS Maundrell Tce at Darwin Street, stop 50a",
+     "stop": true
+    },
+    {
+     "raw": "Right Robinson Road West",
+     "turn": "Right",
+     "text": "Robinson Road West"
+    },
+    {
+     "raw": "Pickup as required*",
+     "text": "Pickup as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7.55 Robinson Road Marketplace (Coles)",
+     "time": "07:55",
+     "text": "Robinson Road Marketplace (Coles)"
+    },
+    {
+     "raw": "7.58 BS Robinson Rd at Priscilla Street, stop 53",
+     "time": "07:58",
+     "text": "BS Robinson Rd at Priscilla Street, stop 53",
+     "stop": true
+    },
+    {
+     "raw": "BS Robinson Rd at Bassano St",
+     "text": "BS Robinson Rd at Bassano St",
+     "stop": true
+    },
+    {
+     "raw": "Left Newman Road",
+     "turn": "Left",
+     "text": "Newman Road"
+    },
+    {
+     "raw": "Right Zillmere Road",
+     "turn": "Right",
+     "text": "Zillmere Road"
+    },
+    {
+     "raw": "8.10 Nudgee College",
+     "time": "08:10",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "set down at bus bays",
+     "text": "set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "where safe to do so",
+     "text": "where safe to do so"
+    },
+    {
+     "raw": "- changed start point",
+     "text": "- changed start point"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15.05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Zillmere Road",
+     "turn": "Right",
+     "text": "Zillmere Road"
+    },
+    {
+     "raw": "Left Newman Road",
+     "turn": "Left",
+     "text": "Newman Road"
+    },
+    {
+     "raw": "Right Robinson Road West",
+     "turn": "Right",
+     "text": "Robinson Road West"
+    },
+    {
+     "raw": "BS Robinson Rd at Priscilla Street, stop 53",
+     "text": "BS Robinson Rd at Priscilla Street, stop 53",
+     "stop": true
+    },
+    {
+     "raw": "Past Shopping Centre (Coles)",
+     "text": "Past Shopping Centre (Coles)"
+    },
+    {
+     "raw": "(End of yellow line)",
+     "text": "(End of yellow line)"
+    },
+    {
+     "raw": "Left Maundrell Terrace",
+     "turn": "Left",
+     "text": "Maundrell Terrace"
+    },
+    {
+     "raw": "BS Maundrell Tce at Darwin Street, stop 50",
+     "text": "BS Maundrell Tce at Darwin Street, stop 50",
+     "stop": true
+    },
+    {
+     "raw": "Right Horn Road",
+     "turn": "Right",
+     "text": "Horn Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Horn Rd at Muneera Street, stop 49",
+     "text": "BS Horn Rd at Muneera Street, stop 49",
+     "stop": true
+    },
+    {
+     "raw": "Left Stringybark Drive",
+     "turn": "Left",
+     "text": "Stringybark Drive"
+    },
+    {
+     "raw": "BS Stringybark Dr near Horn Rd, stop 48",
+     "text": "BS Stringybark Dr near Horn Rd, stop 48",
+     "stop": true
+    },
+    {
+     "raw": "BS Stringybark Dr at Martindale Street, stop 47",
+     "text": "BS Stringybark Dr at Martindale Street, stop 47",
+     "stop": true
+    },
+    {
+     "raw": "Left Martindale Street",
+     "turn": "Left",
+     "text": "Martindale Street"
+    },
+    {
+     "raw": "Right Kenna Street",
+     "turn": "Right",
+     "text": "Kenna Street"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Kenna St near Whites Rd, stop 46",
+     "text": "BS Kenna St near Whites Rd, stop 46",
+     "stop": true
+    },
+    {
+     "raw": "Right Whites Road",
+     "turn": "Right",
+     "text": "Whites Road"
+    },
+    {
+     "raw": "Right Hamilton Road",
+     "turn": "Right",
+     "text": "Hamilton Road"
+    },
+    {
+     "raw": "BS Hamilton Rd at Trouts Rd, stop 46",
+     "text": "BS Hamilton Rd at Trouts Rd, stop 46",
+     "stop": true
+    },
+    {
+     "raw": "Cross Beckett Rd",
+     "text": "Cross Beckett Rd"
+    },
+    {
+     "raw": "Hamilton Rd after Beckett Rd",
+     "text": "Hamilton Rd after Beckett Rd"
+    },
+    {
+     "raw": "(Stop just past Unit Complex driveway but do not",
+     "text": "(Stop just past Unit Complex driveway but do not"
+    },
+    {
+     "raw": "block driveway)",
+     "text": "block driveway)"
+    },
+    {
+     "raw": "Left Old Northern Road",
+     "turn": "Left",
+     "text": "Old Northern Road"
+    },
+    {
+     "raw": "Right Collins Road / Bunya Road",
+     "turn": "Right",
+     "text": "Collins Road / Bunya Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Jinker Track",
+     "turn": "Right",
+     "text": "Jinker Track"
+    },
+    {
+     "raw": "Left Jinker Track sports complex",
+     "turn": "Left",
+     "text": "Jinker Track sports complex"
+    },
+    {
+     "raw": "Last car park - on right with shelter",
+     "text": "Last car park - on right with shelter"
+    },
+    {
+     "raw": "(Caution - large bus turns around)",
+     "text": "(Caution - large bus turns around)"
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the route where",
+     "as_required": true
+    },
+    {
+     "raw": "Right Jinker Track",
+     "turn": "Right",
+     "text": "Jinker Track"
+    },
+    {
+     "raw": "Right Bunya Road",
+     "turn": "Right",
+     "text": "Bunya Road"
+    },
+    {
+     "raw": "Left Woodhill Road continues Hutton Road",
+     "turn": "Left",
+     "text": "Woodhill Road continues Hutton Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Caesar Road",
+     "turn": "Right",
+     "text": "Caesar Road"
+    },
+    {
+     "raw": "Right Patricks Road",
+     "turn": "Right",
+     "text": "Patricks Road"
+    },
+    {
+     "raw": "Left Gordon Road",
+     "turn": "Left",
+     "text": "Gordon Road"
+    },
+    {
+     "raw": "BS Gordon Rd near Anora Cr",
+     "text": "BS Gordon Rd near Anora Cr",
+     "stop": true
+    },
+    {
+     "raw": "Right Ferny Way",
+     "turn": "Right",
+     "text": "Ferny Way"
+    },
+    {
+     "raw": "Left Samford Road",
+     "turn": "Left",
+     "text": "Samford Road"
+    },
+    {
+     "raw": "BS Samford Rd near Claverton St",
+     "text": "BS Samford Rd near Claverton St",
+     "stop": true
+    },
+    {
+     "raw": "BS Samford Rd near Warrong St",
+     "text": "BS Samford Rd near Warrong St",
+     "stop": true
+    },
+    {
+     "raw": "Right Settlement Road",
+     "turn": "Right",
+     "text": "Settlement Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "BS Settlement Rd at Chaprowe Street, stop 37",
+     "text": "BS Settlement Rd at Chaprowe Street, stop 37",
+     "stop": true
+    },
+    {
+     "raw": "Continues Illlowra St",
+     "text": "Continues Illlowra St"
+    },
+    {
+     "raw": "Left Payne Rd",
+     "turn": "Left",
+     "text": "Payne Rd"
+    },
+    {
+     "raw": "BS Payne Rd at Payne - Glenmore, stop 32",
+     "text": "BS Payne Rd at Payne - Glenmore, stop 32",
+     "stop": true
+    },
+    {
+     "raw": "Return Empty to College",
+     "text": "Return Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "safe to do so",
+     "text": "safe to do so"
+    },
+    {
+     "raw": "- changed start point",
+     "text": "- changed start point"
+    }
+   ]
+  }
+ ]
+}

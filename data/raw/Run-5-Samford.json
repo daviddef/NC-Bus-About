@@ -1,0 +1,482 @@
+{
+ "file": "Run-5-Samford.pdf",
+ "title": "RUN 5 - SAMFORD/DAYBORO",
+ "subtitle": [
+  "Highvale & Samford Village to St Joseph's Boondall",
+  "Connections from Dayboro & Samsonvale",
+  "Follow the BusMinder procedures for Nudgee students"
+ ],
+ "updated": "14/04/2022",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "6.25 Depart empty to Delonix Place",
+     "time": "06:25",
+     "text": "Depart empty to Delonix Place",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Left Pickering Street",
+     "turn": "Left",
+     "text": "Pickering Street"
+    },
+    {
+     "raw": "Right Samford Road",
+     "turn": "Right",
+     "text": "Samford Road"
+    },
+    {
+     "raw": "Samford roundabout 2nd exit -",
+     "text": "Samford roundabout 2nd exit -"
+    },
+    {
+     "raw": "Mt Glorious Road",
+     "text": "Mt Glorious Road"
+    },
+    {
+     "raw": "Left Wights Mountain Road",
+     "turn": "Left",
+     "text": "Wights Mountain Road"
+    },
+    {
+     "raw": "Right Westbourne Drive",
+     "turn": "Right",
+     "text": "Westbourne Drive"
+    },
+    {
+     "raw": "Lay over before corner of Delonix Place",
+     "text": "Lay over before corner of Delonix Place"
+    },
+    {
+     "raw": "START OF RUN",
+     "text": "START OF RUN"
+    },
+    {
+     "raw": "6.55 Depart Corner of Delonix Place",
+     "time": "06:55",
+     "text": "Depart Corner of Delonix Place",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Continue as Westbourne Drive",
+     "text": "Continue as Westbourne Drive"
+    },
+    {
+     "raw": "Right Follow Right as Wetbourne Drive",
+     "turn": "Right",
+     "text": "Follow Right as Wetbourne Drive"
+    },
+    {
+     "raw": "2nd exit at roundabout as Sky Drive",
+     "text": "2nd exit at roundabout as Sky Drive"
+    },
+    {
+     "raw": "7.00",
+     "time": "07:00",
+     "text": ""
+    },
+    {
+     "raw": "Left Mount Glorious Road",
+     "turn": "Left",
+     "text": "Mount Glorious Road"
+    },
+    {
+     "raw": "Left Hulcombe Road",
+     "turn": "Left",
+     "text": "Hulcombe Road"
+    },
+    {
+     "raw": "Right Continue as Ryder Road",
+     "turn": "Right",
+     "text": "Continue as Ryder Road"
+    },
+    {
+     "raw": "Left Mount Glorious Road",
+     "turn": "Left",
+     "text": "Mount Glorious Road"
+    },
+    {
+     "raw": "Look for School Bus Turning sign on Left approx",
+     "text": "Look for School Bus Turning sign on Left approx",
+     "connection": true
+    },
+    {
+     "raw": "0.5km past Dawson Creek Road enter turnaround",
+     "text": "0.5km past Dawson Creek Road enter turnaround"
+    },
+    {
+     "raw": "area",
+     "text": "area"
+    },
+    {
+     "raw": "7.09 Depart turnaround area",
+     "time": "07:09",
+     "text": "Depart turnaround area",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Return Mount Glorious Road",
+     "text": "Return Mount Glorious Road"
+    },
+    {
+     "raw": "7.23 Mary Ring Drive bus stop",
+     "time": "07:23",
+     "text": "Mary Ring Drive bus stop",
+     "stop": true
+    },
+    {
+     "raw": "Connect with School Bus 77",
+     "text": "Connect with School Bus 77",
+     "connection": true
+    },
+    {
+     "raw": "Connect with School Bus 78",
+     "text": "Connect with School Bus 78",
+     "connection": true
+    },
+    {
+     "raw": "7.25 Depart Mary Ring Drive bus stop",
+     "time": "07:25",
+     "text": "Depart Mary Ring Drive bus stop",
+     "stop": true,
+     "school_or_depot": true
+    },
+    {
+     "raw": "Do not depart until ALL connections are made",
+     "text": "Do not depart until ALL connections are made",
+     "connection": true,
+     "school_or_depot": true
+    },
+    {
+     "raw": "Samford roundabout 1st exit - Main Street",
+     "text": "Samford roundabout 1st exit - Main Street"
+    },
+    {
+     "raw": "Continue as Mount Samson Road",
+     "text": "Continue as Mount Samson Road"
+    },
+    {
+     "raw": "Right Samford Rangers Soccer fields car park",
+     "turn": "Right",
+     "text": "Samford Rangers Soccer fields car park"
+    },
+    {
+     "raw": "Left then right to Bus Bay",
+     "turn": "Left",
+     "text": "then right to Bus Bay",
+     "school_or_depot": true
+    },
+    {
+     "raw": "7.30 Samford Soccer Club bus bay",
+     "time": "07:30",
+     "text": "Samford Soccer Club bus bay",
+     "school_or_depot": true
+    },
+    {
+     "raw": "ON LOAD Nudgee Pax from School Bus 17",
+     "text": "ON LOAD Nudgee Pax from School Bus 17",
+     "connection": true
+    },
+    {
+     "raw": "7.33 Depart Samford Soccer Club bus bay",
+     "time": "07:33",
+     "text": "Depart Samford Soccer Club bus bay",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Mount Samson Road",
+     "turn": "Right",
+     "text": "Mount Samson Road"
+    },
+    {
+     "raw": "7.35",
+     "time": "07:35",
+     "text": ""
+    },
+    {
+     "raw": "Right Eatons Crossing Road",
+     "turn": "Right",
+     "text": "Eatons Crossing Road"
+    },
+    {
+     "raw": "Pickup as required",
+     "text": "Pickup as required",
+     "as_required": true
+    },
+    {
+     "raw": "7.44 Mayflower Street bus stop",
+     "time": "07:44",
+     "text": "Mayflower Street bus stop",
+     "stop": true
+    },
+    {
+     "raw": "Right South Pine Road",
+     "turn": "Right",
+     "text": "South Pine Road"
+    },
+    {
+     "raw": "Left Albany Creek Road",
+     "turn": "Left",
+     "text": "Albany Creek Road"
+    },
+    {
+     "raw": "Left Bridgeman Road",
+     "turn": "Left",
+     "text": "Bridgeman Road"
+    },
+    {
+     "raw": "Right Graham Road",
+     "turn": "Right",
+     "text": "Graham Road"
+    },
+    {
+     "raw": "7.58 Stop Graham Rd near Stirling St",
+     "time": "07:58",
+     "text": "Stop Graham Rd near Stirling St",
+     "stop": true
+    },
+    {
+     "raw": "Left Ridley Road",
+     "turn": "Left",
+     "text": "Ridley Road"
+    },
+    {
+     "raw": "7.59 Stop BT Ridley Rd at Ridley Road South",
+     "time": "07:59",
+     "text": "Stop BT Ridley Rd at Ridley Road South",
+     "stop": true
+    },
+    {
+     "raw": "Pickup as required",
+     "text": "Pickup as required",
+     "as_required": true
+    },
+    {
+     "raw": "Right Beams Road",
+     "turn": "Right",
+     "text": "Beams Road"
+    },
+    {
+     "raw": "EXPRESS ALONG BEAMS ROAD - DO NOT STOP",
+     "text": "EXPRESS ALONG BEAMS ROAD - DO NOT STOP",
+     "express": true
+    },
+    {
+     "raw": "(Nudgee Bus 1 picks up on Beams Road)",
+     "text": "(Nudgee Bus 1 picks up on Beams Road)"
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Into College at Zillmere Road lights",
+     "turn": "Left",
+     "text": "Into College at Zillmere Road lights"
+    },
+    {
+     "raw": "Left into School driveway",
+     "turn": "Left",
+     "text": "into School driveway"
+    },
+    {
+     "raw": "8.16 U turn into bus bays & set down",
+     "time": "08:16",
+     "turn": "UTurn",
+     "text": "into bus bays & set down",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Nudgee College",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "END OF RUN",
+     "text": "END OF RUN"
+    },
+    {
+     "raw": "Empty to Depot - Fuel & Tidy Vehicle",
+     "text": "Empty to Depot - Fuel & Tidy Vehicle",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "Nudgee College",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "14.45 School supervisors will call you into position",
+     "time": "14:45",
+     "text": "School supervisors will call you into position"
+    },
+    {
+     "raw": "START OF RUN",
+     "text": "START OF RUN"
+    },
+    {
+     "raw": "15.05 Depart College - bus bays",
+     "time": "15:05",
+     "text": "Depart College - bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Do Not Block the intersection before entering",
+     "text": "Do Not Block the intersection before entering"
+    },
+    {
+     "raw": "Sandgate Road",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "Left Beams Road",
+     "turn": "Left",
+     "text": "Beams Road"
+    },
+    {
+     "raw": "Left Ridley Road",
+     "turn": "Left",
+     "text": "Ridley Road"
+    },
+    {
+     "raw": "Drop as required",
+     "text": "Drop as required",
+     "as_required": true
+    },
+    {
+     "raw": "Right Graham Road",
+     "turn": "Right",
+     "text": "Graham Road"
+    },
+    {
+     "raw": "Drop as required",
+     "text": "Drop as required",
+     "as_required": true
+    },
+    {
+     "raw": "Left Bridgeman Road",
+     "turn": "Left",
+     "text": "Bridgeman Road"
+    },
+    {
+     "raw": "Right Albany Creek Road",
+     "turn": "Right",
+     "text": "Albany Creek Road"
+    },
+    {
+     "raw": "Right South Pine Road",
+     "turn": "Right",
+     "text": "South Pine Road"
+    },
+    {
+     "raw": "Left Eatons Crossing Road",
+     "turn": "Left",
+     "text": "Eatons Crossing Road"
+    },
+    {
+     "raw": "Drop as required",
+     "text": "Drop as required",
+     "as_required": true
+    },
+    {
+     "raw": "Continue Eatons Crossing Road",
+     "text": "Continue Eatons Crossing Road"
+    },
+    {
+     "raw": "OFF LOAD Pax to School Bus No 59 at",
+     "text": "OFF LOAD Pax to School Bus No 59 at",
+     "connection": true
+    },
+    {
+     "raw": "Topiaries just before Mt Samson Road",
+     "text": "Topiaries just before Mt Samson Road"
+    },
+    {
+     "raw": "Left Mt Samson Road",
+     "turn": "Left",
+     "text": "Mt Samson Road"
+    },
+    {
+     "raw": "Continue as Main Street",
+     "text": "Continue as Main Street"
+    },
+    {
+     "raw": "Bus shelter at Samford RSL",
+     "text": "Bus shelter at Samford RSL"
+    },
+    {
+     "raw": "Right Mt Glorious Road",
+     "turn": "Right",
+     "text": "Mt Glorious Road"
+    },
+    {
+     "raw": "Right Showgrounds Drive",
+     "turn": "Right",
+     "text": "Showgrounds Drive"
+    },
+    {
+     "raw": "Right Westwood Drive",
+     "turn": "Right",
+     "text": "Westwood Drive"
+    },
+    {
+     "raw": "Caution quite tight in this section",
+     "text": "Caution quite tight in this section"
+    },
+    {
+     "raw": "Continue right as Mt O'Reilly Road",
+     "text": "Continue right as Mt O'Reilly Road"
+    },
+    {
+     "raw": "Left Greggs Road",
+     "turn": "Left",
+     "text": "Greggs Road"
+    },
+    {
+     "raw": "Continue as Gibbons Road",
+     "text": "Continue as Gibbons Road"
+    },
+    {
+     "raw": "Right Mt Samson Road",
+     "turn": "Right",
+     "text": "Mt Samson Road"
+    },
+    {
+     "raw": "END OF RUN",
+     "text": "END OF RUN"
+    },
+    {
+     "raw": "Empty to Depot - Fuel & Tidy Vehicle",
+     "text": "Empty to Depot - Fuel & Tidy Vehicle",
+     "school_or_depot": true
+    }
+   ]
+  }
+ ]
+}

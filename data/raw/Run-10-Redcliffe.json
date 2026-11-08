@@ -1,0 +1,397 @@
+{
+ "file": "Run-10-Redcliffe.pdf",
+ "title": "RUN 10 - REDCLIFFE PENINSULA",
+ "subtitle": [],
+ "updated": "08/12/2021",
+ "updated_note": null,
+ "trips": [
+  {
+   "label": "AM",
+   "items": [
+    {
+     "raw": "7.15 Bus Stop - Boardman Rd (opp. Fire Station)",
+     "time": "07:15",
+     "text": "Bus Stop - Boardman Rd (opp. Fire Station)",
+     "stop": true
+    },
+    {
+     "raw": "Right Griffith Road",
+     "turn": "Right",
+     "text": "Griffith Road"
+    },
+    {
+     "raw": "7.16 Bus Stop (Marina Plaza Shops)",
+     "time": "07:16",
+     "text": "Bus Stop (Marina Plaza Shops)",
+     "stop": true
+    },
+    {
+     "raw": "Left Newport Drive",
+     "turn": "Left",
+     "text": "Newport Drive"
+    },
+    {
+     "raw": "7.17 1st Bus Stop",
+     "time": "07:17",
+     "text": "1st Bus Stop",
+     "stop": true
+    },
+    {
+     "raw": "Right Endeavour Esplanade",
+     "turn": "Right",
+     "text": "Endeavour Esplanade"
+    },
+    {
+     "raw": "Left Oyster Point Esplanade",
+     "turn": "Left",
+     "text": "Oyster Point Esplanade"
+    },
+    {
+     "raw": "Right Jeays Street",
+     "turn": "Right",
+     "text": "Jeays Street"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Scarborough Road",
+     "turn": "Right",
+     "text": "Scarborough Road"
+    },
+    {
+     "raw": "Bus Stop - Southern Cross School",
+     "text": "Bus Stop - Southern Cross School",
+     "stop": true
+    },
+    {
+     "raw": "7.25 Bus Stop - Griffith Road",
+     "time": "07:25",
+     "text": "Bus Stop - Griffith Road",
+     "stop": true
+    },
+    {
+     "raw": "Continue as Scarborough Rd",
+     "text": "Continue as Scarborough Rd"
+    },
+    {
+     "raw": "Bus Stop - Maryborough Terrace",
+     "text": "Bus Stop - Maryborough Terrace",
+     "stop": true
+    },
+    {
+     "raw": "Continue as Scarborough Rd / Victoria Ave",
+     "text": "Continue as Scarborough Rd / Victoria Ave"
+    },
+    {
+     "raw": "Left MacDonnell Road",
+     "turn": "Left",
+     "text": "MacDonnell Road"
+    },
+    {
+     "raw": "7.33 Pick up as required*",
+     "time": "07:33",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Oxley Avenue",
+     "turn": "Right",
+     "text": "Oxley Avenue"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Hornibrook Esplanade",
+     "turn": "Right",
+     "text": "Hornibrook Esplanade"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "7.41 Bus Stop (Pelican Park)",
+     "time": "07:41",
+     "text": "Bus Stop (Pelican Park)",
+     "stop": true
+    },
+    {
+     "raw": "Continue Hornibrook Esplanade",
+     "text": "Continue Hornibrook Esplanade"
+    },
+    {
+     "raw": "Left Beaconfield Terrace",
+     "turn": "Left",
+     "text": "Beaconfield Terrace"
+    },
+    {
+     "raw": "7.45 Bus Stop - Brighton Health Campus",
+     "time": "07:45",
+     "text": "Bus Stop - Brighton Health Campus",
+     "stop": true
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continue Beaconfield Tce / Brighton Tce",
+     "text": "Continue Beaconfield Tce / Brighton Tce"
+    },
+    {
+     "raw": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "text": "*Pick up as required - bus will pick up from Council Bus Stops along",
+     "as_required": true
+    },
+    {
+     "raw": "7.50 Sacred Heart Primary School",
+     "time": "07:50",
+     "text": "Sacred Heart Primary School"
+    },
+    {
+     "raw": "Left Brighton Road",
+     "turn": "Left",
+     "text": "Brighton Road"
+    },
+    {
+     "raw": "Right Rainbow Street",
+     "turn": "Right",
+     "text": "Rainbow Street"
+    },
+    {
+     "raw": "7.55 Bus Stop Rail Station",
+     "time": "07:55",
+     "text": "Bus Stop Rail Station",
+     "stop": true
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Board Street",
+     "turn": "Left",
+     "text": "Board Street"
+    },
+    {
+     "raw": "Left Braun Street",
+     "turn": "Left",
+     "text": "Braun Street"
+    },
+    {
+     "raw": "Continues as Sandgate Road",
+     "text": "Continues as Sandgate Road"
+    },
+    {
+     "raw": "Pick up as required*",
+     "text": "Pick up as required*",
+     "as_required": true
+    },
+    {
+     "raw": "8.10 Nudgee College",
+     "time": "08:10",
+     "text": "Nudgee College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "set down at bus bays",
+     "text": "set down at bus bays",
+     "school_or_depot": true
+    },
+    {
+     "raw": "CAUTION",
+     "text": "CAUTION"
+    },
+    {
+     "raw": "College Bus Transit Area maximum speed",
+     "text": "College Bus Transit Area maximum speed"
+    },
+    {
+     "raw": "is 10 km per hour",
+     "text": "is 10 km per hour"
+    },
+    {
+     "raw": "the route where safe to do so",
+     "text": "the route where safe to do so"
+    }
+   ]
+  },
+  {
+   "label": "PM",
+   "items": [
+    {
+     "raw": "15.05 Depart College",
+     "time": "15:05",
+     "text": "Depart College",
+     "school_or_depot": true
+    },
+    {
+     "raw": "Right Sandgate Road",
+     "turn": "Right",
+     "text": "Sandgate Road"
+    },
+    {
+     "raw": "(Continues as Braun Street)",
+     "text": "(Continues as Braun Street)"
+    },
+    {
+     "raw": "Right Board Street",
+     "turn": "Right",
+     "text": "Board Street"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Right Rainbow Street",
+     "turn": "Right",
+     "text": "Rainbow Street"
+    },
+    {
+     "raw": "Left Bowser Parade",
+     "turn": "Left",
+     "text": "Bowser Parade"
+    },
+    {
+     "raw": "Continues as Brighton Road",
+     "text": "Continues as Brighton Road"
+    },
+    {
+     "raw": "Right Brighton Terrace",
+     "turn": "Right",
+     "text": "Brighton Terrace"
+    },
+    {
+     "raw": "Continues as Beaconsfield Terrace",
+     "text": "Continues as Beaconsfield Terrace"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Bus Stop - Brighton Health Campus",
+     "text": "Bus Stop - Brighton Health Campus",
+     "stop": true
+    },
+    {
+     "raw": "Right Houghton Highway",
+     "turn": "Right",
+     "text": "Houghton Highway"
+    },
+    {
+     "raw": "Right Hornibrook Esplanade",
+     "turn": "Right",
+     "text": "Hornibrook Esplanade"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Oxley Avenue",
+     "turn": "Left",
+     "text": "Oxley Avenue"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Macdonnell Road",
+     "turn": "Left",
+     "text": "Macdonnell Road"
+    },
+    {
+     "raw": "Right Victoria Avenue",
+     "turn": "Right",
+     "text": "Victoria Avenue"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Continues as Scarborough Road",
+     "text": "Continues as Scarborough Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Jeays Street",
+     "turn": "Left",
+     "text": "Jeays Street"
+    },
+    {
+     "raw": "Left Oyster Point Esplanade",
+     "turn": "Left",
+     "text": "Oyster Point Esplanade"
+    },
+    {
+     "raw": "Continues as Endeavour Esplanade",
+     "text": "Continues as Endeavour Esplanade"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "Left Newport Drive",
+     "turn": "Left",
+     "text": "Newport Drive"
+    },
+    {
+     "raw": "Right Griffith Road",
+     "turn": "Right",
+     "text": "Griffith Road"
+    },
+    {
+     "raw": "Left Boardman Road",
+     "turn": "Left",
+     "text": "Boardman Road"
+    },
+    {
+     "raw": "Drop as required*",
+     "text": "Drop as required*",
+     "as_required": true
+    },
+    {
+     "raw": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "text": "*Drop as required - bus will drop off at Council Bus Stops along the",
+     "as_required": true
+    },
+    {
+     "raw": "Empty to College",
+     "text": "Empty to College"
+    },
+    {
+     "raw": "Refuel and Tidy Vehicle",
+     "text": "Refuel and Tidy Vehicle"
+    },
+    {
+     "raw": "route where safe to do so",
+     "text": "route where safe to do so"
+    }
+   ]
+  }
+ ]
+}
