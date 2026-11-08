@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Comparison from './components/Comparison'
 import MapView from './components/MapView'
 import RunCard, { RunRow } from './components/RunCard'
+import Segmented, { type Opt } from './components/Segmented'
 import { geocode } from './lib/geocode'
 import { mins } from './lib/format'
 import { GREY, PALETTE, planTrips, prepare, sortResults, walkMinutes, withWalk } from './lib/plan'
@@ -9,9 +10,19 @@ import { dist } from './lib/geo'
 import { walkingRoute, type Walk } from './lib/walking'
 import type { Dataset, GeoHit, Mode, Pt, Result, Run, SortKey } from './types'
 
+const MODES: Opt<Mode>[] = [
+  { value: 'quick', label: 'Quickest', icon: 'bolt' },
+  { value: 'close', label: 'Least walking', icon: 'walk' },
+]
+const SORTS: Opt<SortKey>[] = [
+  { value: 'arrive', label: 'Arrive soonest', icon: 'clock' },
+  { value: 'walk', label: 'Least walking', icon: 'walk' },
+  { value: 'bus', label: 'Shortest ride', icon: 'bus' },
+]
+
 export default function App() {
   const [runs, setRuns] = useState<Run[]>([])
-  const [school, setSchool] = useState<Pt>([-27.3387, 153.0716])
+  const [school, setSchool] = useState<Pt>([-27.3595, 153.0640])
   const [loadErr, setLoadErr] = useState('')
   const [q, setQ] = useState('')
   const [hits, setHits] = useState<GeoHit[]>([])
@@ -103,19 +114,8 @@ export default function App() {
         {loadErr && <p className="err pad">Could not load run data: {loadErr}</p>}
         {dest && (
           <div className="opts">
-            <label>Where to get off
-              <select value={mode} onChange={(e) => setMode(e.target.value as Mode)}>
-                <option value="quick">Quickest (bus + walk)</option>
-                <option value="close">Least walking (closest stop)</option>
-              </select>
-            </label>
-            <label>Sort by
-              <select value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>
-                <option value="arrive">Arrive soonest</option>
-                <option value="walk">Least walking</option>
-                <option value="bus">Shortest bus ride</option>
-              </select>
-            </label>
+            <Segmented label="Where to get off" value={mode} onChange={setMode} options={MODES} />
+            <Segmented label="Sort by" value={sort} onChange={setSort} options={SORTS} />
           </div>
         )}
       </section>

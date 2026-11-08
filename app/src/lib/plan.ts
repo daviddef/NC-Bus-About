@@ -9,13 +9,15 @@ export const walkMinutes = (d: number) => (d * 1.3) / 80 // 80 m/min, +30% for s
 
 export function prepare(ds: Dataset): Run[] {
   return ds.runs.map((r, i) => {
-    const g = r.route.g
+    // Start the drawn line exactly at the school, not at the nearest road point the router snapped to.
+    const g: Pt[] = r.route.g.length && dist(ds.school, r.route.g[0]) > 5 ? [ds.school, ...r.route.g] : r.route.g
     const cum = [0]
     for (let k = 1; k < g.length; k++) cum.push(cum[k - 1] + dist(g[k - 1], g[k]))
     const total = cum[cum.length - 1] || 1
     const [h, m] = (r.depart ?? '15:05').split(':').map(Number)
     return {
       ...r,
+      route: { ...r.route, g },
       colour: PALETTE[i % PALETTE.length],
       cum,
       total,

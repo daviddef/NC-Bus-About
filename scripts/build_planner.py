@@ -11,7 +11,7 @@ stops; the bus is assumed BUS_FACTOR x slower than a car. Decisions saved by the
 import json, re, sys, time, urllib.request
 from pathlib import Path
 
-SCHOOL = (-27.3387, 153.0716)
+SCHOOL = (-27.3595, 153.0640)
 OSRM = "https://router.project-osrm.org/route/v1/driving/"
 
 
@@ -67,7 +67,7 @@ select{font:inherit;font-size:14px;padding:7px;border:1px solid var(--line);bord
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 const RUNS=__DATA__;
-const SCHOOL=[-27.3387,153.0716],KEY="nudgee-qa-decisions-v1",BUS_FACTOR=1.3,MAX_OFF=250,PAL=["#1a56db","#e65100","#2e7d32","#8e24aa","#c2185b","#00838f","#6d4c41"];
+const SCHOOL=[-27.3595, 153.0640],KEY="nudgee-qa-decisions-v1",BUS_FACTOR=1.3,MAX_OFF=250,PAL=["#1a56db","#e65100","#2e7d32","#8e24aa","#c2185b","#00838f","#6d4c41"];
 let dec={};try{dec=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
 const map=L.map("map").setView(SCHOOL,11);
 const ESRI="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";

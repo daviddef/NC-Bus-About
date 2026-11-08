@@ -1,5 +1,6 @@
 import { hhmm, metres, mins } from '../lib/format'
 import type { Mode, Result } from '../types'
+import Segmented from './Segmented'
 
 type Row = { label: string; cells: (r: Result) => string; value?: (r: Result) => number }
 
@@ -17,10 +18,12 @@ interface Props { results: Result[]; alt: Result[]; mode: Mode; onMode: (m: Mode
 
 export default function Comparison({ results, alt, mode, onMode }: Props) {
   const toggle = (
-    <div className="seg" role="group" aria-label="Which stop to get off at">
-      <button className={mode === 'quick' ? 'act' : ''} onClick={() => onMode('quick')}>Quickest</button>
-      <button className={mode === 'close' ? 'act' : ''} onClick={() => onMode('close')}>Least walking</button>
-    </div>
+    <Segmented
+      label="Where to get off"
+      value={mode}
+      onChange={onMode}
+      options={[{ value: 'quick', label: 'Quickest', icon: 'bolt' }, { value: 'close', label: 'Least walking', icon: 'walk' }]}
+    />
   )
   if (results.length < 2) {
     return <div className="cmp">{toggle}<p className="note">Tick two or more runs to compare them.</p></div>
