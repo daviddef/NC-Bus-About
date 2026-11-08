@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import Comparison from './components/Comparison'
 import MapView from './components/MapView'
 import RunCard, { RunRow } from './components/RunCard'
-import Segmented, { type Opt } from './components/Segmented'
 import SearchBox from './components/SearchBox'
 import { addRecent, loadRecents, saveRecents, type Place } from './lib/places'
 import { mins } from './lib/format'
@@ -11,10 +10,10 @@ import { dist } from './lib/geo'
 import { walkingRoute, type Walk } from './lib/walking'
 import type { Dataset, Priority, Pt, Result, Run } from './types'
 
-const PRIORITIES: Opt<Priority>[] = [
-  { value: 'stops', label: 'Fewest stops', icon: 'stop' },
-  { value: 'quick', label: 'Quickest', icon: 'bolt' },
-  { value: 'walk', label: 'Least walking', icon: 'walk' },
+const CATS: { pri: Priority; tag: string }[] = [
+  { pri: 'quick', tag: 'Quickest' },
+  { pri: 'stops', tag: 'Fewest stops' },
+  { pri: 'walk', tag: 'Least walking' },
 ]
 
 export default function App() {
@@ -23,7 +22,6 @@ export default function App() {
   const [loadErr, setLoadErr] = useState('')
   const [place, setPlace] = useState<Place | null>(null)
   const [recents, setRecents] = useState<Place[]>(() => loadRecents())
-  const [pri, setPri] = useState<Priority>('quick')
   const [selected, setSelected] = useState<string[]>([])
   const [view, setView] = useState<'map' | 'compare'>('map')
   const [fitKey, setFitKey] = useState(0)
@@ -37,20 +35,21 @@ export default function App() {
   }, [])
 
   const dest: Pt | null = place ? [place.lat, place.lon] : null
-  const baseA = useMemo(() => (dest ? planTrips(runs, dest, pri) : []), [runs, dest, pri])
+  const baseA = useMemo(() => (dest ? planTrips(runs, dest, 'quick') : []), [runs, dest])
+  const bases = useMemo(() => (dest ? Object.fromEntries(CATS.map((c) => [c.pri, planTrips(runs, dest, c.pri)])) as Record<Priority, Result[]> : null), [runs, dest])
   const wkey = (r: Result) => `${r.run.key}|${r.stop.lat},${r.stop.lon}|${dest?.join(',')}`
 
   // Real walking routes for the top results and for everything ticked (both stop choices).
   useEffect(() => {
     if (!dest) return
     let live = true
-    const todo = [...baseA.slice(0, 8), ...baseA.filter((r) => selected.includes(r.run.key))]
+    const todo = [...baseA.slice(0, 8), ...(bases ? CATS.flatMap((c) => bases[c.pri].slice(0, 3)) : []), ...baseA.filter((r) => selected.includes(r.run.key))]
     todo.forEach((r) => {
       walkingRoute([r.stop.lat, r.stop.lon], dest).then((w) => { if (live && w) setWalks((p) => (p[wkey(r)] ? p : { ...p, [wkey(r)]: w })) })
     })
     return () => { live = false }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [baseA, selected])
+  }, [baseA, bases, selected])
 
   // Each ticked run gets its own colour, in the order ticked; the rest stay grey.
   const paint = (r: Result): Result => {
@@ -58,15 +57,31 @@ export default function App() {
     return { ...r, run: { ...r.run, colour: i >= 0 ? PALETTE[i % PALETTE.length] : GREY } }
   }
   const real = (r: Result) => (walks[wkey(r)] ? withWalk(r, walks[wkey(r)]) : r)
-  const results = useMemo(() => sortResults(baseA.map(real), pri).map(paint),
+  const results = useMemo(() => sortResults(baseA.map(real), 'quick').map(paint),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [baseA, walks, pri, selected])
-  const chosen = results.filter((r) => selected.includes(r.run.key))
+    [baseA, walks, selected])
+  // The best run for each of the three things that matter; one card if the same run wins more than one.
+  const top = useMemo(() => {
+    const out: { r: Result; tags: string[] }[] = []
+    if (!bases) return out
+    for (const c of CATS) {
+      const list = bases[c.pri].map(real)
+      const first = list[0]
+      if (!first) continue
+      const same = out.find((o) => o.r.run.key === first.run.key && o.r.stop.lat === first.stop.lat && o.r.stop.lon === first.stop.lon)
+      if (same) { same.tags.push(c.tag); continue }
+      if (!out.some((o) => o.r.run.key === first.run.key)) out.push({ r: first, tags: [c.tag] })
+    }
+    return out.map((o) => ({ ...o, r: paint(o.r) }))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bases, walks, selected])
+  const topKeys = top.map((t) => t.r.run.key)
+  const chosen = selected.map((k) => top.find((t) => t.r.run.key === k)?.r ?? results.find((r) => r.run.key === k)).filter((r): r is Result => !!r).map(paint)
 
   function pick(p: Place) {
     setPlace(p)
     if (p.icon !== 'target') setRecents((r) => addRecent(r, p)) // never remember where someone actually is
-    setSelected(planTrips(runs, [p.lat, p.lon], pri).slice(0, 2).map((r) => r.run.key))
+    setSelected([...new Set(CATS.map((c) => planTrips(runs, [p.lat, p.lon], c.pri)[0]?.run.key).filter(Boolean))] as string[])
     setView('map'); setFitKey((k) => k + 1)
   }
 
@@ -77,8 +92,7 @@ export default function App() {
   }
 
   const walkAll = dest ? walkMinutes(dist(school, dest)) : null
-  const top = results.slice(0, 2)
-  const rest = results.slice(2, 12)
+  const rest = results.filter((r) => !topKeys.includes(r.run.key)).slice(0, 10)
 
   return (
     <div className="app">
@@ -89,11 +103,6 @@ export default function App() {
         </header>
         <SearchBox ready={runs.length > 0} recents={recents} onPick={pick} onClearRecents={() => { setRecents([]); saveRecents([]) }} />
         {loadErr && <p className="err pad">Could not load run data: {loadErr}</p>}
-        {dest && (
-          <div className="opts">
-            <Segmented label="What matters most" value={pri} onChange={setPri} options={PRIORITIES} />
-          </div>
-        )}
       </section>
 
       <section className="top">
@@ -102,7 +111,7 @@ export default function App() {
         )}
         {place && <p className="note where">Buses to <b>{place.full}</b></p>}
         {walkAll !== null && walkAll <= 60 && <p className="note">Walking all the way from school: about {mins(walkAll)}.</p>}
-        {top.map((r, i) => <RunCard key={r.run.key} r={r} rank={i} on={selected.includes(r.run.key)} onToggle={() => toggle(r.run.key)} />)}
+        {top.map((t) => <RunCard key={t.r.run.key} r={t.r} tags={t.tags} on={selected.includes(t.r.run.key)} onToggle={() => toggle(t.r.run.key)} />)}
         {dest && !results.length && <p>No run found near there.</p>}
       </section>
 

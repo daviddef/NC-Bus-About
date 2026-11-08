@@ -84,7 +84,7 @@ export function planTrips(runs: Run[], dest: Pt, pri: Priority): Result[] {
 
 export function sortResults(res: Result[], pri: Priority): Result[] {
   const by = {
-    stops: (r: Result) => r.stopCount * 1000 + r.arriveAt,
+    stops: (r: Result) => (r.walkMin > 15 ? 1e6 : 0) + r.stopCount * 1000 + r.arriveAt,
     quick: (r: Result) => r.arriveAt,
     walk: (r: Result) => r.walkMin * 1000 + r.arriveAt,
   }[pri]

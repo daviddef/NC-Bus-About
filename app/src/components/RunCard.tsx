@@ -3,7 +3,7 @@ import { hhmm, metres, mins } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
 import type { Result } from '../types'
 
-interface Props { r: Result; rank?: number; on: boolean; onToggle: () => void }
+interface Props { r: Result; tags?: string[]; on: boolean; onToggle: () => void }
 
 const Ic = ({ n, s = 15 }: { n: IconName; s?: number }) => <span className="ic" dangerouslySetInnerHTML={{ __html: svg(n, s) }} />
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
@@ -39,7 +39,7 @@ function Summary({ r, open, onMore }: { r: Result; open: boolean; onMore: () => 
 }
 
 /** Compact card, used for the top results. */
-export default function RunCard({ r, rank, on, onToggle }: Props) {
+export default function RunCard({ r, tags, on, onToggle }: Props) {
   const [open, setOpen] = useState(false)
   return (
     <div className={`card ${on ? 'on' : ''}`} style={{ ['--c' as string]: r.run.colour }}>
@@ -48,7 +48,7 @@ export default function RunCard({ r, rank, on, onToggle }: Props) {
         <div className="cname">
           <b>{r.run.name.split(' · ')[0]}</b>
           <span>{r.run.name.split(' · ')[1]}</span>
-          {rank === 0 && <em className="best">Best</em>}
+          {tags?.map((t) => <em className="best" key={t}>{t}</em>)}
         </div>
         <div className="arr"><b>{hhmm(r.arriveAt)}</b><small>you arrive</small></div>
       </div>
@@ -58,7 +58,7 @@ export default function RunCard({ r, rank, on, onToggle }: Props) {
 }
 
 /** One line that expands to the same summary, used for the rest of the runs. */
-export function RunRow({ r, on, onToggle }: Omit<Props, 'rank'>) {
+export function RunRow({ r, on, onToggle }: Omit<Props, 'tags'>) {
   const [open, setOpen] = useState(false)
   return (
     <div className={`row ${on ? 'on' : ''}`} style={{ ['--c' as string]: r.run.colour }}>
