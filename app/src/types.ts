@@ -54,5 +54,4 @@ export interface Result {
   walkPath?: Pt[]
 }
 
-export type Mode = 'quick' | 'close'
-export type SortKey = 'arrive' | 'walk' | 'bus'
+export type Priority = 'stops' | 'quick' | 'walk'

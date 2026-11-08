@@ -1,6 +1,5 @@
 import { hhmm, metres, mins } from '../lib/format'
-import type { Mode, Result } from '../types'
-import Segmented from './Segmented'
+import type { Result } from '../types'
 
 type Row = { label: string; cells: (r: Result) => string; value?: (r: Result) => number }
 
@@ -15,19 +14,9 @@ const ROWS: Row[] = [
   { label: 'Walking distance', cells: (r) => metres(r.distM), value: (r) => r.distM },
 ]
 
-interface Props { results: Result[]; alt: Result[]; mode: Mode; onMode: (m: Mode) => void }
-
-export default function Comparison({ results, alt, mode, onMode }: Props) {
-  const toggle = (
-    <Segmented
-      label="Where to get off"
-      value={mode}
-      onChange={onMode}
-      options={[{ value: 'quick', label: 'Quickest', icon: 'bolt' }, { value: 'close', label: 'Least walking', icon: 'walk' }]}
-    />
-  )
+export default function Comparison({ results }: { results: Result[] }) {
   if (results.length < 2) {
-    return <div className="cmp">{toggle}<p className="note">Tick two or more runs to compare them.</p></div>
+    return <div className="cmp"><p className="note">Tick two or more runs to compare them.</p></div>
   }
   const start = Math.min(...results.map((r) => r.run.departMin))
   const end = Math.max(...results.map((r) => r.arriveAt))
@@ -35,6 +24,7 @@ export default function Comparison({ results, alt, mode, onMode }: Props) {
   const pct = (m: number) => ((m - start) / span) * 100
   const first = [...results].sort((a, b) => a.arriveAt - b.arriveAt)[0]
   const least = [...results].sort((a, b) => a.walkMin - b.walkMin)[0]
+  const fewest = [...results].sort((a, b) => a.stopCount - b.stopCount || a.arriveAt - b.arriveAt)[0]
 
   const notes = results.filter((r) => r !== first).map((r) => {
     const later = Math.round(r.arriveAt - first.arriveAt)
@@ -46,28 +36,14 @@ export default function Comparison({ results, alt, mode, onMode }: Props) {
     return <li key={r.run.key}><b style={{ color: r.run.colour }}>{r.run.name}</b>: {bits.join(', ')}.</li>
   })
 
-  const altLines = results.map((r) => {
-    const a = alt.find((x) => x.run.key === r.run.key)
-    if (!a) return null
-    const same = a.stop.lat === r.stop.lat && a.stop.lon === r.stop.lon
-    const label = mode === 'quick' ? 'Least walking instead' : 'Quickest instead'
-    return (
-      <li key={r.run.key}>
-        <b style={{ color: r.run.colour }}>{r.run.name}</b> — {label}:{' '}
-        {same ? 'same stop.' : <>get off at <b>{a.stop.t}</b> ({hhmm(a.getOffAt)}), walk {a.walkReal ? '' : '≈'}{mins(a.walkMin)} ({metres(a.distM)}), arrive {hhmm(a.arriveAt)}
-          {' '}— {Math.abs(Math.round(a.arriveAt - r.arriveAt))} min {a.arriveAt >= r.arriveAt ? 'later' : 'sooner'}, {Math.abs(Math.round(a.walkMin - r.walkMin))} min {a.walkMin <= r.walkMin ? 'less' : 'more'} walking.</>}
-      </li>
-    )
-  })
-
   return (
     <div className="cmp">
       <h2>Comparing {results.length} runs</h2>
-      {toggle}
       <p className="verdict">
-        <b style={{ color: first.run.colour }}>{first.run.name}</b> gets you there first, about <b>{hhmm(first.arriveAt)}</b>.
-        {least !== first && <> <b style={{ color: least.run.colour }}>{least.run.name}</b> has the shortest walk ({mins(least.walkMin)}, {metres(least.distM)}).</>}
-        {' '}Compared with the first:
+        <b style={{ color: fewest.run.colour }}>{fewest.run.name}</b> has the fewest stops ({fewest.stopCount}).{' '}
+        <b style={{ color: first.run.colour }}>{first.run.name}</b> gets you there first, about <b>{hhmm(first.arriveAt)}</b>.{' '}
+        <b style={{ color: least.run.colour }}>{least.run.name}</b> has the shortest walk ({mins(least.walkMin)}, {metres(least.distM)}).
+        {' '}Compared with the quickest:
       </p>
       <ul>{notes}</ul>
 
@@ -107,8 +83,6 @@ export default function Comparison({ results, alt, mode, onMode }: Props) {
         </tbody>
       </table>
 
-      <h3>{mode === 'quick' ? 'Or, to walk as little as possible' : 'Or, to get there as soon as possible'}</h3>
-      <ul>{altLines}</ul>
       <p className="note">Green marks the best value in each row. All times are estimated from road distance (the College sheets only give the afternoon departure) and have not been checked by College Transport.</p>
     </div>
   )

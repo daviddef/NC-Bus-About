@@ -9,16 +9,12 @@ import { mins } from './lib/format'
 import { GREY, PALETTE, planTrips, prepare, sortResults, walkMinutes, withWalk } from './lib/plan'
 import { dist } from './lib/geo'
 import { walkingRoute, type Walk } from './lib/walking'
-import type { Dataset, Mode, Pt, Result, Run, SortKey } from './types'
+import type { Dataset, Priority, Pt, Result, Run } from './types'
 
-const MODES: Opt<Mode>[] = [
+const PRIORITIES: Opt<Priority>[] = [
+  { value: 'stops', label: 'Fewest stops', icon: 'stop' },
   { value: 'quick', label: 'Quickest', icon: 'bolt' },
-  { value: 'close', label: 'Least walking', icon: 'walk' },
-]
-const SORTS: Opt<SortKey>[] = [
-  { value: 'arrive', label: 'Arrive soonest', icon: 'clock' },
   { value: 'walk', label: 'Least walking', icon: 'walk' },
-  { value: 'bus', label: 'Shortest ride', icon: 'bus' },
 ]
 
 export default function App() {
@@ -27,8 +23,7 @@ export default function App() {
   const [loadErr, setLoadErr] = useState('')
   const [place, setPlace] = useState<Place | null>(null)
   const [recents, setRecents] = useState<Place[]>(() => loadRecents())
-  const [mode, setMode] = useState<Mode>('quick')
-  const [sort, setSort] = useState<SortKey>('arrive')
+  const [pri, setPri] = useState<Priority>('quick')
   const [selected, setSelected] = useState<string[]>([])
   const [view, setView] = useState<'map' | 'compare'>('map')
   const [fitKey, setFitKey] = useState(0)
@@ -42,22 +37,20 @@ export default function App() {
   }, [])
 
   const dest: Pt | null = place ? [place.lat, place.lon] : null
-  const other: Mode = mode === 'quick' ? 'close' : 'quick'
-  const baseA = useMemo(() => (dest ? planTrips(runs, dest, mode, sort) : []), [runs, dest, mode, sort])
-  const baseB = useMemo(() => (dest ? planTrips(runs, dest, other, sort) : []), [runs, dest, other, sort])
+  const baseA = useMemo(() => (dest ? planTrips(runs, dest, pri) : []), [runs, dest, pri])
   const wkey = (r: Result) => `${r.run.key}|${r.stop.lat},${r.stop.lon}|${dest?.join(',')}`
 
   // Real walking routes for the top results and for everything ticked (both stop choices).
   useEffect(() => {
     if (!dest) return
     let live = true
-    const todo = [...baseA.slice(0, 8), ...baseA.filter((r) => selected.includes(r.run.key)), ...baseB.filter((r) => selected.includes(r.run.key))]
+    const todo = [...baseA.slice(0, 8), ...baseA.filter((r) => selected.includes(r.run.key))]
     todo.forEach((r) => {
       walkingRoute([r.stop.lat, r.stop.lon], dest).then((w) => { if (live && w) setWalks((p) => (p[wkey(r)] ? p : { ...p, [wkey(r)]: w })) })
     })
     return () => { live = false }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [baseA, baseB, selected])
+  }, [baseA, selected])
 
   // Each ticked run gets its own colour, in the order ticked; the rest stay grey.
   const paint = (r: Result): Result => {
@@ -65,18 +58,15 @@ export default function App() {
     return { ...r, run: { ...r.run, colour: i >= 0 ? PALETTE[i % PALETTE.length] : GREY } }
   }
   const real = (r: Result) => (walks[wkey(r)] ? withWalk(r, walks[wkey(r)]) : r)
-  const results = useMemo(() => sortResults(baseA.map(real), sort).map(paint),
+  const results = useMemo(() => sortResults(baseA.map(real), pri).map(paint),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [baseA, walks, sort, selected])
-  const alt = useMemo(() => baseB.filter((r) => selected.includes(r.run.key)).map(real).map(paint),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [baseB, walks, selected])
+    [baseA, walks, pri, selected])
   const chosen = results.filter((r) => selected.includes(r.run.key))
 
   function pick(p: Place) {
     setPlace(p)
     if (p.icon !== 'target') setRecents((r) => addRecent(r, p)) // never remember where someone actually is
-    setSelected(planTrips(runs, [p.lat, p.lon], mode, sort).slice(0, 2).map((r) => r.run.key))
+    setSelected(planTrips(runs, [p.lat, p.lon], pri).slice(0, 2).map((r) => r.run.key))
     setView('map'); setFitKey((k) => k + 1)
   }
 
@@ -101,8 +91,7 @@ export default function App() {
         {loadErr && <p className="err pad">Could not load run data: {loadErr}</p>}
         {dest && (
           <div className="opts">
-            <Segmented label="Where to get off" value={mode} onChange={setMode} options={MODES} />
-            <Segmented label="Sort by" value={sort} onChange={setSort} options={SORTS} />
+            <Segmented label="What matters most" value={pri} onChange={setPri} options={PRIORITIES} />
           </div>
         )}
       </section>
@@ -126,7 +115,7 @@ export default function App() {
           <div className="mapwrap" hidden={view !== 'map'}>
             <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} />
           </div>
-          {view === 'compare' && <Comparison results={chosen} alt={alt} mode={mode} onMode={setMode} />}
+          {view === 'compare' && <Comparison results={chosen} />}
         </div>
       </main>
 

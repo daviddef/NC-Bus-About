@@ -1,5 +1,5 @@
 import { dist } from './geo'
-import type { Dataset, Mode, Pt, Result, Run, SortKey, StopOption } from '../types'
+import type { Dataset, Priority, Pt, Result, Run, StopOption } from '../types'
 
 export const PALETTE = ['#1a56db', '#e65100', '#2e7d32', '#8e24aa', '#c2185b', '#00838f', '#6d4c41', '#455a64']
 export const GREY = '#8a94a6'
@@ -60,30 +60,34 @@ export function countStops(stops: StopOption[], upTo: number): number {
   return Math.max(kept.length, 1)
 }
 
-export function planTrips(runs: Run[], dest: Pt, mode: Mode, sort: SortKey): Result[] {
+export function planTrips(runs: Run[], dest: Pt, pri: Priority): Result[] {
   const res: Result[] = []
   for (const run of runs) {
     const stops = stopsFor(run)
     if (!stops.length) continue
-    let best: { s: StopOption; d: number; w: number; key: number } | null = null
-    for (const s of stops) {
+    const cands = stops.map((s) => {
       const d = dist([s.lat, s.lon], dest)
-      const w = walkMinutes(d)
-      const key = mode === 'close' ? d : s.eta + w
-      if (!best || key < best.key) best = { s, d, w, key }
-    }
-    if (!best) continue
+      return { s, d, w: walkMinutes(d), n: countStops(stops, s.i) }
+    })
+    // Fewest stops: only stops with a sensible walk, else the stop would just be the first one on the road.
+    const pool = pri === 'stops' ? (cands.filter((c) => c.w <= 15).length ? cands.filter((c) => c.w <= 15) : cands) : cands
+    const key = (c: (typeof cands)[number]) => (pri === 'walk' ? c.d : pri === 'stops' ? c.n * 1000 + c.s.eta + c.w : c.s.eta + c.w)
+    const best = pool.reduce((m, c) => (key(c) < key(m) ? c : m))
     const arriveAt = run.departMin + best.s.eta + best.w
     res.push({
-      run, stop: best.s, stops, distM: best.d, walkMin: best.w, busMin: best.s.eta, stopCount: countStops(stops, best.s.i),
+      run, stop: best.s, stops, distM: best.d, walkMin: best.w, busMin: best.s.eta, stopCount: best.n,
       getOffAt: run.departMin + best.s.eta, arriveAt, journeyMin: arriveAt - run.departMin, walkReal: false,
     })
   }
-  return sortResults(res, sort)
+  return sortResults(res, pri)
 }
 
-export function sortResults(res: Result[], sort: SortKey): Result[] {
-  const by = { arrive: (r: Result) => r.arriveAt, walk: (r: Result) => r.walkMin, bus: (r: Result) => r.busMin }[sort]
+export function sortResults(res: Result[], pri: Priority): Result[] {
+  const by = {
+    stops: (r: Result) => r.stopCount * 1000 + r.arriveAt,
+    quick: (r: Result) => r.arriveAt,
+    walk: (r: Result) => r.walkMin * 1000 + r.arriveAt,
+  }[pri]
   return [...res].sort((a, b) => by(a) - by(b))
 }
 
