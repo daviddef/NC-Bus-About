@@ -81,7 +81,9 @@ export default function App() {
   function pick(p: Place) {
     setPlace(p)
     if (p.icon !== 'target') setRecents((r) => addRecent(r, p)) // never remember where someone actually is
-    setSelected([...new Set(CATS.map((c) => planTrips(runs, [p.lat, p.lon], c.pri)[0]?.run.key).filter(Boolean))] as string[])
+    const keys = new Set(CATS.map((c) => planTrips(runs, [p.lat, p.lon], c.pri)[0]?.run.key).filter(Boolean) as string[])
+    for (const r of planTrips(runs, [p.lat, p.lon], 'quick')) { if (keys.size >= 3) break; keys.add(r.run.key) } // always at least three to compare
+    setSelected([...keys])
     setView('map'); setFitKey((k) => k + 1)
   }
 
