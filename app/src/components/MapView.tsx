@@ -47,8 +47,8 @@ const offIcon = (colour: string, time: string) =>
     iconAnchor: [17, 17],
     html: `<div class="off" style="--c:${colour}"><span class="offic">${svg('bus', 17)}</span><span class="offt">${time}</span></div>`,
   })
-const numIcon = (n: number, colour: string) =>
-  L.divIcon({ className: '', iconSize: [22, 22], iconAnchor: [11, 11], html: `<div class="num" style="background:${colour}">${n}</div>` })
+const numIcon = (n: number, colour: string, dim = false) =>
+  L.divIcon({ className: '', iconSize: [22, 22], iconAnchor: [11, 11], html: `<div class="num${dim ? ' dim' : ''}" style="background:${colour}">${n}</div>` })
 const arrowIcon = (deg: number, colour: string) =>
   L.divIcon({
     className: '',
@@ -345,7 +345,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
                   eventHandlers={{ click: () => open([s.lat, s.lon], <Pop icon="stop" colour={run.colour} title={s.t} sub={`${run.name.split(' · ')[0]} · about ${hhmm(run.departMin + s.eta)}`} rows={s.road ? [`On ${s.road}`, 'Bus stops here only if asked, where safe'] : []} />) }} />
               ))}
               {named.map((s, i) => (
-                <Marker key={'n' + i} position={[s.lat, s.lon]} icon={numIcon(i + 1, run.colour)}
+                <Marker key={'n' + i} position={[s.lat, s.lon]} icon={numIcon(i + 1, run.colour, s.i > stop.i)} zIndexOffset={s.i > stop.i ? -500 : 0}
                   eventHandlers={{ click: () => open([s.lat, s.lon], <Pop icon="stop" colour={run.colour} title={s.t} sub={`${run.name.split(' · ')[0]} · stop ${i + 1} · about ${hhmm(run.departMin + s.eta)}`} />) }} />
               ))}
               {dest && (
