@@ -107,8 +107,8 @@ function PtLayer({ data, open, only }: { data: PtOverlay; open: (at: Pt, node: R
           pathOptions={{ color: PT_COLOUR[s.m] ?? '#64748b', weight: 2, fillColor: '#fff', fillOpacity: 1 }}
           eventHandlers={{
             click: () => open(s.p, (
-              <Pop icon="transit" colour={PT_COLOUR[s.m] ?? '#64748b'} title={s.n} sub={`${PT_NAME[s.m] ?? 'Public transport'} · weekday afternoon`}
-                rows={s.l.map(([route, to, ms]) => <span><b>{s.m === '2' ? 'Train' : route}</b> to {to}<br />{ms.slice(0, 5).map((m) => hhmm(m)).join(' · ')}{ms.length > 5 ? ' …' : ''}</span>)} />
+              <Pop icon="transit" colour={PT_COLOUR[s.m] ?? '#64748b'} title={s.n} sub={`${PT_NAME[s.m] ?? 'Public transport'} · timetable, weekday 2:30–6 pm`}
+                rows={s.l.map(([route, to, ms]) => <span><b>{s.m === '2' ? 'Train' : route}</b> to {to}<br />Leaves here at {ms.slice(0, 5).map((m) => hhmm(m)).join(' · ')}{ms.length > 5 ? ` … (${ms.length} in all)` : ''}</span>)} />
             ), [...new Set(s.l.map(([route]) => route))]),
           }} />
       ))}
