@@ -1,11 +1,11 @@
-import { Fragment, useEffect, useState, type ReactNode } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import L from 'leaflet'
 import { CircleMarker, MapContainer, Marker, Polyline, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet'
 import { bearing, dist } from '../lib/geo'
 import { hhmm, metres, mins } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
 import { etaMin, project } from '../lib/plan'
-import type { Net, PtView } from '../lib/transit'
+import { LEAVE_SCHOOL, type Net, type PtView } from '../lib/transit'
 import type { PtOverlay, Pt, Result } from '../types'
 
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/'
@@ -116,6 +116,7 @@ function PtLayer({ data, open }: { data: PtOverlay; open: (at: Pt, node: ReactNo
 function JourneyLayer({ views, net, school, dest, open }: { views: PtView[]; net: Net; school: Pt; dest: Pt; open: (at: Pt, node: ReactNode) => void }) {
   return (
     <>
+      {views.flatMap((v, vi) => v.j.rides.map((r, i) => <Polyline key={`c${vi}-${i}`} positions={r.path} interactive={false} pathOptions={{ color: '#fff', weight: 9, opacity: 0.9 }} />))}
       {views.map((v, vi) => {
         const { j } = v
         const a = net.stops[j.rides[0].board].p
@@ -126,9 +127,15 @@ function JourneyLayer({ views, net, school, dest, open }: { views: PtView[]; net
             <Polyline positions={v.first.path ? [school, ...v.first.path, a] : [school, a]} interactive={false} pathOptions={{ color: v.colour, weight: 4, dashArray: '1 8', lineCap: 'round' }} />
             {j.rides.map((r, i) => (
               <Fragment key={i}>
-                <Polyline positions={r.path} interactive={false} pathOptions={{ color: '#fff', weight: 9, opacity: 0.9 }} />
-                <Polyline positions={r.path} interactive={false} pathOptions={{ color: v.colour, weight: 5, opacity: 0.95, lineCap: 'round', lineJoin: 'round' }} />
-                {arrows(r.path).map((ar, k) => <Marker key={k} position={ar.at} icon={arrowIcon(ar.deg, v.colour)} interactive={false} keyboard={false} />)}
+                {(() => {
+                  // Journeys that ride the same service share a line: stripe their colours so none hides another.
+                  const sharers = views.map((x, k) => (x.j.rides.some((q) => q.trip === r.trip) ? k : -1)).filter((k) => k >= 0)
+                  const n = sharers.length, idx = sharers.indexOf(vi)
+                  return n > 1
+                    ? <Polyline positions={r.path} interactive={false} pathOptions={{ color: v.colour, weight: 5, opacity: 1, lineCap: 'butt', dashArray: `${12} ${12 * (n - 1)}`, dashOffset: String(-12 * idx) }} />
+                    : <Polyline positions={r.path} interactive={false} pathOptions={{ color: v.colour, weight: 5, opacity: 0.95, lineCap: 'round', lineJoin: 'round' }} />
+                })()}
+                {arrows(r.path).map((ar, k) => <Marker key={k} position={ar.at} icon={arrowIcon(ar.deg, '#334155')} interactive={false} keyboard={false} />)}
                 <CircleMarker center={net.stops[r.board].p} radius={7} pathOptions={{ color: v.colour, weight: 3, fillColor: '#fff', fillOpacity: 1 }}
                   eventHandlers={{ click: () => open(net.stops[r.board].p, <Pop icon="transit" colour={v.colour} title={`Get on: ${net.stops[r.board].n}`} sub={`${r.mode === '2' ? 'Train' : r.route} to ${r.headsign || 'end of line'}`} rows={[`${hhmm(r.boardAt)}`]} />) }} />
                 {i > 0 && <Polyline positions={[net.stops[j.rides[i - 1].alight].p, net.stops[r.board].p]} interactive={false} pathOptions={{ color: v.colour, weight: 3, dashArray: '2 6' }} />}
@@ -144,6 +151,96 @@ function JourneyLayer({ views, net, school, dest, open }: { views: PtView[]; net
   )
 }
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
+
+// ---- the pulse: a dot that travels each journey from the school to the destination in (sped-up) real time
+interface TP { p: Pt; t: number }
+interface Track { key: string; colour: string; pts: TP[]; start: number; end: number }
+
+function along(path: Pt[], t0: number, t1: number): TP[] {
+  const d = [0]
+  for (let i = 1; i < path.length; i++) d.push(d[i - 1] + dist(path[i - 1], path[i]))
+  const total = d[d.length - 1] || 1
+  return path.map((p, i) => ({ p, t: t0 + ((t1 - t0) * d[i]) / total }))
+}
+function finish(key: string, colour: string, raw: TP[]): Track {
+  let last = -Infinity
+  const pts = raw.map((q) => ({ p: q.p, t: (last = Math.max(last, q.t)) }))
+  return { key, colour, pts, start: pts[0].t, end: pts[pts.length - 1].t }
+}
+function schoolTrack(r: Result, dest: Pt | null): Track {
+  const { run, stop } = r
+  const ride: TP[] = run.route.g.slice(0, stop.i + 1).map((p, i) => ({ p, t: run.departMin + etaMin(run, i) }))
+  const here: Pt = [stop.lat, stop.lon]
+  const walk = dest ? along(r.walkPath ? [here, ...r.walkPath, dest] : [here, dest], r.getOffAt, r.arriveAt) : []
+  return finish(run.key, run.colour, [...ride, ...walk])
+}
+function ptTrack(v: PtView, net: Net, school: Pt, dest: Pt): Track {
+  const { j } = v
+  const board = net.stops[j.rides[0].board].p
+  const pts: TP[] = [...along([school, ...(v.first.path ?? []), board], LEAVE_SCHOOL, LEAVE_SCHOOL + v.first.min), { p: board, t: j.rides[0].boardAt }]
+  j.rides.forEach((r, i) => {
+    pts.push(...along(r.path, r.boardAt, r.alightAt))
+    const nx = j.rides[i + 1]
+    if (nx) pts.push({ p: net.stops[nx.board].p, t: nx.boardAt })
+  })
+  const last = j.rides[j.rides.length - 1]
+  const z = net.stops[last.alight].p
+  pts.push(...along([z, ...(v.last.path ?? []), dest], last.alightAt, v.arriveAt))
+  return finish(String(vi(j)), v.colour, pts)
+}
+const vi = (j: { key: string; start: number; endStop: number }) => `${j.key}:${j.start}:${j.endStop}`
+function posAt(tr: Track, t: number): Pt {
+  const a = tr.pts
+  if (t <= a[0].t) return a[0].p
+  for (let i = 1; i < a.length; i++) {
+    if (t <= a[i].t) {
+      const span = a[i].t - a[i - 1].t
+      const f = span > 0 ? (t - a[i - 1].t) / span : 1
+      return [a[i - 1].p[0] + (a[i].p[0] - a[i - 1].p[0]) * f, a[i - 1].p[1] + (a[i].p[1] - a[i - 1].p[1]) * f]
+    }
+  }
+  return a[a.length - 1].p
+}
+const pulseIcon = (colour: string, label: string) =>
+  L.divIcon({ className: '', iconSize: [20, 20], iconAnchor: [10, 10], html: `<div class="pulser" style="--c:${colour}"><span class="pring"></span><span class="pdot"></span><span class="plabel">${label}</span></div>` })
+
+const TRAVEL_MS = 16000 // how long the whole journey takes to play
+const HOLD_MS = 2500
+
+/** Plays the clock from the earliest start to the latest arrival, looping. */
+function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
+  const [t, setT] = useState<number | null>(null)
+  const prog = useRef(0)
+  const sig = tracks.map((k) => k.key).join('|')
+  const start = Math.min(...tracks.map((k) => k.start))
+  const end = Math.max(...tracks.map((k) => k.end))
+  useEffect(() => { prog.current = 0 }, [sig])
+  useEffect(() => {
+    if (!tracks.length) return
+    let raf = 0, last = performance.now()
+    const tick = (now: number) => {
+      if (playing) {
+        prog.current = (prog.current + (now - last)) % (TRAVEL_MS + HOLD_MS)
+        setT(start + (end - start) * Math.min(1, prog.current / TRAVEL_MS))
+      }
+      last = now
+      raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sig, playing])
+  if (t === null) return null
+  return (
+    <>
+      {tracks.map((k) => {
+        const done = t >= k.end
+        const label = done ? `Arrive ${hhmm(k.end).replace(' ', '')} · ${mins(k.end - k.start)}` : `${hhmm(Math.max(t, k.start)).replace(' ', '')} · ${mins(Math.max(0, t - k.start))}`
+        return <Marker key={k.key} position={posAt(k, t)} icon={pulseIcon(k.colour, label)} interactive={false} keyboard={false} zIndexOffset={1500} />
+      })}
+    </>
+  )
+}
 
 interface Props {
   school: Pt
@@ -163,6 +260,13 @@ interface Props {
 export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading, journeys, net }: Props) {
   const [popup, setPopup] = useState<{ at: Pt; node: ReactNode; hl: string[] } | null>(null)
   const open = (at: Pt, node: ReactNode, hl: string[] = []) => setPopup({ at, node, hl })
+  const [playing, setPlaying] = useState(true)
+  const tracks = useMemo(() => {
+    if (!dest) return []
+    const out: Track[] = selected.map((r) => schoolTrack(r, dest))
+    if (net) journeys.forEach((v) => out.push(ptTrack(v, net, school, dest)))
+    return out.filter((k) => k.pts.length > 1)
+  }, [selected, journeys, net, school, dest])
   const bounds: Pt[] = [school]
   if (dest) bounds.push(dest)
   journeys.forEach((v) => v.j.rides.forEach((r) => r.path.forEach((p, i) => i % 4 === 0 && bounds.push(p))))
@@ -187,6 +291,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
           </Fragment>
         )))}
 
+        {tracks.length > 0 && <Pulses tracks={tracks} playing={playing} />}
         {net && dest && journeys.length > 0 && <JourneyLayer views={journeys} net={net} school={school} dest={dest} open={open} />}
 
         {selected.map((r) => {
@@ -267,6 +372,12 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
       </MapContainer>
 
       <div className="ptwrap">
+        {tracks.length > 0 && (
+          <button type="button" className="ptbtn" aria-pressed={playing} onClick={() => setPlaying(!playing)}>
+            <span dangerouslySetInnerHTML={{ __html: svg(playing ? 'pause' : 'play', 18) }} />
+            <span>{playing ? 'Pause' : 'Play trip'}</span>
+          </button>
+        )}
         <button type="button" className={'ptbtn' + (showPt ? ' on' : '')} aria-pressed={showPt} onClick={onTogglePt}>
           <span dangerouslySetInnerHTML={{ __html: svg('transit', 18) }} />
           <span>{ptLoading ? 'Loading…' : 'Public transport'}</span>

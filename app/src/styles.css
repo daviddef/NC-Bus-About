@@ -149,3 +149,9 @@ table.simple th,table.simple td{padding:12px 4px}
 .ptbtn{display:inline-flex;align-items:center;gap:7px;background:var(--bg);color:var(--fg);border:2px solid var(--line);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;box-shadow:0 2px 8px #0003;cursor:pointer}
 .ptbtn.on{background:#0f172a;color:#fff;border-color:#0f172a}
 .ptnote{background:var(--bg);color:var(--mut);border-radius:10px;padding:7px 10px;font-size:11.5px;line-height:1.35;box-shadow:0 2px 8px #0003}
+
+.pulser{position:relative;width:20px;height:20px}
+.pdot{position:absolute;inset:4px;border-radius:50%;background:var(--c);border:2px solid #fff;box-shadow:0 1px 4px #0006}
+.pring{position:absolute;inset:0;border-radius:50%;background:var(--c);opacity:.5;animation:pr 1.1s ease-out infinite}
+@keyframes pr{from{transform:scale(.6);opacity:.6}to{transform:scale(2.6);opacity:0}}
+.plabel{position:absolute;left:18px;top:-9px;white-space:nowrap;background:var(--c);color:#fff;font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;box-shadow:0 1px 5px #0005}
