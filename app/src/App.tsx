@@ -62,6 +62,13 @@ function pickOptions(all: Option[]): Pick[] {
     const next = lists[c.pri].find((x) => !out.some((p) => p.o.id === x.id))
     if (next) out.push({ o: next, tags: ['2nd ' + c.tag.toLowerCase()] })
   }
+  // And, if there is one, the best way by public transport with no changes at all.
+  const direct = all.filter((o) => o.pt && o.pt.j.changes === 0 && o.arrive <= quickest + 90).sort((a, b) => a.arrive * 100 + a.walk - (b.arrive * 100 + b.walk))[0]
+  if (direct) {
+    const same = out.find((p) => p.o.id === direct.id && p.o.where === direct.where)
+    if (same) same.tags.push('No changes')
+    else if (!out.some((p) => p.o.id === direct.id)) out.push({ o: direct, tags: ['No changes'] })
+  }
   return out
 }
 

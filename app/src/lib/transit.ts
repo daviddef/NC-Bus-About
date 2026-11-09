@@ -25,6 +25,7 @@ export interface Net {
   trips: Trip[]
   cDep: Float64Array; cArr: Float64Array; cFrom: Int32Array; cTo: Int32Array; cTrip: Int32Array; cPos: Int32Array
   walk: { to: number; min: number }[][]
+  stopTrips: { trip: number; pos: number }[][] // every trip that calls at each stop, and where
 }
 
 export function buildNet(f: TripsFile): Net {
@@ -40,7 +41,9 @@ export function buildNet(f: TripsFile): Net {
     stops, trips, routes: f.routes.map(([id, m]) => ({ id, m })),
     cDep: new Float64Array(n), cArr: new Float64Array(n), cFrom: new Int32Array(n), cTo: new Int32Array(n), cTrip: new Int32Array(n), cPos: new Int32Array(n),
     walk: stops.map(() => []),
+    stopTrips: stops.map(() => []),
   }
+  trips.forEach((t, ti) => t.s.forEach((st, pos) => net.stopTrips[st].push({ trip: ti, pos })))
   rows.forEach((r, i) => { net.cDep[i] = r[0]; net.cArr[i] = r[1]; net.cFrom[i] = r[2]; net.cTo[i] = r[3]; net.cTrip[i] = r[4]; net.cPos[i] = r[5] })
   // walkable changes between nearby stops (grid of ~0.003 degrees)
   const grid = new Map<string, number[]>()
@@ -155,7 +158,42 @@ export function journeyCandidates(net: Net, school: Pt, dest: Pt, leave: number)
       })
     }
   }
-  return all
+  return [...all, ...directJourneys(net, starts, ends, leave)]
+}
+
+/** One service all the way, no changes: the earliest trip from each nearby stop to each stop near the destination. */
+function directJourneys(net: Net, starts: { s: number; d: number }[], ends: { s: number; d: number }[], leave: number): Journey[] {
+  const endD = new Map(ends.map((e) => [e.s, e.d]))
+  const out: Journey[] = []
+  for (const o of starts) {
+    const t0 = leave + walkMinutes(o.d) + BOARD_BUFFER
+    const best = new Map<number, { arr: number; trip: number; b: number; a: number }>()
+    for (const { trip, pos } of net.stopTrips[o.s]) {
+      const t = net.trips[trip]
+      const dep = t.t0 + t.d[pos]
+      if (dep < t0 || dep > t0 + 90) continue
+      for (let j = pos + 1; j < t.s.length; j++) {
+        if (!endD.has(t.s[j])) continue
+        const arr = t.t0 + t.a[j]
+        const cur = best.get(t.s[j])
+        if (!cur || arr < cur.arr) best.set(t.s[j], { arr, trip, b: pos, a: j })
+      }
+    }
+    for (const [es, v] of best) {
+      if (es === o.s) continue
+      const t = net.trips[v.trip], r = net.routes[t.r]
+      const ride: Ride = {
+        trip: v.trip, route: r.id, mode: r.m, headsign: t.hs, board: o.s, alight: es, boardAt: t.t0 + t.d[v.b], alightAt: v.arr,
+        nStops: v.a - v.b, path: t.s.slice(v.b, v.a + 1).map((i) => net.stops[i].p),
+      }
+      const lastD = endD.get(es)!
+      out.push({
+        key: String(v.trip), start: o.s, rides: [ride], changeWalkMin: 0, firstWalkM: o.d, lastWalkM: lastD, endStop: es,
+        transitArrive: v.arr, stopsRidden: v.a - v.b, changes: 0, walkMin: walkMinutes(o.d) + walkMinutes(lastD), arriveAt: v.arr + walkMinutes(lastD), tags: [],
+      })
+    }
+  }
+  return out
 }
 
 export interface Seg { min: number; distM: number; real: boolean; path?: Pt[] }
