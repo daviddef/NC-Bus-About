@@ -87,7 +87,7 @@ const PT_COLOUR: Record<string, string> = { '3': '#64748b', '2': '#0f172a', '0':
 const PT_NAME: Record<string, string> = { '3': 'Bus', '2': 'Train', '0': 'Tram', '4': 'Ferry' }
 
 /** TransLink buses, trains and ferries around the school: thin lines and small stops under the school runs. */
-function PtLayer({ data, open }: { data: PtOverlay; open: (at: Pt, node: ReactNode) => void }) {
+function PtLayer({ data, open }: { data: PtOverlay; open: (at: Pt, node: ReactNode, hl?: string[]) => void }) {
   const map = useMap()
   const [zoom, setZoom] = useState(map.getZoom())
   useMapEvents({ zoomend: () => setZoom(map.getZoom()) })
@@ -105,7 +105,7 @@ function PtLayer({ data, open }: { data: PtOverlay; open: (at: Pt, node: ReactNo
             click: () => open(s.p, (
               <Pop icon="transit" colour={PT_COLOUR[s.m] ?? '#64748b'} title={s.n} sub={`${PT_NAME[s.m] ?? 'Public transport'} · weekday afternoon`}
                 rows={s.l.map(([route, to, ms]) => <span><b>{s.m === '2' ? 'Train' : route}</b> to {to}<br />{ms.slice(0, 5).map((m) => hhmm(m)).join(' · ')}{ms.length > 5 ? ' …' : ''}</span>)} />
-            )),
+            ), [...new Set(s.l.map(([route]) => route))]),
           }} />
       ))}
     </>
@@ -161,8 +161,8 @@ interface Props {
 }
 
 export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading, journeys, net }: Props) {
-  const [popup, setPopup] = useState<{ at: Pt; node: ReactNode } | null>(null)
-  const open = (at: Pt, node: ReactNode) => setPopup({ at, node })
+  const [popup, setPopup] = useState<{ at: Pt; node: ReactNode; hl: string[] } | null>(null)
+  const open = (at: Pt, node: ReactNode, hl: string[] = []) => setPopup({ at, node, hl })
   const bounds: Pt[] = [school]
   if (dest) bounds.push(dest)
   journeys.forEach((v) => v.j.rides.forEach((r) => r.path.forEach((p, i) => i % 4 === 0 && bounds.push(p))))
@@ -180,6 +180,12 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         <FitTo bounds={bounds} fitKey={fitKey} />
 
         {showPt && pt && <PtLayer data={pt} open={open} />}
+        {pt && popup && popup.hl.length > 0 && pt.routes.filter((r) => popup.hl.includes(r.id)).map((r, i) => r.g.map((g, j) => (
+          <Fragment key={`hl${i}-${j}`}>
+            <Polyline positions={g} interactive={false} pathOptions={{ color: '#7c5a00', weight: 11, opacity: 0.55 }} />
+            <Polyline positions={g} interactive={false} pathOptions={{ color: '#ffd400', weight: 7, opacity: 1, lineCap: 'round', lineJoin: 'round' }} />
+          </Fragment>
+        )))}
 
         {net && dest && journeys.length > 0 && <JourneyLayer views={journeys} net={net} school={school} dest={dest} open={open} />}
 
