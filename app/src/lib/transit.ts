@@ -158,7 +158,9 @@ export function journeyCandidates(net: Net, school: Pt, dest: Pt, leave: number)
       })
     }
   }
-  return [...all, ...directJourneys(net, starts, ends, leave)]
+  // Direct journeys can start at any stop within walking range of the school and end at any near the destination,
+  // not just the nearest few (a station 1.5 km away can be the only way with no changes).
+  return [...all, ...directJourneys(net, near(net, school, 80), near(net, dest, 400), leave)]
 }
 
 /** One service all the way, no changes: the earliest trip from each nearby stop to each stop near the destination. */

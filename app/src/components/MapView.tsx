@@ -87,14 +87,18 @@ const PT_COLOUR: Record<string, string> = { '3': '#64748b', '2': '#0f172a', '0':
 const PT_NAME: Record<string, string> = { '3': 'Bus', '2': 'Train', '0': 'Tram', '4': 'Ferry' }
 
 /** TransLink buses, trains and ferries around the school: thin lines and small stops under the school runs. */
-function PtLayer({ data, open }: { data: PtOverlay; open: (at: Pt, node: ReactNode, hl?: string[]) => void }) {
+function PtLayer({ data, open, only }: { data: PtOverlay; open: (at: Pt, node: ReactNode, hl?: string[]) => void; only: Set<string> | null }) {
   const map = useMap()
   const [zoom, setZoom] = useState(map.getZoom())
   useMapEvents({ zoomend: () => setZoom(map.getZoom()) })
-  const stops = zoom >= 14 ? data.stops : data.stops.filter((s) => s.m === '2') // zoomed out: just the stations
+  // Once a destination is chosen, only the services on our journeys: nothing else of the network.
+  const keep = (route: string) => !only || only.has(route)
+  const routes = data.routes.filter((r) => keep(r.id))
+  const all = only ? data.stops.filter((s) => s.l.some(([route]) => keep(route))).map((s) => ({ ...s, l: s.l.filter(([route]) => keep(route)) })) : data.stops
+  const stops = zoom >= 14 ? all : all.filter((s) => s.m === '2') // zoomed out: just the stations
   return (
     <>
-      {data.routes.map((r, i) => r.g.map((g, j) => (
+      {routes.map((r, i) => r.g.map((g, j) => (
         <Polyline key={`${i}-${j}`} positions={g} interactive={false}
           pathOptions={{ color: PT_COLOUR[r.m] ?? '#64748b', weight: r.m === '2' ? 3 : 2, opacity: 0.55, dashArray: r.m === '2' ? '10 5' : undefined }} />
       )))}
@@ -318,7 +322,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         <Resize visible={visible} />
         <FitTo bounds={bounds} fitKey={fitKey} />
 
-        {showPt && pt && <PtLayer data={pt} open={open} />}
+        {showPt && pt && <PtLayer data={pt} open={open} only={dest ? new Set(journeys.flatMap((v) => v.j.rides.map((r) => r.route))) : null} />}
         {pt && popup && popup.hl.length > 0 && pt.routes.filter((r) => popup.hl.includes(r.id)).map((r, i) => r.g.map((g, j) => (
           <Fragment key={`hl${i}-${j}`}>
             <Polyline positions={g} interactive={false} pathOptions={{ color: '#7c5a00', weight: 11, opacity: 0.55 }} />
@@ -418,7 +422,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
           <span dangerouslySetInnerHTML={{ __html: svg('transit', 18) }} />
           <span>{ptLoading ? 'Loading…' : 'Public transport'}</span>
         </button>
-        {showPt && pt && <div className="ptnote">Other buses, trains and ferries (grey, black dashes). Zoom in for bus stops; tap one for afternoon times. TransLink timetable for a school-term weekday, CC BY 4.0. Check TransLink for today.</div>}
+        {showPt && pt && <div className="ptnote">{dest ? 'Only the services on your options.' : 'Buses, trains and ferries (grey, black dashes).'} Zoom in for stops; tap one for times. TransLink timetable for a school-term weekday, CC BY 4.0. Check TransLink for today.</div>}
       </div>
 
       {selected.length > 0 && (

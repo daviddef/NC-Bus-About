@@ -14,13 +14,13 @@ export default function PtCard({ v, net, on, onToggle }: { v: PtView; net: Net; 
   const { j } = v
   const ap = v.first.real && v.last.real ? '' : '≈'
   const onlyOne = j.rides.length === 1 ? j.rides[0] : null
-  const title = j.rides.map(label).join(' + ')
+  const title = j.rides.map((r) => (r.mode === '2' ? 'Train' : `Bus ${r.route}`)).join(' + ')
   return (
     <div className={`card ${on ? 'on' : ''}`} style={{ ['--c' as string]: v.colour }}>
       <div className="chead">
         <input type="checkbox" checked={on} onChange={onToggle} aria-label="Show this journey on the map" />
         <div className="cname">
-          <b>{modeName(j.rides[0].mode)} {title}</b>
+          <b>{title}</b>
           {j.changes > 0 && <span>{plural(j.changes, 'change')}</span>}
           {j.tags.map((t) => <em className="best" key={t}>{t}</em>)}
         </div>
