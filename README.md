@@ -50,3 +50,10 @@ See section 6 of `PROPOSAL.md`.
 14:30-18:00 weekday departures on a school-term weekday (default 17 Nov 2026). Re-run it when the feed changes (the feed is replaced
 about daily and currently runs to 9 Jan 2027). TransLink's terms ask for approval before publicly conveying information about the
 network (translink.opendata@tmr.qld.gov.au, allow three business days): get it before deploying this.
+
+### Public transport journeys home
+
+`scripts/export_pt_trips.py <unzipped GTFS> app/public/data/pt-trips.json [YYYYMMDD]` writes every afternoon trip (15:00-19:30) in a box around
+Brisbane for one school-term weekday (1.7 MB, ~450 KB gzipped). The app builds a connection-scan planner from it in the browser
+(`app/src/lib/transit.ts`): leave school 3:05 pm, walk to a stop, up to any number of changes, walk to the destination; it picks the
+quickest, fewest-stops and least-walking journeys (each a different journey). Timetable only, not live; re-run the script when TransLink's feed changes.

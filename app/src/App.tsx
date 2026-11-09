@@ -1,14 +1,23 @@
 import { useEffect, useMemo, useState } from 'react'
 import Comparison from './components/Comparison'
 import MapView from './components/MapView'
+import PtCard from './components/PtCard'
 import RunCard, { RunRow } from './components/RunCard'
+import Segmented, { type Opt } from './components/Segmented'
 import SearchBox from './components/SearchBox'
 import { addRecent, loadRecents, saveRecents, type Place } from './lib/places'
-import { mins } from './lib/format'
+import { hhmm, mins } from './lib/format'
 import { GREY, PALETTE, planTrips, prepare, sortResults, walkMinutes, withWalk } from './lib/plan'
 import { dist } from './lib/geo'
+import { buildNet, LEAVE_SCHOOL, planPublic, viewOf, walkKey, type Net, type TripsFile } from './lib/transit'
 import { walkingRoute, type Walk } from './lib/walking'
 import type { Dataset, Priority, PtOverlay, Pt, Result, Run } from './types'
+
+type Svc = 'school' | 'pt'
+const SERVICES: Opt<Svc>[] = [
+  { value: 'school', label: 'School bus', icon: 'bus' },
+  { value: 'pt', label: 'Public transport', icon: 'transit' },
+]
 
 const CATS: { pri: Priority; tag: string }[] = [
   { pri: 'quick', tag: 'Quickest' },
@@ -50,6 +59,10 @@ export default function App() {
   const [showPt, setShowPt] = useState(false)
   const [pt, setPt] = useState<PtOverlay | null>(null)
   const [ptLoading, setPtLoading] = useState(false)
+  const [svc, setSvc] = useState<Svc>('school')
+  const [net, setNet] = useState<Net | null>(null)
+  const [netLoading, setNetLoading] = useState(false)
+  const [netErr, setNetErr] = useState('')
   const [walks, setWalks] = useState<Record<string, Walk>>({})
 
   useEffect(() => {
@@ -58,6 +71,18 @@ export default function App() {
       .then((d) => { setRuns(prepare(d)); setSchool(d.school) })
       .catch((e: Error) => setLoadErr(e.message))
   }, [])
+
+  function pickSvc(v: Svc) {
+    setSvc(v)
+    if (v === 'pt') {
+      setView('map'); setFitKey((k) => k + 1)
+      if (!net && !netLoading) {
+        setNetLoading(true); setNetErr('')
+        fetch(import.meta.env.BASE_URL + 'data/pt-trips.json').then((r) => r.json() as Promise<TripsFile>).then((f) => setNet(buildNet(f)))
+          .catch((e: Error) => setNetErr(e.message)).finally(() => setNetLoading(false))
+      }
+    } else setFitKey((k) => k + 1)
+  }
 
   function togglePt() {
     setShowPt((v) => !v)
@@ -100,6 +125,21 @@ export default function App() {
   const topKeys = top.map((t) => t.r.run.key)
   const chosen = selected.map((k) => top.find((t) => t.r.run.key === k)?.r ?? results.find((r) => r.run.key === k)).filter((r): r is Result => !!r).map(paint)
 
+  const rawJourneys = useMemo(() => (svc === 'pt' && net && dest ? planPublic(net, school, dest) : []), [svc, net, school, dest])
+  useEffect(() => {
+    if (!net || !dest) return
+    let live = true
+    rawJourneys.forEach((j) => {
+      const a = net.stops[j.start].p, z = net.stops[j.endStop].p
+      for (const [f, t] of [[school, a], [z, dest]] as [Pt, Pt][]) {
+        walkingRoute(f, t).then((w) => { if (live && w) setWalks((p) => (p[walkKey(f, t)] ? p : { ...p, [walkKey(f, t)]: w })) })
+      }
+    })
+    return () => { live = false }
+  }, [rawJourneys, net, school, dest])
+  const journeys = useMemo(() => (net && dest ? rawJourneys.map((j, i) => viewOf(net, j, school, dest, PALETTE[i % PALETTE.length], walks)) : []),
+    [rawJourneys, net, dest, school, walks])
+
   function pick(p: Place) {
     setPlace(p)
     if (p.icon !== 'target') setRecents((r) => addRecent(r, p)) // never remember where someone actually is
@@ -127,6 +167,7 @@ export default function App() {
         </header>
         <SearchBox ready={runs.length > 0} recents={recents} onPick={pick} onClearRecents={() => { setRecents([]); saveRecents([]) }} />
         {loadErr && <p className="err pad">Could not load run data: {loadErr}</p>}
+        {dest && <div className="opts"><Segmented label="Getting home by" value={svc} onChange={pickSvc} options={SERVICES} /></div>}
       </section>
 
       <section className="top">
@@ -135,24 +176,33 @@ export default function App() {
         )}
         {place && <p className="note where">Buses to <b>{place.full}</b></p>}
         {walkAll !== null && walkAll <= 60 && <p className="note">Walking all the way from school: about {mins(walkAll)}.</p>}
-        {top.map((t) => <RunCard key={t.r.run.key} r={t.r} tags={t.tags} on={selected.includes(t.r.run.key)} onToggle={() => toggle(t.r.run.key)} />)}
-        {dest && !results.length && <p>No run found near there.</p>}
+        {svc === 'pt' && dest && (
+          <>
+            <p className="note">Public transport only, leaving school at {hhmm(LEAVE_SCHOOL)}. TransLink timetable for a school-term weekday.</p>
+            {(netLoading || (!net && !netErr)) && <p className="note">Loading timetables…</p>}
+            {netErr && <p className="err pad">Could not load timetables: {netErr}</p>}
+            {net && journeys.map((v) => <PtCard key={v.j.key + v.j.start + v.j.endStop} v={v} net={net} />)}
+            {net && !journeys.length && <p>No public transport found from the school to there this afternoon.</p>}
+          </>
+        )}
+        {svc === 'school' && top.map((t) => <RunCard key={t.r.run.key} r={t.r} tags={t.tags} on={selected.includes(t.r.run.key)} onToggle={() => toggle(t.r.run.key)} />)}
+        {svc === 'school' && dest && !results.length && <p>No run found near there.</p>}
       </section>
 
       <main>
         <nav className="tabs">
           <button className={view === 'map' ? 'act' : ''} onClick={() => setView('map')}>Map</button>
-          <button className={view === 'compare' ? 'act' : ''} onClick={() => setView('compare')} disabled={!dest}>Compare ({chosen.length})</button>
+          <button className={view === 'compare' ? 'act' : ''} onClick={() => setView('compare')} disabled={!dest || svc === 'pt'}>Compare ({chosen.length})</button>
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
-            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={togglePt} ptLoading={ptLoading} />
+            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={svc === 'school' ? chosen : []} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={togglePt} ptLoading={ptLoading} journeys={svc === 'pt' ? journeys : []} net={net} />
           </div>
           {view === 'compare' && <Comparison results={chosen} />}
         </div>
       </main>
 
-      {rest.length > 0 && (
+      {svc === 'school' && rest.length > 0 && (
         <section className="rest">
           <h3>Other runs</h3>
           {rest.map((r) => <RunRow key={r.run.key} r={r} on={selected.includes(r.run.key)} onToggle={() => toggle(r.run.key)} />)}

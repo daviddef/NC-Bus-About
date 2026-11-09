@@ -5,6 +5,7 @@ import { bearing, dist } from '../lib/geo'
 import { hhmm, metres, mins } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
 import { etaMin, project } from '../lib/plan'
+import type { Net, PtView } from '../lib/transit'
 import type { PtOverlay, Pt, Result } from '../types'
 
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/'
@@ -111,6 +112,39 @@ function PtLayer({ data, open }: { data: PtOverlay; open: (at: Pt, node: ReactNo
   )
 }
 
+/** Public transport journeys home: walk, ride(s), walk. */
+function JourneyLayer({ views, net, school, dest, open }: { views: PtView[]; net: Net; school: Pt; dest: Pt; open: (at: Pt, node: ReactNode) => void }) {
+  return (
+    <>
+      {views.map((v, vi) => {
+        const { j } = v
+        const a = net.stops[j.rides[0].board].p
+        const z = net.stops[j.rides[j.rides.length - 1].alight].p
+        const lastRide = j.rides[j.rides.length - 1]
+        return (
+          <Fragment key={vi}>
+            <Polyline positions={v.first.path ? [school, ...v.first.path, a] : [school, a]} interactive={false} pathOptions={{ color: v.colour, weight: 4, dashArray: '1 8', lineCap: 'round' }} />
+            {j.rides.map((r, i) => (
+              <Fragment key={i}>
+                <Polyline positions={r.path} interactive={false} pathOptions={{ color: '#fff', weight: 9, opacity: 0.9 }} />
+                <Polyline positions={r.path} interactive={false} pathOptions={{ color: v.colour, weight: 5, opacity: 0.95, lineCap: 'round', lineJoin: 'round' }} />
+                {arrows(r.path).map((ar, k) => <Marker key={k} position={ar.at} icon={arrowIcon(ar.deg, v.colour)} interactive={false} keyboard={false} />)}
+                <CircleMarker center={net.stops[r.board].p} radius={7} pathOptions={{ color: v.colour, weight: 3, fillColor: '#fff', fillOpacity: 1 }}
+                  eventHandlers={{ click: () => open(net.stops[r.board].p, <Pop icon="transit" colour={v.colour} title={`Get on: ${net.stops[r.board].n}`} sub={`${r.mode === '2' ? 'Train' : r.route} to ${r.headsign || 'end of line'}`} rows={[`${hhmm(r.boardAt)}`]} />) }} />
+                {i > 0 && <Polyline positions={[net.stops[j.rides[i - 1].alight].p, net.stops[r.board].p]} interactive={false} pathOptions={{ color: v.colour, weight: 3, dashArray: '2 6' }} />}
+              </Fragment>
+            ))}
+            <Polyline positions={v.last.path ? [z, ...v.last.path, dest] : [z, dest]} interactive={false} pathOptions={{ color: '#d6336c', weight: 4, dashArray: '1 8', lineCap: 'round' }} />
+            <Marker position={z} icon={offIcon(v.colour, hhmm(lastRide.alightAt).replace(' ', ''))} zIndexOffset={800}
+              eventHandlers={{ click: () => open(z, <Pop icon="transit" colour={v.colour} title={`Get off: ${net.stops[lastRide.alight].n}`} sub={`${lastRide.mode === '2' ? 'Train' : lastRide.route}`} rows={[`${hhmm(lastRide.alightAt)} · ${plural(lastRide.nStops, 'stop')}`, `Then ${v.last.real ? '' : '≈'}${mins(v.last.min)} walk (${metres(v.last.distM)})`]} />) }} />
+          </Fragment>
+        )
+      })}
+    </>
+  )
+}
+const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
+
 interface Props {
   school: Pt
   dest: Pt | null
@@ -122,13 +156,16 @@ interface Props {
   showPt: boolean
   onTogglePt: () => void
   ptLoading: boolean
+  journeys: PtView[]
+  net: Net | null
 }
 
-export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading }: Props) {
+export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading, journeys, net }: Props) {
   const [popup, setPopup] = useState<{ at: Pt; node: ReactNode } | null>(null)
   const open = (at: Pt, node: ReactNode) => setPopup({ at, node })
   const bounds: Pt[] = [school]
   if (dest) bounds.push(dest)
+  journeys.forEach((v) => v.j.rides.forEach((r) => r.path.forEach((p, i) => i % 4 === 0 && bounds.push(p))))
   selected.forEach((r) => {
     bounds.push([r.stop.lat, r.stop.lon])
     r.run.route.g.slice(0, r.stop.i + 1).forEach((p, i) => i % 12 === 0 && bounds.push(p))
@@ -143,6 +180,8 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         <FitTo bounds={bounds} fitKey={fitKey} />
 
         {showPt && pt && <PtLayer data={pt} open={open} />}
+
+        {net && dest && journeys.length > 0 && <JourneyLayer views={journeys} net={net} school={school} dest={dest} open={open} />}
 
         {selected.map((r) => {
           const { run, stop } = r
