@@ -93,8 +93,8 @@ export default function App() {
   }, [])
 
   const leave = when === 'school' ? LEAVE_SCHOOL : atMin
-  // A school bus only works if it hasn't left yet.
-  const viable = useMemo(() => (when === 'school' ? runs : runs.filter((r) => r.departMin >= atMin)), [runs, when, atMin])
+  // A school bus only works if it leaves soon after you do: not already gone, and not hours away.
+  const viable = useMemo(() => (when === 'school' ? runs : runs.filter((r) => r.departMin >= atMin && r.departMin <= atMin + 30)), [runs, when, atMin])
 
   const dest: Pt | null = place ? [place.lat, place.lon] : null
   const baseA = useMemo(() => (dest ? planTrips(viable, dest, 'quick') : []), [viable, dest])
@@ -114,7 +114,7 @@ export default function App() {
   useEffect(() => {
     if (!includePt || net || netLoading) return
     setNetLoading(true); setNetErr('')
-    fetch(import.meta.env.BASE_URL + 'data/pt-trips.json').then((r) => r.json() as Promise<TripsFile>).then((f) => setNet(buildNet(f)))
+    fetch(import.meta.env.BASE_URL + 'data/pt-trips.json', { cache: 'no-cache' }).then((r) => r.json() as Promise<TripsFile>).then((f) => setNet(buildNet(f)))
       .catch((e: Error) => setNetErr(e.message)).finally(() => setNetLoading(false))
   }, [includePt, net, netLoading])
 
@@ -225,6 +225,7 @@ export default function App() {
         {dest && <p className="note">{leaveNote}.{noSchool && ' No school bus fits that time, so showing public transport.'}</p>}
         {walkAll !== null && walkAll <= 60 && <p className="note">Walking all the way from school: about {mins(walkAll)}.</p>}
         {includePt && (netLoading || (!net && !netErr)) && <p className="note">Loading timetables…</p>}
+        {includePt && net && dest && !cands.length && <p className="note">No public transport found from the school to there when leaving at {hhmm(leave)}.</p>}
         {netErr && <p className="err pad">Could not load timetables: {netErr}</p>}
         {picks.map((p) => p.o.school
           ? <RunCard key={p.o.id} r={paintR(p.o.school)} tags={p.tags} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} />
