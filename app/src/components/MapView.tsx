@@ -154,7 +154,7 @@ const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
 
 // ---- the pulse: a dot that travels each journey from the school to the destination in (sped-up) real time
 interface TP { p: Pt; t: number }
-interface Track { key: string; colour: string; pts: TP[]; start: number; end: number }
+interface Track { key: string; name: string; colour: string; pts: TP[]; start: number; end: number }
 
 function along(path: Pt[], t0: number, t1: number): TP[] {
   const d = [0]
@@ -162,17 +162,17 @@ function along(path: Pt[], t0: number, t1: number): TP[] {
   const total = d[d.length - 1] || 1
   return path.map((p, i) => ({ p, t: t0 + ((t1 - t0) * d[i]) / total }))
 }
-function finish(key: string, colour: string, raw: TP[]): Track {
+function finish(key: string, name: string, colour: string, raw: TP[]): Track {
   let last = -Infinity
   const pts = raw.map((q) => ({ p: q.p, t: (last = Math.max(last, q.t)) }))
-  return { key, colour, pts, start: pts[0].t, end: pts[pts.length - 1].t }
+  return { key, name, colour, pts, start: pts[0].t, end: pts[pts.length - 1].t }
 }
 function schoolTrack(r: Result, dest: Pt | null): Track {
   const { run, stop } = r
   const ride: TP[] = run.route.g.slice(0, stop.i + 1).map((p, i) => ({ p, t: run.departMin + etaMin(run, i) }))
   const here: Pt = [stop.lat, stop.lon]
   const walk = dest ? along(r.walkPath ? [here, ...r.walkPath, dest] : [here, dest], r.getOffAt, r.arriveAt) : []
-  return finish(run.key, run.colour, [...ride, ...walk])
+  return finish(run.key, run.name.split(' · ')[0], run.colour, [...ride, ...walk])
 }
 function ptTrack(v: PtView, net: Net, school: Pt, dest: Pt): Track {
   const { j } = v
@@ -186,7 +186,7 @@ function ptTrack(v: PtView, net: Net, school: Pt, dest: Pt): Track {
   const last = j.rides[j.rides.length - 1]
   const z = net.stops[last.alight].p
   pts.push(...along([z, ...(v.last.path ?? []), dest], last.alightAt, v.arriveAt))
-  return finish(String(vi(j)), v.colour, pts)
+  return finish(String(vi(j)), j.rides.map((r) => (r.mode === '2' ? 'Train' : `Bus ${r.route}`)).join(' + '), v.colour, pts)
 }
 const vi = (j: { key: string; start: number; endStop: number }) => `${j.key}:${j.start}:${j.endStop}`
 function posAt(tr: Track, t: number): Pt {
@@ -205,7 +205,7 @@ const pulseIcon = (colour: string, label: string, done: boolean) =>
   L.divIcon({
     className: '', iconSize: [20, 20], iconAnchor: [10, 10],
     html: done
-      ? `<div class="pulser done" style="--c:${colour}"><span class="pdot tick">${svg('check', 13)}</span><span class="plabel">${label}</span></div>`
+      ? `<div class="pulser done" style="--c:${colour}"><span class="pdot tick">${svg('check', 13)}</span></div>`
       : `<div class="pulser" style="--c:${colour}"><span class="pring"></span><span class="pdot"></span><span class="plabel">${label}</span></div>`,
   })
 /** The stretch of a track already travelled by time t, ending at the pulse itself. */
@@ -217,7 +217,18 @@ function travelled(tr: Track, t: number): Pt[] {
 }
 
 const SPEED = 3 // journey minutes per real second, the same however many options are shown
-const HOLD_MS = 2500
+const HOLD_MS = 6000 // long enough to read who got home when
+
+/** A light-hearted way to say how much sooner this one gets home than the slowest option. */
+function fun(gap: number): string {
+  const m = Math.round(gap)
+  if (m < 1) return ''
+  if (m < 10) return `🍪 ${m} min: time for a snack`
+  if (m < 20) return `🎮 ${m} min of extra gaming time`
+  if (m < 35) return `🏊 ${m} min of extra swim time`
+  if (m < 60) return `📺 ${m} min: a whole episode, plus snacks`
+  return `🎬 ${m} min: a full movie before the slowest gets home`
+}
 
 /** Plays the clock from the earliest start to the latest arrival, looping. */
 function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
@@ -244,8 +255,18 @@ function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sig, playing])
   if (t === null) return null
+  const slowest = Math.max(...tracks.map((k) => k.end))
+  const home = tracks.filter((k) => t >= k.end).sort((a, b) => a.end - b.end)
   return (
     <>
+      <div className="arrivals" aria-live="polite">
+        {home.map((k) => (
+          <div className="arr1" key={k.key} style={{ ['--c' as string]: k.colour }}>
+            <b>{k.name}</b> home <b>{hhmm(k.end)}</b> <span>· {mins(k.end - k.start)}</span>
+            {tracks.length > 1 && <div className="fun">{k.end >= slowest ? '🐢 last one home' : fun(slowest - k.end)}</div>}
+          </div>
+        ))}
+      </div>
       {tracks.map((k) => (t > k.start ? <Polyline key={'d' + k.key} positions={travelled(k, t)} interactive={false} pathOptions={{ color: '#fff', weight: 9, opacity: 0.72, lineCap: 'round', lineJoin: 'round' }} /> : null))}
       {tracks.map((k) => {
         const done = t >= k.end
