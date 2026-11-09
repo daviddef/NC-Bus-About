@@ -53,7 +53,7 @@ network (translink.opendata@tmr.qld.gov.au, allow three business days): get it b
 
 ### Public transport journeys home
 
-`scripts/export_pt_trips.py <unzipped GTFS> app/public/data/pt-trips.json [YYYYMMDD]` writes every afternoon trip (15:00-19:30) in a box around
-Brisbane for one school-term weekday (1.7 MB, ~450 KB gzipped). The app builds a connection-scan planner from it in the browser
-(`app/src/lib/transit.ts`): leave school 3:05 pm, walk to a stop, up to any number of changes, walk to the destination; it picks the
+`scripts/export_pt_trips.py <unzipped GTFS> app/public/data/pt-trips.json [YYYYMMDD]` writes every trip from 05:00 to 00:30 in a box around
+Brisbane for one school-term weekday (4.3 MB, ~1.1 MB gzipped). The app builds a connection-scan planner from it in the browser
+(`app/src/lib/transit.ts`): leave school at 3:05 pm or a chosen time, walk to a stop, up to any number of changes, walk to the destination; it picks the
 quickest, fewest-stops and least-walking journeys (each a different journey). Timetable only, not live; re-run the script when TransLink's feed changes.

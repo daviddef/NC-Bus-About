@@ -3,14 +3,14 @@
 
 usage: python3 -I scripts/export_pt_trips.py <unzipped_gtfs_dir> <out.json> [service_date YYYYMMDD]
 
-Keeps stop_times between 15:00 and 19:30 at stops inside the box below, on one normal school-term weekday.
+Keeps stop_times between 05:00 and 00:30 at stops inside the box below, on one normal school-term weekday.
 Source: TransLink open data, CC BY 4.0. Times are delta-coded minutes (seconds dropped) to keep the file small.
 """
 import csv, json, sys, datetime, collections
 from pathlib import Path
 
 BOX = (-27.60, -27.17, 152.82, 153.22)  # lat_min, lat_max, lon_min, lon_max
-T0, T1 = 15 * 60, 19 * 60 + 30
+T0, T1 = 5 * 60, 24 * 60 + 30
 
 
 def rd(d, f):

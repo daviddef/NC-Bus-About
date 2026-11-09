@@ -155,3 +155,12 @@ table.simple th,table.simple td{padding:12px 4px}
 .pring{position:absolute;inset:0;border-radius:50%;background:var(--c);opacity:.5;animation:pr 1.1s ease-out infinite}
 @keyframes pr{from{transform:scale(.6);opacity:.6}to{transform:scale(2.6);opacity:0}}
 .plabel{position:absolute;left:18px;top:-9px;white-space:nowrap;background:var(--c);color:#fff;font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;box-shadow:0 1px 5px #0005}
+.pulser.done .pdot{inset:0;background:#16a34a;border-color:#fff;display:flex;align-items:center;justify-content:center;color:#fff}
+.pulser.done .plabel{background:#16a34a}
+.timerow{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--mut)}
+.timerow input{font:inherit;font-size:16px;padding:8px 10px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.nowbtn{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}
+.ptchip{display:flex;align-items:center;gap:8px;width:100%;font:inherit;font-size:15px;font-weight:600;padding:11px 14px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;text-align:left}
+.ptchip i{margin-left:auto;font-style:normal;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--pan);color:var(--mut)}
+.ptchip.on{background:#0f172a;color:#fff;border-color:#0f172a}.ptchip.on i{background:#fff;color:#0f172a}
+.ptchip:disabled{opacity:.85;cursor:default}

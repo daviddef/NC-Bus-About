@@ -5,19 +5,22 @@ import PtCard from './components/PtCard'
 import RunCard, { RunRow } from './components/RunCard'
 import Segmented, { type Opt } from './components/Segmented'
 import SearchBox from './components/SearchBox'
+import { svg } from './lib/icons'
 import { addRecent, loadRecents, saveRecents, type Place } from './lib/places'
 import { hhmm, mins } from './lib/format'
 import { GREY, PALETTE, planTrips, prepare, sortResults, walkMinutes, withWalk } from './lib/plan'
 import { dist } from './lib/geo'
-import { buildNet, LEAVE_SCHOOL, planPublic, viewOf, walkKey, type Net, type TripsFile } from './lib/transit'
+import { buildNet, journeyCandidates, LEAVE_SCHOOL, viewOf, walkKey, type Net, type PtView, type TripsFile } from './lib/transit'
 import { walkingRoute, type Walk } from './lib/walking'
 import type { Dataset, Priority, PtOverlay, Pt, Result, Run } from './types'
 
-type Svc = 'school' | 'pt'
-const SERVICES: Opt<Svc>[] = [
-  { value: 'school', label: 'School bus', icon: 'bus' },
-  { value: 'pt', label: 'Public transport', icon: 'transit' },
+type When = 'school' | 'at'
+const WHEN: Opt<When>[] = [
+  { value: 'school', label: 'After school', icon: 'school' },
+  { value: 'at', label: 'Leave at', icon: 'clock' },
 ]
+const nowMin = () => { const d = new Date(); return Math.round((d.getHours() * 60 + d.getMinutes()) / 5) * 5 }
+const timeStr = (m: number) => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`
 
 const CATS: { pri: Priority; tag: string }[] = [
   { pri: 'quick', tag: 'Quickest' },
@@ -25,24 +28,39 @@ const CATS: { pri: Priority; tag: string }[] = [
   { pri: 'walk', tag: 'Least walking' },
 ]
 
-type Pick = { r: Result; tags: string[] }
+/** One way home, school bus or public transport, with the three numbers that decide between them. */
+interface Option { id: string; where: string; arrive: number; walk: number; stops: number; school?: Result; pt?: PtView }
+interface Pick { o: Option; tags: string[] }
 
-/** One card per category, each a different run. A run that wins twice (at the same stop) carries both tags and the
- *  other category shows its runner-up, labelled "2nd …", so three options always appear. */
-function topPicks(lists: Record<Priority, Result[]>): Pick[] {
+const schoolOption = (r: Result): Option => ({ id: r.run.key, where: `${r.stop.lat},${r.stop.lon}`, arrive: r.arriveAt, walk: r.walkMin, stops: r.stopCount, school: r });
+const ptOption = (v: PtView): Option => ({ id: 'pt:' + v.j.key, where: `${v.j.start}>${v.j.endStop}`, arrive: v.arriveAt, walk: v.walkMin, stops: v.j.stopsRidden + 6 * v.j.changes, pt: v });
+
+/** Best option for each of the three things that matter, across school buses and public transport, each a different
+ *  journey. One that wins twice (same way) carries both tags; the other category shows its runner-up ("2nd …"). */
+function pickOptions(all: Option[]): Pick[] {
+  if (!all.length) return []
+  const quickest = Math.min(...all.map((o) => o.arrive))
+  const ok = all.filter((o) => o.arrive <= quickest + 45)
+  const calm = ok.filter((o) => o.walk <= 20)
+  const cat = {
+    quick: { pool: ok, by: (o: Option) => o.arrive * 100 + o.walk },
+    stops: { pool: calm.length ? calm : ok, by: (o: Option) => o.stops * 1000 + o.arrive },
+    walk: { pool: ok, by: (o: Option) => o.walk * 1000 + o.arrive },
+  }
+  const lists = Object.fromEntries(CATS.map((c) => [c.pri, [...cat[c.pri].pool].sort((a, b) => cat[c.pri].by(a) - cat[c.pri].by(b))])) as Record<Priority, Option[]>
   const out: Pick[] = []
-  const owed: { c: (typeof CATS)[number] }[] = []
+  const owed: (typeof CATS)[number][] = []
   for (const c of CATS) {
     const w = lists[c.pri][0]
     if (!w) continue
-    const same = out.find((o) => o.r.run.key === w.run.key && o.r.stop.lat === w.stop.lat && o.r.stop.lon === w.stop.lon)
-    if (same) { same.tags.push(c.tag); owed.push({ c }) }
-    else if (out.some((o) => o.r.run.key === w.run.key)) owed.push({ c })
-    else out.push({ r: w, tags: [c.tag] })
+    const same = out.find((p) => p.o.id === w.id && p.o.where === w.where)
+    if (same) { same.tags.push(c.tag); owed.push(c) }
+    else if (out.some((p) => p.o.id === w.id)) owed.push(c)
+    else out.push({ o: w, tags: [c.tag] })
   }
-  for (const { c } of owed) {
-    const next = lists[c.pri].find((x) => !out.some((o) => o.r.run.key === x.run.key))
-    if (next) out.push({ r: next, tags: ['2nd ' + c.tag.toLowerCase()] })
+  for (const c of owed) {
+    const next = lists[c.pri].find((x) => !out.some((p) => p.o.id === x.id))
+    if (next) out.push({ o: next, tags: ['2nd ' + c.tag.toLowerCase()] })
   }
   return out
 }
@@ -53,13 +71,15 @@ export default function App() {
   const [loadErr, setLoadErr] = useState('')
   const [place, setPlace] = useState<Place | null>(null)
   const [recents, setRecents] = useState<Place[]>(() => loadRecents())
-  const [selected, setSelected] = useState<string[]>([])
+  const [when, setWhen] = useState<When>('school')
+  const [atMin, setAtMin] = useState(nowMin)
+  const [off, setOff] = useState<string[]>([]) // options hidden from the map
+  const [extra, setExtra] = useState<string[]>([]) // other school runs ticked from the list
   const [view, setView] = useState<'map' | 'compare'>('map')
   const [fitKey, setFitKey] = useState(0)
   const [showPt, setShowPt] = useState(false)
   const [pt, setPt] = useState<PtOverlay | null>(null)
   const [ptLoading, setPtLoading] = useState(false)
-  const [svc, setSvc] = useState<Svc>('school')
   const [net, setNet] = useState<Net | null>(null)
   const [netLoading, setNetLoading] = useState(false)
   const [netErr, setNetErr] = useState('')
@@ -72,91 +92,102 @@ export default function App() {
       .catch((e: Error) => setLoadErr(e.message))
   }, [])
 
-  function pickSvc(v: Svc) {
-    setSvc(v)
-    if (v === 'pt') {
-      setView('map'); setFitKey((k) => k + 1)
-      if (!net && !netLoading) {
-        setNetLoading(true); setNetErr('')
-        fetch(import.meta.env.BASE_URL + 'data/pt-trips.json').then((r) => r.json() as Promise<TripsFile>).then((f) => setNet(buildNet(f)))
-          .catch((e: Error) => setNetErr(e.message)).finally(() => setNetLoading(false))
-      }
-    } else setFitKey((k) => k + 1)
-  }
+  const leave = when === 'school' ? LEAVE_SCHOOL : atMin
+  // A school bus only works if it hasn't left yet.
+  const viable = useMemo(() => (when === 'school' ? runs : runs.filter((r) => r.departMin >= atMin)), [runs, when, atMin])
 
-  function togglePt() {
-    setShowPt((v) => !v)
-    if (!pt && !ptLoading) {
+  const dest: Pt | null = place ? [place.lat, place.lon] : null
+  const baseA = useMemo(() => (dest ? planTrips(viable, dest, 'quick') : []), [viable, dest])
+  const bases = useMemo(() => (dest ? Object.fromEntries(CATS.map((c) => [c.pri, planTrips(viable, dest, c.pri)])) as Record<Priority, Result[]> : null), [viable, dest])
+  const noSchool = !!dest && runs.length > 0 && baseA.length === 0
+  const includePt = showPt || noSchool
+
+  function setPtOn(on: boolean) {
+    setShowPt(on)
+    if (on && !pt && !ptLoading) {
       setPtLoading(true)
       fetch(import.meta.env.BASE_URL + 'data/pt-overlay.json').then((r) => r.json() as Promise<PtOverlay>).then(setPt).catch(() => setShowPt(false)).finally(() => setPtLoading(false))
     }
   }
+  // No school bus fits, so public transport is the answer: switch it on.
+  useEffect(() => { if (noSchool && !showPt) setPtOn(true) }, [noSchool]) // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!includePt || net || netLoading) return
+    setNetLoading(true); setNetErr('')
+    fetch(import.meta.env.BASE_URL + 'data/pt-trips.json').then((r) => r.json() as Promise<TripsFile>).then((f) => setNet(buildNet(f)))
+      .catch((e: Error) => setNetErr(e.message)).finally(() => setNetLoading(false))
+  }, [includePt, net, netLoading])
 
-  const dest: Pt | null = place ? [place.lat, place.lon] : null
-  const baseA = useMemo(() => (dest ? planTrips(runs, dest, 'quick') : []), [runs, dest])
-  const bases = useMemo(() => (dest ? Object.fromEntries(CATS.map((c) => [c.pri, planTrips(runs, dest, c.pri)])) as Record<Priority, Result[]> : null), [runs, dest])
   const wkey = (r: Result) => `${r.run.key}|${r.stop.lat},${r.stop.lon}|${dest?.join(',')}`
-
-  // Real walking routes for the top results and for everything ticked (both stop choices).
-  useEffect(() => {
-    if (!dest) return
-    let live = true
-    const todo = [...baseA.slice(0, 8), ...(bases ? CATS.flatMap((c) => bases[c.pri].slice(0, 3)) : []), ...baseA.filter((r) => selected.includes(r.run.key))]
-    todo.forEach((r) => {
-      walkingRoute([r.stop.lat, r.stop.lon], dest).then((w) => { if (live && w) setWalks((p) => (p[wkey(r)] ? p : { ...p, [wkey(r)]: w })) })
-    })
-    return () => { live = false }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [baseA, bases, selected])
-
-  // Each ticked run gets its own colour, in the order ticked; the rest stay grey.
-  const paint = (r: Result): Result => {
-    const i = selected.indexOf(r.run.key)
-    return { ...r, run: { ...r.run, colour: i >= 0 ? PALETTE[i % PALETTE.length] : GREY } }
-  }
   const real = (r: Result) => (walks[wkey(r)] ? withWalk(r, walks[wkey(r)]) : r)
-  const results = useMemo(() => sortResults(baseA.map(real), 'quick').map(paint),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [baseA, walks, selected])
-  // Always three different runs: the best for each of the three things that matter.
-  const top = useMemo(() => (bases ? topPicks({ quick: bases.quick.map(real), stops: bases.stops.map(real), walk: bases.walk.map(real) }).map((o) => ({ ...o, r: paint(o.r) })) : []),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [bases, walks, selected])
-  const topKeys = top.map((t) => t.r.run.key)
-  const chosen = selected.map((k) => top.find((t) => t.r.run.key === k)?.r ?? results.find((r) => r.run.key === k)).filter((r): r is Result => !!r).map(paint)
 
-  const rawJourneys = useMemo(() => (svc === 'pt' && net && dest ? planPublic(net, school, dest) : []), [svc, net, school, dest])
-  useEffect(() => {
-    if (!net || !dest) return
-    let live = true
-    rawJourneys.forEach((j) => {
-      const a = net.stops[j.start].p, z = net.stops[j.endStop].p
-      for (const [f, t] of [[school, a], [z, dest]] as [Pt, Pt][]) {
-        walkingRoute(f, t).then((w) => { if (live && w) setWalks((p) => (p[walkKey(f, t)] ? p : { ...p, [walkKey(f, t)]: w })) })
-      }
+  const cands = useMemo(() => (includePt && net && dest ? journeyCandidates(net, school, dest, leave) : []), [includePt, net, school, dest, leave])
+  const ptViews = useMemo(() => (net && dest ? cands.map((j) => viewOf(net, j, school, dest, GREY, walks, leave)) : []), [cands, net, dest, school, walks, leave])
+
+  const picks = useMemo(() => {
+    if (!bases) return []
+    const seen = new Set<string>()
+    const school: Option[] = []
+    for (const r of [...bases.quick, ...bases.stops, ...bases.walk].map(real)) {
+      const o = schoolOption(r)
+      if (!seen.has(o.id + o.where)) { seen.add(o.id + o.where); school.push(o) }
+    }
+    return pickOptions([...school, ...ptViews.map(ptOption)])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bases, ptViews, walks])
+  const pickIds = picks.map((p) => p.o.id)
+
+  // Real walking routes for what we're showing, so times and lines follow the footpath.
+  const todo: { key: string; from: Pt; to: Pt }[] = []
+  if (dest) {
+    baseA.slice(0, 8).forEach((r) => todo.push({ key: wkey(r), from: [r.stop.lat, r.stop.lon], to: dest }))
+    if (bases) CATS.forEach((c) => bases[c.pri].slice(0, 3).forEach((r) => todo.push({ key: wkey(r), from: [r.stop.lat, r.stop.lon], to: dest })))
+    if (net) picks.forEach((p) => {
+      if (!p.o.pt) return
+      const a = net.stops[p.o.pt.j.start].p, z = net.stops[p.o.pt.j.endStop].p
+      todo.push({ key: walkKey(school, a), from: school, to: a }, { key: walkKey(z, dest), from: z, to: dest })
     })
+  }
+  const todoSig = todo.map((t) => t.key).join('|')
+  useEffect(() => {
+    let live = true
+    todo.forEach((t) => walkingRoute(t.from, t.to).then((w) => { if (live && w) setWalks((p) => (p[t.key] ? p : { ...p, [t.key]: w })) }))
     return () => { live = false }
-  }, [rawJourneys, net, school, dest])
-  const journeys = useMemo(() => (net && dest ? rawJourneys.map((j, i) => viewOf(net, j, school, dest, PALETTE[i % PALETTE.length], walks)) : []),
-    [rawJourneys, net, dest, school, walks])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [todoSig])
 
+  // Colours follow the order shown: the top options first, then any other run ticked from the list.
+  const colourOf = (id: string) => {
+    const i = [...pickIds, ...extra].indexOf(id)
+    return i >= 0 ? PALETTE[i % PALETTE.length] : GREY
+  }
+  const paintR = (r: Result): Result => ({ ...r, run: { ...r.run, colour: colourOf(r.run.key) } })
+  const results = useMemo(() => sortResults(baseA.map(real), 'quick'), // eslint-disable-next-line react-hooks/exhaustive-deps
+    [baseA, walks])
+  const shownPicks = picks.filter((p) => !off.includes(p.o.id))
+  const chosen: Result[] = [
+    ...shownPicks.filter((p) => p.o.school).map((p) => paintR(p.o.school!)),
+    ...extra.map((k) => results.find((r) => r.run.key === k)).filter((r): r is Result => !!r).map(paintR),
+  ]
+  const journeys: PtView[] = shownPicks.filter((p) => p.o.pt).map((p) => ({ ...p.o.pt!, colour: colourOf(p.o.id) }))
+  const rest = results.filter((r) => !pickIds.includes(r.run.key)).slice(0, 10)
+
+  function reset() { setOff([]); setExtra([]); setView('map'); setFitKey((k) => k + 1) }
   function pick(p: Place) {
     setPlace(p)
     if (p.icon !== 'target') setRecents((r) => addRecent(r, p)) // never remember where someone actually is
-    const to: Pt = [p.lat, p.lon]
-    const keys = new Set(topPicks({ quick: planTrips(runs, to, 'quick'), stops: planTrips(runs, to, 'stops'), walk: planTrips(runs, to, 'walk') }).map((o) => o.r.run.key))
-    setSelected([...keys])
-    setView('map'); setFitKey((k) => k + 1)
+    reset()
   }
-
-  function toggle(key: string) {
-    const on = selected.includes(key)
-    setSelected(on ? selected.filter((k) => k !== key) : [...selected, key])
-    if (!on) setFitKey((k) => k + 1)
+  const toggle = (id: string, isPick: boolean) => {
+    const list = isPick ? off : extra
+    const turningOn = isPick ? list.includes(id) : !list.includes(id)
+    const next = list.includes(id) ? list.filter((k) => k !== id) : [...list, id]
+    if (isPick) setOff(next); else setExtra(next)
+    if (turningOn) setFitKey((k) => k + 1)
   }
 
   const walkAll = dest ? walkMinutes(dist(school, dest)) : null
-  const rest = results.filter((r) => !topKeys.includes(r.run.key)).slice(0, 10)
+  const leaveNote = when === 'school' ? `Leaving school after school (school buses from ${hhmm(LEAVE_SCHOOL)})` : `Leaving school at ${hhmm(atMin)}`
 
   return (
     <div className="app">
@@ -167,45 +198,57 @@ export default function App() {
         </header>
         <SearchBox ready={runs.length > 0} recents={recents} onPick={pick} onClearRecents={() => { setRecents([]); saveRecents([]) }} />
         {loadErr && <p className="err pad">Could not load run data: {loadErr}</p>}
-        {dest && <div className="opts"><Segmented label="Getting home by" value={svc} onChange={pickSvc} options={SERVICES} /></div>}
+        {dest && (
+          <div className="opts">
+            <Segmented label="When" value={when} onChange={(v) => { setWhen(v); if (v === 'at') setAtMin(nowMin()); reset() }} options={WHEN} />
+            {when === 'at' && (
+              <label className="timerow">
+                <span>Leaving at</span>
+                <input type="time" step={300} value={timeStr(atMin)} onChange={(e) => { const [h, m] = e.target.value.split(':').map(Number); if (!Number.isNaN(h)) { setAtMin(h * 60 + m); reset() } }} />
+                <button type="button" className="nowbtn" onClick={() => { setAtMin(nowMin()); reset() }}>Now</button>
+              </label>
+            )}
+            <button type="button" className={'ptchip' + (includePt ? ' on' : '')} aria-pressed={includePt} disabled={noSchool} onClick={() => setPtOn(!showPt)}>
+              <span dangerouslySetInnerHTML={{ __html: svg('transit', 18) }} />
+              <span>Include public transport</span>
+              <i>{includePt ? 'On' : 'Off'}</i>
+            </button>
+          </div>
+        )}
       </section>
 
       <section className="top">
         {!dest && (
           <p className="note">Type where you are going. Times are estimates worked out from road distance — the College sheets only give the 3:05 pm departure. Not yet checked by College Transport: always check BusMinder and your driver.</p>
         )}
-        {place && <p className="note where">Buses to <b>{place.full}</b></p>}
+        {place && <p className="note where">Ways to <b>{place.full}</b></p>}
+        {dest && <p className="note">{leaveNote}.{noSchool && ' No school bus fits that time, so showing public transport.'}</p>}
         {walkAll !== null && walkAll <= 60 && <p className="note">Walking all the way from school: about {mins(walkAll)}.</p>}
-        {svc === 'pt' && dest && (
-          <>
-            <p className="note">Public transport only, leaving school at {hhmm(LEAVE_SCHOOL)}. TransLink timetable for a school-term weekday.</p>
-            {(netLoading || (!net && !netErr)) && <p className="note">Loading timetables…</p>}
-            {netErr && <p className="err pad">Could not load timetables: {netErr}</p>}
-            {net && journeys.map((v) => <PtCard key={v.j.key + v.j.start + v.j.endStop} v={v} net={net} />)}
-            {net && !journeys.length && <p>No public transport found from the school to there this afternoon.</p>}
-          </>
-        )}
-        {svc === 'school' && top.map((t) => <RunCard key={t.r.run.key} r={t.r} tags={t.tags} on={selected.includes(t.r.run.key)} onToggle={() => toggle(t.r.run.key)} />)}
-        {svc === 'school' && dest && !results.length && <p>No run found near there.</p>}
+        {includePt && (netLoading || (!net && !netErr)) && <p className="note">Loading timetables…</p>}
+        {netErr && <p className="err pad">Could not load timetables: {netErr}</p>}
+        {picks.map((p) => p.o.school
+          ? <RunCard key={p.o.id} r={paintR(p.o.school)} tags={p.tags} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} />
+          : net && <PtCard key={p.o.id} v={{ ...p.o.pt!, colour: colourOf(p.o.id), j: { ...p.o.pt!.j, tags: p.tags } }} net={net} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} />)}
+        {dest && !picks.length && !netLoading && runs.length > 0 && <p>Nothing found for that time. Try turning on public transport.</p>}
       </section>
 
       <main>
         <nav className="tabs">
           <button className={view === 'map' ? 'act' : ''} onClick={() => setView('map')}>Map</button>
-          <button className={view === 'compare' ? 'act' : ''} onClick={() => setView('compare')} disabled={!dest || svc === 'pt'}>Compare ({chosen.length})</button>
+          <button className={view === 'compare' ? 'act' : ''} onClick={() => setView('compare')} disabled={!dest}>Compare ({chosen.length})</button>
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
-            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={svc === 'school' ? chosen : []} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={togglePt} ptLoading={ptLoading} journeys={svc === 'pt' ? journeys : []} net={net} />
+            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} />
           </div>
           {view === 'compare' && <Comparison results={chosen} />}
         </div>
       </main>
 
-      {svc === 'school' && rest.length > 0 && (
+      {rest.length > 0 && (
         <section className="rest">
-          <h3>Other runs</h3>
-          {rest.map((r) => <RunRow key={r.run.key} r={r} on={selected.includes(r.run.key)} onToggle={() => toggle(r.run.key)} />)}
+          <h3>Other school buses</h3>
+          {rest.map((r) => <RunRow key={r.run.key} r={paintR(r)} on={extra.includes(r.run.key)} onToggle={() => toggle(r.run.key, false)} />)}
         </section>
       )}
     </div>

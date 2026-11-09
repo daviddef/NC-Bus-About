@@ -5,7 +5,7 @@ import { bearing, dist } from '../lib/geo'
 import { hhmm, metres, mins } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
 import { etaMin, project } from '../lib/plan'
-import { LEAVE_SCHOOL, type Net, type PtView } from '../lib/transit'
+import type { Net, PtView } from '../lib/transit'
 import type { PtOverlay, Pt, Result } from '../types'
 
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/'
@@ -177,7 +177,7 @@ function schoolTrack(r: Result, dest: Pt | null): Track {
 function ptTrack(v: PtView, net: Net, school: Pt, dest: Pt): Track {
   const { j } = v
   const board = net.stops[j.rides[0].board].p
-  const pts: TP[] = [...along([school, ...(v.first.path ?? []), board], LEAVE_SCHOOL, LEAVE_SCHOOL + v.first.min), { p: board, t: j.rides[0].boardAt }]
+  const pts: TP[] = [...along([school, ...(v.first.path ?? []), board], v.leave, v.leave + v.first.min), { p: board, t: j.rides[0].boardAt }]
   j.rides.forEach((r, i) => {
     pts.push(...along(r.path, r.boardAt, r.alightAt))
     const nx = j.rides[i + 1]
@@ -201,10 +201,22 @@ function posAt(tr: Track, t: number): Pt {
   }
   return a[a.length - 1].p
 }
-const pulseIcon = (colour: string, label: string) =>
-  L.divIcon({ className: '', iconSize: [20, 20], iconAnchor: [10, 10], html: `<div class="pulser" style="--c:${colour}"><span class="pring"></span><span class="pdot"></span><span class="plabel">${label}</span></div>` })
+const pulseIcon = (colour: string, label: string, done: boolean) =>
+  L.divIcon({
+    className: '', iconSize: [20, 20], iconAnchor: [10, 10],
+    html: done
+      ? `<div class="pulser done" style="--c:${colour}"><span class="pdot tick">${svg('check', 13)}</span><span class="plabel">${label}</span></div>`
+      : `<div class="pulser" style="--c:${colour}"><span class="pring"></span><span class="pdot"></span><span class="plabel">${label}</span></div>`,
+  })
+/** The stretch of a track already travelled by time t, ending at the pulse itself. */
+function travelled(tr: Track, t: number): Pt[] {
+  const out: Pt[] = []
+  for (const q of tr.pts) { if (q.t > t) break; out.push(q.p) }
+  out.push(posAt(tr, t))
+  return out
+}
 
-const TRAVEL_MS = 16000 // how long the whole journey takes to play
+const SPEED = 3 // journey minutes per real second, the same however many options are shown
 const HOLD_MS = 2500
 
 /** Plays the clock from the earliest start to the latest arrival, looping. */
@@ -220,8 +232,9 @@ function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
     let raf = 0, last = performance.now()
     const tick = (now: number) => {
       if (playing) {
-        prog.current = (prog.current + (now - last)) % (TRAVEL_MS + HOLD_MS)
-        setT(start + (end - start) * Math.min(1, prog.current / TRAVEL_MS))
+        const travel = Math.max(4000, ((end - start) / SPEED) * 1000)
+        prog.current = (prog.current + (now - last)) % (travel + HOLD_MS)
+        setT(start + Math.min(end - start, (prog.current / 1000) * SPEED))
       }
       last = now
       raf = requestAnimationFrame(tick)
@@ -233,10 +246,11 @@ function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
   if (t === null) return null
   return (
     <>
+      {tracks.map((k) => (t > k.start ? <Polyline key={'d' + k.key} positions={travelled(k, t)} interactive={false} pathOptions={{ color: '#fff', weight: 9, opacity: 0.72, lineCap: 'round', lineJoin: 'round' }} /> : null))}
       {tracks.map((k) => {
         const done = t >= k.end
-        const label = done ? `Arrive ${hhmm(k.end).replace(' ', '')} · ${mins(k.end - k.start)}` : `${hhmm(Math.max(t, k.start)).replace(' ', '')} · ${mins(Math.max(0, t - k.start))}`
-        return <Marker key={k.key} position={posAt(k, t)} icon={pulseIcon(k.colour, label)} interactive={false} keyboard={false} zIndexOffset={1500} />
+        const label = done ? `Arrived ${hhmm(k.end).replace(' ', '')} · ${mins(k.end - k.start)}` : `${hhmm(Math.max(t, k.start)).replace(' ', '')} · ${mins(Math.max(0, t - k.start))}`
+        return <Marker key={k.key} position={posAt(k, t)} icon={pulseIcon(k.colour, label, done)} interactive={false} keyboard={false} zIndexOffset={1500} />
       })}
     </>
   )
@@ -291,7 +305,6 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
           </Fragment>
         )))}
 
-        {tracks.length > 0 && <Pulses tracks={tracks} playing={playing} />}
         {net && dest && journeys.length > 0 && <JourneyLayer views={journeys} net={net} school={school} dest={dest} open={open} />}
 
         {selected.map((r) => {
@@ -363,6 +376,8 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         )}
         <Marker position={school} icon={schoolIcon} zIndexOffset={1000}
           eventHandlers={{ click: () => open(school, <Pop icon="school" colour="#e11d2e" title="St Joseph’s Nudgee College" sub="Every afternoon run starts here" />) }} />
+
+        {tracks.length > 0 && <Pulses tracks={tracks} playing={playing} />}
 
         {popup && (
           <Popup position={popup.at} className="ncpop" offset={[0, -6]} eventHandlers={{ remove: () => setPopup(null) }}>

@@ -11,7 +11,7 @@ export interface TripsFile {
   trips: [number, string, number, number[], number[], number[]][]
 }
 
-export const LEAVE_SCHOOL = 15 * 60 + 5 // 3:05 pm, the time the College buses leave
+export const LEAVE_SCHOOL = 15 * 60 + 5 // 3:05 pm, the time the College buses leave; the default "after school" time
 const BOARD_BUFFER = 1 // minutes spare when stepping onto the first service
 const CHANGE_BUFFER = 2 // minutes to change between services at the same stop
 const MAX_WALK_M = 1700 // furthest we'll ask anyone to walk to a first or last stop
@@ -75,9 +75,10 @@ function scan(net: Net, origin: number, start: number): Labels {
   L.arr[origin] = start
   for (const w of net.walk[origin]) if (start + w.min < L.arr[w.to]) { L.arr[w.to] = start + w.min; L.kind[w.to] = 2; L.pFrom[w.to] = origin }
   const stopAt = start + 150
-  for (let c = 0; c < net.cDep.length; c++) {
+  let lo = 0, hi = net.cDep.length // first connection departing at or after the start
+  while (lo < hi) { const m = (lo + hi) >> 1; if (net.cDep[m] < start) lo = m + 1; else hi = m }
+  for (let c = lo; c < net.cDep.length; c++) {
     const dep = net.cDep[c]
-    if (dep < start) continue
     if (dep > stopAt) break
     const tr = net.cTrip[c]
     if (board[tr] < 0) {
@@ -132,19 +133,19 @@ function rebuild(net: Net, L: Labels, end: number): { rides: Ride[]; changeWalk:
   return null
 }
 
-/** Quickest, fewest stops and least walking, each a different journey. */
-export function planPublic(net: Net, school: Pt, dest: Pt): Journey[] {
+/** Every sensible way to get from the school to the destination by public transport, leaving at `leave`. */
+export function journeyCandidates(net: Net, school: Pt, dest: Pt, leave: number): Journey[] {
   const starts = near(net, school, 6)
   const ends = near(net, dest, 40)
-  if (!starts.length || !ends.length) return []
   const all: Journey[] = []
   for (const o of starts) {
-    const t0 = LEAVE_SCHOOL + walkMinutes(o.d) + BOARD_BUFFER
+    const t0 = leave + walkMinutes(o.d) + BOARD_BUFFER
     const L = scan(net, o.s, t0)
     for (const e of ends) {
       if (!isFinite(L.arr[e.s]) || e.s === o.s) continue
       const rb = rebuild(net, L, e.s)
       if (!rb || rb.first !== o.s) continue
+      if (rb.rides.some((r, i) => i > 0 && r.route === rb.rides[i - 1].route)) continue // changing onto the same route is pointless
       const lastWalk = walkMinutes(e.d)
       const walk = walkMinutes(o.d) + rb.changeWalk + lastWalk
       const ridden = rb.rides.reduce((n, r) => n + r.nStops, 0)
@@ -154,30 +155,7 @@ export function planPublic(net: Net, school: Pt, dest: Pt): Journey[] {
       })
     }
   }
-  if (!all.length) return []
-  const quickest = Math.min(...all.map((j) => j.arriveAt))
-  const ok = all.filter((j) => j.arriveAt <= quickest + 45)
-  const cats: { tag: string; pool: Journey[]; by: (j: Journey) => number }[] = [
-    { tag: 'Quickest', pool: ok, by: (j) => j.arriveAt * 100 + j.walkMin },
-    { tag: 'Fewest stops', pool: ok.filter((j) => j.walkMin <= 25), by: (j) => (j.stopsRidden + 6 * j.changes) * 1000 + j.arriveAt },
-    { tag: 'Least walking', pool: ok, by: (j) => j.walkMin * 1000 + j.arriveAt },
-  ]
-  const lists = cats.map((c) => [...(c.pool.length ? c.pool : ok)].sort((a, b) => c.by(a) - c.by(b)))
-  const same = (a: Journey, b: Journey) => a.key === b.key && a.start === b.start && a.endStop === b.endStop
-  const out: Journey[] = []
-  const owed: number[] = []
-  cats.forEach((c, i) => {
-    const w = lists[i][0]
-    const dup = out.find((o) => same(o, w))
-    if (dup) { dup.tags.push(c.tag); owed.push(i) }
-    else if (out.some((o) => o.key === w.key)) owed.push(i)
-    else out.push({ ...w, tags: [c.tag] })
-  })
-  for (const i of owed) {
-    const next = lists[i].find((x) => !out.some((o) => o.key === x.key))
-    if (next) out.push({ ...next, tags: ['2nd ' + cats[i].tag.toLowerCase()] })
-  }
-  return out
+  return all
 }
 
 export interface Seg { min: number; distM: number; real: boolean; path?: Pt[] }
@@ -188,6 +166,7 @@ export interface PtView {
   last: Seg
   walkMin: number
   arriveAt: number
+  leave: number // when they set off from school
   leaveBy: number // when to leave school to catch the first service
   tight: boolean // the walk to the first stop leaves no time to spare
 }
@@ -195,7 +174,7 @@ export interface PtView {
 export const walkKey = (a: Pt, b: Pt) => `${a.join(',')}>${b.join(',')}`
 
 /** Swap in real walking routes for the first and last walk when we have them. */
-export function viewOf(net: Net, j: Journey, school: Pt, dest: Pt, colour: string, walks: Record<string, { path: Pt[]; distM: number; min: number }>): PtView {
+export function viewOf(net: Net, j: Journey, school: Pt, dest: Pt, colour: string, walks: Record<string, { path: Pt[]; distM: number; min: number }>, leave: number): PtView {
   const a = net.stops[j.start].p, b = net.stops[j.endStop].p
   const wf = walks[walkKey(school, a)], wl = walks[walkKey(b, dest)]
   const first: Seg = wf ? { min: wf.min, distM: wf.distM, real: true, path: wf.path } : { min: walkMinutes(j.firstWalkM), distM: j.firstWalkM, real: false }
@@ -203,6 +182,6 @@ export function viewOf(net: Net, j: Journey, school: Pt, dest: Pt, colour: strin
   const boardAt = j.rides[0].boardAt
   return {
     j, colour, first, last, walkMin: first.min + j.changeWalkMin + last.min, arriveAt: j.transitArrive + last.min,
-    leaveBy: boardAt - first.min, tight: LEAVE_SCHOOL + first.min > boardAt - 0.5,
+    leave, leaveBy: boardAt - first.min, tight: leave + first.min > boardAt - 0.5,
   }
 }

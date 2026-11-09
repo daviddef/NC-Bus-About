@@ -9,15 +9,16 @@ const modeName = (m: string) => (m === '2' ? 'Train' : m === '4' ? 'Ferry' : m =
 const label = (r: { route: string; mode: string }) => (r.mode === '2' ? 'Train' : r.route)
 
 /** A public transport option: the services to catch, the walking, and what time you arrive. */
-export default function PtCard({ v, net }: { v: PtView; net: Net }) {
+export default function PtCard({ v, net, on, onToggle }: { v: PtView; net: Net; on: boolean; onToggle: () => void }) {
   const [open, setOpen] = useState(false)
   const { j } = v
   const ap = v.first.real && v.last.real ? '' : '≈'
   const onlyOne = j.rides.length === 1 ? j.rides[0] : null
   const title = j.rides.map(label).join(' + ')
   return (
-    <div className="card on" style={{ ['--c' as string]: v.colour }}>
+    <div className={`card ${on ? 'on' : ''}`} style={{ ['--c' as string]: v.colour }}>
       <div className="chead">
+        <input type="checkbox" checked={on} onChange={onToggle} aria-label="Show this journey on the map" />
         <div className="cname">
           <b>{modeName(j.rides[0].mode)} {title}</b>
           {j.changes > 0 && <span>{plural(j.changes, 'change')}</span>}
@@ -38,13 +39,13 @@ export default function PtCard({ v, net }: { v: PtView; net: Net }) {
       </div>
       {open && (
         <ul className="details">
-          <li>Leave school by <b>{hhmm(v.leaveBy)}</b>. Walk {v.first.real ? '' : '≈'}{mins(v.first.min)} ({metres(v.first.distM)}) to <b>{net.stops[j.start].n}</b>.</li>
+          <li>Leave school by <b>{hhmm(v.leaveBy)}</b> (public transport). Walk {v.first.real ? '' : '≈'}{mins(v.first.min)} ({metres(v.first.distM)}) to <b>{net.stops[j.start].n}</b>.</li>
           {j.rides.map((r, i) => (
             <li key={i}>{i > 0 ? 'Then ' : ''}{modeName(r.mode)} <b>{label(r)}</b> to {r.headsign || 'the end of the line'}: on at <b>{hhmm(r.boardAt)}</b> ({net.stops[r.board].n}), off at <b>{hhmm(r.alightAt)}</b> ({net.stops[r.alight].n}).</li>
           ))}
           {j.changeWalkMin > 0 && <li>Walk {mins(j.changeWalkMin)} between stops to change.</li>}
           <li>Then walk {v.last.real ? '' : '≈'}{mins(v.last.min)} ({metres(v.last.distM)}) from <b>{net.stops[j.endStop].n}</b>.</li>
-          <li>Based on TransLink&rsquo;s timetable for a school-term weekday, leaving school at 3:05 pm. Not live: check TransLink for today.</li>
+          <li>Based on TransLink&rsquo;s timetable for a school-term weekday. Not live: check TransLink for today.</li>
         </ul>
       )}
     </div>
