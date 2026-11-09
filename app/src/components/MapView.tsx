@@ -223,15 +223,41 @@ function travelled(tr: Track, t: number): Pt[] {
 const SPEED = 3 // journey minutes per real second, the same however many options are shown
 const HOLD_MS = 6000 // long enough to read who got home when
 
-/** A light-hearted way to say how much sooner this one gets home than the slowest option. */
-function fun(gap: number): string {
+/** A light-hearted way to say how much sooner this one gets home than the slowest option (and what to do with it). */
+const JOKES: [number, ((n: number, slow: string) => string)[]][] = [
+  [10, [
+    (n, slow) => `🍪 ${n} min head start: snack secured before ${slow} lands`,
+    (n) => `🎧 ${n} min: one whole song and a victory lap`,
+    (n, slow) => `☕ ${n} min to raid the fridge before ${slow} gets in`,
+  ]],
+  [20, [
+    (n, slow) => `🎮 ${n} min: one quick match before ${slow} turns up`,
+    (n) => `📱 ${n} min of scrolling… sorry, “research”`,
+    (n, slow) => `🧦 ${n} min: shoes off, feet up, before ${slow} is home`,
+  ]],
+  [35, [
+    (n) => `📚 Do your homework in ${n} min, before the last bus arrives`,
+    (n) => `🏊 ${n} min of extra swim time`,
+    (n) => `🛁 ${n} min: a long shower, hot water all yours`,
+  ]],
+  [60, [
+    (n, slow) => `🍕 ${n} min: pizza's nearly ready before ${slow} gets home`,
+    (n, slow) => `📺 ${n} min: a whole episode before ${slow} arrives`,
+    (n) => `🎸 ${n} min of guitar practice… or pretending to`,
+  ]],
+  [Infinity, [
+    (n) => `🎬 ${n} min: a full movie before the slowest gets home`,
+    (n) => `😴 ${n} min: a power nap. You've earned it`,
+    (n) => `🏀 ${n} min: shoot hoops, shower, still beat the last one`,
+  ]],
+]
+const LAST = ['🐢 Last one home. Podcast time!', '🎧 Last home: queue a long playlist', '🐌 The scenic route. Enjoy the view', '🧠 Last home: plenty of time to think up an excuse']
+const hash = (s: string) => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7)
+function fun(gap: number, slow: string, seed: string): string {
   const m = Math.round(gap)
-  if (m < 1) return ''
-  if (m < 10) return `🍪 ${m} min: time for a snack`
-  if (m < 20) return `🎮 ${m} min of extra gaming time`
-  if (m < 35) return `🏊 ${m} min of extra swim time`
-  if (m < 60) return `📺 ${m} min: a whole episode, plus snacks`
-  return `🎬 ${m} min: a full movie before the slowest gets home`
+  if (m < 1) return LAST[hash(seed) % LAST.length]
+  const list = JOKES.find(([max]) => m < max)![1]
+  return list[hash(seed) % list.length](m, slow)
 }
 
 /** Plays the clock from the earliest start to the latest arrival, looping. */
@@ -260,6 +286,7 @@ function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
   }, [sig, playing])
   if (t === null) return null
   const slowest = Math.max(...tracks.map((k) => k.end))
+  const slowName = tracks.find((k) => k.end === slowest)?.name ?? 'the last one'
   const home = tracks.filter((k) => t >= k.end).sort((a, b) => a.end - b.end)
   return (
     <>
@@ -267,7 +294,7 @@ function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
         {home.map((k) => (
           <div className="arr1" key={k.key} style={{ ['--c' as string]: k.colour }}>
             <b>{k.name}</b> home <b>{hhmm(k.end)}</b> <span>· {mins(k.end - k.start)}</span>
-            {tracks.length > 1 && <div className="fun">{k.end >= slowest ? '🐢 last one home' : fun(slowest - k.end)}</div>}
+            {tracks.length > 1 && <div className="fun">{fun(slowest - k.end, slowName, k.key)}</div>}
           </div>
         ))}
       </div>
