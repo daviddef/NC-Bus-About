@@ -42,3 +42,11 @@ The College PDFs and the TransLink download are not stored in this repo.
 
 Needs answers from College Transport: an official BusMinder data feed or permission, the stop export with coordinates, what "as required" means in practice, and which run sheets are current.
 See section 6 of `PROPOSAL.md`.
+
+## Public transport overlay (branch `pt-overlay`, not yet published)
+
+`scripts/export_pt_overlay.py <unzipped SEQ GTFS> app/public/data/pt-overlay.json [YYYYMMDD] [radius_km]` cuts TransLink's open GTFS
+(https://translink.com.au/about-translink/open-data, CC BY 4.0) down to lines and stops within 6 km of the school, with each stop's
+14:30-18:00 weekday departures on a school-term weekday (default 17 Nov 2026). Re-run it when the feed changes (the feed is replaced
+about daily and currently runs to 9 Jan 2027). TransLink's terms ask for approval before publicly conveying information about the
+network (translink.opendata@tmr.qld.gov.au, allow three business days): get it before deploying this.

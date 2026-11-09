@@ -8,7 +8,7 @@ import { mins } from './lib/format'
 import { GREY, PALETTE, planTrips, prepare, sortResults, walkMinutes, withWalk } from './lib/plan'
 import { dist } from './lib/geo'
 import { walkingRoute, type Walk } from './lib/walking'
-import type { Dataset, Priority, Pt, Result, Run } from './types'
+import type { Dataset, Priority, PtOverlay, Pt, Result, Run } from './types'
 
 const CATS: { pri: Priority; tag: string }[] = [
   { pri: 'quick', tag: 'Quickest' },
@@ -47,6 +47,9 @@ export default function App() {
   const [selected, setSelected] = useState<string[]>([])
   const [view, setView] = useState<'map' | 'compare'>('map')
   const [fitKey, setFitKey] = useState(0)
+  const [showPt, setShowPt] = useState(false)
+  const [pt, setPt] = useState<PtOverlay | null>(null)
+  const [ptLoading, setPtLoading] = useState(false)
   const [walks, setWalks] = useState<Record<string, Walk>>({})
 
   useEffect(() => {
@@ -55,6 +58,14 @@ export default function App() {
       .then((d) => { setRuns(prepare(d)); setSchool(d.school) })
       .catch((e: Error) => setLoadErr(e.message))
   }, [])
+
+  function togglePt() {
+    setShowPt((v) => !v)
+    if (!pt && !ptLoading) {
+      setPtLoading(true)
+      fetch(import.meta.env.BASE_URL + 'data/pt-overlay.json').then((r) => r.json() as Promise<PtOverlay>).then(setPt).catch(() => setShowPt(false)).finally(() => setPtLoading(false))
+    }
+  }
 
   const dest: Pt | null = place ? [place.lat, place.lon] : null
   const baseA = useMemo(() => (dest ? planTrips(runs, dest, 'quick') : []), [runs, dest])
@@ -135,7 +146,7 @@ export default function App() {
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
-            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} />
+            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={togglePt} ptLoading={ptLoading} />
           </div>
           {view === 'compare' && <Comparison results={chosen} />}
         </div>

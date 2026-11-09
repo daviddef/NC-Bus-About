@@ -55,3 +55,11 @@ export interface Result {
 }
 
 export type Priority = 'stops' | 'quick' | 'walk'
+
+/** Public transport around the school, from TransLink's open GTFS data (see scripts/export_pt_overlay.py). */
+export interface PtOverlay {
+  date: string
+  window: string
+  routes: { id: string; m: string; g: Pt[][] }[]
+  stops: { id: string; n: string; p: Pt; m: string; l: [string, string, number[]][] }[]
+}

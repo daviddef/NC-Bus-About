@@ -1,11 +1,11 @@
 import { Fragment, useEffect, useState, type ReactNode } from 'react'
 import L from 'leaflet'
-import { CircleMarker, MapContainer, Marker, Polyline, Popup, TileLayer, useMap } from 'react-leaflet'
+import { CircleMarker, MapContainer, Marker, Polyline, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet'
 import { bearing, dist } from '../lib/geo'
 import { hhmm, metres, mins } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
 import { etaMin, project } from '../lib/plan'
-import type { Pt, Result } from '../types'
+import type { PtOverlay, Pt, Result } from '../types'
 
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/'
 
@@ -82,6 +82,35 @@ function Pop({ icon, colour, title, sub, rows }: { icon: IconName; colour: strin
   )
 }
 
+const PT_COLOUR: Record<string, string> = { '3': '#64748b', '2': '#0f172a', '0': '#0369a1', '4': '#0369a1' }
+const PT_NAME: Record<string, string> = { '3': 'Bus', '2': 'Train', '0': 'Tram', '4': 'Ferry' }
+
+/** TransLink buses, trains and ferries around the school: thin lines and small stops under the school runs. */
+function PtLayer({ data, open }: { data: PtOverlay; open: (at: Pt, node: ReactNode) => void }) {
+  const map = useMap()
+  const [zoom, setZoom] = useState(map.getZoom())
+  useMapEvents({ zoomend: () => setZoom(map.getZoom()) })
+  const stops = zoom >= 14 ? data.stops : data.stops.filter((s) => s.m === '2') // zoomed out: just the stations
+  return (
+    <>
+      {data.routes.map((r, i) => r.g.map((g, j) => (
+        <Polyline key={`${i}-${j}`} positions={g} interactive={false}
+          pathOptions={{ color: PT_COLOUR[r.m] ?? '#64748b', weight: r.m === '2' ? 3 : 2, opacity: 0.55, dashArray: r.m === '2' ? '10 5' : undefined }} />
+      )))}
+      {stops.map((s) => (
+        <CircleMarker key={s.id} center={s.p} radius={s.m === '2' ? 5 : 3.5}
+          pathOptions={{ color: PT_COLOUR[s.m] ?? '#64748b', weight: 2, fillColor: '#fff', fillOpacity: 1 }}
+          eventHandlers={{
+            click: () => open(s.p, (
+              <Pop icon="transit" colour={PT_COLOUR[s.m] ?? '#64748b'} title={s.n} sub={`${PT_NAME[s.m] ?? 'Public transport'} · weekday afternoon`}
+                rows={s.l.map(([route, to, ms]) => <span><b>{s.m === '2' ? 'Train' : route}</b> to {to}<br />{ms.slice(0, 5).map((m) => hhmm(m)).join(' · ')}{ms.length > 5 ? ' …' : ''}</span>)} />
+            )),
+          }} />
+      ))}
+    </>
+  )
+}
+
 interface Props {
   school: Pt
   dest: Pt | null
@@ -89,9 +118,13 @@ interface Props {
   selected: Result[]
   fitKey: number
   visible: boolean
+  pt: PtOverlay | null
+  showPt: boolean
+  onTogglePt: () => void
+  ptLoading: boolean
 }
 
-export default function MapView({ school, dest, destName, selected, fitKey, visible }: Props) {
+export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading }: Props) {
   const [popup, setPopup] = useState<{ at: Pt; node: ReactNode } | null>(null)
   const open = (at: Pt, node: ReactNode) => setPopup({ at, node })
   const bounds: Pt[] = [school]
@@ -108,6 +141,8 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         <TileLayer url={ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}'} maxNativeZoom={16} maxZoom={19} pane="shadowPane" />
         <Resize visible={visible} />
         <FitTo bounds={bounds} fitKey={fitKey} />
+
+        {showPt && pt && <PtLayer data={pt} open={open} />}
 
         {selected.map((r) => {
           const { run, stop } = r
@@ -185,6 +220,14 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
           </Popup>
         )}
       </MapContainer>
+
+      <div className="ptwrap">
+        <button type="button" className={'ptbtn' + (showPt ? ' on' : '')} aria-pressed={showPt} onClick={onTogglePt}>
+          <span dangerouslySetInnerHTML={{ __html: svg('transit', 18) }} />
+          <span>{ptLoading ? 'Loading…' : 'Public transport'}</span>
+        </button>
+        {showPt && pt && <div className="ptnote">Other buses, trains and ferries (grey, black dashes). Zoom in for bus stops; tap one for afternoon times. TransLink timetable for a school-term weekday, CC BY 4.0. Check TransLink for today.</div>}
+      </div>
 
       {selected.length > 0 && (
         <div className="legend" aria-label="Selected runs">
