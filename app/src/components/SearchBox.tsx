@@ -7,11 +7,12 @@ interface Props {
   recents: Place[]
   onPick: (p: Place) => void
   onClearRecents: () => void
+  onClear: () => void // the box was emptied: forget the destination
 }
 
 const Icon = ({ n, s = 18 }: { n: Parameters<typeof svg>[0]; s?: number }) => <span className="sic" dangerouslySetInnerHTML={{ __html: svg(n, s) }} />
 
-export default function SearchBox({ ready, recents, onPick, onClearRecents }: Props) {
+export default function SearchBox({ ready, recents, onPick, onClearRecents, onClear }: Props) {
   const [text, setText] = useState('')
   const [items, setItems] = useState<Place[]>([])
   const [open, setOpen] = useState(false)
@@ -79,10 +80,10 @@ export default function SearchBox({ ready, recents, onPick, onClearRecents }: Pr
           type="search" role="combobox" aria-expanded={showList} aria-controls="sresults" aria-autocomplete="list"
           value={text} disabled={!ready} enterKeyHint="search" autoComplete="off" autoCorrect="off" spellCheck={false}
           placeholder="Where to? Address, shop or suburb"
-          onChange={(e) => { setText(e.target.value); setOpen(true); setMsg('') }}
+          onChange={(e) => { setText(e.target.value); setOpen(true); setMsg(''); if (!e.target.value) onClear() }}
           onFocus={() => setOpen(true)} onKeyDown={onKey}
         />
-        {text && <button type="button" className="sbtn" aria-label="Clear" onClick={() => { setText(''); setItems([]); setMsg('') }}><Icon n="close" s={18} /></button>}
+        {text && <button type="button" className="sbtn" aria-label="Clear" onClick={() => { setText(''); setItems([]); setMsg(''); onClear() }}><Icon n="close" s={18} /></button>}
         <button type="button" className="sbtn here" aria-label="Use my location" title="Use my location" onClick={here}><Icon n="target" s={22} /></button>
       </div>
 

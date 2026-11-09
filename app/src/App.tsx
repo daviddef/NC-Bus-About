@@ -203,7 +203,7 @@ export default function App() {
           <h1>Which bus home?</h1>
           <p>From St Joseph&rsquo;s Nudgee College &middot; prototype with estimated times</p>
         </header>
-        <SearchBox ready={runs.length > 0} recents={recents} onPick={pick} onClearRecents={() => { setRecents([]); saveRecents([]) }} />
+        <SearchBox ready={runs.length > 0} recents={recents} onPick={pick} onClearRecents={() => { setRecents([]); saveRecents([]) }} onClear={() => { setPlace(null); reset() }} />
         {loadErr && <p className="err pad">Could not load run data: {loadErr}</p>}
         {dest && (
           <div className="opts">
