@@ -184,3 +184,10 @@ table.simple th,table.simple td{padding:12px 4px}
 .steps .onoff{margin-top:3px}.steps .onoff small{display:inline}
 .steps .walk div{color:var(--mut)}
 .src{margin-top:10px;font-size:11.5px;color:var(--mut)}
+
+/* settings: a thin button beside Compare that opens a small panel */
+.tabs{position:relative}
+.tabs .setbtn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;position:relative}
+.tabs .setbtn.dot::after{content:'';position:absolute;top:5px;right:5px;width:8px;height:8px;border-radius:50%;background:#e11d2e}
+.tabs .opts.pop{position:absolute;z-index:1200;right:12px;top:calc(100% + 6px);width:min(340px,calc(100vw - 24px));background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 32px #0004;padding:12px;gap:10px}
+.recents{display:none}

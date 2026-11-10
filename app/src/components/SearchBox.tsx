@@ -6,13 +6,12 @@ interface Props {
   ready: boolean
   recents: Place[]
   onPick: (p: Place) => void
-  onClearRecents: () => void
   onClear: () => void // the box was emptied: forget the destination
 }
 
 const Icon = ({ n, s = 18 }: { n: Parameters<typeof svg>[0]; s?: number }) => <span className="sic" dangerouslySetInnerHTML={{ __html: svg(n, s) }} />
 
-export default function SearchBox({ ready, recents, onPick, onClearRecents, onClear }: Props) {
+export default function SearchBox({ ready, recents, onPick, onClear }: Props) {
   const [text, setText] = useState('')
   const [items, setItems] = useState<Place[]>([])
   const [open, setOpen] = useState(false)
@@ -71,7 +70,10 @@ export default function SearchBox({ ready, recents, onPick, onClearRecents, onCl
     )
   }
 
-  const showList = open && (items.length > 0 || msg !== '' || busy)
+  const asking = text.trim().length < 3
+  const last = recents.slice(0, 2)
+  const showRecents = open && asking && last.length > 0 && !msg
+  const showList = showRecents || (open && (items.length > 0 || msg !== '' || busy))
   return (
     <div className="sbox" ref={box}>
       <div className="sfield">
@@ -89,29 +91,25 @@ export default function SearchBox({ ready, recents, onPick, onClearRecents, onCl
 
       {showList && (
         <ul className="slist" id="sresults" role="listbox">
-          {items.map((p, i) => (
+          {showRecents && last.map((p) => (
+            <li key={'r' + p.label + p.sub} role="option" aria-selected={false}
+              onPointerDown={(e) => { e.preventDefault(); pick(p) }}>
+              <Icon n="history" s={20} />
+              <span className="stx"><b>{p.label}</b>{p.sub && <small>{p.sub}</small>}</span>
+            </li>
+          ))}
+          {!showRecents && items.map((p, i) => (
             <li key={p.label + p.sub} role="option" aria-selected={i === active} className={i === active ? 'act' : ''}
               onPointerDown={(e) => { e.preventDefault(); pick(p) }} onMouseEnter={() => setActive(i)}>
               <Icon n={p.icon} s={20} />
               <span className="stx"><b>{p.label}</b>{p.sub && <small>{p.sub}</small>}</span>
             </li>
           ))}
-          {items.length === 0 && <li className="smsg">{busy ? 'Searching…' : msg}</li>}
+          {!showRecents && items.length === 0 && <li className="smsg">{busy ? 'Searching…' : msg}</li>}
         </ul>
       )}
       {!showList && msg && <p className="smsg2">{msg}</p>}
 
-      {recents.length > 0 && (
-        <div className="recents" aria-label="Recent searches">
-          <span className="rlabel"><Icon n="history" s={14} /> Recent</span>
-          <div className="rchips">
-            {recents.map((p) => (
-              <button key={p.label + p.sub} type="button" className="rchip" onClick={() => pick(p)} title={p.full}>{p.label}</button>
-            ))}
-          </div>
-          <button type="button" className="rclear" onClick={onClearRecents} aria-label="Clear recent searches">Clear</button>
-        </div>
-      )}
     </div>
   )
 }

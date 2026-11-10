@@ -6,7 +6,7 @@ import RunCard, { RunRow } from './components/RunCard'
 import Segmented, { type Opt } from './components/Segmented'
 import SearchBox from './components/SearchBox'
 import { svg } from './lib/icons'
-import { addRecent, loadRecents, saveRecents, type Place } from './lib/places'
+import { addRecent, loadRecents, type Place } from './lib/places'
 import { hhmm, mins } from './lib/format'
 import { GREY, PALETTE, planTrips, prepare, sortResults, walkMinutes, withWalk } from './lib/plan'
 import { dist } from './lib/geo'
@@ -93,6 +93,7 @@ export default function App() {
   const [atMin, setAtMin] = useState(nowMin)
   const [off, setOff] = useState<string[]>([]) // options hidden from the map
   const [extra, setExtra] = useState<string[]>([]) // other school runs ticked from the list
+  const [cfg, setCfg] = useState(false)
   const [view, setView] = useState<'map' | 'compare'>('map')
   const [fitKey, setFitKey] = useState(0)
   const [showPt, setShowPt] = useState(false)
@@ -214,25 +215,8 @@ export default function App() {
           <h1>Which bus home?</h1>
           <p>From St Joseph&rsquo;s Nudgee College &middot; prototype with estimated times</p>
         </header>
-        <SearchBox ready={runs.length > 0} recents={recents} onPick={pick} onClearRecents={() => { setRecents([]); saveRecents([]) }} onClear={() => { setPlace(null); reset() }} />
+        <SearchBox ready={runs.length > 0} recents={recents} onPick={pick} onClear={() => { setPlace(null); reset() }} />
         {loadErr && <p className="err pad">Could not load run data: {loadErr}</p>}
-        {dest && (
-          <div className="opts">
-            <Segmented label="When" value={when} onChange={(v) => { setWhen(v); if (v === 'at') setAtMin(nowMin()); reset() }} options={WHEN} />
-            {when === 'at' && (
-              <label className="timerow">
-                <span>Leaving at</span>
-                <input type="time" step={300} value={timeStr(atMin)} onChange={(e) => { const [h, m] = e.target.value.split(':').map(Number); if (!Number.isNaN(h)) { setAtMin(h * 60 + m); reset() } }} />
-                <button type="button" className="nowbtn" onClick={() => { setAtMin(nowMin()); reset() }}>Now</button>
-              </label>
-            )}
-            <button type="button" className={'ptchip' + (includePt ? ' on' : '')} aria-pressed={includePt} disabled={noSchool} onClick={() => setPtOn(!showPt)}>
-              <span dangerouslySetInnerHTML={{ __html: svg('transit', 18) }} />
-              <span>Include public transport</span>
-              <i>{includePt ? 'On' : 'Off'}</i>
-            </button>
-          </div>
-        )}
       </section>
 
       <section className="top">
@@ -255,6 +239,23 @@ export default function App() {
         <nav className="tabs">
           <button className={view === 'map' ? 'act' : ''} onClick={() => setView('map')}>Map</button>
           <button className={view === 'compare' ? 'act' : ''} onClick={() => setView('compare')} disabled={!dest}>Compare ({chosen.length})</button>
+          <button className={'setbtn' + (cfg ? ' act' : '') + (when !== 'school' || includePt ? ' dot' : '')} aria-expanded={cfg} onClick={() => setCfg(!cfg)}><span dangerouslySetInnerHTML={{ __html: svg('sliders', 16) }} /> Settings</button>
+
+          {cfg && <div className="opts pop" role="dialog" aria-label="Settings">
+            <Segmented label="When" value={when} onChange={(v) => { setWhen(v); if (v === 'at') setAtMin(nowMin()); reset() }} options={WHEN} />
+            {when === 'at' && (
+              <label className="timerow">
+                <span>Leaving at</span>
+                <input type="time" step={300} value={timeStr(atMin)} onChange={(e) => { const [h, m] = e.target.value.split(':').map(Number); if (!Number.isNaN(h)) { setAtMin(h * 60 + m); reset() } }} />
+                <button type="button" className="nowbtn" onClick={() => { setAtMin(nowMin()); reset() }}>Now</button>
+              </label>
+            )}
+            <button type="button" className={'ptchip' + (includePt ? ' on' : '')} aria-pressed={includePt} disabled={noSchool} onClick={() => setPtOn(!showPt)}>
+              <span dangerouslySetInnerHTML={{ __html: svg('transit', 18) }} />
+              <span>Include public transport</span>
+              <i>{includePt ? 'On' : 'Off'}</i>
+            </button>
+          </div>}
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
