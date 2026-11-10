@@ -225,3 +225,5 @@ table.simple th,table.simple td{padding:12px 4px}
 .facts{margin-top:18px;padding:12px 14px;border-radius:14px;background:#fff8d6;color:#3b2a00}
 .facts h3{margin:0 0 6px}.facts ul{margin:0;padding-left:0;list-style:none;display:grid;gap:8px;font-size:14.5px}.facts .note{color:#7a5b00;margin:8px 0 0}
 @media (max-width:760px){.factstrip{left:56px;transform:none;top:8px;max-width:calc(100% - 200px);font-size:12px;padding:5px 9px}}
+
+.yrh{margin:22px 0 4px}table.yr td small{display:block}

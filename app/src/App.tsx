@@ -300,7 +300,7 @@ export default function App() {
           <div className="mapwrap" hidden={view !== 'map'}>
             <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} facts={facts} drive={driveOn && drive ? { there: driveThere?.path ?? null, path: drive.path, colour: DRIVE_COLOUR, from: leave, start: leave + PICKUP_MIN, end: driveArrive } : null} />
           </div>
-          {view === 'compare' && <Comparison results={cmpItems} facts={facts} />}
+          {view === 'compare' && <Comparison results={cmpItems} />}
         </div>
       </main>
 

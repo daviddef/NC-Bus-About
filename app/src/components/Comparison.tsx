@@ -1,4 +1,5 @@
 import { hhmm, metres, mins } from '../lib/format'
+import { SCHOOL_DAYS } from '../lib/facts'
 
 /** One way home, school bus or public transport, in the same terms. */
 export interface CmpItem {
@@ -8,7 +9,7 @@ export interface CmpItem {
 }
 type Result = CmpItem
 
-export default function Comparison({ results, facts = [] }: { results: Result[]; facts?: string[] }) {
+export default function Comparison({ results }: { results: Result[] }) {
   if (results.length < 2) {
     return <div className="cmp"><p className="note">Tick two or more runs to compare them.</p></div>
   }
@@ -32,6 +33,19 @@ export default function Comparison({ results, facts = [] }: { results: Result[];
     { label: 'Stops', cell: (r) => r.stops, best: fewest },
     { label: 'Walk', cell: (r) => <>{r.walkReal ? '' : '≈'}{mins(r.walkMin)}<small>{metres(r.distM)}</small></>, best: least },
     { label: 'Get-off stop', cell: (r) => <small className="stopn">{r.where}</small> },
+  ]
+
+  const yr = (min: number) => (min * SCHOOL_DAYS) / 60 // hours over the year
+  const h = (x: number) => (x >= 10 ? Math.round(x) : Math.round(x * 10) / 10) + ' h'
+  const wait = (r: Result) => r.waitMin + (r.key === 'drive' ? r.legs.filter((l) => l.kind === 'wait').reduce((n, l) => n + l.t1 - l.t0, 0) : 0)
+  const latest = Math.max(...pool.map((r) => r.arriveAt))
+  const parent = (r: Result) => (r.key === 'drive' && r.legs[0] ? r.legs[0].t1 - r.legs[0].t0 + r.rideMin : 0)
+  const yrRows: { label: string; cell: (r: Result) => React.ReactNode; best?: Result }[] = [
+    { label: 'In the vehicle', cell: (r) => <>{h(yr(r.rideMin))}<small>{Math.round((r.rideMin * SCHOOL_DAYS) / 110)} movies</small></>, best: best((r) => r.rideMin) },
+    { label: 'Waiting', cell: (r) => (wait(r) ? <>{h(yr(wait(r)))}<small>{r.key === 'drive' ? 'pick-up line' : 'at a stop'}</small></> : '0 h'), best: best((r) => wait(r)) },
+    { label: 'Walking', cell: (r) => (r.walkMin >= 1 ? <>{h(yr(r.walkMin))}<small>{Math.round((r.walkMin * SCHOOL_DAYS * 80) / 1000)} km · {(Math.round((r.walkMin * SCHOOL_DAYS * 110) / 1000)).toLocaleString('en-AU')}k steps</small></> : '0 h'), best: best((r) => r.walkMin) },
+    { label: 'Home sooner', cell: (r) => (r.arriveAt >= latest ? 'slowest' : <>+{h(yr(latest - r.arriveAt))}<small>{((yr(latest - r.arriveAt) * 6) / 24).toFixed(1)} days over Years 7–12</small></>), best: first },
+    ...(results.some((r) => parent(r)) ? [{ label: 'Parent driving', cell: (r: Result) => (parent(r) ? <>{h(yr(parent(r)))}<small>there and back</small></> : '–') }] : []),
   ]
 
   return (
@@ -72,13 +86,21 @@ export default function Comparison({ results, facts = [] }: { results: Result[];
           ))}
         </tbody>
       </table>
-      {facts.length > 0 && (
-        <section className="facts" aria-label="Fun facts">
-          <h3>Fun facts</h3>
-          <ul>{facts.map((f) => <li key={f}>{f}</li>)}</ul>
-          <p className="note">Worked out over about 200 school days a year, using these estimated times.</p>
-        </section>
-      )}
+      <h3 className="yrh">Over a school year</h3>
+      <table className="simple yr">
+        <thead>
+          <tr><th />{results.map((r) => <th key={r.key} style={{ borderBottomColor: r.colour }}>{r.short}</th>)}</tr>
+        </thead>
+        <tbody>
+          {yrRows.map((row) => (
+            <tr key={row.label}>
+              <th scope="row">{row.label}</th>
+              {results.map((r) => <td key={r.key} className={row.best === r ? 'win' : ''}>{row.cell(r)}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="note">About {SCHOOL_DAYS} school days, afternoon trip home only, from these estimated times. A movie is about 110 minutes; a marathon is 42 km.</p>
       <p className="note">Green is the best in each row. ≈ means the walk is a straight-line guess. Times are estimates, not checked by College Transport.</p>
     </div>
   )
