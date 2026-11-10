@@ -43,7 +43,7 @@ export default function PtCard({ v, net, on, onToggle }: { v: PtView; net: Net; 
           <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{v.first.real ? '' : '≈'}{mins(v.first.min)} · {metres(v.first.distM)}<small>to {net.stops[j.start].n}</small></div></li>
           {j.rides.map((r, i) => (
             <Fragment key={i}>
-              {i > 0 && j.changeWalkMin > 0 && <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{mins(j.changeWalkMin)} to change<small>{net.stops[r.board].n}</small></div></li>}
+              {i > 0 && <li className="walk"><i className="sdot"><Ic n="clock" s={14} /></i><div>Change: in <b>{hhmm(j.rides[i - 1].alightAt)}</b>, next {label(r)} <b>{hhmm(r.boardAt)}</b><small>{j.changeWalkMin > 0 ? `${mins(j.changeWalkMin)} walk to ` : 'at '}{net.stops[r.board].n} · wait {mins(Math.max(0, Math.round(r.boardAt - j.rides[i - 1].alightAt - j.changeWalkMin / (j.rides.length - 1))))}</small></div></li>}
               <li className="ride"><i className="sdot"><Ic n={r.mode === '2' ? 'transit' : 'bus'} s={14} /></i>
                 <div><b className="rt">{label(r)}</b> <span className="to">to {r.headsign || 'end of line'}</span>
                   <div className="onoff"><span className="t">{hhmm(r.boardAt)}</span> on <small>{net.stops[r.board].n}</small></div>

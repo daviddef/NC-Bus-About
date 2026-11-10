@@ -4,7 +4,7 @@ import { hhmm, metres, mins } from '../lib/format'
 export interface CmpItem {
   key: string; name: string; short: string; colour: string
   startMin: number; getOffAt: number; arriveAt: number
-  rideMin: number; changes: number; waitMin: number; legs: { t0: number; t1: number; kind: 'ride' | 'wait' | 'walk'; label: string }[]; stops: number; walkMin: number; walkReal: boolean; distM: number; where: string
+  rideMin: number; changes: number; waitMin: number; swaps: { arrive: number; next: number; wait: number; route: string }[]; legs: { t0: number; t1: number; kind: 'ride' | 'wait' | 'walk'; label: string }[]; stops: number; walkMin: number; walkReal: boolean; distM: number; where: string
 }
 type Result = CmpItem
 
@@ -27,7 +27,7 @@ export default function Comparison({ results }: { results: Result[] }) {
     { label: 'You arrive', cell: (r) => hhmm(r.arriveAt), best: first },
     { label: 'Get off', cell: (r) => hhmm(r.getOffAt) },
     { label: 'Riding', cell: (r) => mins(r.rideMin), best: best((r) => r.rideMin) },
-    { label: 'Changes', cell: (r) => (r.changes ? <>{r.changes}<small>wait {mins(r.waitMin)}</small></> : 'None'), best: results.reduce((m, r) => (r.changes + r.waitMin / 100 < m.changes + m.waitMin / 100 ? r : m)) },
+    { label: 'Changes', cell: (r) => (r.changes ? <>{r.swaps.map((x, i) => <span key={i} className="swap"><b>{hhmm(x.arrive)}</b> change<small>next {x.route} <b>{hhmm(x.next)}</b></small><small>wait {mins(x.wait)}</small></span>)}</> : 'None'), best: results.reduce((m, r) => (r.changes + r.waitMin / 100 < m.changes + m.waitMin / 100 ? r : m)) },
     { label: 'Stops', cell: (r) => r.stops, best: fewest },
     { label: 'Walk', cell: (r) => <>{r.walkReal ? '' : '≈'}{mins(r.walkMin)}<small>{metres(r.distM)}</small></>, best: least },
     { label: 'Get-off stop', cell: (r) => <small className="stopn">{r.where}</small> },
@@ -49,7 +49,7 @@ export default function Comparison({ results }: { results: Result[] }) {
               <div className="tlbar">
                 {r.legs.map((l, i) => (
                   <div key={i} className={l.kind === 'ride' ? 'bus' : l.kind === 'walk' ? 'walk' : 'wait'}
-                    style={{ left: pct(l.t0) + '%', width: Math.max(pct(l.t1) - pct(l.t0), 0) + '%', ...(l.kind === 'ride' ? { background: r.colour } : {}) }}>{pct(l.t1) - pct(l.t0) > (l.kind === 'wait' ? 7 : 12) ? l.label : ''}</div>
+                    style={{ left: pct(l.t0) + '%', width: Math.max(pct(l.t1) - pct(l.t0), 0) + '%', ...(l.kind === 'ride' ? { background: r.colour } : {}) }}>{pct(l.t1) - pct(l.t0) > (l.kind === 'wait' ? 16 : 12) ? l.label : ''}</div>
                 ))}
               </div>
             </div>

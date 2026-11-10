@@ -191,19 +191,19 @@ export default function App() {
   const journeys: PtView[] = shownPicks.filter((p) => p.o.pt).map((p) => ({ ...p.o.pt!, colour: colourOf(p.o.id) }))
   const lab = (r: { route: string; mode: string }) => (r.mode === '2' ? 'Train' : r.route)
   const cmpItems: CmpItem[] = [
-    ...chosen.map((r): CmpItem => ({ key: r.run.key, name: r.run.name, short: r.run.name.split(' · ')[0], colour: r.run.colour, startMin: r.run.departMin, getOffAt: r.getOffAt, arriveAt: r.arriveAt, rideMin: r.busMin, changes: 0, waitMin: 0, legs: [{ t0: r.run.departMin, t1: r.getOffAt, kind: 'ride', label: `${mins(r.busMin)} ride` }, { t0: r.getOffAt, t1: r.arriveAt, kind: 'walk', label: r.distM < 150 ? 'no walk' : `${mins(r.walkMin)} walk` }], stops: r.stopCount, walkMin: r.walkMin, walkReal: r.walkReal, distM: r.distM, where: r.stop.t })),
+    ...chosen.map((r): CmpItem => ({ key: r.run.key, name: r.run.name, short: r.run.name.split(' · ')[0], colour: r.run.colour, startMin: r.run.departMin, getOffAt: r.getOffAt, arriveAt: r.arriveAt, rideMin: r.busMin, changes: 0, waitMin: 0, swaps: [], legs: [{ t0: r.run.departMin, t1: r.getOffAt, kind: 'ride', label: `${mins(r.busMin)} ride` }, { t0: r.getOffAt, t1: r.arriveAt, kind: 'walk', label: r.distM < 150 ? 'no walk' : `${mins(r.walkMin)} walk` }], stops: r.stopCount, walkMin: r.walkMin, walkReal: r.walkReal, distM: r.distM, where: r.stop.t })),
     ...journeys.map((v): CmpItem => {
       const last = v.j.rides[v.j.rides.length - 1]
       const legs: CmpItem['legs'] = []
       v.j.rides.forEach((rd, i) => {
         const prev = v.j.rides[i - 1]
-        if (prev) legs.push({ t0: prev.alightAt, t1: rd.boardAt, kind: 'wait', label: `change · wait ${mins(Math.max(0, rd.boardAt - prev.alightAt - v.j.changeWalkMin / (v.j.rides.length - 1)))}` })
+        if (prev) legs.push({ t0: prev.alightAt, t1: rd.boardAt, kind: 'wait', label: `off ${hhmm(prev.alightAt)} → next ${hhmm(rd.boardAt)} · wait ${mins(Math.max(0, Math.round(rd.boardAt - prev.alightAt - v.j.changeWalkMin / (v.j.rides.length - 1))))}` })
         legs.push({ t0: rd.boardAt, t1: rd.alightAt, kind: 'ride', label: `${lab(rd)} · ${mins(rd.alightAt - rd.boardAt)}` })
       })
       legs.push({ t0: last.alightAt, t1: v.arriveAt, kind: 'walk', label: `${mins(v.last.min)} walk` })
       const wait = v.j.rides.slice(1).reduce((n, rd, i) => n + Math.max(0, rd.boardAt - v.j.rides[i].alightAt), 0) - v.j.changeWalkMin
       return { key: 'pt:' + v.j.key, name: v.j.rides.map((r) => (r.mode === '2' ? 'Train' : `Bus ${r.route}`)).join(' + '), short: v.j.rides.map(lab).join('+'), colour: v.colour, startMin: v.j.rides[0].boardAt, getOffAt: last.alightAt, arriveAt: v.arriveAt,
-        rideMin: v.j.rides.reduce((n, r) => n + (r.alightAt - r.boardAt), 0), changes: v.j.changes, waitMin: Math.max(0, Math.round(wait)), legs, stops: v.j.stopsRidden, walkMin: v.walkMin, walkReal: v.first.real && v.last.real, distM: v.first.distM + v.last.distM, where: net ? net.stops[last.alight].n : '' }
+        rideMin: v.j.rides.reduce((n, r) => n + (r.alightAt - r.boardAt), 0), swaps: v.j.rides.slice(1).map((rd, i) => ({ arrive: v.j.rides[i].alightAt, next: rd.boardAt, route: lab(rd), wait: Math.max(0, Math.round(rd.boardAt - v.j.rides[i].alightAt - v.j.changeWalkMin / (v.j.rides.length - 1))) })), changes: v.j.changes, waitMin: Math.max(0, Math.round(wait)), legs, stops: v.j.stopsRidden, walkMin: v.walkMin, walkReal: v.first.real && v.last.real, distM: v.first.distM + v.last.distM, where: net ? net.stops[last.alight].n : '' }
     }),
   ]
   const rest = results.filter((r) => !pickIds.includes(r.run.key)).slice(0, 10)
