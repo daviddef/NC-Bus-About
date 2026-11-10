@@ -4,7 +4,7 @@ import { hhmm, metres, mins } from '../lib/format'
 export interface CmpItem {
   key: string; name: string; short: string; colour: string
   startMin: number; getOffAt: number; arriveAt: number
-  rideMin: number; stops: number; walkMin: number; walkReal: boolean; distM: number; where: string
+  rideMin: number; changes: number; waitMin: number; legs: { t0: number; t1: number; kind: 'ride' | 'wait' | 'walk'; label: string }[]; stops: number; walkMin: number; walkReal: boolean; distM: number; where: string
 }
 type Result = CmpItem
 
@@ -27,6 +27,7 @@ export default function Comparison({ results }: { results: Result[] }) {
     { label: 'You arrive', cell: (r) => hhmm(r.arriveAt), best: first },
     { label: 'Get off', cell: (r) => hhmm(r.getOffAt) },
     { label: 'Riding', cell: (r) => mins(r.rideMin), best: best((r) => r.rideMin) },
+    { label: 'Changes', cell: (r) => (r.changes ? <>{r.changes}<small>wait {mins(r.waitMin)}</small></> : 'None'), best: results.reduce((m, r) => (r.changes + r.waitMin / 100 < m.changes + m.waitMin / 100 ? r : m)) },
     { label: 'Stops', cell: (r) => r.stops, best: fewest },
     { label: 'Walk', cell: (r) => <>{r.walkReal ? '' : '≈'}{mins(r.walkMin)}<small>{metres(r.distM)}</small></>, best: least },
     { label: 'Get-off stop', cell: (r) => <small className="stopn">{r.where}</small> },
@@ -42,14 +43,14 @@ export default function Comparison({ results }: { results: Result[] }) {
 
       <div className="tl" role="img" aria-label="Timeline of each journey: ride then walk">
         {results.map((r) => {
-          const wlabel = r.distM < 150 ? 'no walk' : mins(r.walkMin) + ' walk'
-          const narrow = pct(r.arriveAt) - pct(r.getOffAt) < 16 // too short to hold its own label
           return (
             <div className="tlrow" key={r.key}>
               <div className="tlname" style={{ color: r.colour }}>{name(r)}</div>
               <div className="tlbar">
-                <div className="bus" style={{ left: pct(r.startMin) + '%', width: pct(r.getOffAt) - pct(r.startMin) + '%', background: r.colour }}>{mins(r.rideMin)} ride{narrow ? ' · ' + wlabel : ''}</div>
-                <div className="walk" style={{ left: pct(r.getOffAt) + '%', width: pct(r.arriveAt) - pct(r.getOffAt) + '%' }}>{narrow ? '' : wlabel}</div>
+                {r.legs.map((l, i) => (
+                  <div key={i} className={l.kind === 'ride' ? 'bus' : l.kind === 'walk' ? 'walk' : 'wait'}
+                    style={{ left: pct(l.t0) + '%', width: Math.max(pct(l.t1) - pct(l.t0), 0) + '%', ...(l.kind === 'ride' ? { background: r.colour } : {}) }}>{pct(l.t1) - pct(l.t0) > (l.kind === 'wait' ? 7 : 12) ? l.label : ''}</div>
+                ))}
               </div>
             </div>
           )
