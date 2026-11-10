@@ -1,3 +1,4 @@
+import { earlierStop } from './RunCard'
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import L from 'leaflet'
 import { CircleMarker, MapContainer, Marker, Polyline, Popup, TileLayer, Tooltip, useMap, useMapEvents } from 'react-leaflet'
@@ -49,6 +50,7 @@ const offIcon = (colour: string, time: string) =>
   })
 const numIcon = (n: number, colour: string, dim = false) =>
   L.divIcon({ className: '', iconSize: [22, 22], iconAnchor: [11, 11], html: `<div class="num${dim ? ' dim' : ''}" style="background:${colour}">${n}</div>` })
+const ideaIcon = L.divIcon({ className: '', iconSize: [34, 34], iconAnchor: [17, 17], html: `<div class="idea"><span class="idring"></span><span class="idbulb">${svg('bulb', 16)}</span></div>` })
 const arrowIcon = (deg: number, colour: string) =>
   L.divIcon({
     className: '',
@@ -404,8 +406,13 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
           const rest = g.slice(stop.i)
           const here: Pt = [stop.lat, stop.lon]
           const named = r.stops.filter((s) => s.k === 'stop').sort((a, b) => a.i - b.i)
+          const tip = earlierStop(r, dest)
           return (
             <Fragment key={run.key}>
+              {tip && (
+                <Marker position={[tip.s.lat, tip.s.lon]} icon={ideaIcon} zIndexOffset={900}
+                  eventHandlers={{ click: () => open([tip.s.lat, tip.s.lon], <Pop icon="bolt" colour="#f59e0b" title={`Get off here, stop ${tip.n}`} sub={`${run.name.split(' · ')[0]} · about ${hhmm(run.departMin + tip.s.eta)}`} rows={[tip.s.t, `≈${mins(tip.walk)} walk, home ${mins(Math.round(tip.save))} sooner than the stop on the card`]} />) }} />
+              )}
               <Polyline positions={rest} pathOptions={{ color: run.colour, weight: 3, opacity: 0.4, dashArray: '1 8', lineCap: 'round' }} interactive={false} />
               <Polyline positions={mine} pathOptions={{ color: '#fff', weight: 9, opacity: 0.9 }} interactive={false} />
               <Polyline positions={mine} pathOptions={{ color: run.colour, weight: 5, opacity: 0.95, lineCap: 'round', lineJoin: 'round' }} interactive={false} />

@@ -239,7 +239,7 @@ export default function App() {
         {includePt && net && dest && !cands.length && <p className="note">No public transport found from the school to there when leaving at {hhmm(leave)}.</p>}
         {netErr && <p className="err pad">Could not load timetables: {netErr}</p>}
         {picks.map((p) => p.o.school
-          ? <RunCard key={p.o.id} r={paintR(p.o.school)} tags={p.tags} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} />
+          ? <RunCard key={p.o.id} r={paintR(p.o.school)} tags={p.tags} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} dest={dest} />
           : net && <PtCard key={p.o.id} v={{ ...p.o.pt!, colour: colourOf(p.o.id), j: { ...p.o.pt!.j, tags: p.tags } }} net={net} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} />)}
         {dest && !picks.length && !netLoading && runs.length > 0 && <p>Nothing found for that time. Try turning on public transport.</p>}
       </section>
@@ -277,7 +277,7 @@ export default function App() {
       {rest.length > 0 && (
         <section className="rest">
           <h3>Other school buses</h3>
-          {rest.map((r) => <RunRow key={r.run.key} r={paintR(r)} on={extra.includes(r.run.key)} onToggle={() => toggle(r.run.key, false)} />)}
+          {rest.map((r) => <RunRow key={r.run.key} r={paintR(r)} on={extra.includes(r.run.key)} onToggle={() => toggle(r.run.key, false)} dest={dest} />)}
         </section>
       )}
     </div>
