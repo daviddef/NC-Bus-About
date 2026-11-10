@@ -194,7 +194,7 @@ const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
 // ---- the pulse: a dot that travels each journey from the school to the destination in (sped-up) real time
 interface TP { p: Pt; t: number }
 type Mode = 'walk' | 'bus' | 'transit' | 'car'
-interface Track { key: string; name: string; colour: string; pts: TP[]; start: number; end: number; legs: { t0: number; mode: Mode }[] }
+interface Track { key: string; name: string; colour: string; pts: TP[]; start: number; end: number; hold?: number; legs: { t0: number; mode: Mode }[] }
 /** Walking or riding at time t: the last leg that has started. */
 const modeAt = (tr: Track, t: number): Mode => { let m: Mode = tr.legs[0]?.mode ?? 'walk'; for (const l of tr.legs) if (t >= l.t0) m = l.mode; return m }
 
@@ -354,7 +354,7 @@ function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
       {tracks.map((k) => (t > k.start ? <Polyline key={'d' + k.key} positions={travelled(k, t)} interactive={false} pathOptions={{ color: '#fff', weight: 9, opacity: 0.72, lineCap: 'round', lineJoin: 'round' }} /> : null))}
       {tracks.map((k) => {
         const done = t >= k.end
-        const label = done ? `Arrived ${hhmm(k.end).replace(' ', '')} · ${mins(k.end - k.start)}` : `${hhmm(Math.max(t, k.start)).replace(' ', '')} · ${mins(Math.max(0, t - k.start))}`
+        const label = done ? `Arrived ${hhmm(k.end).replace(' ', '')} · ${mins(k.end - k.start)}` : k.hold !== undefined && t < k.hold ? `${hhmm(Math.max(t, k.start)).replace(' ', '')} · in the pick-up queue` : `${hhmm(Math.max(t, k.start)).replace(' ', '')} · ${mins(Math.max(0, t - k.start))}`
         return <Marker key={k.key} position={posAt(k, t)} icon={pulseIcon(k.colour, label, done, modeAt(k, t))} interactive={false} keyboard={false} zIndexOffset={1500} />
       })}
     </>
@@ -368,7 +368,7 @@ interface Props {
   selected: Result[]
   fitKey: number
   visible: boolean
-  drive?: { there: Pt[] | null; path: Pt[]; colour: string; start: number; end: number } | null
+  drive?: { there: Pt[] | null; path: Pt[]; colour: string; from: number; start: number; end: number } | null
   pt: PtOverlay | null
   showPt: boolean
   onTogglePt: () => void
@@ -385,7 +385,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
     if (!dest) return []
     const out: Track[] = selected.map((r) => schoolTrack(r, dest))
     if (net) journeys.forEach((v) => out.push(ptTrack(v, net, school, dest)))
-    if (drive) out.push(finish('drive', 'Drive', drive.colour, along(drive.path, drive.start, drive.end), [{ t0: -Infinity, mode: 'car' }]))
+    if (drive) out.push({ ...finish('drive', 'Drive', drive.colour, [{ p: drive.path[0], t: drive.from }, ...along(drive.path, drive.start, drive.end)], [{ t0: -Infinity, mode: 'car' }]), hold: drive.start })
     return out.filter((k) => k.pts.length > 1)
   }, [selected, journeys, net, school, dest, drive])
   const bounds: Pt[] = [school]

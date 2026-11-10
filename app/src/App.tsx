@@ -296,7 +296,7 @@ export default function App() {
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
-            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} drive={driveOn && drive ? { there: driveThere?.path ?? null, path: drive.path, colour: DRIVE_COLOUR, start: leave + PICKUP_MIN, end: driveArrive } : null} />
+            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} drive={driveOn && drive ? { there: driveThere?.path ?? null, path: drive.path, colour: DRIVE_COLOUR, from: leave, start: leave + PICKUP_MIN, end: driveArrive } : null} />
           </div>
           {view === 'compare' && <Comparison results={cmpItems} />}
         </div>
