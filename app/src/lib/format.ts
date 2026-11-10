@@ -6,3 +6,6 @@ export function hhmm(totalMin: number): string {
 }
 export const mins = (m: number) => (m < 1 ? '<1 min' : `${Math.round(m)} min`)
 export const metres = (d: number) => (d < 1000 ? `${Math.round(d / 10) * 10} m` : `${(d / 1000).toFixed(1)} km`)
+
+/** Steps in a walk of this many metres (about 0.75 m a step), rounded. */
+export const stepsFor = (m: number) => `≈${(Math.max(10, Math.round(m / 0.75 / 10) * 10)).toLocaleString('en-AU')} steps`

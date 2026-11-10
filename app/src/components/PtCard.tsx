@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react'
-import { hhmm, metres, mins } from '../lib/format'
+import { hhmm, metres, mins, stepsFor } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
 import type { Net, PtView } from '../lib/transit'
 
@@ -40,7 +40,7 @@ export default function PtCard({ v, net, on, onToggle }: { v: PtView; net: Net; 
         <>
         <ol className="steps">
           <li><i className="sdot"><Ic n="clock" s={14} /></i><div><b>Leave school</b> <span className="t">{hhmm(v.leaveBy)}</span></div></li>
-          <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{v.first.real ? '' : '≈'}{mins(v.first.min)} · {metres(v.first.distM)}<small>to {net.stops[j.start].n}</small></div></li>
+          <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{v.first.real ? '' : '≈'}{mins(v.first.min)} · {metres(v.first.distM)} · {stepsFor(v.first.distM)}<small>to {net.stops[j.start].n}</small></div></li>
           {j.rides.map((r, i) => (
             <Fragment key={i}>
               {i > 0 && <li className="walk"><i className="sdot"><Ic n="clock" s={14} /></i><div>Change: in <b>{hhmm(j.rides[i - 1].alightAt)}</b>, next {label(r)} <b>{hhmm(r.boardAt)}</b><small>{j.changeWalkMin > 0 ? `${mins(j.changeWalkMin)} walk to ` : 'at '}{net.stops[r.board].n} · wait {mins(Math.max(0, Math.round(r.boardAt - j.rides[i - 1].alightAt - j.changeWalkMin / (j.rides.length - 1))))}</small></div></li>}
@@ -51,7 +51,7 @@ export default function PtCard({ v, net, on, onToggle }: { v: PtView; net: Net; 
                 </div></li>
             </Fragment>
           ))}
-          <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{v.last.real ? '' : '≈'}{mins(v.last.min)} · {metres(v.last.distM)}<small>from {net.stops[j.endStop].n}</small></div></li>
+          <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{v.last.real ? '' : '≈'}{mins(v.last.min)} · {metres(v.last.distM)} · {stepsFor(v.last.distM)}<small>from {net.stops[j.endStop].n}</small></div></li>
           <li><i className="sdot home"><Ic n="pin" s={14} /></i><div><b>Home</b> <span className="t">{hhmm(v.arriveAt)}</span></div></li>
         </ol>
         <div className="src">TransLink timetable · school-term weekday · not live</div>

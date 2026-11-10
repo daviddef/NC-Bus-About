@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { hhmm, metres, mins } from '../lib/format'
+import { hhmm, metres, mins, stepsFor } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
 import { dist } from '../lib/geo'
 import { walkMinutes } from '../lib/plan'
@@ -57,7 +57,7 @@ function Summary({ r, open, onMore, dest }: { r: Result; open: boolean; onMore: 
                 <div className="onoff"><span className="t">{hhmm(r.getOffAt)}</span> off <small>{r.stop.t} · {plural(r.stopCount, 'stop')} · {mins(r.busMin)}</small></div>
                 {r.stop.k === 'seg' && <div className="onoff"><small>Stops here only if asked, where safe</small></div>}
               </div></li>
-            <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{ap}{mins(r.walkMin)} · {metres(r.distM)}<small>{r.walkMin > 15 ? 'Part-way only: still a long way to go' : 'to your destination'}</small></div></li>
+            <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{ap}{mins(r.walkMin)} · {metres(r.distM)} · {stepsFor(r.distM)}<small>{r.walkMin > 15 ? 'Part-way only: still a long way to go' : 'to your destination'}</small></div></li>
             <li><i className="sdot home"><Ic n="pin" s={14} /></i><div><b>Home</b> <span className="t">{hhmm(r.arriveAt)}</span></div></li>
           </ol>
           <div className="src">Estimated times, not checked by College Transport{r.run.updated ? ` · sheet updated ${r.run.updated}` : ''}</div>
