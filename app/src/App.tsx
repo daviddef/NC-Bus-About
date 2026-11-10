@@ -68,10 +68,13 @@ function core(all: Option[]): Pick[] {
 
 function pickOptions(all: Option[]): Pick[] {
   // School buses and public transport are each judged on their own, so a good public option is never crowded out by a school bus.
-  const out = [...core(all.filter((o) => !o.pt)), ...core(all.filter((o) => o.pt))]
-  const quickest = all.length ? Math.min(...all.map((o) => o.arrive)) : 0
+  // Nobody walks more than 15 minutes: those are left out (unless a school bus has nothing shorter, when it keeps its warning).
+  const short = all.filter((o) => o.walk <= 15)
+  const sch = all.filter((o) => !o.pt), schShort = short.filter((o) => !o.pt)
+  const out = [...core(schShort.length ? schShort : sch), ...core(short.filter((o) => o.pt))]
+  const quickest = short.length ? Math.min(...short.map((o) => o.arrive)) : 0
   // And, if there is one, the best way by public transport with no changes at all.
-  const direct = all.filter((o) => o.pt && o.pt.j.changes === 0 && o.arrive <= quickest + 90).sort((a, b) => a.arrive * 100 + a.walk - (b.arrive * 100 + b.walk))[0]
+  const direct = short.filter((o) => o.pt && o.pt.j.changes === 0 && o.arrive <= quickest + 90).sort((a, b) => a.arrive * 100 + a.walk - (b.arrive * 100 + b.walk))[0]
   if (direct) {
     const same = out.find((p) => p.o.id === direct.id && p.o.where === direct.where)
     if (same) same.tags.push('No changes')

@@ -14,8 +14,9 @@ export interface TripsFile {
 export const LEAVE_SCHOOL = 15 * 60 + 5 // 3:05 pm, the time the College buses leave; the default "after school" time
 const BOARD_BUFFER = 1 // minutes spare when stepping onto the first service
 const CHANGE_BUFFER = 2 // minutes to change between services at the same stop
-const MAX_WALK_M = 1700 // furthest we'll ask anyone to walk to a first or last stop
-const DIRECT_WALK_M = 2300 // a no-changes ride may end further from home: sometimes one bus and a longer walk beats two buses
+const MAX_WALK_M = 900 // furthest we'll ask anyone to walk to a first or last stop (about 15 minutes)
+export const MAX_WALK_MIN = 15 // all the walking on a public transport journey, added up
+const DIRECT_WALK_M = MAX_WALK_M
 const NEAR_M = 250 // stops this close count as a walkable change
 
 interface Trip { r: number; hs: string; t0: number; s: number[]; a: number[]; d: number[] }
@@ -161,7 +162,7 @@ export function journeyCandidates(net: Net, school: Pt, dest: Pt, leave: number)
   }
   // Direct journeys can start at any stop within walking range of the school and end at any near the destination,
   // not just the nearest few (a station 1.5 km away can be the only way with no changes).
-  return [...all, ...directJourneys(net, near(net, school, 80), near(net, dest, 400, DIRECT_WALK_M), leave)]
+  return [...all, ...directJourneys(net, near(net, school, 80), near(net, dest, 400, DIRECT_WALK_M), leave)].filter((j) => j.walkMin <= MAX_WALK_MIN)
 }
 
 /** One service all the way, no changes: the earliest trip from each nearby stop to each stop near the destination. */
