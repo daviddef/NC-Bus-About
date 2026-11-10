@@ -191,3 +191,7 @@ table.simple th,table.simple td{padding:12px 4px}
 .tabs .setbtn.dot::after{content:'';position:absolute;top:5px;right:5px;width:8px;height:8px;border-radius:50%;background:#e11d2e}
 .tabs .opts.pop{position:absolute;z-index:1200;right:12px;top:calc(100% + 6px);width:min(340px,calc(100vw - 24px));background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 32px #0004;padding:12px;gap:10px}
 .recents{display:none}
+
+.stline{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:none;border:2px solid transparent;border-radius:10px;padding:6px 8px;margin:0 -8px;cursor:pointer}
+.stline:hover{background:var(--pan)}.stline.on{border-color:#ffd400;background:#fff8d6}
+.stline span{color:var(--mut);font-size:13px}

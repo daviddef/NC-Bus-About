@@ -87,7 +87,24 @@ const PT_COLOUR: Record<string, string> = { '3': '#64748b', '2': '#0f172a', '0':
 const PT_NAME: Record<string, string> = { '3': 'Bus', '2': 'Train', '0': 'Tram', '4': 'Ferry' }
 
 /** TransLink buses, trains and ferries around the school: thin lines and small stops under the school runs. */
-function PtLayer({ data, open, only }: { data: PtOverlay; open: (at: Pt, node: ReactNode, hl?: string[]) => void; only: Set<string> | null }) {
+/** The services at a stop. Tap one to see only its route on the map; tap again for all of them. */
+function StopLines({ lines, mode, focus }: { lines: [string, string, number[]][]; mode: string; focus: (hl: string[]) => void }) {
+  const [sel, setSel] = useState<string | null>(null)
+  const keys = lines.map(([route, to]) => `${route}|${to}`)
+  return (
+    <>
+      {lines.map(([route, to, ms], i) => (
+        <button type="button" key={keys[i]} className={'stline' + (sel === keys[i] ? ' on' : '')} aria-pressed={sel === keys[i]}
+          onClick={() => { const next = sel === keys[i] ? null : keys[i]; setSel(next); focus(next ? [next] : keys) }}>
+          <b>{mode === '2' ? 'Train' : route}</b> to {to}<br />
+          <span>Leaves here at {ms.slice(0, 5).map((m) => hhmm(m)).join(' · ')}{ms.length > 5 ? ` … (${ms.length} in all)` : ''}</span>
+        </button>
+      ))}
+    </>
+  )
+}
+
+function PtLayer({ data, open, focus, only }: { data: PtOverlay; open: (at: Pt, node: ReactNode, hl?: string[]) => void; focus: (hl: string[]) => void; only: Set<string> | null }) {
   const map = useMap()
   const [zoom, setZoom] = useState(map.getZoom())
   useMapEvents({ zoomend: () => setZoom(map.getZoom()) })
@@ -111,7 +128,7 @@ function PtLayer({ data, open, only }: { data: PtOverlay; open: (at: Pt, node: R
           eventHandlers={{
             click: () => open(s.p, (
               <Pop icon="transit" colour={PT_COLOUR[s.m] ?? '#64748b'} title={s.n} sub={`${PT_NAME[s.m] ?? 'Public transport'} · timetable, weekday 2:30–6 pm`}
-                rows={s.l.map(([route, to, ms]) => <span><b>{s.m === '2' ? 'Train' : route}</b> to {to}<br />Leaves here at {ms.slice(0, 5).map((m) => hhmm(m)).join(' · ')}{ms.length > 5 ? ` … (${ms.length} in all)` : ''}</span>)} />
+                rows={[<StopLines key="l" lines={s.l} mode={s.m} focus={focus} />]} />
             ), [...new Set(s.l.map(([route, to]) => `${route}|${to}`))]),
           }} />
       ))}
@@ -365,7 +382,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         <Resize visible={visible} />
         <FitTo bounds={bounds} fitKey={fitKey} />
 
-        {showPt && pt && <PtLayer data={pt} open={open} only={dest ? new Set(journeys.flatMap((v) => v.j.rides.map((r) => r.route))) : null} />}
+        {showPt && pt && <PtLayer data={pt} open={open} focus={(hl) => setPopup((p) => (p ? { ...p, hl } : p))} only={dest ? new Set(journeys.flatMap((v) => v.j.rides.map((r) => r.route))) : null} />}
         {pt && popup && popup.hl.length > 0 && pt.routes.filter((r) => popup.hl.some((k) => k.startsWith(`${r.id}|`))).map((r, i) => r.g.map((g, j) => !popup.hl.includes(`${r.id}|${r.h?.[j] ?? ''}`) && r.h ? null : (
           <Fragment key={`hl${i}-${j}`}>
             <Polyline positions={g} interactive={false} pathOptions={{ color: '#7c5a00', weight: 11, opacity: 0.55 }} />
