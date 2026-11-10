@@ -180,7 +180,10 @@ const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
 
 // ---- the pulse: a dot that travels each journey from the school to the destination in (sped-up) real time
 interface TP { p: Pt; t: number }
-interface Track { key: string; name: string; colour: string; pts: TP[]; start: number; end: number }
+type Mode = 'walk' | 'bus' | 'transit'
+interface Track { key: string; name: string; colour: string; pts: TP[]; start: number; end: number; legs: { t0: number; mode: Mode }[] }
+/** Walking or riding at time t: the last leg that has started. */
+const modeAt = (tr: Track, t: number): Mode => { let m: Mode = tr.legs[0]?.mode ?? 'walk'; for (const l of tr.legs) if (t >= l.t0) m = l.mode; return m }
 
 function along(path: Pt[], t0: number, t1: number): TP[] {
   const d = [0]
@@ -188,17 +191,17 @@ function along(path: Pt[], t0: number, t1: number): TP[] {
   const total = d[d.length - 1] || 1
   return path.map((p, i) => ({ p, t: t0 + ((t1 - t0) * d[i]) / total }))
 }
-function finish(key: string, name: string, colour: string, raw: TP[]): Track {
+function finish(key: string, name: string, colour: string, raw: TP[], legs: Track['legs']): Track {
   let last = -Infinity
   const pts = raw.map((q) => ({ p: q.p, t: (last = Math.max(last, q.t)) }))
-  return { key, name, colour, pts, start: pts[0].t, end: pts[pts.length - 1].t }
+  return { key, name, colour, pts, start: pts[0].t, end: pts[pts.length - 1].t, legs }
 }
 function schoolTrack(r: Result, dest: Pt | null): Track {
   const { run, stop } = r
   const ride: TP[] = run.route.g.slice(0, stop.i + 1).map((p, i) => ({ p, t: run.departMin + etaMin(run, i) }))
   const here: Pt = [stop.lat, stop.lon]
   const walk = dest ? along(r.walkPath ? [here, ...r.walkPath, dest] : [here, dest], r.getOffAt, r.arriveAt) : []
-  return finish(run.key, run.name.split(' · ')[0], run.colour, [...ride, ...walk])
+  return finish(run.key, run.name.split(' · ')[0], run.colour, [...ride, ...walk], [{ t0: -Infinity, mode: 'bus' }, { t0: r.getOffAt, mode: 'walk' }])
 }
 function ptTrack(v: PtView, net: Net, school: Pt, dest: Pt): Track {
   const { j } = v
@@ -210,9 +213,11 @@ function ptTrack(v: PtView, net: Net, school: Pt, dest: Pt): Track {
     if (nx) pts.push({ p: net.stops[nx.board].p, t: nx.boardAt })
   })
   const last = j.rides[j.rides.length - 1]
+  const legs: Track['legs'] = [{ t0: -Infinity, mode: 'walk' }]
+  j.rides.forEach((r, i) => { legs.push({ t0: r.boardAt, mode: r.mode === '2' ? 'transit' : 'bus' }); legs.push({ t0: r.alightAt, mode: 'walk' }); void i })
   const z = net.stops[last.alight].p
   pts.push(...along([z, ...(v.last.path ?? []), dest], last.alightAt, v.arriveAt))
-  return finish(String(vi(j)), j.rides.map((r) => (r.mode === '2' ? 'Train' : `Bus ${r.route}`)).join(' + '), v.colour, pts)
+  return finish(String(vi(j)), j.rides.map((r) => (r.mode === '2' ? 'Train' : `Bus ${r.route}`)).join(' + '), v.colour, pts, legs)
 }
 const vi = (j: { key: string; start: number; endStop: number }) => `${j.key}:${j.start}:${j.endStop}`
 function posAt(tr: Track, t: number): Pt {
@@ -227,12 +232,12 @@ function posAt(tr: Track, t: number): Pt {
   }
   return a[a.length - 1].p
 }
-const pulseIcon = (colour: string, label: string, done: boolean) =>
+const pulseIcon = (colour: string, label: string, done: boolean, mode: Mode) =>
   L.divIcon({
     className: '', iconSize: [20, 20], iconAnchor: [10, 10],
     html: done
       ? `<div class="pulser done" style="--c:${colour}"><span class="pdot tick">${svg('check', 13)}</span></div>`
-      : `<div class="pulser" style="--c:${colour}"><span class="pring"></span><span class="pdot"></span><span class="plabel">${label}</span></div>`,
+      : `<div class="pulser" style="--c:${colour}"><span class="pring"></span><span class="pdot mv">${svg(mode, 14)}</span><span class="plabel">${label}</span></div>`,
   })
 /** The stretch of a track already travelled by time t, ending at the pulse itself. */
 function travelled(tr: Track, t: number): Pt[] {
@@ -337,7 +342,7 @@ function Pulses({ tracks, playing }: { tracks: Track[]; playing: boolean }) {
       {tracks.map((k) => {
         const done = t >= k.end
         const label = done ? `Arrived ${hhmm(k.end).replace(' ', '')} · ${mins(k.end - k.start)}` : `${hhmm(Math.max(t, k.start)).replace(' ', '')} · ${mins(Math.max(0, t - k.start))}`
-        return <Marker key={k.key} position={posAt(k, t)} icon={pulseIcon(k.colour, label, done)} interactive={false} keyboard={false} zIndexOffset={1500} />
+        return <Marker key={k.key} position={posAt(k, t)} icon={pulseIcon(k.colour, label, done, modeAt(k, t))} interactive={false} keyboard={false} zIndexOffset={1500} />
       })}
     </>
   )
