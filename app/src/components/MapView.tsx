@@ -5,7 +5,7 @@ import { CircleMarker, MapContainer, Marker, Polyline, Popup, TileLayer, Tooltip
 import { bearing, dist } from '../lib/geo'
 import { hhmm, metres, mins } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
-import { etaMin, project } from '../lib/plan'
+import { etaMin, project, walkMinutes } from '../lib/plan'
 import type { Net, PtView } from '../lib/transit'
 import type { PtOverlay, Pt, Result } from '../types'
 
@@ -175,6 +175,19 @@ function JourneyLayer({ views, net, school, dest, open }: { views: PtView[]; net
       })}
     </>
   )
+}
+/** What getting off at this stop would mean: the walk from here, when you'd be home, and how that compares with the card. */
+function offRows(r: Result, s: { lat: number; lon: number; eta: number }, dest: Pt | null): ReactNode[] {
+  if (!dest) return []
+  const d = dist([s.lat, s.lon], dest), w = walkMinutes(d)
+  const arr = r.run.departMin + s.eta + w
+  const diff = Math.round(r.arriveAt - arr)
+  const same = Math.abs(s.eta - r.stop.eta) < 0.5
+  return [
+    <span key="w"><b>If you get off here:</b> ≈{mins(w)} walk ({metres(d)}), home <b>{hhmm(arr)}</b></span>,
+    same ? <span key="c">This is the stop on the card</span>
+      : <span key="c" style={{ color: diff > 0 ? '#15803d' : diff < 0 ? '#b42318' : undefined, fontWeight: 700 }}>{diff > 0 ? `${mins(diff)} sooner than the card` : diff < 0 ? `${mins(-diff)} later than the card` : 'About the same as the card'}</span>,
+  ]
 }
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
 
@@ -444,11 +457,11 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
               {arrows(mine).map((a, i) => <Marker key={i} position={a.at} icon={arrowIcon(a.deg, run.colour)} interactive={false} keyboard={false} />)}
               {r.stops.filter((s) => s.k === 'seg' && s.i <= stop.i).map((s, i) => (
                 <CircleMarker key={i} center={[s.lat, s.lon]} radius={4} pathOptions={{ color: run.colour, weight: 2, fillColor: '#fff', fillOpacity: 1 }}
-                  eventHandlers={{ click: () => open([s.lat, s.lon], <Pop icon="stop" colour={run.colour} title={s.t} sub={`${run.name.split(' · ')[0]} · about ${hhmm(run.departMin + s.eta)}`} rows={s.road ? [`On ${s.road}`, 'Bus stops here only if asked, where safe'] : []} />) }} />
+                  eventHandlers={{ click: () => open([s.lat, s.lon], <Pop icon="stop" colour={run.colour} title={s.t} sub={`${run.name.split(' · ')[0]} · about ${hhmm(run.departMin + s.eta)}`} rows={[...(s.road ? [`On ${s.road}`, 'Bus stops here only if asked, where safe'] : []), ...offRows(r, s, dest)]} />) }} />
               ))}
               {named.map((s, i) => (
                 <Marker key={'n' + i} position={[s.lat, s.lon]} icon={numIcon(i + 1, run.colour, s.i > stop.i)} zIndexOffset={s.i > stop.i ? -500 : 0}
-                  eventHandlers={{ click: () => open([s.lat, s.lon], <Pop icon="stop" colour={run.colour} title={s.t} sub={`${run.name.split(' · ')[0]} · stop ${i + 1} · about ${hhmm(run.departMin + s.eta)}`} />) }} />
+                  eventHandlers={{ click: () => open([s.lat, s.lon], <Pop icon="stop" colour={run.colour} title={s.t} sub={`${run.name.split(' · ')[0]} · stop ${i + 1} · about ${hhmm(run.departMin + s.eta)}`} rows={offRows(r, s, dest)} />) }} />
               ))}
               {dest && (
                 <Polyline
