@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { hhmm, metres, mins } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
 import type { Net, PtView } from '../lib/transit'
 
 const Ic = ({ n, s = 15 }: { n: IconName; s?: number }) => <span className="ic" dangerouslySetInnerHTML={{ __html: svg(n, s) }} />
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
-const modeName = (m: string) => (m === '2' ? 'Train' : m === '4' ? 'Ferry' : m === '0' ? 'Tram' : 'Bus')
 const label = (r: { route: string; mode: string }) => (r.mode === '2' ? 'Train' : r.route)
 
 /** A public transport option: the services to catch, the walking, and what time you arrive. */
@@ -38,15 +37,25 @@ export default function PtCard({ v, net, on, onToggle }: { v: PtView; net: Net; 
         <button type="button" className="more" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? 'Less' : 'Details'} <span className={open ? 'flip' : ''}><Ic n="chevron" s={16} /></span></button>
       </div>
       {open && (
-        <ul className="details">
-          <li>Leave school by <b>{hhmm(v.leaveBy)}</b> (public transport). Walk {v.first.real ? '' : '≈'}{mins(v.first.min)} ({metres(v.first.distM)}) to <b>{net.stops[j.start].n}</b>.</li>
+        <>
+        <ol className="steps">
+          <li><i className="sdot"><Ic n="clock" s={14} /></i><div><b>Leave school</b> <span className="t">{hhmm(v.leaveBy)}</span></div></li>
+          <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{v.first.real ? '' : '≈'}{mins(v.first.min)} · {metres(v.first.distM)}<small>to {net.stops[j.start].n}</small></div></li>
           {j.rides.map((r, i) => (
-            <li key={i}>{i > 0 ? 'Then ' : ''}{modeName(r.mode)} <b>{label(r)}</b> to {r.headsign || 'the end of the line'}: on at <b>{hhmm(r.boardAt)}</b> ({net.stops[r.board].n}), off at <b>{hhmm(r.alightAt)}</b> ({net.stops[r.alight].n}).</li>
+            <Fragment key={i}>
+              {i > 0 && j.changeWalkMin > 0 && <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{mins(j.changeWalkMin)} to change<small>{net.stops[r.board].n}</small></div></li>}
+              <li className="ride"><i className="sdot"><Ic n={r.mode === '2' ? 'transit' : 'bus'} s={14} /></i>
+                <div><b className="rt">{label(r)}</b> <span className="to">to {r.headsign || 'end of line'}</span>
+                  <div className="onoff"><span className="t">{hhmm(r.boardAt)}</span> on <small>{net.stops[r.board].n}</small></div>
+                  <div className="onoff"><span className="t">{hhmm(r.alightAt)}</span> off <small>{net.stops[r.alight].n} · {plural(r.nStops, 'stop')}</small></div>
+                </div></li>
+            </Fragment>
           ))}
-          {j.changeWalkMin > 0 && <li>Walk {mins(j.changeWalkMin)} between stops to change.</li>}
-          <li>Then walk {v.last.real ? '' : '≈'}{mins(v.last.min)} ({metres(v.last.distM)}) from <b>{net.stops[j.endStop].n}</b>.</li>
-          <li>Based on TransLink&rsquo;s timetable for a school-term weekday. Not live: check TransLink for today.</li>
-        </ul>
+          <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{v.last.real ? '' : '≈'}{mins(v.last.min)} · {metres(v.last.distM)}<small>from {net.stops[j.endStop].n}</small></div></li>
+          <li><i className="sdot home"><Ic n="pin" s={14} /></i><div><b>Home</b> <span className="t">{hhmm(v.arriveAt)}</span></div></li>
+        </ol>
+        <div className="src">TransLink timetable · school-term weekday · not live</div>
+        </>
       )}
     </div>
   )

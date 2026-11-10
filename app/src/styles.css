@@ -168,3 +168,19 @@ table.simple th,table.simple td{padding:12px 4px}
 .arr1{background:var(--bg);color:var(--fg);border-left:5px solid var(--c);border-radius:12px;padding:7px 11px;font-size:13px;box-shadow:0 2px 10px #0004;animation:popin .35s ease-out}
 .arr1 span{color:var(--mut)}.arr1 .fun{margin-top:2px;font-size:12.5px;font-weight:600}
 @keyframes popin{from{transform:translateY(-8px) scale(.94);opacity:0}to{transform:none;opacity:1}}
+
+/* public transport details: a short step-by-step */
+.steps{list-style:none;margin:10px 0 0;padding:10px 0 0;border-top:1px solid var(--line);display:grid;gap:0;font-size:14px}
+.steps li{display:flex;gap:10px;position:relative;padding:0 0 12px}
+.steps li:last-child{padding-bottom:0}
+.steps li:not(:last-child)::before{content:'';position:absolute;left:12px;top:26px;bottom:0;width:2px;background:var(--line)}
+.steps .ride:not(:last-child)::before{background:var(--c);opacity:.5}
+.steps .walk:not(:last-child)::before{background:none;border-left:2px dotted var(--mut);width:0;opacity:.6}
+.sdot{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--pan);color:var(--fg);font-style:normal}
+.steps .ride .sdot{background:var(--c);color:#fff}.steps .sdot.home{background:#d6336c;color:#fff}
+.steps small{display:block;color:var(--mut);font-size:12.5px;line-height:1.3}
+.steps .t{font-weight:700;font-variant-numeric:tabular-nums}
+.steps .rt{font-size:15px}.steps .to{color:var(--mut)}
+.steps .onoff{margin-top:3px}.steps .onoff small{display:inline}
+.steps .walk div{color:var(--mut)}
+.src{margin-top:10px;font-size:11.5px;color:var(--mut)}
