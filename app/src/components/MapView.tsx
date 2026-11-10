@@ -229,29 +229,42 @@ const JOKES: [number, ((n: number, slow: string) => string)[]][] = [
     (n, slow) => `🍪 ${n} min head start: snack secured before ${slow} lands`,
     (n) => `🎧 ${n} min: one whole song and a victory lap`,
     (n, slow) => `☕ ${n} min to raid the fridge before ${slow} gets in`,
+    (n) => `🎒 ${n} min: unpack your bag before anyone asks`,
+    (n) => `👟 ${n} min: shoes off and lunchbox out of the bag, before Mum finds it`,
   ]],
   [20, [
     (n, slow) => `🎮 ${n} min: one quick match before ${slow} turns up`,
     (n) => `📱 ${n} min of scrolling… sorry, “research”`,
     (n, slow) => `🧦 ${n} min: shoes off, feet up, before ${slow} is home`,
+    (n) => `🍽️ ${n} min: empty the dishwasher, then ask for a favour`,
+    (n) => `🧺 ${n} min: your washing in the machine, bonus points`,
+    (n) => `🗑️ ${n} min: bins out. Parents will notice`,
   ]],
   [35, [
     (n) => `📚 Do your homework in ${n} min, before the last bus arrives`,
     (n) => `🏊 ${n} min of extra swim time`,
     (n) => `🛁 ${n} min: a long shower, hot water all yours`,
+    (n) => `🌿 ${n} min: enough to mow the lawn. Probably`,
+    (n) => `🐕 ${n} min: walk the dog, you're the favourite now`,
+    (n) => `🧹 ${n} min: tidy your room before anyone says the words`,
   ]],
   [60, [
     (n, slow) => `🍕 ${n} min: pizza's nearly ready before ${slow} gets home`,
     (n, slow) => `📺 ${n} min: a whole episode before ${slow} arrives`,
     (n) => `🎸 ${n} min of guitar practice… or pretending to`,
+    (n) => `🍳 ${n} min: cook dinner and become a legend`,
+    (n) => `🚗 ${n} min: wash the car, then a very reasonable request`,
+    (n) => `🧼 ${n} min: dishes, wipe the bench and unpack your bag`,
   ]],
   [Infinity, [
     (n) => `🎬 ${n} min: a full movie before the slowest gets home`,
     (n) => `😴 ${n} min: a power nap. You've earned it`,
     (n) => `🏀 ${n} min: shoot hoops, shower, still beat the last one`,
+    (n) => `🌱 ${n} min: mow the lawn, water the garden, still beat the last one`,
+    (n) => `🛒 ${n} min: a cheeky grocery run, then dinner's on you`,
   ]],
 ]
-const LAST = ['🐢 Last one home. Podcast time!', '🎧 Last home: queue a long playlist', '🐌 The scenic route. Enjoy the view', '🧠 Last home: plenty of time to think up an excuse']
+const LAST = ['🐢 Last one home. Podcast time!', '🎧 Last home: queue a long playlist', '🐌 The scenic route. Enjoy the view', '🧠 Last home: plenty of time to think up an excuse', '🙈 Last home: the dishwasher is already empty. Not your fault']
 const hash = (s: string) => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7)
 function fun(gap: number, slow: string, seed: string): string {
   const m = Math.round(gap)
