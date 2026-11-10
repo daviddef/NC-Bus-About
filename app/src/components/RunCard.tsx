@@ -22,7 +22,7 @@ export function earlierStop(r: Result, dest: Pt | null): Earlier | null {
     const walk = walkMinutes(dist([s.lat, s.lon], dest))
     if (walk > 15) continue
     const save = r.arriveAt - (r.run.departMin + s.eta + walk)
-    if (save >= 3 && (!best || save > best.save)) best = { n: idx + 1, s, walk, save }
+    if (Math.round(save) >= 1 && (!best || save > best.save)) best = { n: idx + 1, s, walk, save }
   }
   return best
 }
