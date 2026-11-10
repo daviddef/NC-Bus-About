@@ -8,6 +8,8 @@ import type { Pt, Result } from '../types'
 interface Props { r: Result; tags?: string[]; on: boolean; onToggle: () => void; dest: Pt | null }
 
 const Ic = ({ n, s = 15 }: { n: IconName; s?: number }) => <span className="ic" dangerouslySetInnerHTML={{ __html: svg(n, s) }} />
+/** The College's own run sheet for this run (the PDF the times and stops were read from). */
+export const sheetUrl = (key: string) => `https://www.nudgee.com/uploads/documents/Bus-Services/${key}.pdf`
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
 
 /** Getting off earlier on the same bus can get you home sooner: the best earlier named stop, if it saves a few minutes. */
@@ -45,7 +47,7 @@ function Summary({ r, open, onMore, dest }: { r: Result; open: boolean; onMore: 
       )}
       <div className="flags">
         {r.walkMin > 15 && <span className="flag bad"><Ic n="warn" s={13} /> Part-way only</span>}
-        {old && <span className="flag"><Ic n="clock" s={13} /> Sheet {oldYear}</span>}
+        {old && <a className="flag" href={sheetUrl(r.run.key)} target="_blank" rel="noopener noreferrer" title="Open the College run sheet (PDF)"><Ic n="clock" s={13} /> Sheet {oldYear}</a>}
         <button type="button" className="more" aria-expanded={open} onClick={onMore}>{open ? 'Less' : 'Details'} <span className={open ? 'flip' : ''}><Ic n="chevron" s={16} /></span></button>
       </div>
       {open && (
@@ -60,7 +62,7 @@ function Summary({ r, open, onMore, dest }: { r: Result; open: boolean; onMore: 
             <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{ap}{mins(r.walkMin)} · {metres(r.distM)} · {stepsFor(r.distM)}<small>{r.walkMin > 15 ? 'Part-way only: still a long way to go' : 'to your destination'}</small></div></li>
             <li><i className="sdot home"><Ic n="pin" s={14} /></i><div><b>Home</b> <span className="t">{hhmm(r.arriveAt)}</span></div></li>
           </ol>
-          <div className="src">Estimated times, not checked by College Transport{r.run.updated ? ` · sheet updated ${r.run.updated}` : ''}</div>
+          <div className="src">Estimated times, not checked by College Transport · <a href={sheetUrl(r.run.key)} target="_blank" rel="noopener noreferrer">Open the run sheet (PDF)</a>{r.run.updated ? `, updated ${r.run.updated}` : ''}</div>
         </>
       )}
     </>
