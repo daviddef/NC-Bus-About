@@ -49,13 +49,19 @@ function Summary({ r, open, onMore, dest }: { r: Result; open: boolean; onMore: 
         <button type="button" className="more" aria-expanded={open} onClick={onMore}>{open ? 'Less' : 'Details'} <span className={open ? 'flip' : ''}><Ic n="chevron" s={16} /></span></button>
       </div>
       {open && (
-        <ul className="details">
-          <li>Leaves school <b>{hhmm(r.run.departMin)}</b>, from the College bus bays</li>
-          <li>{r.stop.k === 'seg' ? <>A stop on <b>{r.stop.road}</b>. The bus stops here only if asked, where safe.</> : 'A named stop on the run sheet.'}</li>
-          {r.walkMin > 15 && <li><b>Gets you part-way:</b> {metres(r.distM)} still to go. Ask someone to pick you up, or plan the walk.</li>}
-          <li>Times are estimated from road distance. The stop has not been checked by College Transport{r.stop.status === 'possible' ? ' (match uncertain)' : ''}. Stop count includes optional stops.</li>
-          {r.run.updated && <li>Run sheet last updated {r.run.updated}.</li>}
-        </ul>
+        <>
+          <ol className="steps">
+            <li><i className="sdot"><Ic n="clock" s={14} /></i><div><b>Leave school</b> <span className="t">{hhmm(r.run.departMin)}</span><small>College bus bays</small></div></li>
+            <li className="ride"><i className="sdot"><Ic n="bus" s={14} /></i>
+              <div><b className="rt">{r.run.name.split(' · ')[0]}</b> <span className="to">{r.run.name.split(' · ')[1]}</span>
+                <div className="onoff"><span className="t">{hhmm(r.getOffAt)}</span> off <small>{r.stop.t} · {plural(r.stopCount, 'stop')} · {mins(r.busMin)}</small></div>
+                {r.stop.k === 'seg' && <div className="onoff"><small>Stops here only if asked, where safe</small></div>}
+              </div></li>
+            <li className="walk"><i className="sdot"><Ic n="walk" s={14} /></i><div>{ap}{mins(r.walkMin)} · {metres(r.distM)}<small>{r.walkMin > 15 ? 'Part-way only: still a long way to go' : 'to your destination'}</small></div></li>
+            <li><i className="sdot home"><Ic n="pin" s={14} /></i><div><b>Home</b> <span className="t">{hhmm(r.arriveAt)}</span></div></li>
+          </ol>
+          <div className="src">Estimated times, not checked by College Transport{r.run.updated ? ` · sheet updated ${r.run.updated}` : ''}</div>
+        </>
       )}
     </>
   )
