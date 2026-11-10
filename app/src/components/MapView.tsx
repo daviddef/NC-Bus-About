@@ -368,7 +368,7 @@ interface Props {
   selected: Result[]
   fitKey: number
   visible: boolean
-  drive?: { path: Pt[]; colour: string; start: number; end: number } | null
+  drive?: { there: Pt[] | null; path: Pt[]; colour: string; start: number; end: number } | null
   pt: PtOverlay | null
   showPt: boolean
   onTogglePt: () => void
@@ -419,6 +419,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
 
         {drive && (
           <>
+            {drive.there && <Polyline positions={drive.there} interactive={false} pathOptions={{ color: drive.colour, weight: 3, opacity: 0.55, dashArray: '2 8', lineCap: 'round' }} />}
             <Polyline positions={drive.path} interactive={false} pathOptions={{ color: '#fff', weight: 9, opacity: 0.9 }} />
             <Polyline positions={drive.path} interactive={false} pathOptions={{ color: drive.colour, weight: 5, opacity: 0.9, dashArray: '10 8', lineCap: 'round' }} />
           </>

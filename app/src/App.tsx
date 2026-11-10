@@ -106,6 +106,7 @@ export default function App() {
   const [netLoading, setNetLoading] = useState(false)
   const [netErr, setNetErr] = useState('')
   const [drive, setDrive] = useState<Drive | null>(null)
+  const [driveThere, setDriveThere] = useState<Drive | null>(null) // the parent's drive from the destination to the school
   const [walks, setWalks] = useState<Record<string, Walk>>({})
 
   useEffect(() => {
@@ -121,10 +122,11 @@ export default function App() {
 
   const dest: Pt | null = place ? [place.lat, place.lon] : null
   useEffect(() => {
-    setDrive(null)
+    setDrive(null); setDriveThere(null)
     if (!dest) return
     let live = true
     drivingRoute(school, dest).then((d) => { if (live) setDrive(d) })
+    drivingRoute(dest, school).then((d) => { if (live) setDriveThere(d) })
     return () => { live = false }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [place, school])
@@ -220,8 +222,9 @@ export default function App() {
   ]
   const driveOn = !!drive && !off.includes('drive')
   const driveArrive = drive ? leave + PICKUP_MIN + typicalMin(drive) : 0
-  if (drive && driveOn) cmpItems.push({ key: 'drive', name: 'Drive · picked up', short: 'Drive', colour: DRIVE_COLOUR, startMin: leave, getOffAt: driveArrive, arriveAt: driveArrive, rideMin: typicalMin(drive), changes: 0, waitMin: 0, swaps: [],
-    legs: [{ t0: leave, t1: leave + PICKUP_MIN, kind: 'wait', label: 'pick-up' }, { t0: leave + PICKUP_MIN, t1: driveArrive, kind: 'ride', label: `${mins(typicalMin(drive))} drive` }], stops: 0, walkMin: 0, walkReal: true, distM: drive.distM, where: 'Door to door' })
+  const thereMin = drive ? typicalMin(driveThere ?? drive) : 0 // the parent's trip to the school takes about as long as the trip back
+  if (drive && driveOn) cmpItems.push({ key: 'drive', name: 'Drive · picked up', short: 'Drive', colour: DRIVE_COLOUR, startMin: leave - thereMin, getOffAt: driveArrive, arriveAt: driveArrive, rideMin: typicalMin(drive), changes: 0, waitMin: 0, swaps: [],
+    legs: [{ t0: leave - thereMin, t1: leave, kind: 'ride', label: `parent drives there ${mins(thereMin)}` }, { t0: leave, t1: leave + PICKUP_MIN, kind: 'wait', label: 'pick-up' }, { t0: leave + PICKUP_MIN, t1: driveArrive, kind: 'ride', label: `${mins(typicalMin(drive))} home` }], stops: 0, walkMin: 0, walkReal: true, distM: drive.distM, where: 'Door to door' })
   const rest = results.filter((r) => !pickIds.includes(r.run.key)).slice(0, 10)
 
   function reset() { setOff([]); setExtra([]); setView('map'); setFitKey((k) => k + 1) }
@@ -265,7 +268,7 @@ export default function App() {
         {picks.map((p) => p.o.school
           ? <RunCard key={p.o.id} r={paintR(p.o.school)} tags={p.tags} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} dest={dest} />
           : net && <PtCard key={p.o.id} v={{ ...p.o.pt!, colour: colourOf(p.o.id), j: { ...p.o.pt!.j, tags: p.tags } }} net={net} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} />)}
-        {drive && dest && <DriveCard d={drive} leave={leave} colour={DRIVE_COLOUR} on={driveOn} onToggle={() => toggle('drive', true)} />}
+        {drive && dest && <DriveCard d={drive} there={driveThere} leave={leave} colour={DRIVE_COLOUR} on={driveOn} onToggle={() => toggle('drive', true)} />}
         {dest && !picks.length && !netLoading && runs.length > 0 && <p>Nothing found for that time. Try turning on public transport.</p>}
       </section>
 
@@ -293,7 +296,7 @@ export default function App() {
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
-            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} drive={driveOn && drive ? { path: drive.path, colour: DRIVE_COLOUR, start: leave + PICKUP_MIN, end: driveArrive } : null} />
+            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} drive={driveOn && drive ? { there: driveThere?.path ?? null, path: drive.path, colour: DRIVE_COLOUR, start: leave + PICKUP_MIN, end: driveArrive } : null} />
           </div>
           {view === 'compare' && <Comparison results={cmpItems} />}
         </div>
