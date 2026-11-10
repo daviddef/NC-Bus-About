@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import Comparison from './components/Comparison'
+import Comparison, { type CmpItem } from './components/Comparison'
 import MapView from './components/MapView'
 import PtCard from './components/PtCard'
 import RunCard, { RunRow } from './components/RunCard'
@@ -189,6 +189,15 @@ export default function App() {
     ...extra.map((k) => results.find((r) => r.run.key === k)).filter((r): r is Result => !!r).map(paintR),
   ]
   const journeys: PtView[] = shownPicks.filter((p) => p.o.pt).map((p) => ({ ...p.o.pt!, colour: colourOf(p.o.id) }))
+  const lab = (r: { route: string; mode: string }) => (r.mode === '2' ? 'Train' : r.route)
+  const cmpItems: CmpItem[] = [
+    ...chosen.map((r): CmpItem => ({ key: r.run.key, name: r.run.name, short: r.run.name.split(' · ')[0], colour: r.run.colour, startMin: r.run.departMin, getOffAt: r.getOffAt, arriveAt: r.arriveAt, rideMin: r.busMin, stops: r.stopCount, walkMin: r.walkMin, walkReal: r.walkReal, distM: r.distM, where: r.stop.t })),
+    ...journeys.map((v): CmpItem => {
+      const last = v.j.rides[v.j.rides.length - 1]
+      return { key: 'pt:' + v.j.key, name: v.j.rides.map((r) => (r.mode === '2' ? 'Train' : `Bus ${r.route}`)).join(' + '), short: v.j.rides.map(lab).join('+'), colour: v.colour, startMin: v.j.rides[0].boardAt, getOffAt: last.alightAt, arriveAt: v.arriveAt,
+        rideMin: v.j.rides.reduce((n, r) => n + (r.alightAt - r.boardAt), 0), stops: v.j.stopsRidden, walkMin: v.walkMin, walkReal: v.first.real && v.last.real, distM: v.first.distM + v.last.distM, where: net ? net.stops[last.alight].n : '' }
+    }),
+  ]
   const rest = results.filter((r) => !pickIds.includes(r.run.key)).slice(0, 10)
 
   function reset() { setOff([]); setExtra([]); setView('map'); setFitKey((k) => k + 1) }
@@ -238,7 +247,7 @@ export default function App() {
       <main>
         <nav className="tabs">
           <button className={view === 'map' ? 'act' : ''} onClick={() => setView('map')}>Map</button>
-          <button className={view === 'compare' ? 'act' : ''} onClick={() => setView('compare')} disabled={!dest}>Compare ({chosen.length})</button>
+          <button className={view === 'compare' ? 'act' : ''} onClick={() => setView('compare')} disabled={!dest}>Compare ({cmpItems.length})</button>
           <button className={'setbtn' + (cfg ? ' act' : '') + (when !== 'school' || includePt ? ' dot' : '')} aria-expanded={cfg} onClick={() => setCfg(!cfg)}><span dangerouslySetInnerHTML={{ __html: svg('sliders', 16) }} /> Settings</button>
 
           {cfg && <div className="opts pop" role="dialog" aria-label="Settings">
@@ -261,7 +270,7 @@ export default function App() {
           <div className="mapwrap" hidden={view !== 'map'}>
             <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} />
           </div>
-          {view === 'compare' && <Comparison results={chosen} />}
+          {view === 'compare' && <Comparison results={cmpItems} />}
         </div>
       </main>
 

@@ -195,3 +195,11 @@ table.simple th,table.simple td{padding:12px 4px}
 .stline{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:none;border:2px solid transparent;border-radius:10px;padding:6px 8px;margin:0 -8px;cursor:pointer}
 .stline:hover{background:var(--pan)}.stline.on{border-color:#ffd400;background:#fff8d6}
 .stline span{color:var(--mut);font-size:13px}
+
+/* legend on phones: small wrapped pills instead of one long scrolling row */
+@media (max-width:760px){
+  .legend{flex-wrap:wrap;overflow:visible;gap:5px;bottom:24px;left:6px;right:6px}
+  .lg{padding:3px 9px;gap:5px;font-size:12px;border-width:2px;max-width:100%;white-space:nowrap}
+  .lgsw{width:8px;height:8px}
+  .lgwalk{display:none}
+}
