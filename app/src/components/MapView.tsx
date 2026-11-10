@@ -193,7 +193,7 @@ const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`
 
 // ---- the pulse: a dot that travels each journey from the school to the destination in (sped-up) real time
 interface TP { p: Pt; t: number }
-type Mode = 'walk' | 'bus' | 'transit'
+type Mode = 'walk' | 'bus' | 'transit' | 'car'
 interface Track { key: string; name: string; colour: string; pts: TP[]; start: number; end: number; legs: { t0: number; mode: Mode }[] }
 /** Walking or riding at time t: the last leg that has started. */
 const modeAt = (tr: Track, t: number): Mode => { let m: Mode = tr.legs[0]?.mode ?? 'walk'; for (const l of tr.legs) if (t >= l.t0) m = l.mode; return m }
@@ -368,6 +368,7 @@ interface Props {
   selected: Result[]
   fitKey: number
   visible: boolean
+  drive?: { path: Pt[]; colour: string; start: number; end: number } | null
   pt: PtOverlay | null
   showPt: boolean
   onTogglePt: () => void
@@ -376,7 +377,7 @@ interface Props {
   net: Net | null
 }
 
-export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading, journeys, net }: Props) {
+export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading, journeys, net, drive }: Props) {
   const [popup, setPopup] = useState<{ at: Pt; node: ReactNode; hl: string[] } | null>(null)
   const open = (at: Pt, node: ReactNode, hl: string[] = []) => setPopup({ at, node, hl })
   const [playing, setPlaying] = useState(true)
@@ -384,8 +385,9 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
     if (!dest) return []
     const out: Track[] = selected.map((r) => schoolTrack(r, dest))
     if (net) journeys.forEach((v) => out.push(ptTrack(v, net, school, dest)))
+    if (drive) out.push(finish('drive', 'Drive', drive.colour, along(drive.path, drive.start, drive.end), [{ t0: -Infinity, mode: 'car' }]))
     return out.filter((k) => k.pts.length > 1)
-  }, [selected, journeys, net, school, dest])
+  }, [selected, journeys, net, school, dest, drive])
   const bounds: Pt[] = [school]
   if (dest) bounds.push(dest)
   journeys.forEach((v) => v.j.rides.forEach((r) => r.path.forEach((p, i) => i % 4 === 0 && bounds.push(p))))
@@ -415,6 +417,12 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
           </Polyline>
         )))}
 
+        {drive && (
+          <>
+            <Polyline positions={drive.path} interactive={false} pathOptions={{ color: '#fff', weight: 9, opacity: 0.9 }} />
+            <Polyline positions={drive.path} interactive={false} pathOptions={{ color: drive.colour, weight: 5, opacity: 0.9, dashArray: '10 8', lineCap: 'round' }} />
+          </>
+        )}
         {net && dest && journeys.length > 0 && <JourneyLayer views={journeys} net={net} school={school} dest={dest} open={open} />}
 
         {selected.map((r) => {
@@ -515,7 +523,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         {showPt && pt && <div className="ptnote">{dest ? 'Only the services on your options.' : 'Buses, trains and ferries (grey, black dashes).'} Dotted white = no stops along that stretch. Zoom in for stops; tap one for times. TransLink timetable for a school-term weekday, CC BY 4.0. Check TransLink for today.</div>}
       </div>
 
-      {(selected.length > 0 || journeys.length > 0) && (
+      {(selected.length > 0 || journeys.length > 0 || !!drive) && (
         <div className="legend" aria-label="Selected options">
           {selected.map((r) => (
             <div className="lg" key={r.run.key} style={{ ['--c' as string]: r.run.colour }}>
@@ -525,6 +533,13 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
               <span className="lgwalk" dangerouslySetInnerHTML={{ __html: `${svg('walk', 13)} ${r.walkReal ? '' : '≈'}${mins(r.walkMin)}` }} />
             </div>
           ))}
+          {drive && (
+            <div className="lg" style={{ ['--c' as string]: drive.colour }}>
+              <span className="lgsw" />
+              <b>Drive</b>
+              <span>home {hhmm(drive.end)}</span>
+            </div>
+          )}
           {journeys.map((v) => (
             <div className="lg" key={v.j.key} style={{ ['--c' as string]: v.colour }}>
               <span className="lgsw" />

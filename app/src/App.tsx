@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import Comparison, { type CmpItem } from './components/Comparison'
 import MapView from './components/MapView'
+import DriveCard from './components/DriveCard'
+import { drivingRoute, PICKUP_MIN, typicalMin, type Drive } from './lib/driving'
 import PtCard from './components/PtCard'
 import RunCard, { RunRow } from './components/RunCard'
 import Segmented, { type Opt } from './components/Segmented'
@@ -14,6 +16,7 @@ import { buildNet, journeyCandidates, LEAVE_SCHOOL, viewOf, walkKey, type Net, t
 import { walkingRoute, type Walk } from './lib/walking'
 import type { Dataset, Priority, PtOverlay, Pt, Result, Run } from './types'
 
+const DRIVE_COLOUR = '#475569'
 type When = 'school' | 'at'
 const WHEN: Opt<When>[] = [
   { value: 'school', label: 'After school', icon: 'school' },
@@ -102,6 +105,7 @@ export default function App() {
   const [net, setNet] = useState<Net | null>(null)
   const [netLoading, setNetLoading] = useState(false)
   const [netErr, setNetErr] = useState('')
+  const [drive, setDrive] = useState<Drive | null>(null)
   const [walks, setWalks] = useState<Record<string, Walk>>({})
 
   useEffect(() => {
@@ -116,6 +120,14 @@ export default function App() {
   const viable = useMemo(() => (when === 'school' ? runs : runs.filter((r) => r.departMin >= atMin && r.departMin <= atMin + 30)), [runs, when, atMin])
 
   const dest: Pt | null = place ? [place.lat, place.lon] : null
+  useEffect(() => {
+    setDrive(null)
+    if (!dest) return
+    let live = true
+    drivingRoute(school, dest).then((d) => { if (live) setDrive(d) })
+    return () => { live = false }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [place, school])
   const baseA = useMemo(() => (dest ? planTrips(viable, dest, 'quick') : []), [viable, dest])
   const bases = useMemo(() => (dest ? Object.fromEntries(CATS.map((c) => [c.pri, planTrips(viable, dest, c.pri)])) as Record<Priority, Result[]> : null), [viable, dest])
   const noSchool = !!dest && runs.length > 0 && baseA.length === 0
@@ -206,6 +218,10 @@ export default function App() {
         rideMin: v.j.rides.reduce((n, r) => n + (r.alightAt - r.boardAt), 0), swaps: v.j.rides.slice(1).map((rd, i) => ({ arrive: v.j.rides[i].alightAt, next: rd.boardAt, route: lab(rd), wait: Math.max(0, Math.round(rd.boardAt - v.j.rides[i].alightAt - v.j.changeWalkMin / (v.j.rides.length - 1))) })), changes: v.j.changes, waitMin: Math.max(0, Math.round(wait)), legs, stops: v.j.stopsRidden, walkMin: v.walkMin, walkReal: v.first.real && v.last.real, distM: v.first.distM + v.last.distM, where: net ? net.stops[last.alight].n : '' }
     }),
   ]
+  const driveOn = !!drive && !off.includes('drive')
+  const driveArrive = drive ? leave + PICKUP_MIN + typicalMin(drive) : 0
+  if (drive && driveOn) cmpItems.push({ key: 'drive', name: 'Drive · picked up', short: 'Drive', colour: DRIVE_COLOUR, startMin: leave, getOffAt: driveArrive, arriveAt: driveArrive, rideMin: typicalMin(drive), changes: 0, waitMin: 0, swaps: [],
+    legs: [{ t0: leave, t1: leave + PICKUP_MIN, kind: 'wait', label: 'pick-up' }, { t0: leave + PICKUP_MIN, t1: driveArrive, kind: 'ride', label: `${mins(typicalMin(drive))} drive` }], stops: 0, walkMin: 0, walkReal: true, distM: drive.distM, where: 'Door to door' })
   const rest = results.filter((r) => !pickIds.includes(r.run.key)).slice(0, 10)
 
   function reset() { setOff([]); setExtra([]); setView('map'); setFitKey((k) => k + 1) }
@@ -249,6 +265,7 @@ export default function App() {
         {picks.map((p) => p.o.school
           ? <RunCard key={p.o.id} r={paintR(p.o.school)} tags={p.tags} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} dest={dest} />
           : net && <PtCard key={p.o.id} v={{ ...p.o.pt!, colour: colourOf(p.o.id), j: { ...p.o.pt!.j, tags: p.tags } }} net={net} on={!off.includes(p.o.id)} onToggle={() => toggle(p.o.id, true)} />)}
+        {drive && dest && <DriveCard d={drive} leave={leave} colour={DRIVE_COLOUR} on={driveOn} onToggle={() => toggle('drive', true)} />}
         {dest && !picks.length && !netLoading && runs.length > 0 && <p>Nothing found for that time. Try turning on public transport.</p>}
       </section>
 
@@ -276,7 +293,7 @@ export default function App() {
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
-            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} />
+            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} drive={driveOn && drive ? { path: drive.path, colour: DRIVE_COLOUR, start: leave + PICKUP_MIN, end: driveArrive } : null} />
           </div>
           {view === 'compare' && <Comparison results={cmpItems} />}
         </div>

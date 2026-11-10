@@ -57,3 +57,6 @@ network (translink.opendata@tmr.qld.gov.au, allow three business days): get it b
 Brisbane for one school-term weekday (4.3 MB, ~1.1 MB gzipped). The app builds a connection-scan planner from it in the browser
 (`app/src/lib/transit.ts`): leave school at 3:05 pm or a chosen time, walk to a stop, up to any number of changes, walk to the destination; it picks the
 quickest, fewest-stops and least-walking journeys (each a different journey). Timetable only, not live; re-run the script when TransLink's feed changes.
+
+### Driving comparison
+The "Drive" card routes school to destination with OSRM's public demo server (`router.project-osrm.org`, prototype use only). The router gives free-flow time; the app scales it by 1.35 for a typical school-afternoon peak (range 1.1x to 1.7x) and adds a 5 minute pick-up queue. It is a guide, not live traffic.

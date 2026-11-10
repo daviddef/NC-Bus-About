@@ -16,18 +16,19 @@ export default function Comparison({ results }: { results: Result[] }) {
   const end = Math.max(...results.map((r) => r.arriveAt))
   const span = Math.max(end - start, 1)
   const pct = (m: number) => ((m - start) / span) * 100
-  const first = [...results].sort((a, b) => a.arriveAt - b.arriveAt)[0]
-  const fewest = [...results].sort((a, b) => a.stops - b.stops || a.arriveAt - b.arriveAt)[0]
-  const least = [...results].sort((a, b) => a.walkMin - b.walkMin)[0]
+  const pool = results.filter((r) => r.key !== 'drive').length ? results.filter((r) => r.key !== 'drive') : results // being driven is shown, but never crowds out the others
+  const first = [...pool].sort((a, b) => a.arriveAt - b.arriveAt)[0]
+  const fewest = [...pool].sort((a, b) => a.stops - b.stops || a.arriveAt - b.arriveAt)[0]
+  const least = [...pool].sort((a, b) => a.walkMin - b.walkMin)[0]
   const name = (r: Result) => r.short
   const win = (r: Result, tag: Result) => (r === tag ? 'win' : '')
-  const best = (f: (r: Result) => number) => results.reduce((m, r) => (f(r) < f(m) ? r : m))
+  const best = (f: (r: Result) => number) => pool.reduce((m, r) => (f(r) < f(m) ? r : m))
 
   const rows: { label: string; cell: (r: Result) => React.ReactNode; best?: Result }[] = [
     { label: 'You arrive', cell: (r) => hhmm(r.arriveAt), best: first },
     { label: 'Get off', cell: (r) => hhmm(r.getOffAt) },
     { label: 'Riding', cell: (r) => mins(r.rideMin), best: best((r) => r.rideMin) },
-    { label: 'Changes', cell: (r) => (r.changes ? <>{r.swaps.map((x, i) => <span key={i} className="swap"><b>{hhmm(x.arrive)}</b> change<small>next {x.route} <b>{hhmm(x.next)}</b></small><small>wait {mins(x.wait)}</small></span>)}</> : 'None'), best: results.reduce((m, r) => (r.changes + r.waitMin / 100 < m.changes + m.waitMin / 100 ? r : m)) },
+    { label: 'Changes', cell: (r) => (r.changes ? <>{r.swaps.map((x, i) => <span key={i} className="swap"><b>{hhmm(x.arrive)}</b> change<small>next {x.route} <b>{hhmm(x.next)}</b></small><small>wait {mins(x.wait)}</small></span>)}</> : 'None'), best: pool.reduce((m, r) => (r.changes + r.waitMin / 100 < m.changes + m.waitMin / 100 ? r : m)) },
     { label: 'Stops', cell: (r) => r.stops, best: fewest },
     { label: 'Walk', cell: (r) => <>{r.walkReal ? '' : '≈'}{mins(r.walkMin)}<small>{metres(r.distM)}</small></>, best: least },
     { label: 'Get-off stop', cell: (r) => <small className="stopn">{r.where}</small> },
