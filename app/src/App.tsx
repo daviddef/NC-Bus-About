@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import Comparison, { type CmpItem } from './components/Comparison'
 import MapView from './components/MapView'
+import { factsFor } from './lib/facts'
 import DriveCard from './components/DriveCard'
 import { drivingRoute, PICKUP_MIN, typicalMin, type Drive } from './lib/driving'
 import PtCard from './components/PtCard'
@@ -225,6 +226,7 @@ export default function App() {
   const thereMin = drive ? typicalMin(driveThere ?? drive) : 0 // the parent's trip to the school takes about as long as the trip back
   if (drive && driveOn) cmpItems.push({ key: 'drive', name: 'Drive · picked up', short: 'Drive', colour: DRIVE_COLOUR, startMin: leave - thereMin, getOffAt: driveArrive, arriveAt: driveArrive, rideMin: typicalMin(drive), changes: 0, waitMin: 0, swaps: [],
     legs: [{ t0: leave - thereMin, t1: leave, kind: 'ride', label: `parent drives there ${mins(thereMin)}` }, { t0: leave, t1: leave + PICKUP_MIN, kind: 'wait', label: 'pick-up' }, { t0: leave + PICKUP_MIN, t1: driveArrive, kind: 'ride', label: `${mins(typicalMin(drive))} home` }], stops: 0, walkMin: 0, walkReal: true, distM: drive.distM, where: 'Door to door' })
+  const facts = useMemo(() => factsFor(cmpItems), [cmpItems]) // eslint-disable-line react-hooks/exhaustive-deps
   const rest = results.filter((r) => !pickIds.includes(r.run.key)).slice(0, 10)
 
   function reset() { setOff([]); setExtra([]); setView('map'); setFitKey((k) => k + 1) }
@@ -296,9 +298,9 @@ export default function App() {
         </nav>
         <div className="stage">
           <div className="mapwrap" hidden={view !== 'map'}>
-            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} drive={driveOn && drive ? { there: driveThere?.path ?? null, path: drive.path, colour: DRIVE_COLOUR, from: leave, start: leave + PICKUP_MIN, end: driveArrive } : null} />
+            <MapView school={school} dest={dest} destName={place?.label ?? ''} selected={chosen} fitKey={fitKey} visible={view === 'map'} pt={pt} showPt={showPt} onTogglePt={() => setPtOn(!showPt)} ptLoading={ptLoading} journeys={journeys} net={net} facts={facts} drive={driveOn && drive ? { there: driveThere?.path ?? null, path: drive.path, colour: DRIVE_COLOUR, from: leave, start: leave + PICKUP_MIN, end: driveArrive } : null} />
           </div>
-          {view === 'compare' && <Comparison results={cmpItems} />}
+          {view === 'compare' && <Comparison results={cmpItems} facts={facts} />}
         </div>
       </main>
 

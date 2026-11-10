@@ -368,6 +368,7 @@ interface Props {
   selected: Result[]
   fitKey: number
   visible: boolean
+  facts?: string[]
   drive?: { there: Pt[] | null; path: Pt[]; colour: string; from: number; start: number; end: number } | null
   pt: PtOverlay | null
   showPt: boolean
@@ -377,7 +378,19 @@ interface Props {
   net: Net | null
 }
 
-export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading, journeys, net, drive }: Props) {
+/** One fun fact at a time, changing every few seconds; tap for the next. */
+function FactStrip({ facts }: { facts: string[] }) {
+  const [i, setI] = useState(0)
+  useEffect(() => { setI(0) }, [facts.length])
+  useEffect(() => {
+    if (facts.length < 2) return
+    const id = setInterval(() => setI((k) => k + 1), 9000)
+    return () => clearInterval(id)
+  }, [facts.length])
+  return <button type="button" className="factstrip" onClick={() => setI((k) => k + 1)} aria-live="polite">{facts[i % facts.length]}</button>
+}
+
+export default function MapView({ school, dest, destName, selected, fitKey, visible, pt, showPt, onTogglePt, ptLoading, journeys, net, drive, facts = [] }: Props) {
   const [popup, setPopup] = useState<{ at: Pt; node: ReactNode; hl: string[] } | null>(null)
   const open = (at: Pt, node: ReactNode, hl: string[] = []) => setPopup({ at, node, hl })
   const [playing, setPlaying] = useState(true)
@@ -524,6 +537,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         {showPt && pt && <div className="ptnote">{dest ? 'Only the services on your options.' : 'Buses, trains and ferries (grey, black dashes).'} Dotted white = no stops along that stretch. Zoom in for stops; tap one for times. TransLink timetable for a school-term weekday, CC BY 4.0. Check TransLink for today.</div>}
       </div>
 
+      {facts.length > 0 && <FactStrip facts={facts} />}
       {(selected.length > 0 || journeys.length > 0 || !!drive) && (
         <div className="legend" aria-label="Selected options">
           {selected.map((r) => (

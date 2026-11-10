@@ -8,7 +8,7 @@ export interface CmpItem {
 }
 type Result = CmpItem
 
-export default function Comparison({ results }: { results: Result[] }) {
+export default function Comparison({ results, facts = [] }: { results: Result[]; facts?: string[] }) {
   if (results.length < 2) {
     return <div className="cmp"><p className="note">Tick two or more runs to compare them.</p></div>
   }
@@ -72,6 +72,13 @@ export default function Comparison({ results }: { results: Result[] }) {
           ))}
         </tbody>
       </table>
+      {facts.length > 0 && (
+        <section className="facts" aria-label="Fun facts">
+          <h3>Fun facts</h3>
+          <ul>{facts.map((f) => <li key={f}>{f}</li>)}</ul>
+          <p className="note">Worked out over about 200 school days a year, using these estimated times.</p>
+        </section>
+      )}
       <p className="note">Green is the best in each row. ≈ means the walk is a straight-line guess. Times are estimates, not checked by College Transport.</p>
     </div>
   )

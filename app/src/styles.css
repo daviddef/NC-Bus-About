@@ -220,3 +220,8 @@ table.simple th,table.simple td{padding:12px 4px}
 .tlbar .wait{position:absolute;top:0;bottom:0;display:flex;align-items:center;padding:0 6px;font-size:12px;font-weight:600;color:#7a4b00;background:repeating-linear-gradient(135deg,#fde68a 0 6px,#fef3c7 6px 12px);overflow:hidden;white-space:nowrap}
 
 .swap{display:block}.swap+.swap{margin-top:6px}.swap small b{color:var(--fg)}
+
+.factstrip{position:absolute;z-index:500;left:50%;transform:translateX(-50%);top:10px;max-width:min(520px,calc(100% - 150px));font:inherit;font-size:13px;font-weight:600;line-height:1.35;text-align:left;color:#3b2a00;background:#fff8d6;border:2px solid #fbbf24;border-radius:14px;padding:7px 12px;box-shadow:0 2px 8px #0003;cursor:pointer}
+.facts{margin-top:18px;padding:12px 14px;border-radius:14px;background:#fff8d6;color:#3b2a00}
+.facts h3{margin:0 0 6px}.facts ul{margin:0;padding-left:0;list-style:none;display:grid;gap:8px;font-size:14.5px}.facts .note{color:#7a5b00;margin:8px 0 0}
+@media (max-width:760px){.factstrip{left:56px;transform:none;top:8px;max-width:calc(100% - 200px);font-size:12px;padding:5px 9px}}
