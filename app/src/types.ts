@@ -60,6 +60,6 @@ export type Priority = 'stops' | 'quick' | 'walk'
 export interface PtOverlay {
   date: string
   window: string
-  routes: { id: string; m: string; g: Pt[][]; h?: string[] }[]
+  routes: { id: string; m: string; g: Pt[][]; h?: string[]; x?: { h: string; g: Pt[] }[] }[]
   stops: { id: string; n: string; p: Pt; m: string; l: [string, string, number[]][] }[]
 }

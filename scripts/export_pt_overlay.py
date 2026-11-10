@@ -77,6 +77,7 @@ def main():
     deps = collections.defaultdict(list)          # (stop, route, headsign) -> minutes
     shape_use = collections.Counter()              # (route, shape) -> trips through the area
     seen_trip = set()
+    rep_trip = {}                                  # shape -> one trip that uses it
     shape_head = collections.defaultdict(collections.Counter)   # shape -> headsigns of its trips
     for r in rd(gtfs, "stop_times.txt"):
         s = r["stop_id"]
@@ -87,6 +88,7 @@ def main():
             seen_trip.add(r["trip_id"])
             shape_use[(t[0], t[2])] += 1
             shape_head[t[2]][t[1]] += 1
+            rep_trip.setdefault(t[2], r["trip_id"])
         h = r["departure_time"]
         m = int(h[:2]) * 60 + int(h[3:5])
         if WIN[0] <= m <= WIN[1]:
@@ -113,6 +115,30 @@ def main():
     for r in rd(gtfs, "shapes.txt"):
         if r["shape_id"] in want:
             pts[r["shape_id"]].append((int(r["shape_pt_sequence"]), float(r["shape_pt_lat"]), float(r["shape_pt_lon"])))
+    # Stretches of a bus route with no stop for 1.2 km or more (a tunnel or an expressway): found from one trip per line.
+    want_trips = {rep_trip[sh]: sh for sh in want if sh in rep_trip and routes[want[sh]][1] == "3"}
+    allxy = {r["stop_id"]: (float(r["stop_lat"]), float(r["stop_lon"])) for r in rd(gtfs, "stops.txt") if r["stop_lat"]}
+    seqs = collections.defaultdict(list)
+    for r in rd(gtfs, "stop_times.txt"):
+        if r["trip_id"] in want_trips:
+            seqs[r["trip_id"]].append((int(r["stop_sequence"]), r["stop_id"]))
+    nonstop = collections.defaultdict(list)
+    for tid, sq in seqs.items():
+        sh = want_trips[tid]
+        sp = sorted(pts[sh]) if pts.get(sh) else []
+        if not sp:
+            continue
+        ll = [(a, b) for _, a, b in sp]
+        near = lambda xy: min(range(len(ll)), key=lambda i: (ll[i][0] - xy[0]) ** 2 + (ll[i][1] - xy[1]) ** 2)
+        sq.sort()
+        for (_, a), (_, b) in zip(sq, sq[1:]):
+            if a in allxy and b in allxy and hav(*allxy[a], *allxy[b]) >= 1200:
+                i, j = near(allxy[a]), near(allxy[b])
+                if i < j:
+                    run = [[round(la, 5), round(lo, 5)] for la, lo in ll[i:j + 1] if hav(SCHOOL[0], SCHOOL[1], la, lo) <= radius * 1.15]
+                    run = simplify(run, 12)
+                    if len(run) > 1:
+                        nonstop[want[sh]].append({"h": shape_head[sh].most_common(1)[0][0] if shape_head[sh] else "", "g": run})
     lines = collections.defaultdict(list)
     heads = collections.defaultdict(list)          # parallel to lines: where each line is heading
     for sh, lst in pts.items():
@@ -132,7 +158,7 @@ def main():
                 heads[want[sh]].append(shape_head[sh].most_common(1)[0][0] if shape_head[sh] else "")
     payload = {
         "date": ds, "radiusKm": radius / 1000, "window": "14:30-18:00 weekday",
-        "routes": [{"id": routes[rt][0], "m": routes[rt][1], "g": g, "h": heads[rt]} for rt, g in sorted(lines.items(), key=lambda kv: routes[kv[0]][0])],
+        "routes": [{"id": routes[rt][0], "m": routes[rt][1], "g": g, "h": heads[rt], "x": nonstop.get(rt, [])} for rt, g in sorted(lines.items(), key=lambda kv: routes[kv[0]][0])],
         "stops": sorted(out_stops, key=lambda x: x["id"]),
     }
     Path(out).parent.mkdir(parents=True, exist_ok=True)

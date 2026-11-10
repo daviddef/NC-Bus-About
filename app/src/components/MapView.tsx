@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import L from 'leaflet'
-import { CircleMarker, MapContainer, Marker, Polyline, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet'
+import { CircleMarker, MapContainer, Marker, Polyline, Popup, TileLayer, Tooltip, useMap, useMapEvents } from 'react-leaflet'
 import { bearing, dist } from '../lib/geo'
 import { hhmm, metres, mins } from '../lib/format'
 import { svg, type IconName } from '../lib/icons'
@@ -101,6 +101,9 @@ function PtLayer({ data, open, only }: { data: PtOverlay; open: (at: Pt, node: R
       {routes.map((r, i) => r.g.map((g, j) => (
         <Polyline key={`${i}-${j}`} positions={g} interactive={false}
           pathOptions={{ color: PT_COLOUR[r.m] ?? '#64748b', weight: r.m === '2' ? 3 : 2, opacity: 0.55, dashArray: r.m === '2' ? '10 5' : undefined }} />
+      )))}
+      {routes.map((r, i) => (r.x ?? []).map((x, j) => (
+        <Polyline key={`x${i}-${j}`} positions={x.g} interactive={false} pathOptions={{ color: '#fff', weight: 1.5, opacity: 0.95, dashArray: '2 5' }} />
       )))}
       {stops.map((s) => (
         <CircleMarker key={s.id} center={s.p} radius={s.m === '2' ? 5 : 3.5}
@@ -369,6 +372,11 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
             <Polyline positions={g} interactive={false} pathOptions={{ color: '#ffd400', weight: 7, opacity: 1, lineCap: 'round', lineJoin: 'round' }} />
           </Fragment>
         )))}
+        {pt && popup && popup.hl.length > 0 && pt.routes.filter((r) => popup.hl.some((k) => k.startsWith(`${r.id}|`))).map((r, i) => (r.x ?? []).filter((x) => popup.hl.includes(`${r.id}|${x.h}`)).map((x, j) => (
+          <Polyline key={`hx${i}-${j}`} positions={x.g} pathOptions={{ color: '#7c5a00', weight: 5, opacity: 1, dashArray: '1 9', lineCap: 'round' }}>
+            <Tooltip sticky>No stops along here (tunnel or non-stop)</Tooltip>
+          </Polyline>
+        )))}
 
         {net && dest && journeys.length > 0 && <JourneyLayer views={journeys} net={net} school={school} dest={dest} open={open} />}
 
@@ -462,7 +470,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
           <span dangerouslySetInnerHTML={{ __html: svg('transit', 18) }} />
           <span>{ptLoading ? 'Loading…' : 'Public transport'}</span>
         </button>
-        {showPt && pt && <div className="ptnote">{dest ? 'Only the services on your options.' : 'Buses, trains and ferries (grey, black dashes).'} Zoom in for stops; tap one for times. TransLink timetable for a school-term weekday, CC BY 4.0. Check TransLink for today.</div>}
+        {showPt && pt && <div className="ptnote">{dest ? 'Only the services on your options.' : 'Buses, trains and ferries (grey, black dashes).'} Dotted white = no stops along that stretch. Zoom in for stops; tap one for times. TransLink timetable for a school-term weekday, CC BY 4.0. Check TransLink for today.</div>}
       </div>
 
       {(selected.length > 0 || journeys.length > 0) && (
