@@ -86,7 +86,8 @@ export default function Comparison({ results }: { results: Result[] }) {
           ))}
         </tbody>
       </table>
-      <h3 className="yrh">Over a school year</h3>
+      <h3 className="yrh">Over a full school year</h3>
+      <p className="note">{SCHOOL_DAYS} school days: about 40 weeks of term, so no weekends or holidays. Not counted from today.</p>
       <table className="simple yr">
         <thead>
           <tr><th />{results.map((r) => <th key={r.key} style={{ borderBottomColor: r.colour }}>{r.short}</th>)}</tr>
@@ -100,7 +101,7 @@ export default function Comparison({ results }: { results: Result[] }) {
           ))}
         </tbody>
       </table>
-      <p className="note">About {SCHOOL_DAYS} school days, afternoon trip home only, from these estimated times. A movie is about 110 minutes; a marathon is 42 km.</p>
+      <p className="note">Afternoon trip home only, from these estimated times. A movie is about 110 minutes; a marathon is 42 km.</p>
       <p className="note">Green is the best in each row. ≈ means the walk is a straight-line guess. Times are estimates, not checked by College Transport.</p>
     </div>
   )
