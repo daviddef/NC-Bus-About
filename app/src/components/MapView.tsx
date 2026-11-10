@@ -109,7 +109,7 @@ function PtLayer({ data, open, only }: { data: PtOverlay; open: (at: Pt, node: R
             click: () => open(s.p, (
               <Pop icon="transit" colour={PT_COLOUR[s.m] ?? '#64748b'} title={s.n} sub={`${PT_NAME[s.m] ?? 'Public transport'} · timetable, weekday 2:30–6 pm`}
                 rows={s.l.map(([route, to, ms]) => <span><b>{s.m === '2' ? 'Train' : route}</b> to {to}<br />Leaves here at {ms.slice(0, 5).map((m) => hhmm(m)).join(' · ')}{ms.length > 5 ? ` … (${ms.length} in all)` : ''}</span>)} />
-            ), [...new Set(s.l.map(([route]) => route))]),
+            ), [...new Set(s.l.map(([route, to]) => `${route}|${to}`))]),
           }} />
       ))}
     </>
@@ -350,7 +350,7 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         <FitTo bounds={bounds} fitKey={fitKey} />
 
         {showPt && pt && <PtLayer data={pt} open={open} only={dest ? new Set(journeys.flatMap((v) => v.j.rides.map((r) => r.route))) : null} />}
-        {pt && popup && popup.hl.length > 0 && pt.routes.filter((r) => popup.hl.includes(r.id)).map((r, i) => r.g.map((g, j) => (
+        {pt && popup && popup.hl.length > 0 && pt.routes.filter((r) => popup.hl.some((k) => k.startsWith(`${r.id}|`))).map((r, i) => r.g.map((g, j) => !popup.hl.includes(`${r.id}|${r.h?.[j] ?? ''}`) && r.h ? null : (
           <Fragment key={`hl${i}-${j}`}>
             <Polyline positions={g} interactive={false} pathOptions={{ color: '#7c5a00', weight: 11, opacity: 0.55 }} />
             <Polyline positions={g} interactive={false} pathOptions={{ color: '#ffd400', weight: 7, opacity: 1, lineCap: 'round', lineJoin: 'round' }} />
@@ -452,14 +452,22 @@ export default function MapView({ school, dest, destName, selected, fitKey, visi
         {showPt && pt && <div className="ptnote">{dest ? 'Only the services on your options.' : 'Buses, trains and ferries (grey, black dashes).'} Zoom in for stops; tap one for times. TransLink timetable for a school-term weekday, CC BY 4.0. Check TransLink for today.</div>}
       </div>
 
-      {selected.length > 0 && (
-        <div className="legend" aria-label="Selected runs">
+      {(selected.length > 0 || journeys.length > 0) && (
+        <div className="legend" aria-label="Selected options">
           {selected.map((r) => (
             <div className="lg" key={r.run.key} style={{ ['--c' as string]: r.run.colour }}>
               <span className="lgsw" />
               <b>{r.run.name.split(' · ')[0]}</b>
               <span>off {hhmm(r.getOffAt)}</span>
               <span className="lgwalk" dangerouslySetInnerHTML={{ __html: `${svg('walk', 13)} ${r.walkReal ? '' : '≈'}${mins(r.walkMin)}` }} />
+            </div>
+          ))}
+          {journeys.map((v) => (
+            <div className="lg" key={v.j.key} style={{ ['--c' as string]: v.colour }}>
+              <span className="lgsw" />
+              <b>{v.j.rides.map((r) => (r.mode === '2' ? 'Train' : `Bus ${r.route}`)).join(' + ')}</b>
+              <span>home {hhmm(v.arriveAt)}</span>
+              <span className="lgwalk" dangerouslySetInnerHTML={{ __html: `${svg('walk', 13)} ≈${mins(v.walkMin)}` }} />
             </div>
           ))}
         </div>

@@ -15,6 +15,7 @@ export const LEAVE_SCHOOL = 15 * 60 + 5 // 3:05 pm, the time the College buses l
 const BOARD_BUFFER = 1 // minutes spare when stepping onto the first service
 const CHANGE_BUFFER = 2 // minutes to change between services at the same stop
 const MAX_WALK_M = 1700 // furthest we'll ask anyone to walk to a first or last stop
+const DIRECT_WALK_M = 2300 // a no-changes ride may end further from home: sometimes one bus and a longer walk beats two buses
 const NEAR_M = 250 // stops this close count as a walkable change
 
 interface Trip { r: number; hs: string; t0: number; s: number[]; a: number[]; d: number[] }
@@ -62,9 +63,9 @@ export function buildNet(f: TripsFile): Net {
   return net
 }
 
-function near(net: Net, p: Pt, limit: number): { s: number; d: number }[] {
+function near(net: Net, p: Pt, limit: number, maxM = MAX_WALK_M): { s: number; d: number }[] {
   const out: { s: number; d: number }[] = []
-  net.stops.forEach((st, s) => { const d = dist(p, st.p); if (d <= MAX_WALK_M) out.push({ s, d }) })
+  net.stops.forEach((st, s) => { const d = dist(p, st.p); if (d <= maxM) out.push({ s, d }) })
   return out.sort((a, b) => a.d - b.d).slice(0, limit)
 }
 
@@ -160,7 +161,7 @@ export function journeyCandidates(net: Net, school: Pt, dest: Pt, leave: number)
   }
   // Direct journeys can start at any stop within walking range of the school and end at any near the destination,
   // not just the nearest few (a station 1.5 km away can be the only way with no changes).
-  return [...all, ...directJourneys(net, near(net, school, 80), near(net, dest, 400), leave)]
+  return [...all, ...directJourneys(net, near(net, school, 80), near(net, dest, 400, DIRECT_WALK_M), leave)]
 }
 
 /** One service all the way, no changes: the earliest trip from each nearby stop to each stop near the destination. */

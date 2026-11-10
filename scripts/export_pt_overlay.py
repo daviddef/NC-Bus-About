@@ -77,6 +77,7 @@ def main():
     deps = collections.defaultdict(list)          # (stop, route, headsign) -> minutes
     shape_use = collections.Counter()              # (route, shape) -> trips through the area
     seen_trip = set()
+    shape_head = collections.defaultdict(collections.Counter)   # shape -> headsigns of its trips
     for r in rd(gtfs, "stop_times.txt"):
         s = r["stop_id"]
         t = trips.get(r["trip_id"])
@@ -85,6 +86,7 @@ def main():
         if r["trip_id"] not in seen_trip:
             seen_trip.add(r["trip_id"])
             shape_use[(t[0], t[2])] += 1
+            shape_head[t[2]][t[1]] += 1
         h = r["departure_time"]
         m = int(h[:2]) * 60 + int(h[3:5])
         if WIN[0] <= m <= WIN[1]:
@@ -112,6 +114,7 @@ def main():
         if r["shape_id"] in want:
             pts[r["shape_id"]].append((int(r["shape_pt_sequence"]), float(r["shape_pt_lat"]), float(r["shape_pt_lon"])))
     lines = collections.defaultdict(list)
+    heads = collections.defaultdict(list)          # parallel to lines: where each line is heading
     for sh, lst in pts.items():
         lst.sort()
         run, runs = [], []
@@ -126,9 +129,10 @@ def main():
             seg = simplify(seg, 12)
             if len(seg) > 1:
                 lines[want[sh]].append(seg)
+                heads[want[sh]].append(shape_head[sh].most_common(1)[0][0] if shape_head[sh] else "")
     payload = {
         "date": ds, "radiusKm": radius / 1000, "window": "14:30-18:00 weekday",
-        "routes": [{"id": routes[rt][0], "m": routes[rt][1], "g": g} for rt, g in sorted(lines.items(), key=lambda kv: routes[kv[0]][0])],
+        "routes": [{"id": routes[rt][0], "m": routes[rt][1], "g": g, "h": heads[rt]} for rt, g in sorted(lines.items(), key=lambda kv: routes[kv[0]][0])],
         "stops": sorted(out_stops, key=lambda x: x["id"]),
     }
     Path(out).parent.mkdir(parents=True, exist_ok=True)

@@ -37,7 +37,8 @@ const ptOption = (v: PtView): Option => ({ id: 'pt:' + v.j.key, where: `${v.j.st
 
 /** Best option for each of the three things that matter, across school buses and public transport, each a different
  *  journey. One that wins twice (same way) carries both tags; the other category shows its runner-up ("2nd …"). */
-function pickOptions(all: Option[]): Pick[] {
+/** The best of each kind among these options: quickest, fewest stops, least walking, always distinct runs. */
+function core(all: Option[]): Pick[] {
   if (!all.length) return []
   const quickest = Math.min(...all.map((o) => o.arrive))
   const ok = all.filter((o) => o.arrive <= quickest + 45)
@@ -62,6 +63,13 @@ function pickOptions(all: Option[]): Pick[] {
     const next = lists[c.pri].find((x) => !out.some((p) => p.o.id === x.id))
     if (next) out.push({ o: next, tags: ['2nd ' + c.tag.toLowerCase()] })
   }
+  return out
+}
+
+function pickOptions(all: Option[]): Pick[] {
+  // School buses and public transport are each judged on their own, so a good public option is never crowded out by a school bus.
+  const out = [...core(all.filter((o) => !o.pt)), ...core(all.filter((o) => o.pt))]
+  const quickest = all.length ? Math.min(...all.map((o) => o.arrive)) : 0
   // And, if there is one, the best way by public transport with no changes at all.
   const direct = all.filter((o) => o.pt && o.pt.j.changes === 0 && o.arrive <= quickest + 90).sort((a, b) => a.arrive * 100 + a.walk - (b.arrive * 100 + b.walk))[0]
   if (direct) {
