@@ -87,6 +87,16 @@ function pickOptions(all: Option[]): Pick[] {
   return out
 }
 
+/** Visits to the site, read from GoatCounter's public counter. Shown only if it answers. */
+function Visits() {
+  const [n, setN] = useState<{ count: string; count_unique: string } | null>(null)
+  useEffect(() => {
+    fetch('https://ncbus.goatcounter.com/counter/TOTAL.json').then((r) => (r.ok ? r.json() : null)).then((j) => { if (j && j.count) setN(j) }).catch(() => {})
+  }, [])
+  if (!n) return null
+  return <p className="visits">👀 {n.count} visits from {n.count_unique} visitors so far</p>
+}
+
 export default function App() {
   const [runs, setRuns] = useState<Run[]>([])
   const [school, setSchool] = useState<Pt>([-27.3595, 153.0640])
@@ -294,6 +304,7 @@ export default function App() {
               <span>Include public transport</span>
               <i>{includePt ? 'On' : 'Off'}</i>
             </button>
+            <Visits />
           </div>}
         </nav>
         <div className="stage">
